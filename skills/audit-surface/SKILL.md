@@ -1,0 +1,31 @@
+---
+name: audit-surface
+description: Inspect one professional asset—such as a resume, LinkedIn profile export, GitHub README, personal website or portfolio entry—for factual accuracy, outdated claims and presentation quality. Use for a single-surface review.
+---
+
+# Audit One Professional Surface
+
+Verify an individual professional asset against available evidence and its intended audience. This is not a full SEO, accessibility, performance or security audit.
+
+## Steps
+
+1. Identify the exact asset, accessible version, date checked and intended audience. State which sections cannot be accessed; accept pasted or exported content.
+2. Extract observable claims and evaluate against available canonical records. Distinguish **confirmed mismatch**, **potential issue needing verification**, and **stylistic opportunity**.
+3. Inspect relevant surface quality: accuracy of titles/dates/credentials, links, audience fit, clarity, recency and unsupported project maturity or impact. Assess only what can actually be observed.
+4. Consolidate duplicate findings and prioritize by risk and user impact. For every actionable issue, give current state, supporting evidence, desired outcome and a verifiable acceptance criterion.
+5. Produce a report. When tracker access and authorization exist, first check existing issues; otherwise output issue-ready text. Do not edit the public asset or create tickets silently.
+
+## Output: Surface Audit Report
+
+- Asset, source/version, checked date and access limits
+- Findings with category, confidence, evidence and priority
+- Specific suggested corrections
+- De-duplicated actionable items with acceptance criteria
+
+## Done when
+
+- Findings are grounded in inspected content; inaccessible content is not guessed.
+- Confirmed contradictions cite relevant evidence.
+- Copy variation is distinguished from factual drift.
+- Every high-priority finding identifies a measurable correction.
+- No duplicate tracker issues or claimed unperformed updates.
