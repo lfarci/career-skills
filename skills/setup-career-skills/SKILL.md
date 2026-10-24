@@ -13,11 +13,12 @@ Discover the user's existing ecosystem before prescribing any structure. Run thi
 2. Collect **only missing decisions**, conversationally in small, related groups:
    - Where are canonical professional facts kept? If nowhere, offer plain Markdown in a user-selected private location.
    - Which public assets exist (resume, website, LinkedIn, GitHub, portfolio, credentials)? Which are read-only or writable?
+   - If visual identity matters, where are existing banners, logos, icons, palette notes and font choices stored? This is optional; do not require creating a brand kit.
    - Where should ongoing work be tracked (GitHub Issues, another tracker, Markdown checklist, or nowhere)? Which repository/project and labels, if applicable?
    - What are the privacy boundaries, languages, target roles and audiences? These are optional and may remain unanswered.
    - Should suggestions be proposed only, or are edits to designated private records authorized? Public publication always requires explicit approval.
 3. Record a small human-readable workspace configuration in the user's chosen location. Use Markdown by default. Store references and preferences; link to source records rather than copying confidential profile data. Never commit the user's configuration to the public career-skills repository.
-4. Summarize discovered assets, canonical authority, tracker destination, permissions, and unresolved questions. Validate linked paths and accessible integrations where possible.
+4. Summarize discovered assets, any optional visual-brand kit/location, canonical authority, tracker destination, permissions, and unresolved questions. Validate linked paths and accessible integrations where possible.
 
 ## Output
 

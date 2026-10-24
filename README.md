@@ -12,9 +12,9 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | [`reflect`](skills/reflect/SKILL.md) | Explore and articulate professional identity and goals | Explicit reflection |
 | [`maintain-profile`](skills/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Reusable behavior |
 | [`build-resume`](skills/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Explicit authoring |
-| [`personal-brand`](skills/personal-brand/SKILL.md) | Define professional positioning and coordinate its public expression | Explicit planning |
+| [`personal-brand`](skills/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Explicit planning |
 | [`audit-surface`](skills/audit-surface/SKILL.md) | Audit an individual professional asset | Reusable behavior |
-| [`audit`](skills/audit/SKILL.md) | Audit alignment across multiple professional assets and track findings | Explicit audit |
+| [`audit`](skills/audit/SKILL.md) | Audit factual and observable visual alignment across multiple professional assets | Explicit audit |
 | [`find-jobs`](skills/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Explicit search |
 
 An **explicit** skill is normally run when requested; a **reusable** skill is useful for an agent to discover and apply during a related task. Invocation flags vary by harness, so the files use portable skill metadata rather than relying on any one platform's invocation behavior.
