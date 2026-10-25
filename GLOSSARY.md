@@ -5,12 +5,8 @@ A person's private working context for their career, including professional iden
 ## Language
 
 **Career workspace**:
-The private collection of career records and assets covering the person's professional life, aspirations, development and presentation.
+The entirely private collection of career records and assets covering the person's professional life, aspirations, projects, development and presentation, including material prepared for possible publication. Also called the private garden; nothing stored here is public merely because it is intended for a public audience.
 _Avoid_: Profile (when referring to the whole workspace)
-
-**Private garden**:
-The inward-facing space for the person's aspirations, goals, personal objectives and internal reflection.
-_Avoid_: Public profile
 
 **Public face**:
 The outward-facing presentation of the person, adapted to the audience or person receiving it and expressed through shared materials and online surfaces.
@@ -27,3 +23,15 @@ _Avoid_: Evidence (when referring to the undertaking itself)
 **Presentation**:
 An expression of the person's professional identity for a particular surface or recipient, such as a website, LinkedIn profile or tailored resume.
 _Avoid_: Separate identity
+
+**Project record**:
+The career-oriented account of a project: its purpose, status, skills used, personal contribution, learning and potential relevance to a resume or presentation, with links to the actual work.
+_Avoid_: Project repository, automatic evidence
+
+**Published surface**:
+An external destination presenting career content, such as a LinkedIn account, personal website, GitHub profile or credential service. Its current content establishes what is actually published there.
+_Avoid_: Final directory, local approved copy (as proof of publication)
+
+**Published state**:
+The content actually present on a particular published surface at a given time. It may differ from drafts or previously approved material in the private career workspace.
+_Avoid_: Approved draft, intended content
