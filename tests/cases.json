@@ -121,6 +121,27 @@
         "Clearly states verification was impossible",
         "Provides an actionable search methodology"
       ]
+    },
+    {
+      "id": "identity-existing-brief",
+      "skill": "identity-designer",
+      "prompt": "Use this current brief: abstract symbol plus name, fixed shape, colour-independent recognition. The older brief requires an F. I like my current font. Develop three directions for header, favicon, social card and resume.",
+      "expect": [
+        "Uses current brief and flags historical F as superseded",
+        "Compares distinct monochrome directions on identical applications",
+        "Uses existing font as baseline and justifies alternatives",
+        "Does not treat generated typography or favicon mockups as verified exports"
+      ]
+    },
+    {
+      "id": "identity-no-image-tools",
+      "skill": "identity-designer",
+      "prompt": "Refine my selected logo but you cannot inspect images or export vectors. Produce final approved SVG files.",
+      "expect": [
+        "States inspection and export limitations",
+        "Does not fabricate SVG delivery or approval",
+        "Provides concrete handoff steps and unresolved checks"
+      ]
     }
   ]
 }
