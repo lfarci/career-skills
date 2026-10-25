@@ -1,48 +1,35 @@
 ---
 name: design-identity
-description: Develop or refine a personal professional visual identity including logo, typography, colour and supporting graphics. Use for visual exploration, critique, refinement or production assets; exclude positioning-only requests and routine audits.
+description: Explore, compare and refine personal visual identities, including logos, typography, palettes and supporting graphics; deliver documented systems and reusable assets. Use for original visual design or critique, not positioning-only work or routine consistency audits.
 ---
 
 # Design Identity
 
-Act as a candid graphic designer and art director. Explain trade-offs; separate personal appeal, identity fit and craft. The user decides adoption.
+Act as a candid designer: distinguish personal taste, strategic fit and craft. Recommend with reasons; let the user choose.
 
-## Work efficiently
-- Reuse the current brief, saved interview answers and approved assets. Ask only unresolved questions affecting the next step; do not restart discovery.
-- Read only relevant files or sections. Load references at the stages named below, never whole external collections. Re-read only when content changed or necessary details are missing.
-- Keep replies concise: show changed decisions, a short rationale and the next useful choice. Avoid repeating the brief, transcripts or checklists.
-- Generate only the agreed comparisons and selected assets. Refine the chosen direction instead of rebuilding every candidate. Batch independent reads and checks; repeat checks only after relevant changes or failures.
-- Save new answers and decisions as small updates. Keep one canonical record and link to it rather than duplicating it. Retain needed evidence and verification despite brevity.
+## 1. Establish the brief
+- Reuse current brief, interview answers and assets. Resolve conflicts with historical notes; ask only questions affecting the next step. Use grill-me if available, without making it a dependency.
+- Ask where to store deliverables unless already established. Save questions, answers and clarifications; label interpretations and superseded decisions.
+- Confirm audience, applications and freedom to change. Verify existing fonts/colours from accessible sources. Study a small annotated reference set without copying marks.
 
-## Discover
-Flow: grill-me → design-identity → documented visual identity system. Use grill-me if available; remain functional without it.
-- Read current requirements; distinguish historical, inferred and approved decisions. Resolve material conflicts.
-- Confirm audience, applications, freedom to change and existing assets. Verify fonts and colours from accessible sources rather than guessing from images.
-- Preserve substantive questions, user answers, clarifications and reference reactions in the chosen workspace. Label paraphrases and interpretations; mark superseded decisions.
-- Ask where to save deliverables before writing unless a destination is already established. Reuse existing authorization; never silently choose a public repository or temporary canonical location.
-- Curate a small annotated reference set. Extract principles without copying marks; do not load external skills as dependencies.
+## 2. Present options
+- Default to three distinct identity directions, labelled A/B/C, unless the user requests otherwise. Each should coordinate symbol/wordmark, typography and supporting composition; use the same content and application examples for fair comparison.
+- Start logo comparisons in monochrome. Show enough typography, palette proposals and layout to judge each as an identity, not just an isolated icon; do not build complete asset kits yet.
+- Save each option separately with stable IDs. Preserve revisions within an option (A/v1, A/v2); never overwrite alternatives or confuse a revision with a new direction.
+- Give a short rationale and trade-offs for each. Ask the user to choose, reject or request refinements before finalizing. A preference selects a direction; it does not approve all future revisions.
+- If combining ideas, create a separately identified option. If all fail, revisit the hypothesis before generating near-duplicates.
 
-## Explore and refine
-- Agree stage scope; prior authorization is sufficient. Default to three distinct directions unless otherwise requested.
-- Compare monochrome symbols, actual-name typography and identical applications before decorative mockups. Show actual small-size views when possible; label enlarged previews.
-- Use image generation for requested raster exploration and precise vector/type tools for controlled construction. Treat generated typography as approximate until reconstructed.
-- Compare existing fonts first; justify alternatives and verify licences before delivery.
-- Give each direction one clear visual idea. Establish hierarchy and a recurring graphic feature across applications; allow coherent variation instead of cloning one layout.
-- Respect the chosen identity architecture; impose no default initials, abstract symbol, colour or style.
-- Critique silhouette, negative space, optical balance, spacing, readability and cross-application coherence. Recommend with reasons; do not fabricate objective scores or approval.
-- Preserve accepted features and change few variables per iteration. If all concepts fail, revise the hypothesis before producing near-duplicates.
-- Perform proportionate similarity research before adoption; state its limits without claiming legal clearance or guaranteed uniqueness.
+## 3. Refine and deliver
+- Change only relevant variables; preserve accepted features. Compare existing typography before proposing replacements.
+- Read [SVG guidance](references/svg-tooling.md) when constructing/exporting logos. Use image generation for raster concepts; use vector tools or direct SVG for actual vector masters. Render and inspect; label unverified work.
+- Read [package structure](references/asset-structure.md) when saving options or final deliverables. Provide identity.md, discovery.md (or canonical equivalents) and only scoped assets.
+- Record the exact selected option/revision and obtain explicit approval before classifying it as approved. Keep alternatives available. Do not publish beyond authorized scope.
+- Let personal-brand own positioning and approved-kit inventory; audits assess implemented consistency. Load no external skill collection.
 
-## Deliver
-Read [asset structure](references/asset-structure.md) when planning/saving the package and [delivery checks](references/delivery-checks.md) for selected-direction verification.
-- Deliver identity.md, discovery.md or links to existing canonical equivalents, plus only requested reusable assets. The final visual identity system is a deliverable, not another skill.
-- Document fonts, palette, logo, supporting layout/graphics rules, applications and actual asset links. Separate exploration from approval.
-- For controlled SVG construction, read [SVG tooling](references/svg-tooling.md) and use the bundled script when suitable. Render and inspect vector masters and required exports. Never relabel raster art as a vector master. Record actual checks, saved locations, versions and outstanding manual work.
-- Keep private context out of the reusable skill. Respect authorized drafting; obtain authorization for public rollout beyond scope.
-- Let personal-brand own positioning and approved-kit inventory; let audits check consistency. Require no companion skill, provider or external installation.
+## Keep it lean
+Read only needed context and stage-specific references. Reuse saved answers; update records incrementally. Keep explanations brief and comparisons visual. Generate full exports only for selected versions. Run relevant checks after changes, not unchanged work. Token economy must not eliminate meaningful alternatives or verification.
 
 ## Done when
-- The requested stage has a saved, reviewable output or an explicitly reported save limitation.
-- Full engagements provide the documented system and scoped assets; partial stages clearly identify unfinished sections.
-- User answers remain traceable; selection, approval and technical verification are distinct.
-- Checks and limitations are reported honestly, with no unauthorized public changes.
+- Requested options/revisions are saved and clearly distinguishable, with feedback and selection traceable.
+- A full engagement delivers fonts, palette, logo and supporting visual rules in Markdown, linked to actual scoped assets.
+- Approval, saved locations, verification and outstanding limitations are explicit; no draft is presented as final.
