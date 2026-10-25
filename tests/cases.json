@@ -186,6 +186,17 @@
         "Links actual files in identity.md and verifies save success",
         "Does not claim approval or rendering checks that did not occur"
       ]
+    },
+    {
+      "id": "identity-preserve-options-and-revisions",
+      "skill": "design-identity",
+      "prompt": "A/v1, B/v1 and C/v1 exist in my chosen folder. I prefer B/v1 but want B/v2 with softer geometry. Keep A and C available and let me compare before approving. Do not overwrite my approved older identity.",
+      "expect": [
+        "Creates B/v2 without modifying existing options or approved identity",
+        "Shows comparable identity previews rather than only logo icons",
+        "Records preference as selection, not blanket approval",
+        "Promotes only an explicitly approved exact version and retains history"
+      ]
     }
   ]
 }
