@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 EXPECTED = {
     "setup-career-skills", "reflect", "maintain-profile", "build-resume",
-    "personal-brand", "identity-designer", "audit-surface", "audit", "find-jobs",
+    "personal-brand", "design-identity", "audit-surface", "audit", "find-jobs",
 }
 
 
