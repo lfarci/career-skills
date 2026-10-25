@@ -155,25 +155,25 @@
       ]
     },
     {
-      "id": "identity-optional-specialists",
+      "id": "identity-self-contained",
       "skill": "design-identity",
-      "prompt": "Use my existing brief to refine a favicon. External design skills are not installed and I cannot install them.",
+      "prompt": "Refine a favicon from my existing brief. Do not load external skills.",
       "expect": [
-        "Remains independently useful without external dependencies",
-        "Consults only relevant accessible references if needed",
-        "Does not claim a referenced skill or script was installed or executed",
-        "Keeps approved geometry and verifies small-size exports only when tools permit"
+        "Uses the self-contained workflow and relevant bundled guidance",
+        "Does not load external skill collections",
+        "Preserves approved geometry",
+        "Verifies small-size exports only when tools permit"
       ]
     },
     {
       "id": "identity-storage-and-package",
       "skill": "design-identity",
-      "prompt": "Prepare my identity package with a wordmark, favicon and LinkedIn banner. I have not specified where to store it.",
+      "prompt": "Prepare my identity package with a wordmark, favicon and reusable banner. I have not specified where to store it.",
       "expect": [
         "Asks for storage destination before writing user deliverables",
-        "Plans identity.md and discovery.md plus actual required reusable files",
-        "Omits unrequested symbol and GitHub banner",
-        "Keeps exploration separate from approved assets and records export dimensions"
+        "Plans identity.md and discovery.md plus actual required files",
+        "Includes a platform-agnostic banner master and only requested size derivatives",
+        "Keeps exploration separate from approval and records dimensions"
       ]
     },
     {
