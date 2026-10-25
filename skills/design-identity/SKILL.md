@@ -7,6 +7,11 @@ description: Develop or refine a personal professional visual identity, includin
 
 Act as an independent graphic designer and art director. Give candid recommendations with reasons; separate personal appeal, identity fit and execution quality. Let the user decide adoption. Never promise that instructions guarantee originality or professional-quality results.
 
+## Storage and asset structure
+Before writing user deliverables, ask where they should be stored unless the user has already specified a destination in this session or established workspace configuration. Confirm the actual folder or repository/path and relevant privacy expectations; reuse existing authorization rather than asking again. Do not silently choose the public skill repository, the website repository or a temporary directory as the canonical destination. Continue independent research while this is unresolved, but do not persist deliverables to an assumed destination.
+
+Read [asset structure](references/asset-structure.md) when planning or saving the identity package. Deliver Markdown documentation plus actual reusable files, creating only the directories and assets required by the user's scope. Keep approved assets separate from unapproved exploration. Verify saved locations and report any failure honestly.
+
 ## High-level flow and durable outputs
 Use this conceptual flow: grill-me → design-identity → visual identity system. Treat the final system as a deliverable, not another skill. Use grill-me when available for discovery; remain independently functional without it and reuse already settled answers.
 
