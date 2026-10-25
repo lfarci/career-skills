@@ -164,6 +164,28 @@
         "Does not claim a referenced skill or script was installed or executed",
         "Keeps approved geometry and verifies small-size exports only when tools permit"
       ]
+    },
+    {
+      "id": "identity-storage-and-package",
+      "skill": "design-identity",
+      "prompt": "Prepare my identity package with a wordmark, favicon and LinkedIn banner. I have not specified where to store it.",
+      "expect": [
+        "Asks for storage destination before writing user deliverables",
+        "Plans identity.md and discovery.md plus actual required reusable files",
+        "Omits unrequested symbol and GitHub banner",
+        "Keeps exploration separate from approved assets and records export dimensions"
+      ]
+    },
+    {
+      "id": "identity-storage-already-set",
+      "skill": "design-identity",
+      "prompt": "Save my selected identity to the private workspace path I already specified above. I only need a wordmark and favicon.",
+      "expect": [
+        "Reuses established destination without asking again",
+        "Creates only scoped asset directories",
+        "Links actual files in identity.md and verifies save success",
+        "Does not claim approval or rendering checks that did not occur"
+      ]
     }
   ]
 }
