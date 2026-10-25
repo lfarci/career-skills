@@ -1,29 +1,23 @@
-# Constructing and inspecting SVG logos
+# SVG logo construction and verification
 
-Use the bundled standard-library Python script to construct a static SVG from JSON primitives:
+Use an available vector editor or write ordinary SVG directly. Do not introduce a custom geometry format or assume a particular installed tool. Reuse approved source files without redrawing them.
 
-```bash
-python3 <skill-dir>/scripts/build_logo_svg.py concept.json concept.svg
-```
+## Construct
+- Use a valid SVG namespace and viewBox, simple paths/primitives and consistent geometry. Prefer few deliberate anchors; judge optical balance rather than grid alignment alone.
+- Keep logo masters static and self-contained: no scripts, event handlers, external references or embedded raster substitutes. Avoid unnecessary effects.
+- Keep editable type sources; for portable final wordmarks, export outlined letters with verified fonts/licences when tools permit. Label live-text/font dependencies.
+- Save new option/revision files; never overwrite a competing concept.
 
-Example specification (geometry demonstration, not a design recommendation):
-```json
-{"viewBox":[0,0,100,100],"title":"Geometry study","shapes":[
-  {"type":"rect","x":20,"y":20,"width":60,"height":60,"rx":12,"fill":"#2563EB"},
-  {"type":"path","d":"M35 50 L65 50","fill":"none","stroke":"white","stroke-width":8}
-]}
-```
+## Inspect
+- Parse for XML well-formedness with an available tool, then render. XML validity alone proves neither correct geometry nor safety.
+- Inspect at presentation size and actual 16/32 px when a favicon is required. Check clipping, joins, negative space, spacing and unintended readings.
+- Check required monochrome, reversed and light/dark variants. Verify name readability and requested applications; check text/background palette contrast.
+- Render with an available vector editor, browser or established renderer. If CairoSVG is available, for example:
+  `cairosvg logo.svg --output-width 512 -o preview.png`
+  Do not force both dimensions and distort non-square lockups. Never use the unsafe option.
+- Treat imported SVG as untrusted; inspect active/external content before rendering. This guide is not a sanitizer.
+- Record actual checks and missing tool/manual steps. If unable to render, keep work unverified; do not declare final assets.
 
-The script bounds input size, shape count and numeric values, accepts only listed primitives and literal colours, escapes XML text, refuses existing output paths and uses no network. It excludes scripts, event handlers, external references, images, CSS, filters, animation and embedded fonts. It constructs new documents rather than parsing or sanitizing imported SVG.
+Before adoption, perform bounded similarity research; explain limits without guaranteeing uniqueness or legal clearance. A logo must be judged visually, not certified by code checks.
 
-Supported shapes: circle, ellipse, rect, line, path, polygon, polyline. Paths are restricted to command characters and bounded numbers; grammar correctness, visibility, clipping and aesthetics still require rendering. No transforms or groups are supported; use explicit coordinates or an available vector editor for advanced work. Keep editable type sources separately and convert approved wordmarks to outlines with an available vector tool when appropriate.
-
-Render using an available vector editor, renderer or browser and inspect the result after meaningful geometry changes. For example, if CairoSVG is already available:
-
-```bash
-cairosvg concept.svg --output-width 512 --output-height 512 -o concept-preview.png
-```
-
-Do not use CairoSVG's unsafe option. Inspect requested actual-size icon exports separately; a large preview does not validate a favicon. Do not claim this construction tool certifies arbitrary SVG security, visual quality, originality or approval.
-
-Technical references: [ElementTree](https://docs.python.org/3/library/xml.etree.elementtree.html), [SVG script elements](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/script), [CairoSVG](https://cairosvg.org/documentation/).
+Technical references: [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG), [CairoSVG](https://cairosvg.org/documentation/).
