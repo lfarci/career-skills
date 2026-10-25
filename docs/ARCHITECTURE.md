@@ -17,6 +17,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 | `review-design` | Actual assets/revisions and current brief | Prioritized evidence-backed design findings | Fit, craft and readiness issues have concrete remedies and inspection limits |
 | `audit-surface` | One accessible asset and available benchmarks | Evidence-backed single-surface findings | All inspected claims and access limits accounted for |
 | `audit` | Multiple assets, canonical facts, goals and optional visual references | Cross-asset discrepancy matrix and proposed tracker tasks | Material overlaps and conflicts reconciled, duplicates removed |
+| `find-companies` | Profile, career direction, location and work constraints | Evidence-backed target-employer shortlist | Company fit and vacancy availability are separate; practical constraints and unknowns are explicit |
 | `find-jobs` | Skills/goals, constraints, current official vacancies | Ranked verified opportunities with links and timestamps | Each verified role has live first-party evidence, transparent fit, no fabricated details |
 
 ## Contracts shared by all skills

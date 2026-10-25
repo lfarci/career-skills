@@ -19,6 +19,7 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | [`review-design`](skills/personal-brand/review-design/SKILL.md) | Critique visual fit, craft and readiness against the brief | Explicit review |
 | [`audit-surface`](skills/personal-brand/audit-surface/SKILL.md) | Audit an individual professional asset | Reusable behavior |
 | [`audit`](skills/personal-brand/audit/SKILL.md) | Audit factual and observable visual alignment across multiple professional assets | Explicit audit |
+| [`find-companies`](skills/job-hunt/find-companies/SKILL.md) | Research employers matching career direction, location and constraints, with or without vacancies | Explicit research |
 | [`find-jobs`](skills/job-hunt/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Explicit search |
 
 An **explicit** skill is normally run when requested; a **reusable** skill is useful for an agent to discover and apply during a related task. Invocation flags vary by harness, so the files use portable skill metadata rather than relying on any one platform's invocation behavior.
@@ -29,7 +30,7 @@ An **explicit** skill is normally run when requested; a **reusable** skill is us
 | --- | --- | --- |
 | `career-direction/` | Private north star, interests, decisions, plans and canonical facts | `reflect`, `maintain-profile` |
 | `personal-brand/` | Public messaging, reusable text, visual identity and presentation quality | `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`, `benchmark-profile`, `audit-surface`, `audit` |
-| `job-hunt/` | Application materials and opportunity search | `build-resume`, `find-jobs` |
+| `job-hunt/` | Application materials and opportunity search | `build-resume`, `find-jobs`, `find-companies` |
 | `setup-career-skills/` | Cross-cutting workspace setup | `setup-career-skills` |
 
 Groups organize the repository; they are not installable umbrella skills. Install individual leaf directories. Existing skill names are unchanged except for the design lifecycle split below. Paths for previously top-level skills have moved into their groups; update installation sources accordingly.
@@ -61,7 +62,7 @@ Configuration discovered during setup belongs in the **user's chosen private wor
 
 ## Scope and status
 
-This is an initial **behavioral-specification release**. The twelve skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
+This is an initial **behavioral-specification release**. The thirteen skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
 
 ## Validation
 

@@ -283,6 +283,38 @@
         "Does not describe a planned certification as earned",
         "Produces canonical reusable snippets without silently publishing"
       ]
+    },
+    {
+      "id": "companies-remote-geography",
+      "skill": "find-companies",
+      "prompt": "Find employers for a Belgium-based hands-on software engineer interested in cloud and developer experience. Remote from Belgium is mandatory. One company has a Brussels sales office and advertises US-only remote engineering jobs.",
+      "expect": [
+        "Uses location eligibility as a hard constraint",
+        "Does not infer Belgian engineering jobs from a sales office",
+        "Excludes or clearly separates the US-only remote company",
+        "Cites inspected current sources and distinguishes inferred fit"
+      ]
+    },
+    {
+      "id": "companies-without-openings",
+      "skill": "find-companies",
+      "prompt": "Find suitable employers even if they have no current vacancy. I prefer English-speaking engineering teams and mentoring without people management.",
+      "expect": [
+        "Keeps company fit separate from opening availability",
+        "Does not assume local team language or management track",
+        "Attributes culture claims and marks unknowns",
+        "Does not contact companies or expose private career plans"
+      ]
+    },
+    {
+      "id": "companies-no-research-access",
+      "skill": "find-companies",
+      "prompt": "Build a target company list from my profile, but you cannot browse and I supplied no company sources.",
+      "expect": [
+        "States verification limits",
+        "Provides research criteria or clearly provisional candidates without invented evidence",
+        "Does not claim verified vacancies or work conditions"
+      ]
     }
   ]
 }
