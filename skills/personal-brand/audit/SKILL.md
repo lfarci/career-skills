@@ -7,11 +7,10 @@ description: Audit alignment across multiple professional assets, including resu
 
 Find *relationships* and contradictions among professional assets; don't merely concatenate individual reports. Use `audit-surface` when available, but require no other skill.
 
-## Record ownership
-Use profile/ for supported personal facts and direction, projects/ for project accounts, and brand/ for positioning, audience and design guidance. Put reusable external-facing outputs in assets/: drafts until approved, staged after explicit approval, with shared content reused across surfaces. Read services.md or its mapped equivalent for surface details. Actual published content lives externally; differences require the user's reconciliation choice and factual conflicts must be flagged before importing. Existing mapped paths take precedence; do not migrate files just to match these names.
-
-## Workspace
-Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+## Contract
+- **Input:** Multiple observed surfaces from assets/services.md plus profile/ authority, brand/ guidance and applicable staged assets.
+- **Scope:** Reconcile cross-surface discrepancies; do not redesign the identity or automatically overwrite either side.
+- **Output:** A cross-surface discrepancy matrix and deduplicated actions in the existing review/tracker record or response; factual conflicts and user decisions are explicit.
 
 ## Steps
 

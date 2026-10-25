@@ -5,11 +5,10 @@ description: Interview a professional to define the brief for career-facing visu
 
 # Define Design Brief
 
-## Record ownership
-Use profile/ for supported personal facts and direction, projects/ for project accounts, and brand/ for positioning, audience and design guidance. Put reusable external-facing outputs in assets/: drafts until approved, staged after explicit approval, with shared content reused across surfaces. Read services.md or its mapped equivalent for surface details. Actual published content lives externally; differences require the user's reconciliation choice and factual conflicts must be flagged before importing. Existing mapped paths take precedence; do not migrate files just to match these names.
-
-## Workspace
-Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+## Contract
+- **Input:** The user’s current design request, explicitly selected references and relevant brand/ guidance.
+- **Scope:** Interview about visual purpose and deliverables; do not inherit historical aesthetics or produce assets.
+- **Output:** brand/discovery.md (or mapped brief): substantive answers, scope, intended impression, constraints and unresolved choices.
 
 ## Interview
 - Ask one high-level question at a time. Start with what the user wants to create or improve and why; wait before suggesting deliverables, fonts or styles. If the current request already answers this, ask the next missing question.

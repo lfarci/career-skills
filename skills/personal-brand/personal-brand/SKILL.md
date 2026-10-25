@@ -7,11 +7,10 @@ description: Define and improve a coherent professional narrative across public 
 
 Define the selected public professional narrative and reusable wording for different audiences. Treat private profile facts, north star, interests, action plans and internal decisions as inputs, not permission to publish. Exclude private doubts, constraints and plans unless explicitly selected for public use; label aspirations without implying achievements. Do not rewrite source facts to match a preferred slogan.
 
-## Record ownership
-Use profile/ for supported personal facts and direction, projects/ for project accounts, and brand/ for positioning, audience and design guidance. Put reusable external-facing outputs in assets/: drafts until approved, staged after explicit approval, with shared content reused across surfaces. Read services.md or its mapped equivalent for surface details. Actual published content lives externally; differences require the user's reconciliation choice and factual conflicts must be flagged before importing. Existing mapped paths take precedence; do not migrate files just to match these names.
-
-## Workspace
-Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+## Contract
+- **Input:** Selected profile/ facts and goals, project evidence, brand/ guidance and assets/services.md.
+- **Scope:** Define positioning and audience-specific messaging; do not change source facts or research a competing company list.
+- **Output:** brand/positioning.md for guidance; reusable text in assets/drafts/, promoted to assets/staged/ only after approval.
 
 ## Steps
 

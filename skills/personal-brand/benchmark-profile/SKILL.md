@@ -5,11 +5,10 @@ description: Research comparable public professional profiles, portfolios and re
 
 # Benchmark Profile
 
-## Research records
-Present findings as a shortlist; let the user save some, all or none. Save only selections or a set covered by an explicit retention instruction, under the mapped research/ company, opportunity or profile records. Retain useful sources, checked dates, observations and reason for keeping; comparator resumes remain links, not downloaded copies. Link related records rather than duplicate them. During ordinary work, ask before acting on stale research; maintenance is on request and archive-first, with deletion left to the user.
-
-## Workspace
-Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+## Contract
+- **Input:** Selected user profile/resume, target roles/audience and inspectable public comparator profiles, portfolios or resumes.
+- **Scope:** Research external examples and separate presentation improvements from experience gaps; do not rewrite personal facts.
+- **Output:** Shortlist first; save only user-selected findings to research/profiles/<person>.md with links, observations and reason for retention. Resume references remain links.
 
 ## Frame the comparison
 - Read the user's selected profile/resume and target roles, audience, experience level, domain and geography when relevant. Ask only missing information that materially changes comparator selection. Agree on the surfaces and depth; do not require a complete career interview.
@@ -29,7 +28,7 @@ Read the chosen career workspace index and relevant canonical records when avail
 
 ## Hand off
 - Ask where to save findings unless established; reuse existing records and link canonical assets. Provide findings in the response if saving is unavailable; do not claim a saved report or changed profile without confirmation.
-- Offer selected recommendations to personal-brand for reusable messaging, build-resume for resume changes, or the design skills for visual work when available. Refer genuine growth opportunities to the private career-direction records. Each handoff must remain useful without another installed skill.
+- Offer selected recommendations to personal-brand for reusable messaging, build-resume for resume changes, or the design skills for visual work when available. Refer genuine growth opportunities to profile/ direction or development records. Each handoff must remain useful without another installed skill.
 - Do not edit, publish, contact comparison subjects or apply for jobs unless separately requested.
 
 ## Done when

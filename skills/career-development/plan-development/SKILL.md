@@ -5,8 +5,10 @@ description: Turn a professional direction and demonstrated experience into a re
 
 # Plan Development
 
-## Workspace
-Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+## Contract
+- **Input:** profile/ direction, skills, preferences and constraints; relevant project/evidence links.
+- **Scope:** Plan growth toward chosen goals; do not declare planned learning achieved.
+- **Output:** profile/development.md (or mapped plan): prioritized outcomes, actions, effort, evidence milestones and review points.
 
 ## Establish the starting point
 - Read the user's chosen direction, relevant demonstrated experience and constraints. Ask only missing priorities, available time, budget or deadlines that affect the plan. Do not assume promotion, management, certifications or a technology track is the goal.

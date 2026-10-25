@@ -5,11 +5,10 @@ description: Research employers that match a user's professional profile, career
 
 # Find Companies
 
-## Research records
-Present findings as a shortlist; let the user save some, all or none. Save only selections or a set covered by an explicit retention instruction, under the mapped research/ company, opportunity or profile records. Retain useful sources, checked dates, observations and reason for keeping; comparator resumes remain links, not downloaded copies. Link related records rather than duplicate them. During ordinary work, ask before acting on stale research; maintenance is on request and archive-first, with deletion left to the user.
-
-## Workspace
-Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+## Contract
+- **Input:** profile/ experience, direction, location and work constraints; existing research/companies/ references.
+- **Scope:** Assess employer fit independently of vacancy availability; do not apply or contact employers.
+- **Output:** Shortlist first; save selected employers to research/companies/<company>.md with fit, sources/check dates and unknowns.
 
 ## Establish fit criteria
 - Read the user's selected profile and career direction. Reuse explicit current preferences; ask only missing information that materially changes the search. Do not infer preferred roles or industries solely from past employers.

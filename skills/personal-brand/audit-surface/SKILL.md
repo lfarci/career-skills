@@ -7,11 +7,10 @@ description: Inspect one professional asset—such as a resume, LinkedIn profile
 
 Verify an individual professional asset against available evidence and its intended audience. This is not a full SEO, accessibility, performance or security audit.
 
-## Record ownership
-Use profile/ for supported personal facts and direction, projects/ for project accounts, and brand/ for positioning, audience and design guidance. Put reusable external-facing outputs in assets/: drafts until approved, staged after explicit approval, with shared content reused across surfaces. Read services.md or its mapped equivalent for surface details. Actual published content lives externally; differences require the user's reconciliation choice and factual conflicts must be flagged before importing. Existing mapped paths take precedence; do not migrate files just to match these names.
-
-## Workspace
-Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+## Contract
+- **Input:** One surface identified in assets/services.md or supplied directly, its observed content and relevant profile/, brand/ and staged references.
+- **Scope:** Inspect one surface for factual/presentation issues; ask how to reconcile differences rather than assuming staged or live content is correct.
+- **Output:** Evidence-backed findings in the response or the user’s existing review/tracker record, tied to the exact surface and inspection limits.
 
 ## Steps
 

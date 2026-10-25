@@ -5,6 +5,11 @@ description: Review saved career research for continued usefulness, stale inform
 
 # Review Research
 
+## Contract
+- **Input:** User-selected research/ scope, saved references and retention/archival guidance.
+- **Scope:** Review on request; archive under guidance, leave deletion manual and preserve useful historical references.
+- **Output:** Updated research/ records and authorized moves to research/archive/ with repaired links, reasons/dates and a change summary.
+
 ## Review
 - Read the workspace index, selected research records and the user's retention guidance. Clarify only missing scope that affects the review; do not require another skill, provider or a fixed folder layout.
 - Assess usefulness for future reference, market understanding, resume inspiration and targeting. Consider why the user saved a record. Expired opportunities or older profiles can remain useful; age alone is not a reason to archive.

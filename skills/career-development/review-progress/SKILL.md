@@ -5,8 +5,10 @@ description: Review progress against a professional development plan using actua
 
 # Review Progress
 
-## Workspace
-Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+## Contract
+- **Input:** profile/development.md, the review period and actual activity/outcome evidence.
+- **Scope:** Assess and revise development commitments; propose factual updates separately rather than publishing achievements.
+- **Output:** The same development plan and dated reviews: progress, blockers, justified adjustments and next actions.
 
 ## Review the evidence
 - Read the current plan, goals, previous review and available outcomes. Establish the review period and ask only for missing evidence that changes the assessment. Remain useful with a pasted plan; do not require another skill or tracker.

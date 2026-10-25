@@ -74,3 +74,9 @@ For existing notes, map before moving: profile/goals.md may already hold directi
 Use readable headings and relative links; no mandatory YAML, IDs or database. Separate facts, user preferences, interpretations and aspirations. Retain source/date and current/planned/superseded status where material. Decisions include rationale; actions include next steps and evidence/review points. Preserve uncertainty and meaningful history.
 
 Before editing, read current canonical records and preserve unrelated changes. Use available version/conflict controls and the chosen write workflow. Confirm saves and links; when writes are unavailable, provide a proposed patch without claiming success. Skills remain useful from pasted input or selected files without an index, another skill or a specific provider.
+
+## Skill contracts and paths
+
+Each SKILL.md defines a concise Input / Scope / Output contract: required records or supplied material, the responsibility boundary, and the destination/result. Contract paths are relative to the chosen career workspace root and are defaults; the workspace index maps them to existing files. They are not installation paths or mandatory filenames. Without an index, use supplied inputs and clarify only missing authority or destination decisions relevant to the task.
+
+Keep workspace-wide structure and lifecycle rules here. Skill contracts name only their own inputs and outputs; they do not repeat all five homes, storage-provider instructions or unrelated lifecycle rules. A skill remains independently usable from its task-specific contract and workflow; no runtime schema, mandatory setup skill or full-workspace read is required.

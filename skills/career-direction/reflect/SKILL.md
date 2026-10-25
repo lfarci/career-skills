@@ -7,8 +7,10 @@ description: Guide deliberate reflection on professional identity, strengths, ca
 
 Help the person understand where they are professionally, where they want to go and why. This skill is about career identity, **not** general-purpose journaling or making a resume.
 
-## Workspace
-Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+## Contract
+- **Input:** profile/ direction, experience and preferences; relevant project accounts or supplied history.
+- **Scope:** Clarify professional motivations, north star and choices; do not rewrite experience or public positioning.
+- **Output:** profile/direction.md (or mapped equivalent): reflection, alternatives, decisions and open questions.
 
 ## Steps
 

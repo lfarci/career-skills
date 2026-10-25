@@ -7,11 +7,10 @@ description: Build, improve or tailor a truthful resume from supported professio
 
 Produce an evidence-based resume readable by humans and reliably extractable by modern applicant tracking systems. There is no universal ATS score or format guaranteed to pass every system.
 
-## Record ownership
-Use profile/ for supported personal facts and direction, projects/ for project accounts, and brand/ for positioning, audience and design guidance. Put reusable external-facing outputs in assets/: drafts until approved, staged after explicit approval, with shared content reused across surfaces. Read services.md or its mapped equivalent for surface details. Actual published content lives externally; differences require the user's reconciliation choice and factual conflicts must be flagged before importing. Existing mapped paths take precedence; do not migrate files just to match these names.
-
-## Workspace
-Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+## Contract
+- **Input:** Supported profile/ facts, selected project evidence, brand/ guidance and an optional research/opportunities/ role.
+- **Scope:** Author or tailor a truthful resume; do not alter career facts to match the vacancy or submit an application.
+- **Output:** Resume sources/exports in assets/drafts/resumes/; explicitly approved versions in assets/staged/resumes/, with verification and intentional tailoring recorded.
 
 ## Steps
 

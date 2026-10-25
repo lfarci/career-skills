@@ -87,3 +87,7 @@ The physical reference model is profile/, projects/, brand/, assets/ and researc
 
 Research retains selected linked references and useful observations, one record per company/opportunity/comparator as useful. Store links to other people's resumes, not copied files. review-research provides requested archival maintenance; do not automatically delete or maintain research in the background. Earlier logical skill categories do not require matching user directories.
 
+
+## Skill input/output contracts
+
+Each skill declares Input, Scope and Output in its SKILL.md. Inputs identify relevant source records or supplied material; scope identifies the work and a meaningful boundary; output identifies a reviewable result and its default workspace destination. These are lightweight Markdown contracts, not a formal schema or required execution chain. The [workspace guide](WORKSPACE.md#skill-contracts-and-paths) defines relative-path resolution and existing-record mapping once. Do not paste a shared workspace preamble into every skill.

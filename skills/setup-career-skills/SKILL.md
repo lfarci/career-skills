@@ -9,6 +9,11 @@ Discover the user's existing ecosystem before prescribing any structure. Run thi
 
 Read [the portable workspace model](references/workspace-model.md) when setting up or mapping career records. Use its five logical areas and minimal index; adapt existing files instead of enforcing a directory tree.
 
+## Contract
+- **Input:** Existing career records, storage location, service accounts and write preferences.
+- **Scope:** Map canonical records and permissions; do not migrate or populate unrelated career content.
+- **Output:** Workspace README.md (or chosen index): source map, storage/write policy, service references and unset areas.
+
 ## Steps
 
 1. Inspect available workspace files, repository configuration, existing career notes and accessible profile sources. Report what you discovered. Never ask the user for a fact that is already available and unambiguous.
