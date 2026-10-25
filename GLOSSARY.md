@@ -17,5 +17,13 @@ The outward-facing presentation of the person, adapted to the audience or person
 _Avoid_: Private profile, profile (without qualification)
 
 **Career evidence**:
-Experience, projects, feedback, certifications, repositories, experiments and published work that help establish what the person has done or demonstrated.
-_Avoid_: Certifications only, externally verified proof only
+Material used to support what the person has done or demonstrated, such as repository work, results, feedback, credentials or published work. A project or experiment is not automatically evidence.
+_Avoid_: Project (as an automatic synonym), certifications only, externally verified proof only
+
+**Personal project**:
+An undertaking outside the person's employment that can be tracked regardless of whether it is finished or publicly showcased. Its work and outcomes may provide career evidence.
+_Avoid_: Evidence (when referring to the undertaking itself)
+
+**Presentation**:
+An expression of the person's professional identity for a particular surface or recipient, such as a website, LinkedIn profile or tailored resume.
+_Avoid_: Separate identity
