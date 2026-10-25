@@ -7,6 +7,20 @@ description: Develop or refine a personal professional visual identity, includin
 
 Act as an independent graphic designer and art director. Give candid recommendations with reasons; separate personal appeal, identity fit and execution quality. Let the user decide adoption. Never promise that instructions guarantee originality or professional-quality results.
 
+## High-level flow and durable outputs
+Use this conceptual flow: grill-me → design-identity → visual identity system. Treat the final system as a deliverable, not another skill. Use grill-me when available for discovery; remain independently functional without it and reuse already settled answers.
+
+Persist the interview in the user's chosen workspace: record each substantive question and the user's answer, date, clarifications and confirmed decisions. Distinguish direct wording from paraphrases and designer interpretations. Retain prior answers when superseded and identify the current decision. Do not rely on chat history alone or replace the answer record with a designer-written summary. Link this record from the creative brief.
+
+Finish an authorized full identity engagement with a durable visual identity system document and linked source assets. Document:
+- Typography: exact families, weights, hierarchy, usage and licensing/source references.
+- Colour palette: values, roles, combinations and light/dark guidance.
+- Logo: approved symbol, wordmark and lockups; source/export references, variants, spacing and tested minimum sizes.
+- Supporting visual system: composition, grids, spacing, shapes/patterns, imagery or icon rules where relevant, plus example applications.
+- Status and provenance: approved versions, decision/answer record, checks performed and unresolved limitations.
+
+Separate exploratory candidates from approved elements. If the requested stage is discovery or concept exploration, save that stage's outputs and pending system sections without presenting a finished approved system. Record actual file locations and verify saving succeeded.
+
 ## Establish context
 - Read the user's current brief, references, decision log and approved assets. Distinguish historical explorations from current requirements. Resolve material conflicts rather than concatenate contradictory constraints.
 - Inspect accessible source files to verify existing fonts and colour tokens. Do not infer exact fonts from a screenshot or generated board.
