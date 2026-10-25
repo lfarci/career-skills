@@ -89,5 +89,9 @@ User-selected useful findings about companies, opportunities, comparable profess
 _Avoid_: Personal-brand audience definition, verified fact without supporting sources
 
 **Comparator**:
-An external professional profile, resume or portfolio selected as a relevant reference for understanding the market or improving the person's presentation. It may be a peer or aspirational example; comparison does not establish that its author competes for the same vacancy.
+An external professional profile, resume or portfolio selected as a relevant reference for understanding the market or improving the person's presentation, recorded as links and useful observations rather than a locally copied resume. It may be a peer or aspirational example; comparison does not establish that its author competes for the same vacancy.
 _Avoid_: Confirmed competitor, model to copy
+
+**Research selection**:
+The user's choice of which shortlisted findings to retain in the career workspace, whether some, all or none. Discovery alone does not imply selection.
+_Avoid_: Automatic retention of every search result
