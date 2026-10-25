@@ -35,3 +35,15 @@ _Avoid_: Final directory, local approved copy (as proof of publication)
 **Published state**:
 The content actually present on a particular published surface at a given time. It may differ from drafts or previously approved material in the private career workspace.
 _Avoid_: Approved draft, intended content
+
+**Staging**:
+The private collection of the latest approved material intended for publication or sharing, including reusable content and destination-specific adaptations. Its presence does not establish that publication occurred.
+_Avoid_: Published state, unreviewed draft
+
+**Reusable content**:
+Approved wording or an asset that can serve multiple presentations without maintaining independent copies. A surface-specific adaptation expresses an intentional difference from that shared material.
+_Avoid_: One separate master per surface
+
+**Reconciliation**:
+A user-directed decision about differences between approved staged material and observed published content, including whether to retain, import or publish a change. A difference alone does not establish which version is correct.
+_Avoid_: Automatic overwrite, unconditional import of public claims as facts
