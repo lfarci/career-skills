@@ -1,44 +1,30 @@
-# Identity package structure
+# Identity package
 
-Ask where to store this package before writing it, unless a destination is already established. Adapt to the user's existing structure instead of forcing a new root. Use relative links within the package.
+Use the user's chosen destination and existing conventions. Create only needed files; link canonical records rather than duplicate them.
 
-## Example
 ```text
 visual-identity/
-├── identity.md
 ├── discovery.md
-├── assets/
-│   ├── logos/
-│   │   ├── symbol.svg
-│   │   ├── wordmark.svg
-│   │   └── lockup.svg
-│   ├── icons/
-│   │   ├── favicon.ico
-│   │   └── avatar.png
-│   └── banners/
-│       ├── banner.svg
-│       └── banner-wide.png
-└── explorations/
+├── options/
+│   ├── A/
+│   │   ├── v1/              # identity.md + assets + comparison preview
+│   │   └── v2/
+│   ├── B/v1/
+│   └── C/v1/
+├── identity.md             # current selection/approval and final guide
+└── assets/                 # approved deliverables only
+    ├── logos/              # editable SVG masters + required exports
+    ├── icons/              # favicon/avatar if needed
+    └── banners/            # generic editable master + requested sizes
 ```
 
-This is a conditional example, not a mandatory asset inventory. Omit unused directories. A wordmark-only identity needs no symbol; banners exist only when requested. Keep an editable, platform-agnostic banner master; create size/aspect-ratio exports only for requested uses. Add social cards, presentation templates or other application assets only when needed. Keep any unapproved candidates under explorations/ or an existing equivalent, never among approved files.
+## Records
+- discovery.md: substantive questions/answers, dates, reference feedback and decisions. Label paraphrases and superseded decisions.
+- Each option/revision: a concise identity.md describing its visual idea, font/palette proposals, preview/source links, status and feedback. Use the same comparison format. Keep early options lightweight; no full export kit.
+- Root identity.md: selected option/revision, approval status, fonts/weights/hierarchy/licences, palette values/roles, logo spacing/minimum sizes/background rules, supporting layout/graphics rules, representative applications and actual asset links. Record verification and unfinished work.
 
-## identity.md
-Use as the canonical Markdown reference for:
-- Status, version and scope; distinguish draft, selected and approved.
-- Fonts: exact families, weights, hierarchy, usage, sources/licences and documented fallbacks.
-- Colour palettes: values, roles, combinations and light/dark guidance.
-- Logo rules: approved forms, clear space, tested size limits, backgrounds and misuse examples.
-- Supporting system: layout, spacing, grids, shapes/patterns and imagery/icon guidance as applicable.
-- An asset index with relative file links, intended use, variant, format and pixel dimensions where relevant. For SVG masters record viewBox/aspect ratio and sizing guidance instead of implying fixed output pixels.
-- Representative applications, verification performed, outstanding limitations and a link to discovery.md.
+## Version handling
+Preserve existing versions; create a new revision for meaningful changes. Record selections by exact ID, for example B/v2. Copy/export to root assets only after approval, with provenance back to that version. If final files are not approved yet, leave them under their option and mark root identity.md as pending. Before replacing an approved version, retain it in the existing version history or archive it and update the guide explicitly.
 
-## discovery.md
-Preserve substantive interview questions and user answers, dates, clarifications, reference feedback and confirmed/unresolved decisions. Label paraphrases and designer interpretations. Mark superseded decisions without erasing the original answer. Link to any existing authoritative interview record instead of duplicating it unnecessarily.
-
-## Actual reusable assets
-Use [SVG tooling](svg-tooling.md) for the bundled static-geometry construction tool and rendering workflow.
-
-Store editable vector logo masters and any required raster exports. Name variants explicitly, for example lockup-dark.svg or symbol-white.svg. Export icons and banners at agreed sizes/aspect ratios and record dimensions and safe-crop areas. Platform-specific crops are optional derivatives of the generic banner master. Supply editable application sources when available and useful.
-
-Do not claim a font, logo, banner or export is included merely because it is described in identity.md. Verify actual files exist and render correctly where tools permit. Do not present the system as approved until the user approves the relevant version.
+## Assets
+Omit unused directories: no symbol for a wordmark-only identity, no banners unless needed. Keep banners platform agnostic; optional size/crop exports derive from the generic master. Record relative paths, purpose, variant, format and pixel dimensions (SVG viewBox/aspect ratio for vector masters). Include editable sources where useful; document font fallbacks and source/licence links. Verify saved files exist; descriptions are not substitutes for assets.
