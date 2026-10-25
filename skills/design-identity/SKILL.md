@@ -1,6 +1,6 @@
 ---
 name: design-identity
-description: Develop or refine a personal professional visual identity: logo, typography, colour and supporting graphics. Use for visual exploration, critique, refinement or production assets; exclude positioning-only requests and routine audits.
+description: Develop or refine a personal professional visual identity including logo, typography, colour and supporting graphics. Use for visual exploration, critique, refinement or production assets; exclude positioning-only requests and routine audits.
 ---
 
 # Design Identity
