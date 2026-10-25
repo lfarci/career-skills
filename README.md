@@ -12,13 +12,23 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | [`reflect`](skills/reflect/SKILL.md) | Explore and articulate professional identity and goals | Explicit reflection |
 | [`maintain-profile`](skills/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Reusable behavior |
 | [`build-resume`](skills/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Explicit authoring |
-| [`personal-brand`](skills/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Explicit planning |
-| [`design-identity`](skills/design-identity/SKILL.md) | Develop, critique and validate a personal visual identity and production assets | Explicit design |
+| [`personal-brand`](skills/personal-brand/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Explicit planning |
+| [`define-design-brief`](skills/personal-brand/define-design-brief/SKILL.md) | Interview about career visual needs and agree on an actionable brief | Explicit discovery |
+| [`create-design-assets`](skills/personal-brand/create-design-assets/SKILL.md) | Explore concepts and produce scoped professional visual assets | Explicit creation |
+| [`review-design`](skills/personal-brand/review-design/SKILL.md) | Critique visual fit, craft and readiness against the brief | Explicit review |
 | [`audit-surface`](skills/audit-surface/SKILL.md) | Audit an individual professional asset | Reusable behavior |
 | [`audit`](skills/audit/SKILL.md) | Audit factual and observable visual alignment across multiple professional assets | Explicit audit |
 | [`find-jobs`](skills/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Explicit search |
 
 An **explicit** skill is normally run when requested; a **reusable** skill is useful for an agent to discover and apply during a related task. Invocation flags vary by harness, so the files use portable skill metadata rather than relying on any one platform's invocation behavior.
+
+### Personal-brand lifecycle
+
+`skills/personal-brand/` groups positioning (`personal-brand`), discovery (`define-design-brief`), production (`create-design-assets`) and critique (`review-design`). The umbrella is an organizational directory, not a skill or required orchestrator. Each leaf is an independently installable package; select the leaf directory when installing.
+
+Use discovery → creation → review as needed, reusing the same brief and asset files. Enter at any stage with existing inputs; no compulsory chain or repeated interview. Creation owns visual concept selection and self-checks; review supplies independent critique. These skills focus on career-facing identities, profiles, portfolios, resumes and talks rather than general commercial branding or product UX.
+
+The former `design-identity` package is replaced by these three design skills; update installed paths and invocations accordingly.
 
 ## Design principles
 
@@ -39,7 +49,7 @@ Configuration discovered during setup belongs in the **user's chosen private wor
 
 ## Scope and status
 
-This is an initial **behavioral-specification release**. The nine skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
+This is an initial **behavioral-specification release**. The eleven skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
 
 ## Validation
 
@@ -54,3 +64,4 @@ Changes should maintain small, independently invocable skills with clear boundar
 ## License
 
 MIT. See [LICENSE](LICENSE).
+

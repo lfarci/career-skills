@@ -21,3 +21,4 @@ Use an available vector editor or write ordinary SVG directly. Do not introduce 
 Before adoption, perform bounded similarity research; explain limits without guaranteeing uniqueness or legal clearance. A logo must be judged visually, not certified by code checks.
 
 Technical references: [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG), [CairoSVG](https://cairosvg.org/documentation/).
+

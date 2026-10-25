@@ -1,0 +1,4 @@
+interface:
+  display_name: "Define Design Brief"
+  short_description: "Clarify career visual goals and deliverables"
+  default_prompt: "Use $define-design-brief for my professional visual identity."

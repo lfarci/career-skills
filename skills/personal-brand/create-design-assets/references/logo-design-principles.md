@@ -22,3 +22,4 @@ Read before proposing logo concepts and when evaluating drafts.
 - Identity Designed — branding case studies: https://identitydesigned.com/
 
 Keep research focused on decisions the current brief needs; do not load entire collections.
+

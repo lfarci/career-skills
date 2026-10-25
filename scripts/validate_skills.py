@@ -11,17 +11,18 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 EXPECTED = {
     "setup-career-skills", "reflect", "maintain-profile", "build-resume",
-    "personal-brand", "design-identity", "audit-surface", "audit", "find-jobs",
+    "personal-brand", "define-design-brief", "create-design-assets", "review-design", "audit-surface", "audit", "find-jobs",
 }
 
 
 def main() -> int:
     errors: list[str] = []
-    actual = {p.name for p in SKILLS.iterdir() if p.is_dir()}
+    packages = {p.parent.name: p for p in SKILLS.rglob("SKILL.md")}
+    actual = set(packages)
     if actual != EXPECTED:
         errors.append(f"Skill inventory mismatch; missing={sorted(EXPECTED-actual)}, extra={sorted(actual-EXPECTED)}")
     for name in sorted(EXPECTED):
-        path = SKILLS / name / "SKILL.md"
+        path = packages.get(name, SKILLS / name / "SKILL.md")
         if not path.is_file():
             errors.append(f"Missing {path.relative_to(ROOT)}")
             continue
@@ -60,3 +61,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

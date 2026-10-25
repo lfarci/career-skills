@@ -14,7 +14,7 @@ Define *how* professional facts and aspirations are communicated to different au
 3. Draft a concise core positioning and evidence-backed differentiators. Explain any proposed change to established messaging; surface competing positioning choices for human judgment.
 4. Define the distinct purpose of each surface. Different headlines and appropriately sized or cropped graphics can communicate one consistent identity.
 5. When visual consistency matters, maintain or propose a **small optional brand kit** that points to reusable approved banners, logos, icons, palette colors and fonts. Read [the lightweight brand-kit guide](references/brand-kit.md) only for this branch. Recommend or create new assets only when needed and requested; avoid mandatory design systems.
-   When original visual identity design is requested, use `design-identity` if available; keep positioning here and visual exploration there. Remain independently useful without it.
+   When original visual identity design is requested, use `define-design-brief` for discovery, `create-design-assets` for concepts/production, or `review-design` for critique when available; keep positioning here. Remain independently useful without it.
 6. Determine which assets merit an individual audit or a full cross-asset alignment audit. Use `audit-surface` and `audit` when available, but remain independently functional if they are not installed.
 7. Produce prioritized recommendations or reviewable proposed edits. Never claim a platform has changed until the modification is confirmed, and ask before public publishing.
 
@@ -35,3 +35,4 @@ Define *how* professional facts and aspirations are communicated to different au
 - Each recommendation names a target surface and expected outcome.
 - Plans/experiments are not presented as accomplished production work.
 - No unauthorized public changes occur.
+
