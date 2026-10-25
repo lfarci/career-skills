@@ -16,12 +16,12 @@ visual-identity/
 │   │   ├── favicon.ico
 │   │   └── avatar.png
 │   └── banners/
-│       ├── github.png
-│       └── linkedin.png
+│       ├── banner.svg
+│       └── banner-wide.png
 └── explorations/
 ```
 
-This is a conditional example, not a mandatory asset inventory. Omit unused directories. A wordmark-only identity needs no symbol; banners exist only when requested. Add social cards, presentation templates or other application assets only when needed. Keep any unapproved candidates under explorations/ or an existing equivalent, never among approved files.
+This is a conditional example, not a mandatory asset inventory. Omit unused directories. A wordmark-only identity needs no symbol; banners exist only when requested. Keep an editable, platform-agnostic banner master; create size/aspect-ratio exports only for requested uses. Add social cards, presentation templates or other application assets only when needed. Keep any unapproved candidates under explorations/ or an existing equivalent, never among approved files.
 
 ## identity.md
 Use as the canonical Markdown reference for:
@@ -37,6 +37,8 @@ Use as the canonical Markdown reference for:
 Preserve substantive interview questions and user answers, dates, clarifications, reference feedback and confirmed/unresolved decisions. Label paraphrases and designer interpretations. Mark superseded decisions without erasing the original answer. Link to any existing authoritative interview record instead of duplicating it unnecessarily.
 
 ## Actual reusable assets
-Store editable vector logo masters and any required raster exports. Name variants explicitly, for example lockup-dark.svg or symbol-white.svg. Export icons and banners at the agreed platform sizes and record those dimensions. Supply editable application sources when available and useful.
+Use [SVG tooling](svg-tooling.md) for the bundled static-geometry construction tool and rendering workflow.
+
+Store editable vector logo masters and any required raster exports. Name variants explicitly, for example lockup-dark.svg or symbol-white.svg. Export icons and banners at agreed sizes/aspect ratios and record dimensions and safe-crop areas. Platform-specific crops are optional derivatives of the generic banner master. Supply editable application sources when available and useful.
 
 Do not claim a font, logo, banner or export is included merely because it is described in identity.md. Verify actual files exist and render correctly where tools permit. Do not present the system as approved until the user approves the relevant version.
