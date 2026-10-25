@@ -95,3 +95,7 @@ _Avoid_: Confirmed competitor, model to copy
 **Research selection**:
 The user's choice of which shortlisted findings to retain in the career workspace, whether some, all or none. Discovery alone does not imply selection.
 _Avoid_: Automatic retention of every search result
+
+**Research archive**:
+Retained research removed from active consideration while preserving its reference value and history. Archiving follows the user's request or established guidance; noticing stale content alone does not authorize a change.
+_Avoid_: Deletion, expired-equals-useless
