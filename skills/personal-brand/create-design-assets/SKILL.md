@@ -5,6 +5,9 @@ description: Explore concepts, create and refine reusable visual assets for a pr
 
 # Create Design Assets
 
+## Workspace
+Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+
 ## Establish the input
 - Read the current brief and requested deliverables. Ask only blocking gaps about purpose, audience, usage, desired impression or scope before suggesting directions. If discovery is needed, offer define-design-brief when available or ask those questions here; never require another skill.
 - Reuse only references and choices the user explicitly makes the basis of this task. Do not infer a geometric/tech direction or preserve a website font from history alone. Keep work career-facing; personal-brand owns professional positioning.

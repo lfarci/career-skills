@@ -56,6 +56,14 @@ The former `design-identity` package is replaced by these three design skills; u
 - **Reviewable mutations:** do not silently publish, apply for a job, alter public profiles, or create tracker items without authorization.
 - **No mandatory provider:** files, repositories, issue trackers, and web integrations are replaceable capabilities.
 
+## Shared career workspace
+
+The skills work on one linked Markdown workspace: **direction → development → evidence**, with selected direction and evidence informing **public presentation and job search**. Results and feedback can revise the next plan; private records never automatically become public claims.
+
+Use a career README as the index: map the five areas to canonical files, identify public surfaces and record storage/write boundaries. Start with a few files; keep existing folders and split only when useful. Local folders, GitHub repositories and other Markdown storage all work. Setup is optional; each skill can also work from supplied documents.
+
+See the [portable workspace model](skills/setup-career-skills/references/workspace-model.md) for a minimal layout, record conventions and existing-workspace mapping. The model describes user records, distinct from this repository's installable skill folders.
+
 ## Getting started
 
 1. Install just the skill directories you want using your agent's Agent Skills workflow (or [skills.sh](https://skills.sh/)); no repository-wide setup is required.

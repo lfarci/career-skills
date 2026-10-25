@@ -5,6 +5,9 @@ description: Critique career-facing visual assets such as personal logos, profes
 
 # Review Design
 
+## Workspace
+Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+
 ## Establish the review
 - Identify the exact assets/revisions and current brief: goal, audience, usage, desired impression and constraints. Ask only missing context that changes the judgment. Review existing work without requiring a new discovery or creation cycle.
 - Inspect actual files/renderings; distinguish observed issues from assumptions. If assets are inaccessible, report the limit and request what is needed rather than inventing findings.

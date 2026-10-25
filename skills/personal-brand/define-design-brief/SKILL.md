@@ -5,6 +5,9 @@ description: Interview a professional to define the brief for career-facing visu
 
 # Define Design Brief
 
+## Workspace
+Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+
 ## Interview
 - Ask one high-level question at a time. Start with what the user wants to create or improve and why; wait before suggesting deliverables, fonts or styles. If the current request already answers this, ask the next missing question.
 - Explore purpose, professional context/domain, audience, where/how the design will be used, and what it should make people feel, associate or remember. Probe vague answers and conflicting needs like a design-focused grill-me interview; do not require that skill.

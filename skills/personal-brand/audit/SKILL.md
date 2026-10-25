@@ -7,6 +7,9 @@ description: Audit alignment across multiple professional assets, including resu
 
 Find *relationships* and contradictions among professional assets; don't merely concatenate individual reports. Use `audit-surface` when available, but require no other skill.
 
+## Workspace
+Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+
 ## Steps
 
 1. Discover the agreed canonical facts, goals, current positioning, **optional approved brand assets/tokens**, and all relevant assets. Record which assets are current, planned, private or inaccessible. Confirm the requested scope without blocking on inaccessible sources.

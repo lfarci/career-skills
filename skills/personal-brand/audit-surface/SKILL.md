@@ -7,6 +7,9 @@ description: Inspect one professional asset—such as a resume, LinkedIn profile
 
 Verify an individual professional asset against available evidence and its intended audience. This is not a full SEO, accessibility, performance or security audit.
 
+## Workspace
+Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+
 ## Steps
 
 1. Identify the exact asset, accessible version, date checked and intended audience. State which sections cannot be accessed; accept pasted or exported content.

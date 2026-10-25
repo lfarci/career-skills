@@ -7,6 +7,9 @@ description: Define and improve a coherent professional narrative across public 
 
 Define the selected public professional narrative and reusable wording for different audiences. Treat private profile facts, north star, interests, action plans and internal decisions as inputs, not permission to publish. Exclude private doubts, constraints and plans unless explicitly selected for public use; label aspirations without implying achievements. Do not rewrite source facts to match a preferred slogan.
 
+## Workspace
+Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+
 ## Steps
 
 1. Review verified professional history, user's intended career direction and constraints. Separate existing strengths from aspirational capabilities.

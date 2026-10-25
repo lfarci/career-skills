@@ -337,6 +337,38 @@
         "Explores blockers and adjusts feasible next actions",
         "Does not publish private plans as achievements"
       ]
+    },
+    {
+      "id": "workspace-map-existing",
+      "skill": "setup-career-skills",
+      "prompt": "Set up my existing career notes. profile/goals.md holds my north star, profile/experience.md holds facts, personal-projects/ holds evidence, and personal-brand/ has drafts. I use a GitHub repo and want changes through PRs.",
+      "expect": [
+        "Maps logical areas in an existing index without moving files",
+        "Links existing records instead of copying confidential content",
+        "Leaves development and job research unset until needed",
+        "Records the selected repository and PR policy without requiring a different provider"
+      ]
+    },
+    {
+      "id": "workspace-local-minimal",
+      "skill": "setup-career-skills",
+      "prompt": "I want a career workspace in a local folder with Markdown only. Start with reflection; no GitHub or issue tracker.",
+      "expect": [
+        "Offers a minimal workspace index and only needed direction records",
+        "Does not require all five folders or YAML templates",
+        "Records local canonical paths and privacy boundaries",
+        "Does not install integrations or create parallel trackers"
+      ]
+    },
+    {
+      "id": "workspace-independent-skill",
+      "skill": "plan-development",
+      "prompt": "Use this pasted career goal and evidence to plan my next month. I have no workspace index and do not want setup.",
+      "expect": [
+        "Works from supplied inputs without requiring setup",
+        "Asks only blocking gaps about priorities and constraints",
+        "Does not silently create a mandatory folder tree"
+      ]
     }
   ]
 }

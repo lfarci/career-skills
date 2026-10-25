@@ -7,6 +7,9 @@ description: Find current job vacancies suited to a person's professional profil
 
 Find *live, verifiable* openings—not just roles that sound suitable. Search broadly, verify narrowly, and explain match quality without overstating certainty.
 
+## Workspace
+Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+
 ## Steps
 
 1. Read the user's career record or supplied resume, confirmed preferences and constraints. Capture target functions, seniority, locations/time zones, remote/hybrid preferences, languages, employment eligibility, compensation expectations and exclusions **only when known**. Ask one targeted question if a missing hard constraint prevents useful searching; otherwise use declared assumptions.

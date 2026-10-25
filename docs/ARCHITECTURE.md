@@ -75,3 +75,7 @@ Use career-direction for reflection and internal decisions, career-evidence for 
 ## Private direction and public expression
 
 career-direction owns the private north star, interests, internal decisions and goals. career-evidence owns demonstrated experience, achievements, qualifications and supporting sources. career-development owns growth action plans and progress reviews. Link these canonical records instead of copying them. personal-brand owns explicitly selected public positioning, canonical reusable text snippets and adaptations for public surfaces. Private input never implies permission to publish; plans remain distinct from accomplishments. benchmark-profile brings in inspected external examples; audit checks alignment with internal evidence and approved references. Treat comparison subjects as inspiration, not claims to copy or evidence of hiring success.
+
+## Shared workspace contract
+
+Use the [portable Markdown workspace model](../skills/setup-career-skills/references/workspace-model.md) as the logical data model across skills. setup-career-skills maps existing records to it in a chosen workspace index; other skills consult that index when available without depending on the setup package. Directory names and schemas are optional. Each record has one canonical authority; outputs link evidence rather than replicate it. Storage can be local, GitHub or another Markdown-capable provider. Private records, approved public text and actual publication have separate boundaries.

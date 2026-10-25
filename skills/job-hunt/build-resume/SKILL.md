@@ -7,6 +7,9 @@ description: Build, improve or tailor a truthful resume from supported professio
 
 Produce an evidence-based resume readable by humans and reliably extractable by modern applicant tracking systems. There is no universal ATS score or format guaranteed to pass every system.
 
+## Workspace
+Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+
 ## Steps
 
 1. Read an existing resume, verified career profile or supplied experience. Accept a partial source: do not require a canonical repository. Identify target role, location, language, job description and desired length/format when available.

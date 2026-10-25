@@ -5,6 +5,9 @@ description: Research comparable public professional profiles, portfolios and re
 
 # Benchmark Profile
 
+## Workspace
+Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+
 ## Frame the comparison
 - Read the user's selected profile/resume and target roles, audience, experience level, domain and geography when relevant. Ask only missing information that materially changes comparator selection. Agree on the surfaces and depth; do not require a complete career interview.
 - Separate comparable peers from aspirational examples. Explain relevance and important differences; do not treat a famous profile, prestigious employer or senior title as proof of effective presentation.

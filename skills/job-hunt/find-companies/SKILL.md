@@ -5,6 +5,9 @@ description: Research employers that match a user's professional profile, career
 
 # Find Companies
 
+## Workspace
+Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
+
 ## Establish fit criteria
 - Read the user's selected profile and career direction. Reuse explicit current preferences; ask only missing information that materially changes the search. Do not infer preferred roles or industries solely from past employers.
 - Establish desired work and growth, demonstrated strengths, location/commute, remote or hybrid needs, employment geography, working languages and relevant eligibility constraints. Clarify industry, company size, employment model, compensation or values only when they affect selection.
