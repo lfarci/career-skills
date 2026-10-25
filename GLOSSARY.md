@@ -47,3 +47,15 @@ _Avoid_: One separate master per surface
 **Reconciliation**:
 A user-directed decision about differences between approved staged material and observed published content, including whether to retain, import or publish a change. A difference alone does not establish which version is correct.
 _Avoid_: Automatic overwrite, unconditional import of public claims as facts
+
+**Publication area**:
+The private part of the career workspace containing material intended for external publication or sharing, including drafts and approved staged material. Its contents are not evidence of actual publication.
+_Avoid_: Public directory, final directory
+
+**Publication draft**:
+A proposed text or asset intended for external use that has not yet been approved for staging.
+_Avoid_: Staged material, published content
+
+**Content discrepancy**:
+A difference between workspace material and observed content on an external surface that requires the user's choice to reconcile. It does not by itself identify which side changed or which should prevail.
+_Avoid_: Automatically incorrect public content
