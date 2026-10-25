@@ -13,6 +13,7 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | [`maintain-profile`](skills/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Reusable behavior |
 | [`build-resume`](skills/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Explicit authoring |
 | [`personal-brand`](skills/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Explicit planning |
+| [`design-identity`](skills/design-identity/SKILL.md) | Develop, critique and validate a personal visual identity and production assets | Explicit design |
 | [`audit-surface`](skills/audit-surface/SKILL.md) | Audit an individual professional asset | Reusable behavior |
 | [`audit`](skills/audit/SKILL.md) | Audit factual and observable visual alignment across multiple professional assets | Explicit audit |
 | [`find-jobs`](skills/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Explicit search |
@@ -38,7 +39,7 @@ Configuration discovered during setup belongs in the **user's chosen private wor
 
 ## Scope and status
 
-This is an initial **behavioral-specification release**. The eight skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
+This is an initial **behavioral-specification release**. The nine skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
 
 ## Validation
 

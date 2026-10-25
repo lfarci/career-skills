@@ -1,6 +1,6 @@
 # Architecture and behavioral contracts
 
-## Why eight skills?
+## Why nine skills?
 
 Following the small, composable skill approach, each skill has a distinct trigger and independently evaluable output. A second skill is justified when work has an independent invocation, responsibility, and completion boundary—not merely a different platform, output format, or checklist.
 
@@ -11,6 +11,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 | `maintain-profile` | Canonical records and new evidence | Minimal proposed/applied factual patch and change log | No duplicate record, unsupported promotion, or unreported conflict |
 | `build-resume` | Supported career facts, optional job post and format | Resume source/exports plus checks | Facts verified, readable output, extraction checked when available |
 | `personal-brand` | Goals, profile evidence, target audiences, asset inventory, optional visual assets | Positioning and cross-surface plan, optional brand kit | Each surface has a distinct role and prioritized changes |
+| `design-identity` | Current brief, annotated references, audiences and applications | Compared directions or refined identity with verified exports and usage guide | Requested stage is reviewable; selection, approval and checks are explicit |
 | `audit-surface` | One accessible asset and available benchmarks | Evidence-backed single-surface findings | All inspected claims and access limits accounted for |
 | `audit` | Multiple assets, canonical facts, goals and optional visual references | Cross-asset discrepancy matrix and proposed tracker tasks | Material overlaps and conflicts reconciled, duplicates removed |
 | `find-jobs` | Skills/goals, constraints, current official vacancies | Ranked verified opportunities with links and timestamps | Each verified role has live first-party evidence, transparent fit, no fabricated details |
@@ -30,7 +31,7 @@ Capture uncertainty without forcing everything into one scale: distinguish *conf
 
 ### Lightweight visual identity (optional)
 
-Users may already have a few reusable visual assets: a banner, logo/avatar, icons, a small color palette and typography choices. `personal-brand` can record **links to their existing source files and approved variants** in a short brand-kit note. `audit-surface` can compare an individual rendered surface to those references; `audit` can spot drift across surfaces. This is a simple asset inventory and consistency checklist, not a mandatory design system, design-token pipeline or new skill. Read the [example brand kit](../skills/personal-brand/references/brand-kit.md) only when relevant. Respect platform-specific crops, font substitutions and stylistic variations; report unknowns when visuals are inaccessible.
+Users may already have a few reusable visual assets: a banner, logo/avatar, icons, a small color palette and typography choices. `personal-brand` can record **links to their existing source files and approved variants** in a short brand-kit note. `audit-surface` can compare an individual rendered surface to those references; `audit` can spot drift across surfaces. This is a simple asset inventory and consistency checklist, not a mandatory design system or design-token pipeline. When explicitly requested, `design-identity` owns original visual exploration, refinement and production checks; it does not replace positioning or require a full design system. Read the [example brand kit](../skills/personal-brand/references/brand-kit.md) only when relevant. Respect platform-specific crops, font substitutions and stylistic variations; report unknowns when visuals are inaccessible.
 
 ### Operating permissions
 

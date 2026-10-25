@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Identity"
+  short_description: "Develop and validate a personal visual identity"
+  default_prompt: "Use $design-identity to develop my visual identity from my existing brief and references."

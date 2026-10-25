@@ -121,6 +121,82 @@
         "Clearly states verification was impossible",
         "Provides an actionable search methodology"
       ]
+    },
+    {
+      "id": "identity-existing-brief",
+      "skill": "design-identity",
+      "prompt": "Use this current brief: abstract symbol plus name, fixed shape, colour-independent recognition. The older brief requires an F. I like my current font. Develop three directions for header, favicon, social card and resume.",
+      "expect": [
+        "Uses current brief and flags historical F as superseded",
+        "Compares distinct monochrome directions on identical applications",
+        "Uses existing font as baseline and justifies alternatives",
+        "Does not treat generated typography or favicon mockups as verified exports"
+      ]
+    },
+    {
+      "id": "identity-no-image-tools",
+      "skill": "design-identity",
+      "prompt": "Refine my selected logo but you cannot inspect images or export vectors. Produce final approved SVG files.",
+      "expect": [
+        "States inspection and export limitations",
+        "Does not fabricate SVG delivery or approval",
+        "Provides concrete handoff steps and unresolved checks"
+      ]
+    },
+    {
+      "id": "audit-approved-identity-across-surfaces",
+      "skill": "audit",
+      "prompt": "Compare website, GitHub avatar, LinkedIn banner and resume to my approved identity. GitHub uses an approved monochrome crop; the resume uses a documented fallback font. The website redraws the symbol incorrectly. LinkedIn cannot be accessed.",
+      "expect": [
+        "Accepts documented crop, monochrome and fallback font variants",
+        "Flags website geometry drift against approved source",
+        "Reports LinkedIn as uninspected rather than aligned",
+        "Does not redesign the approved identity"
+      ]
+    },
+    {
+      "id": "identity-self-contained",
+      "skill": "design-identity",
+      "prompt": "Refine a favicon from my existing brief. Do not load external skills.",
+      "expect": [
+        "Uses the self-contained workflow and relevant bundled guidance",
+        "Does not load external skill collections",
+        "Preserves approved geometry",
+        "Verifies small-size exports only when tools permit"
+      ]
+    },
+    {
+      "id": "identity-storage-and-package",
+      "skill": "design-identity",
+      "prompt": "Prepare my identity package with a wordmark, favicon and reusable banner. I have not specified where to store it.",
+      "expect": [
+        "Asks for storage destination before writing user deliverables",
+        "Plans identity.md and discovery.md plus actual required files",
+        "Includes a platform-agnostic banner master and only requested size derivatives",
+        "Keeps exploration separate from approval and records dimensions"
+      ]
+    },
+    {
+      "id": "identity-storage-already-set",
+      "skill": "design-identity",
+      "prompt": "Save my selected identity to the private workspace path I already specified above. I only need a wordmark and favicon.",
+      "expect": [
+        "Reuses established destination without asking again",
+        "Creates only scoped asset directories",
+        "Links actual files in identity.md and verifies save success",
+        "Does not claim approval or rendering checks that did not occur"
+      ]
+    },
+    {
+      "id": "identity-preserve-options-and-revisions",
+      "skill": "design-identity",
+      "prompt": "A/v1, B/v1 and C/v1 exist in my chosen folder. I prefer B/v1 but want B/v2 with softer geometry. Keep A and C available and let me compare before approving. Do not overwrite my approved older identity.",
+      "expect": [
+        "Creates B/v2 without modifying existing options or approved identity",
+        "Shows comparable identity previews rather than only logo icons",
+        "Records preference as selection, not blanket approval",
+        "Promotes only an explicitly approved exact version and retains history"
+      ]
     }
   ]
 }
