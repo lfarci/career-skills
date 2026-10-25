@@ -28,3 +28,4 @@ Resume source and requested exports when possible, plus a concise validation sum
 - Requested file formats actually exist and have been inspected where tools permit.
 - Material career evidence is not silently dropped merely to hit a page count.
 - Limitations are described instead of asserting an unsupported ATS success percentage.
+

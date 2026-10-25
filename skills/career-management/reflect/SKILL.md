@@ -32,3 +32,4 @@ Help the person understand where they are professionally, where they want to go 
 - Already-answered questions are not repeated.
 - An undecided user may leave with several options rather than forced certainty.
 - No private reflection is published without explicit approval.
+

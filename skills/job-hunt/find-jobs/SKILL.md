@@ -30,3 +30,4 @@ Add a clearly separated section of unverified leads only if useful. If no postin
 - Fit assessments distinguish observed experience, transferable skills and stretch gaps.
 - The result includes verification timestamps and direct source links.
 - No job application, message or external mutation occurs without authorization.
+

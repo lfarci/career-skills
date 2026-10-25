@@ -49,7 +49,7 @@ Track issues in the system explicitly selected during setup. If absent, provide 
 
 ## Portability
 
-Each skill is a self-contained leaf directory with `SKILL.md`; personal-brand packages are grouped under `skills/personal-brand/<name>/SKILL.md`. The umbrella has no SKILL.md. Each leaf with `name` and `description` frontmatter. Some agents support extra fields to disable automatic invocation; those are intentionally omitted from the portable baseline. The README describes intended usage rather than assuming a universal host mechanism.
+Each skill is a self-contained leaf directory with `SKILL.md`; domain packages are grouped under `skills/<group>/<name>/SKILL.md`, while cross-cutting setup remains at the top level. Group directories have no SKILL.md. Each leaf has `name` and `description` frontmatter. Some agents support extra fields to disable automatic invocation; those are intentionally omitted from the portable baseline. The README describes intended usage rather than assuming a universal host mechanism.
 
 ## Deferred, not separately packaged in v1
 
@@ -63,3 +63,7 @@ Use synthetic profiles and assets; compare with-skill against unassisted outputs
 ## Design lifecycle
 
 Keep strategy, discovery, production and critique independently invocable under the personal-brand umbrella. Share the user’s canonical discovery.md, identity.md and versioned assets rather than copying them between stages. Creation includes concept selection and self-checks; review is optional and does not confer approval. Missing brief details can be clarified locally without requiring another installed skill. General company branding and product UX are outside this career-focused collection.
+
+## Domain grouping
+
+Use career-management for reflection and canonical facts; personal-brand for positioning, visuals and audits of professional presentation; job-hunt for resumes and vacancy search. Keep setup-career-skills at the top level because it configures every domain. Grouping does not change invocation names, ownership boundaries or independent installation.

@@ -30,3 +30,4 @@ Maintain accurate career records without deciding how they should be marketed. U
 - Canonical records remain the authority; duplicate copies are not introduced.
 - Unresolved conflicts are visible, not silently fixed.
 - When changes cannot be applied, an accurate patch is supplied without claiming success.
+

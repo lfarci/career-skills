@@ -9,18 +9,29 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | Skill | Purpose | Intended invocation |
 | --- | --- | --- |
 | [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Discover existing records, assets, preferences, and progress tracker | Explicit setup |
-| [`reflect`](skills/reflect/SKILL.md) | Explore and articulate professional identity and goals | Explicit reflection |
-| [`maintain-profile`](skills/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Reusable behavior |
-| [`build-resume`](skills/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Explicit authoring |
+| [`reflect`](skills/career-management/reflect/SKILL.md) | Explore and articulate professional identity and goals | Explicit reflection |
+| [`maintain-profile`](skills/career-management/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Reusable behavior |
+| [`build-resume`](skills/job-hunt/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Explicit authoring |
 | [`personal-brand`](skills/personal-brand/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Explicit planning |
 | [`define-design-brief`](skills/personal-brand/define-design-brief/SKILL.md) | Interview about career visual needs and agree on an actionable brief | Explicit discovery |
 | [`create-design-assets`](skills/personal-brand/create-design-assets/SKILL.md) | Explore concepts and produce scoped professional visual assets | Explicit creation |
 | [`review-design`](skills/personal-brand/review-design/SKILL.md) | Critique visual fit, craft and readiness against the brief | Explicit review |
-| [`audit-surface`](skills/audit-surface/SKILL.md) | Audit an individual professional asset | Reusable behavior |
-| [`audit`](skills/audit/SKILL.md) | Audit factual and observable visual alignment across multiple professional assets | Explicit audit |
-| [`find-jobs`](skills/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Explicit search |
+| [`audit-surface`](skills/personal-brand/audit-surface/SKILL.md) | Audit an individual professional asset | Reusable behavior |
+| [`audit`](skills/personal-brand/audit/SKILL.md) | Audit factual and observable visual alignment across multiple professional assets | Explicit audit |
+| [`find-jobs`](skills/job-hunt/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Explicit search |
 
 An **explicit** skill is normally run when requested; a **reusable** skill is useful for an agent to discover and apply during a related task. Invocation flags vary by harness, so the files use portable skill metadata rather than relying on any one platform's invocation behavior.
+
+### Organization
+
+| Directory | Responsibility | Skills |
+| --- | --- | --- |
+| `career-management/` | Career direction and canonical professional facts | `reflect`, `maintain-profile` |
+| `personal-brand/` | Positioning, visual identity and presentation quality | `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`, `audit-surface`, `audit` |
+| `job-hunt/` | Application materials and opportunity search | `build-resume`, `find-jobs` |
+| `setup-career-skills/` | Cross-cutting workspace setup | `setup-career-skills` |
+
+Groups organize the repository; they are not installable umbrella skills. Install individual leaf directories. Existing skill names are unchanged except for the design lifecycle split below. Paths for previously top-level skills have moved into their groups; update installation sources accordingly.
 
 ### Personal-brand lifecycle
 

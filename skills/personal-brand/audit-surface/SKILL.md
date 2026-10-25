@@ -30,3 +30,4 @@ Verify an individual professional asset against available evidence and its inten
 - Missing access or absent visual guidelines is reported as unknown, not a made-up inconsistency.
 - Every high-priority finding identifies a measurable correction.
 - No duplicate tracker issues or claimed unperformed updates.
+
