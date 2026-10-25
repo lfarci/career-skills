@@ -1,4 +1,0 @@
-interface:
-  display_name: "Identity Designer"
-  short_description: "Develop and validate a personal visual identity"
-  default_prompt: "Use $identity-designer to develop my visual identity from my existing brief and references."
