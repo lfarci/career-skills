@@ -85,5 +85,9 @@ The workspace description of an external career surface: its service, account or
 _Avoid_: Copy of every published page
 
 **Career research**:
-Retained findings about companies, opportunities, comparable profiles or other career-relevant subjects, with sources, observations, uncertainties and their relevance to the person. Research is part of the private career workspace rather than an ephemeral chat result.
+User-selected useful findings about companies, opportunities, comparable professionals, resumes or other career-relevant subjects, with sources, observations, uncertainties and their relevance to the person. Research is retained selectively in the private career workspace, not as an archive of everything discovered.
 _Avoid_: Personal-brand audience definition, verified fact without supporting sources
+
+**Comparator**:
+An external professional profile, resume or portfolio selected as a relevant reference for understanding the market or improving the person's presentation. It may be a peer or aspirational example; comparison does not establish that its author competes for the same vacancy.
+_Avoid_: Confirmed competitor, model to copy
