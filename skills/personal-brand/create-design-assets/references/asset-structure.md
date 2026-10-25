@@ -28,3 +28,4 @@ Preserve existing versions; create a new revision for meaningful changes. Record
 
 ## Assets
 Omit unused directories: no symbol for a wordmark-only identity, no banners unless needed. Keep banners platform agnostic; optional size/crop exports derive from the generic master. Record relative paths, purpose, variant, format and pixel dimensions (SVG viewBox/aspect ratio for vector masters). Include editable sources where useful; document font fallbacks and source/licence links. Verify saved files exist; descriptions are not substitutes for assets.
+

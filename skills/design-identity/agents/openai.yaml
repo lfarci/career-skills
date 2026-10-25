@@ -1,4 +1,0 @@
-interface:
-  display_name: "Design Identity"
-  short_description: "Guide discovery, concepts and visual identity design"
-  default_prompt: "Use $design-identity to clarify my needs, discuss concepts before drafting, and develop my visual identity."

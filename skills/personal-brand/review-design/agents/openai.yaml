@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Design"
+  short_description: "Review career visuals against the design brief"
+  default_prompt: "Use $review-design for my professional visual identity."

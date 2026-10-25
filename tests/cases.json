@@ -124,7 +124,7 @@
     },
     {
       "id": "identity-existing-brief",
-      "skill": "design-identity",
+      "skill": "create-design-assets",
       "prompt": "Use this current brief: abstract symbol plus name, fixed shape, colour-independent recognition. The older brief requires an F. I like my current font. Develop three directions for header, favicon, social card and resume.",
       "expect": [
         "Uses current brief and flags historical F as superseded",
@@ -135,7 +135,7 @@
     },
     {
       "id": "identity-no-image-tools",
-      "skill": "design-identity",
+      "skill": "create-design-assets",
       "prompt": "Refine my selected logo but you cannot inspect images or export vectors. Produce final approved SVG files.",
       "expect": [
         "States inspection and export limitations",
@@ -156,7 +156,7 @@
     },
     {
       "id": "identity-self-contained",
-      "skill": "design-identity",
+      "skill": "create-design-assets",
       "prompt": "Refine a favicon from my existing brief. Do not load external skills.",
       "expect": [
         "Uses the self-contained workflow and relevant bundled guidance",
@@ -167,7 +167,7 @@
     },
     {
       "id": "identity-storage-and-package",
-      "skill": "design-identity",
+      "skill": "create-design-assets",
       "prompt": "Prepare my identity package with a wordmark, favicon and reusable banner. I have not specified where to store it.",
       "expect": [
         "Asks for storage destination before writing user deliverables",
@@ -178,7 +178,7 @@
     },
     {
       "id": "identity-storage-already-set",
-      "skill": "design-identity",
+      "skill": "create-design-assets",
       "prompt": "Save my selected identity to the private workspace path I already specified above. I only need a wordmark and favicon.",
       "expect": [
         "Reuses established destination without asking again",
@@ -189,13 +189,131 @@
     },
     {
       "id": "identity-preserve-options-and-revisions",
-      "skill": "design-identity",
+      "skill": "create-design-assets",
       "prompt": "A/v1, B/v1 and C/v1 exist in my chosen folder. I prefer B/v1 but want B/v2 with softer geometry. Keep A and C available and let me compare before approving. Do not overwrite my approved older identity.",
       "expect": [
         "Creates B/v2 without modifying existing options or approved identity",
         "Shows comparable identity previews rather than only logo icons",
         "Records preference as selection, not blanket approval",
         "Promotes only an explicitly approved exact version and retains history"
+      ]
+    },
+    {
+      "id": "brief-no-assumed-direction",
+      "skill": "define-design-brief",
+      "prompt": "Help me with reusable visuals for my career. Past conversations explored geometric logos and Manrope, but I have not chosen a direction for this task.",
+      "expect": [
+        "Asks what I want to create or improve before suggesting assets",
+        "Explores goal, audience, usage, domain and intended impression one question at a time",
+        "Does not import historical geometric or font choices",
+        "Records agreed scope without generating assets"
+      ]
+    },
+    {
+      "id": "brief-explicit-reference",
+      "skill": "define-design-brief",
+      "prompt": "Continue this supplied brief: a warm editorial LinkedIn banner for recruiters, using my approved wordmark. Only the headline is undecided.",
+      "expect": [
+        "Reuses explicit current scope and reference",
+        "Asks about the unresolved headline rather than restarting discovery",
+        "Does not require a new logo"
+      ]
+    },
+    {
+      "id": "create-banner-only",
+      "skill": "create-design-assets",
+      "prompt": "Create a LinkedIn banner from this current brief: welcoming, editorial, for recruiters; headline Software Engineer. No logo requested. Discuss concepts first.",
+      "expect": [
+        "Discusses relevant concepts before drafting",
+        "Does not invent a logo requirement",
+        "Uses actual content and target crop",
+        "Checks scoped assets and records version status"
+      ]
+    },
+    {
+      "id": "review-career-banner",
+      "skill": "review-design",
+      "prompt": "Review this supplied professional banner against its brief: clear name and role on mobile. The name is clipped in the target crop and the role has low contrast. Do not edit it.",
+      "expect": [
+        "Inspects supplied rendering before asserting findings",
+        "Connects crop and contrast findings to intended use",
+        "Prioritizes concrete corrections",
+        "Does not modify files or declare approval"
+      ]
+    },
+    {
+      "id": "review-inaccessible",
+      "skill": "review-design",
+      "prompt": "Review my new logo but you cannot see the file or a rendering.",
+      "expect": [
+        "Reports inspection limitation",
+        "Requests the asset without inventing visual findings",
+        "Does not generate an unsolicited replacement"
+      ]
+    },
+    {
+      "id": "benchmark-comparable-evidence",
+      "skill": "benchmark-profile",
+      "prompt": "Compare my five-year engineering resume with relevant public resumes and portfolios. Include peer and aspirational examples. I have no quantified outcomes for my projects.",
+      "expect": [
+        "Inspects and links real public examples with checked dates",
+        "Explains relevance and separates peers from aspirational examples and templates",
+        "Separates communication fixes from experience gaps",
+        "Does not invent metrics or infer hiring success"
+      ]
+    },
+    {
+      "id": "benchmark-no-browsing",
+      "skill": "benchmark-profile",
+      "prompt": "Find similar profiles, but you have no web access. I supplied two portfolio screenshots and their URLs.",
+      "expect": [
+        "Limits findings to inspectable supplied examples",
+        "Does not claim live URL verification or invent comparators",
+        "Reports research limitations",
+        "Does not copy wording or modify assets"
+      ]
+    },
+    {
+      "id": "brand-private-boundary",
+      "skill": "personal-brand",
+      "prompt": "Use my private career profile to improve my public bio. It includes doubts about management, a future AI certification, internal action plans and five years of verified engineering work.",
+      "expect": [
+        "Uses supported experience for public messaging",
+        "Keeps internal doubts and plans private unless selected for disclosure",
+        "Does not describe a planned certification as earned",
+        "Produces canonical reusable snippets without silently publishing"
+      ]
+    },
+    {
+      "id": "companies-remote-geography",
+      "skill": "find-companies",
+      "prompt": "Find employers for a Belgium-based hands-on software engineer interested in cloud and developer experience. Remote from Belgium is mandatory. One company has a Brussels sales office and advertises US-only remote engineering jobs.",
+      "expect": [
+        "Uses location eligibility as a hard constraint",
+        "Does not infer Belgian engineering jobs from a sales office",
+        "Excludes or clearly separates the US-only remote company",
+        "Cites inspected current sources and distinguishes inferred fit"
+      ]
+    },
+    {
+      "id": "companies-without-openings",
+      "skill": "find-companies",
+      "prompt": "Find suitable employers even if they have no current vacancy. I prefer English-speaking engineering teams and mentoring without people management.",
+      "expect": [
+        "Keeps company fit separate from opening availability",
+        "Does not assume local team language or management track",
+        "Attributes culture claims and marks unknowns",
+        "Does not contact companies or expose private career plans"
+      ]
+    },
+    {
+      "id": "companies-no-research-access",
+      "skill": "find-companies",
+      "prompt": "Build a target company list from my profile, but you cannot browse and I supplied no company sources.",
+      "expect": [
+        "States verification limits",
+        "Provides research criteria or clearly provisional candidates without invented evidence",
+        "Does not claim verified vacancies or work conditions"
       ]
     }
   ]

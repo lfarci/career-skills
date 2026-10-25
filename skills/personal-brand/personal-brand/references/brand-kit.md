@@ -23,3 +23,4 @@ Avoid collecting the raw assets or font binaries in this public repository. Pres
 - Platform-provided fonts, avatar masks, crop dimensions, or limited styling controls are legitimate differences.
 - Audit only visuals actually available for inspection; when an image or computed font cannot be verified, mark it unknown.
 - Create or edit new banners, logos, icons or other graphics only when the user requests that output and appropriate tools are available.
+

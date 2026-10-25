@@ -1,0 +1,4 @@
+interface:
+  display_name: "Benchmark Profile"
+  short_description: "Compare professional profiles with relevant public peers"
+  default_prompt: "Use $benchmark-profile to find relevant public profiles and resumes and identify improvements to my professional presentation."
