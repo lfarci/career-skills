@@ -59,3 +59,15 @@ _Avoid_: Staged material, published content
 **Content discrepancy**:
 A difference between workspace material and observed content on an external surface that requires the user's choice to reconcile. It does not by itself identify which side changed or which should prevail.
 _Avoid_: Automatically incorrect public content
+
+**Core profile**:
+The private account of who the person is professionally, what they stand for and what they want from their career. It includes supported experience alongside clearly distinguished aspirations, goals and preferences.
+_Avoid_: Public profile, LinkedIn profile, facts-only profile
+
+**Personal brand**:
+The intended professional positioning and impression the person wants to convey, grounded in their core profile.
+_Avoid_: Published content, online presence
+
+**Online presence**:
+The career-related content and surfaces through which the person is represented online. It describes what is externally presented, rather than the person's private profile or intended positioning.
+_Avoid_: Core profile, intended personal brand
