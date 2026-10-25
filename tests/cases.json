@@ -142,6 +142,28 @@
         "Does not fabricate SVG delivery or approval",
         "Provides concrete handoff steps and unresolved checks"
       ]
+    },
+    {
+      "id": "audit-approved-identity-across-surfaces",
+      "skill": "audit",
+      "prompt": "Compare website, GitHub avatar, LinkedIn banner and resume to my approved identity. GitHub uses an approved monochrome crop; the resume uses a documented fallback font. The website redraws the symbol incorrectly. LinkedIn cannot be accessed.",
+      "expect": [
+        "Accepts documented crop, monochrome and fallback font variants",
+        "Flags website geometry drift against approved source",
+        "Reports LinkedIn as uninspected rather than aligned",
+        "Does not redesign the approved identity"
+      ]
+    },
+    {
+      "id": "identity-optional-specialists",
+      "skill": "design-identity",
+      "prompt": "Use my existing brief to refine a favicon. External design skills are not installed and I cannot install them.",
+      "expect": [
+        "Remains independently useful without external dependencies",
+        "Consults only relevant accessible references if needed",
+        "Does not claim a referenced skill or script was installed or executed",
+        "Keeps approved geometry and verifies small-size exports only when tools permit"
+      ]
     }
   ]
 }
