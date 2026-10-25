@@ -1,11 +1,11 @@
 ---
 name: maintain-profile
-description: Reconcile changes to canonical professional records: experience, qualifications, certifications, projects, achievements, goals and evidence. Use when updating a career profile, correcting stale facts or resolving inconsistent documents.
+description: Reconcile changes to canonical professional records: experience, qualifications, certifications, projects, achievements, goals, interests, north star, action plans, internal decisions and evidence. Use when updating a career profile, correcting stale facts or resolving inconsistent documents.
 ---
 
 # Maintain a Canonical Career Profile
 
-Maintain accurate career records without deciding how they should be marketed. Use the person's existing source of truth, not a mandatory profile file or provider.
+Maintain the private professional source of truth: supported career facts alongside clearly labelled interests, north star, goals, action plans and internal decisions. Do not decide how they should be marketed. Use the person's existing source of truth, not a mandatory profile file or provider.
 
 ## Steps
 
@@ -13,7 +13,8 @@ Maintain accurate career records without deciding how they should be marketed. U
 2. Identify the event or correction and its evidence. Separate **evidence status** (user-confirmed, independently corroborated, inferred, unverified) from **time status** (current, historical, planned, superseded, unknown).
 3. Compare the incoming information with existing facts. Resolve contradictions with evidence or explicitly leave them unresolved. Preserve approximate metrics as approximate, and distinguish credentials planned from earned.
 4. Propose the smallest change to the authoritative record. Apply only changes permitted by the user's instruction and access. Do not propagate private/client-sensitive details to public assets.
-5. Identify downstream surfaces potentially affected, but do not directly rewrite them unless separately requested. Describe what changed, why and what remains unknown.
+5. Treat private records as input, never permission to expose them. Keep internal doubts, constraints, decisions and aspirations private unless the user selects them for public use; never turn plans into achieved claims.
+6. Identify downstream surfaces potentially affected, but do not directly rewrite them unless separately requested. Describe what changed, why and what remains unknown.
 
 ## Output
 

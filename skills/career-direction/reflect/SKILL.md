@@ -22,7 +22,8 @@ Help the person understand where they are professionally, where they want to go 
 - Interests, motivators and work preferences (user-attributed)
 - Possible directions and associated trade-offs
 - Preferred direction, if decided, or alternatives still under consideration
-- Goals, experiments and evidence to gather
+- Private north star, goals, experiments and evidence to gather
+- Prioritized action plan when requested, with next steps and review points
 - Open questions and decisions
 
 ## Done when

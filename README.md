@@ -9,12 +9,13 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | Skill | Purpose | Intended invocation |
 | --- | --- | --- |
 | [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Discover existing records, assets, preferences, and progress tracker | Explicit setup |
-| [`reflect`](skills/career-management/reflect/SKILL.md) | Explore and articulate professional identity and goals | Explicit reflection |
-| [`maintain-profile`](skills/career-management/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Reusable behavior |
+| [`reflect`](skills/career-direction/reflect/SKILL.md) | Explore and articulate professional identity and goals | Explicit reflection |
+| [`maintain-profile`](skills/career-direction/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Reusable behavior |
 | [`build-resume`](skills/job-hunt/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Explicit authoring |
 | [`personal-brand`](skills/personal-brand/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Explicit planning |
 | [`define-design-brief`](skills/personal-brand/define-design-brief/SKILL.md) | Interview about career visual needs and agree on an actionable brief | Explicit discovery |
 | [`create-design-assets`](skills/personal-brand/create-design-assets/SKILL.md) | Explore concepts and produce scoped professional visual assets | Explicit creation |
+| [`benchmark-profile`](skills/personal-brand/benchmark-profile/SKILL.md) | Research relevant public profiles and resumes for evidence-backed improvements | Explicit benchmarking |
 | [`review-design`](skills/personal-brand/review-design/SKILL.md) | Critique visual fit, craft and readiness against the brief | Explicit review |
 | [`audit-surface`](skills/personal-brand/audit-surface/SKILL.md) | Audit an individual professional asset | Reusable behavior |
 | [`audit`](skills/personal-brand/audit/SKILL.md) | Audit factual and observable visual alignment across multiple professional assets | Explicit audit |
@@ -26,8 +27,8 @@ An **explicit** skill is normally run when requested; a **reusable** skill is us
 
 | Directory | Responsibility | Skills |
 | --- | --- | --- |
-| `career-management/` | Career direction and canonical professional facts | `reflect`, `maintain-profile` |
-| `personal-brand/` | Positioning, visual identity and presentation quality | `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`, `audit-surface`, `audit` |
+| `career-direction/` | Private north star, interests, decisions, plans and canonical facts | `reflect`, `maintain-profile` |
+| `personal-brand/` | Public messaging, reusable text, visual identity and presentation quality | `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`, `benchmark-profile`, `audit-surface`, `audit` |
 | `job-hunt/` | Application materials and opportunity search | `build-resume`, `find-jobs` |
 | `setup-career-skills/` | Cross-cutting workspace setup | `setup-career-skills` |
 
@@ -60,7 +61,7 @@ Configuration discovered during setup belongs in the **user's chosen private wor
 
 ## Scope and status
 
-This is an initial **behavioral-specification release**. The eleven skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
+This is an initial **behavioral-specification release**. The twelve skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
 
 ## Validation
 
