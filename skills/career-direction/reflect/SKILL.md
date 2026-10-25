@@ -23,7 +23,7 @@ Help the person understand where they are professionally, where they want to go 
 - Possible directions and associated trade-offs
 - Preferred direction, if decided, or alternatives still under consideration
 - Private north star, goals, experiments and evidence to gather
-- Prioritized action plan when requested, with next steps and review points
+- Development priorities to hand off to a private action plan; plan-development can structure it when available
 - Open questions and decisions
 
 ## Done when

@@ -1,11 +1,11 @@
 ---
 name: maintain-profile
-description: Reconcile changes to canonical professional records: experience, qualifications, certifications, projects, achievements, goals, interests, north star, action plans, internal decisions and evidence. Use when updating a career profile, correcting stale facts or resolving inconsistent documents.
+description: Reconcile changes to canonical professional records: experience, qualifications, certifications, projects, achievements, and supporting evidence. Use when updating a career profile, correcting stale facts or resolving inconsistent documents.
 ---
 
 # Maintain a Canonical Career Profile
 
-Maintain the private professional source of truth: supported career facts alongside clearly labelled interests, north star, goals, action plans and internal decisions. Do not decide how they should be marketed. Use the person's existing source of truth, not a mandatory profile file or provider.
+Maintain the private evidence-backed professional record: experience, projects, achievements, qualifications, feedback and supporting sources. Keep interests, north star and internal decisions in career-direction records, and growth plans in career-development records; link rather than duplicate them. Do not decide how they should be marketed. Use the person's existing source of truth, not a mandatory profile file or provider.
 
 ## Steps
 

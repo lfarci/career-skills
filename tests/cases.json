@@ -315,6 +315,28 @@
         "Provides research criteria or clearly provisional candidates without invented evidence",
         "Does not claim verified vacancies or work conditions"
       ]
+    },
+    {
+      "id": "development-feasible-evidence",
+      "skill": "plan-development",
+      "prompt": "I want stronger architecture skills while staying hands-on. I have two hours weekly and no training budget. I completed one design-pattern course but have not applied it. Build a growth plan.",
+      "expect": [
+        "Fits the time and budget",
+        "Does not treat a completed course as demonstrated architecture competence",
+        "Prioritizes applied practice and feedback with evidence milestones",
+        "Does not assume management or paid certification is necessary"
+      ]
+    },
+    {
+      "id": "progress-partial-outcome",
+      "skill": "review-progress",
+      "prompt": "Review my plan for this month. I watched the course, started the prototype, and missed the peer review. I have no working demo yet.",
+      "expect": [
+        "Separates completed activity from demonstrated outcome",
+        "Does not mark the capability fully achieved",
+        "Explores blockers and adjusts feasible next actions",
+        "Does not publish private plans as achievements"
+      ]
     }
   ]
 }
