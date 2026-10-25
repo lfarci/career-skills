@@ -14,7 +14,7 @@ Act as a candid designer: distinguish personal taste, strategic fit and craft. R
 
 ## 2. Present options
 - Default to three distinct identity directions, labelled A/B/C, unless the user requests otherwise. Each should coordinate symbol/wordmark, typography and supporting composition; use the same content and application examples for fair comparison.
-- Start logo comparisons in monochrome. Show enough typography, palette proposals and layout to judge each as an identity, not just an isolated icon; do not build complete asset kits yet.
+- Read [logo design principles](references/logo-design-principles.md) when exploring or evaluating logo concepts. Start logo comparisons in monochrome. Show enough typography, palette proposals and layout to judge each as an identity, not just an isolated icon; do not build complete asset kits yet.
 - Save each option separately with stable IDs. Preserve revisions within an option (A/v1, A/v2); never overwrite alternatives or confuse a revision with a new direction.
 - Give a short rationale and trade-offs for each. Ask the user to choose, reject or request refinements before finalizing. A preference selects a direction; it does not approve all future revisions.
 - If combining ideas, create a separately identified option. If all fail, revisit the hypothesis before generating near-duplicates.
