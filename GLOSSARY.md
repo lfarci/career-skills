@@ -75,3 +75,15 @@ _Avoid_: Core profile, intended personal brand
 **Reputation**:
 How other people perceive the person professionally, reflected imperfectly in feedback and other attributed signals. It is distinct from intended positioning and observable published content.
 _Avoid_: Online presence, verified audience perception (without evidence)
+
+**Career assets**:
+Reusable material prepared from the profile and personal-brand guidance for external presentation, including bios, headlines, resumes and visual assets. Drafts and approved staged versions remain private within the workspace.
+_Avoid_: Personal-brand guidance, actual published state
+
+**Surface record**:
+The workspace description of an external career surface: its service, account or location, intended use and how its content can be inspected or updated. It can reference reusable career assets without duplicating their content.
+_Avoid_: Copy of every published page
+
+**Career research**:
+Retained findings about companies, opportunities, comparable profiles or other career-relevant subjects, with sources, observations, uncertainties and their relevance to the person. Research is part of the private career workspace rather than an ephemeral chat result.
+_Avoid_: Personal-brand audience definition, verified fact without supporting sources
