@@ -10,6 +10,8 @@ Following the small, composable skill approach, each skill has a distinct trigge
 | `reflect` | Experiences, preferences, goals, existing profile | Professional reflection brief | Fact, aspiration, trade-off, and unresolved question are separated |
 | `maintain-profile` | Canonical records and new evidence | Minimal proposed/applied factual patch and change log | No duplicate record, unsupported promotion, or unreported conflict |
 | `build-resume` | Supported career facts, optional job post and format | Resume source/exports plus checks | Facts verified, readable output, extraction checked when available |
+| `plan-development` | Chosen direction, demonstrated capabilities and constraints | Prioritized private growth plan | Actions have realistic scope, evidence milestones and review points |
+| `review-progress` | Current plan, review period and actual outcomes | Evidence-based review and adjusted next steps | Progress and plan changes are traceable without inventing competence |
 | `personal-brand` | Goals, profile evidence, target audiences, asset inventory, optional visual assets | Positioning and cross-surface plan, optional brand kit | Each surface has a distinct role and prioritized changes |
 | `define-design-brief` | User needs and explicitly supplied references | Recorded discovery answers and actionable career visual brief | Scope, goal, audience, usage and intended impression are explicit |
 | `create-design-assets` | Current brief and scoped deliverables | Selected concepts, versioned assets and applicable usage guide | Requested files and checks are explicit; approval is traceable |
@@ -68,8 +70,8 @@ Keep strategy, discovery, production and critique independently invocable under 
 
 ## Domain grouping
 
-Use career-direction for reflection and canonical facts; personal-brand for positioning, visuals and audits of professional presentation; job-hunt for resumes and vacancy search. Keep setup-career-skills at the top level because it configures every domain. Grouping does not change invocation names, ownership boundaries or independent installation.
+Use career-direction for reflection and internal decisions, career-evidence for demonstrated experience and canonical facts, and career-development for growth planning and progress; personal-brand for positioning, visuals and audits of professional presentation; job-hunt for resumes and vacancy search. Keep setup-career-skills at the top level because it configures every domain. Grouping does not change invocation names, ownership boundaries or independent installation.
 
 ## Private direction and public expression
 
-career-direction owns the private source of truth: north star, interests, internal decisions, goals, action plans and supported facts. personal-brand owns explicitly selected public positioning, canonical reusable text snippets and adaptations for public surfaces. Private input never implies permission to publish; plans remain distinct from accomplishments. benchmark-profile brings in inspected external examples; audit checks alignment with internal evidence and approved references. Treat comparison subjects as inspiration, not claims to copy or evidence of hiring success.
+career-direction owns the private north star, interests, internal decisions and goals. career-evidence owns demonstrated experience, achievements, qualifications and supporting sources. career-development owns growth action plans and progress reviews. Link these canonical records instead of copying them. personal-brand owns explicitly selected public positioning, canonical reusable text snippets and adaptations for public surfaces. Private input never implies permission to publish; plans remain distinct from accomplishments. benchmark-profile brings in inspected external examples; audit checks alignment with internal evidence and approved references. Treat comparison subjects as inspiration, not claims to copy or evidence of hiring success.

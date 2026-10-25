@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Progress"
+  short_description: "Review development evidence and adjust the next steps"
+  default_prompt: "Use $review-progress to guide my professional development."

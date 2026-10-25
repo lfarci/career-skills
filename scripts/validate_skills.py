@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 EXPECTED = {
-    "setup-career-skills", "reflect", "maintain-profile", "build-resume",
+    "setup-career-skills", "plan-development", "review-progress", "reflect", "maintain-profile", "build-resume",
     "personal-brand", "benchmark-profile", "define-design-brief", "create-design-assets", "review-design", "audit-surface", "audit", "find-jobs", "find-companies",
 }
 

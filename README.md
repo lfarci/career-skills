@@ -10,8 +10,10 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | --- | --- | --- |
 | [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Discover existing records, assets, preferences, and progress tracker | Explicit setup |
 | [`reflect`](skills/career-direction/reflect/SKILL.md) | Explore and articulate professional identity and goals | Explicit reflection |
-| [`maintain-profile`](skills/career-direction/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Reusable behavior |
+| [`maintain-profile`](skills/career-evidence/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Reusable behavior |
 | [`build-resume`](skills/job-hunt/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Explicit authoring |
+| [`plan-development`](skills/career-development/plan-development/SKILL.md) | Turn career direction and evidence gaps into a feasible growth plan | Explicit planning |
+| [`review-progress`](skills/career-development/review-progress/SKILL.md) | Review development evidence and adjust the plan | Explicit check-in |
 | [`personal-brand`](skills/personal-brand/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Explicit planning |
 | [`define-design-brief`](skills/personal-brand/define-design-brief/SKILL.md) | Interview about career visual needs and agree on an actionable brief | Explicit discovery |
 | [`create-design-assets`](skills/personal-brand/create-design-assets/SKILL.md) | Explore concepts and produce scoped professional visual assets | Explicit creation |
@@ -28,7 +30,9 @@ An **explicit** skill is normally run when requested; a **reusable** skill is us
 
 | Directory | Responsibility | Skills |
 | --- | --- | --- |
-| `career-direction/` | Private north star, interests, decisions, plans and canonical facts | `reflect`, `maintain-profile` |
+| `career-direction/` | What do I want, and why? Private north star, interests and decisions | `reflect` |
+| `career-evidence/` | What have I demonstrated? Experience, achievements and supporting records | `maintain-profile` |
+| `career-development/` | How do I grow toward it? Action plans, practice and progress | `plan-development`, `review-progress` |
 | `personal-brand/` | Public messaging, reusable text, visual identity and presentation quality | `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`, `benchmark-profile`, `audit-surface`, `audit` |
 | `job-hunt/` | Application materials and opportunity search | `build-resume`, `find-jobs`, `find-companies` |
 | `setup-career-skills/` | Cross-cutting workspace setup | `setup-career-skills` |
@@ -62,7 +66,7 @@ Configuration discovered during setup belongs in the **user's chosen private wor
 
 ## Scope and status
 
-This is an initial **behavioral-specification release**. The thirteen skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
+This is an initial **behavioral-specification release**. The fifteen skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
 
 ## Validation
 
