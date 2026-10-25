@@ -1,27 +1,24 @@
 # Logo design principles
 
-Use this reference during logo concept exploration and critique, not for every identity task.
+Read before proposing logo concepts and when evaluating drafts.
 
 ## Principles
-- One clear concept: prefer a strong idea over combining several visual tricks.
-- Distinctiveness: seek a recognizable silhouette and intentional negative space; avoid generic technology motifs or copying famous marks.
-- Simplicity: remove decorative details that do not contribute to recognition.
-- Relevance: connect the concept to the person's identity without literal industry clichés.
-- Versatility: test monochrome, reversed contrast, 16/32/128 px, wordmark pairing and real applications.
-- Craft: use consistent geometry, optical corrections and reproducible vector construction; avoid relying on gradients, shadows or 3D effects to rescue a weak mark.
-- Iteration: keep distinct concepts and revisions, record trade-offs, and obtain explicit approval before finalizing.
+- One clear idea: connect the mark to the subject, audience and objective without literal industry clichés.
+- Simplicity: use few deliberate elements; remove details that do not aid recognition. Minimalism alone does not make a mark distinctive.
+- Distinctiveness: seek a recognizable silhouette and intentional negative space; avoid generic motifs and imitation of famous marks.
+- Versatility: make the design work in solid black and reversed white before adding colour. Test required sizes and applications; use 16/32 px when a favicon is needed.
+- Craft: use consistent construction and optical corrections. Do not rely on gradients, shadows or 3D effects to rescue a weak mark.
 
-## Practical workflow
-1. Gather a small, annotated reference set; distinguish inspiration from imitation.
-2. Sketch 3 genuinely different geometric hypotheses in black and white. When requested, explore impossible geometry, continuous loops, repetition, modularity or negative space, without forcing any particular motif.
-3. Compare candidates under identical size and contrast conditions. Check silhouette, small-size legibility, distinctiveness, conceptual fit and construction quality.
-4. Reject near-duplicates and generic shapes. If none works, revisit the underlying hypothesis rather than adding polish.
-5. Only then explore color, typography and supporting identity applications. Preserve selected and rejected variants with feedback.
-6. Before final delivery, inspect SVG geometry, test practical sizes and perform a reasonable similarity check. Do not claim trademark clearance.
+## Apply the guidance
+1. Research a small set of relevant online examples and design guidance. Use the sources below as starting points; choose case studies for the actual sector, audience or style. Link and annotate the useful principle, not just the appearance. Avoid copying distinctive forms; disclose unavailable research.
+2. Translate the brief into two or three verbal concepts: meaning, relevance, possible construction and trade-off. Let the user choose before drawing. Do not default to geometric or technology motifs.
+3. Draft the selected concepts in monochrome. Compare equally sized executions for fit, silhouette, legibility, distinctiveness and construction. Remove weak or near-duplicate drafts before presentation.
+4. Refine with feedback, then explore colour, typography and applications. Preserve concept/revision IDs and decisions; obtain approval before finalizing.
+5. Inspect final vector geometry and practical sizes; perform bounded similarity research before adoption. Do not claim uniqueness or trademark clearance.
 
-## Further reading
-- David Airey — Logo Design Love and good-logo principles: https://www.davidairey.com/good-logo
-- Adobe — Minimalist logo design: https://www.adobe.com/creativecloud/design/discover/minimalist-logo-design.html
+## Research starting points
+- David Airey — good-logo principles: https://www.davidairey.com/good-logo
+- Adobe — minimalist logo design: https://www.adobe.com/creativecloud/design/discover/minimalist-logo-design.html
 - Identity Designed — branding case studies: https://identitydesigned.com/
 
-These are references for design judgment, not mandatory external dependencies. Keep the skill platform-agnostic and concise.
+Keep research focused on decisions the current brief needs; do not load entire collections.
