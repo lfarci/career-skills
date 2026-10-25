@@ -79,7 +79,7 @@ career-direction owns the private north star, interests, internal decisions and 
 
 ## Shared workspace contract
 
-Use the [portable Markdown workspace model](../skills/setup-career-skills/references/workspace-model.md) as the logical data model across skills. setup-career-skills maps existing records to it in a chosen workspace index; other skills consult that index when available without depending on the setup package. Directory names and schemas are optional. Each record has one canonical authority; outputs link evidence rather than replicate it. Storage can be local, GitHub or another Markdown-capable provider. Private records, approved public text and actual publication have separate boundaries.
+Use the [portable Markdown workspace model](WORKSPACE.md) as the logical data model across skills. setup-career-skills maps existing records to it in a chosen workspace index; other skills consult that index when available without depending on the setup package. Directory names and schemas are optional. Each record has one canonical authority; outputs link evidence rather than replicate it. Storage can be local, GitHub or another Markdown-capable provider. Private records, approved public text and actual publication have separate boundaries.
 
 ## Agreed workspace homes
 

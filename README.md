@@ -63,7 +63,7 @@ The entire workspace is private, including material prepared for public use. Its
 
 A workspace README maps these roles to existing canonical records. They are user-record concepts, not the installable skill categories above. Reuse shared bios, headlines and visual masters; staged material is not proof of publication. Inspect external surfaces where possible, and ask the user to reconcile differences. Research is selected before saving and reviewed on request; prefer guided archiving, with deletion manual.
 
-Use local folders, GitHub repositories or any Markdown-capable storage. Keep existing paths when mapped; setup is optional. See the [portable workspace model](skills/setup-career-skills/references/workspace-model.md) for the layout and operating rules. No actual user notes are migrated by changing this reference model.
+Use local folders, GitHub repositories or any Markdown-capable storage. Keep existing paths when mapped; setup is optional. See the [portable workspace model](docs/WORKSPACE.md) for the layout and operating rules. No actual user notes are migrated by changing this reference model.
 
 ## Getting started
 
