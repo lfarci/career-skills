@@ -16,8 +16,8 @@ _Avoid_: Private profile, profile (without qualification)
 Material used to support what the person has done or demonstrated, such as repository work, results, feedback, credentials or published work. A project or experiment is not automatically evidence.
 _Avoid_: Project (as an automatic synonym), certifications only, externally verified proof only
 
-**Personal project**:
-An undertaking outside the person's employment that can be tracked regardless of whether it is finished or publicly showcased. Its work and outcomes may provide career evidence.
+**Project**:
+An undertaking relevant to the person's career that can be tracked regardless of whether it is finished or publicly showcased. Its work and outcomes may provide career evidence.
 _Avoid_: Evidence (when referring to the undertaking itself)
 
 **Presentation**:
@@ -48,9 +48,9 @@ _Avoid_: One separate master per surface
 A user-directed decision about differences between approved staged material and observed published content, including whether to retain, import or publish a change. A difference alone does not establish which version is correct.
 _Avoid_: Automatic overwrite, unconditional import of public claims as facts
 
-**Publication area**:
-The private part of the career workspace containing material intended for external publication or sharing, including drafts and approved staged material. Its contents are not evidence of actual publication.
-_Avoid_: Public directory, final directory
+**Asset workspace**:
+The private home for reusable outputs intended for external publication or sharing, including drafts, approved staged material and descriptions of their destination services. Its contents are not evidence of actual publication.
+_Avoid_: Publication directory, public directory, final directory
 
 **Publication draft**:
 A proposed text or asset intended for external use that has not yet been approved for staging.
@@ -76,7 +76,7 @@ _Avoid_: Core profile, intended personal brand
 How other people perceive the person professionally, reflected imperfectly in feedback and other attributed signals. It is distinct from intended positioning and observable published content.
 _Avoid_: Online presence, verified audience perception (without evidence)
 
-**Career assets**:
+**Assets**:
 Reusable material prepared from the profile and personal-brand guidance for external presentation, including bios, headlines, resumes and visual assets. Drafts and approved staged versions remain private within the workspace.
 _Avoid_: Personal-brand guidance, actual published state
 

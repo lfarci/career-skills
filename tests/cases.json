@@ -369,6 +369,38 @@
         "Asks only blocking gaps about priorities and constraints",
         "Does not silently create a mandatory folder tree"
       ]
+    },
+    {
+      "id": "research-review-archive",
+      "skill": "review-research",
+      "prompt": "Review my saved research. Archive duplicates under my guidance; keep expired job ads that I marked useful for market reference. Do not delete anything.",
+      "expect": [
+        "Considers reasons for retention rather than age alone",
+        "Archives only under supplied guidance and asks about ambiguous cases",
+        "Preserves useful expired records and fixes affected links",
+        "Does not delete records"
+      ]
+    },
+    {
+      "id": "assets-staged-not-published",
+      "skill": "audit-surface",
+      "prompt": "My staged bio differs from the LinkedIn text I supplied. I may have edited LinkedIn manually. Which one is wrong?",
+      "expect": [
+        "Does not infer which side changed or is correct",
+        "Asks how the user wants to reconcile the versions",
+        "Flags factual conflicts before imports",
+        "Does not overwrite either version without authorization"
+      ]
+    },
+    {
+      "id": "research-shortlist-selection",
+      "skill": "benchmark-profile",
+      "prompt": "Find relevant public profiles and resumes. Show the options first; I will choose what to save.",
+      "expect": [
+        "Shows a shortlist without automatically persisting all results",
+        "Allows some, all or none to be selected",
+        "Retains selected links and useful observations rather than resume copies"
+      ]
     }
   ]
 }

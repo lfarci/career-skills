@@ -5,7 +5,7 @@ description: "Reconcile changes to canonical professional records: experience, q
 
 # Maintain a Canonical Career Profile
 
-Maintain the private evidence-backed professional record: experience, projects, achievements, qualifications, feedback and supporting sources. Keep interests, north star and internal decisions in career-direction records, and growth plans in career-development records; link rather than duplicate them. Do not decide how they should be marketed. Use the person's existing source of truth, not a mandatory profile file or provider.
+Maintain the private evidence-backed professional record: experience, projects, achievements, qualifications, feedback and supporting sources. Within profile/, distinguish facts from direction (interests, north star and internal decisions) and development plans; the respective skills maintain their own sections and link rather than duplicate them. Do not decide how they should be marketed. Use the person's existing source of truth, not a mandatory profile file or provider.
 
 ## Workspace
 Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.

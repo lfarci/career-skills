@@ -21,6 +21,7 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | [`review-design`](skills/personal-brand/review-design/SKILL.md) | Critique visual fit, craft and readiness against the brief | Explicit review |
 | [`audit-surface`](skills/personal-brand/audit-surface/SKILL.md) | Audit an individual professional asset | Reusable behavior |
 | [`audit`](skills/personal-brand/audit/SKILL.md) | Audit factual and observable visual alignment across multiple professional assets | Explicit audit |
+| [`review-research`](skills/career-evidence/review-research/SKILL.md) | Review retained references and archive under user guidance | Explicit maintenance |
 | [`find-companies`](skills/job-hunt/find-companies/SKILL.md) | Research employers matching career direction, location and constraints, with or without vacancies | Explicit research |
 | [`find-jobs`](skills/job-hunt/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Explicit search |
 
@@ -31,7 +32,7 @@ An **explicit** skill is normally run when requested; a **reusable** skill is us
 | Directory | Responsibility | Skills |
 | --- | --- | --- |
 | `career-direction/` | What do I want, and why? Private north star, interests and decisions | `reflect` |
-| `career-evidence/` | What have I demonstrated? Experience, achievements and supporting records | `maintain-profile` |
+| `career-evidence/` | What have I demonstrated? Experience, achievements and supporting records | `maintain-profile`, `review-research` |
 | `career-development/` | How do I grow toward it? Action plans, practice and progress | `plan-development`, `review-progress` |
 | `personal-brand/` | Public messaging, reusable text, visual identity and presentation quality | `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`, `benchmark-profile`, `audit-surface`, `audit` |
 | `job-hunt/` | Application materials and opportunity search | `build-resume`, `find-jobs`, `find-companies` |
@@ -58,11 +59,11 @@ The former `design-identity` package is replaced by these three design skills; u
 
 ## Shared career workspace
 
-The skills work on one linked Markdown workspace: **direction → development → evidence**, with selected direction and evidence informing **public presentation and job search**. Results and feedback can revise the next plan; private records never automatically become public claims.
+The entire workspace is private, including material prepared for public use. Its five homes are **profile/** (background, capabilities, direction and development), **projects/** (work accounts and evidence links), **brand/** (positioning, audiences and visual guidance), **assets/** (drafts, approved staged outputs and service descriptions), and **research/** (selected companies, opportunities and comparable profiles).
 
-Use a career README as the index: map the five areas to canonical files, identify public surfaces and record storage/write boundaries. Start with a few files; keep existing folders and split only when useful. Local folders, GitHub repositories and other Markdown storage all work. Setup is optional; each skill can also work from supplied documents.
+A workspace README maps these roles to existing canonical records. They are user-record concepts, not the installable skill categories above. Reuse shared bios, headlines and visual masters; staged material is not proof of publication. Inspect external surfaces where possible, and ask the user to reconcile differences. Research is selected before saving and reviewed on request; prefer guided archiving, with deletion manual.
 
-See the [portable workspace model](skills/setup-career-skills/references/workspace-model.md) for a minimal layout, record conventions and existing-workspace mapping. The model describes user records, distinct from this repository's installable skill folders.
+Use local folders, GitHub repositories or any Markdown-capable storage. Keep existing paths when mapped; setup is optional. See the [portable workspace model](skills/setup-career-skills/references/workspace-model.md) for the layout and operating rules. No actual user notes are migrated by changing this reference model.
 
 ## Getting started
 
@@ -74,7 +75,7 @@ Configuration discovered during setup belongs in the **user's chosen private wor
 
 ## Scope and status
 
-This is an initial **behavioral-specification release**. The fifteen skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
+This is an initial **behavioral-specification release**. The sixteen skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
 
 ## Validation
 

@@ -7,6 +7,9 @@ description: Find current job vacancies suited to a person's professional profil
 
 Find *live, verifiable* openings—not just roles that sound suitable. Search broadly, verify narrowly, and explain match quality without overstating certainty.
 
+## Research records
+Present findings as a shortlist; let the user save some, all or none. Save only selections or a set covered by an explicit retention instruction, under the mapped research/ company, opportunity or profile records. Retain useful sources, checked dates, observations and reason for keeping; comparator resumes remain links, not downloaded copies. Link related records rather than duplicate them. During ordinary work, ask before acting on stale research; maintenance is on request and archive-first, with deletion left to the user.
+
 ## Workspace
 Read the chosen career workspace index and relevant canonical records when available. Follow its source map and privacy/write boundaries; link evidence and outputs instead of duplicating them. Without an index, use supplied inputs and ask only task-relevant gaps. Work with Markdown wherever stored; do not require setup, a provider or folder migration.
 
