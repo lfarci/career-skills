@@ -65,7 +65,7 @@ The private account of who the person is professionally, what they stand for and
 _Avoid_: Public profile, LinkedIn profile, facts-only profile
 
 **Personal brand**:
-The intended professional positioning and impression conveyed through the person's own public presence and reusable career assets, grounded in their core profile. Work delivered on behalf of an employer is not automatically part of it.
+The guidance for how the person wants to be perceived and addressed: positioning, intended audiences, target clients or employers, messaging, and visual identity rules. It is grounded in the core profile and distinct from the reusable outputs prepared for external use.
 _Avoid_: Published content, online presence
 
 **Online presence**:
