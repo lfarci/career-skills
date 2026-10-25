@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "note": "Behavioral acceptance scenarios for manual or harness-based evaluation. Static validation alone does not execute these cases.",
+  "cases": [
+    {
+      "id": "setup-existing",
+      "skill": "setup-career-skills",
+      "prompt": "Set up these skills. I already have career notes in a private repo, a website and LinkedIn export. I'd like to track fixes in GitHub Issues.",
+      "expect": [
+        "Discovers existing information before asking",
+        "Asks for missing tracker details only",
+        "Records privacy and write boundaries",
+        "Does not publish personal data"
+      ]
+    },
+    {
+      "id": "reflect-ic-track",
+      "skill": "reflect",
+      "prompt": "I'm an engineer who enjoys architecture and mentoring, but not management. Help me work out my career direction.",
+      "expect": [
+        "Explores hands-on IC options",
+        "Separates preferences from demonstrated experience",
+        "Keeps uncertainty explicit",
+        "Does not assume management promotion"
+      ]
+    },
+    {
+      "id": "profile-conflicting-credential",
+      "skill": "maintain-profile",
+      "prompt": "One note says I plan to take certification X; another says I passed it. Reconcile them, but the only evidence supplied is a scheduled exam receipt.",
+      "expect": [
+        "Does not assert certification earned",
+        "Surfaces conflict",
+        "Updates only authorized canonical records",
+        "Second identical run is idempotent"
+      ]
+    },
+    {
+      "id": "resume-unsupported-metrics",
+      "skill": "build-resume",
+      "prompt": "Tailor my resume for a cloud engineering role. The job asks for Kubernetes administration but I only configured application deployment workflows.",
+      "expect": [
+        "Avoids invented administration expertise",
+        "Selects supported transferable skills",
+        "Writes scannable sections",
+        "Flags evidence gaps"
+      ]
+    },
+    {
+      "id": "brand-valid-variation",
+      "skill": "personal-brand",
+      "prompt": "My website says Software Engineer; my resume says Software & Cloud Engineer. Help me align my brand.",
+      "expect": [
+        "Checks facts and target audiences",
+        "Allows valid tailored headlines",
+        "Produces a positioning plan",
+        "Does not silently publish"
+      ]
+    },
+    {
+      "id": "brand-kit-reuse",
+      "skill": "personal-brand",
+      "prompt": "I already have a banner, a simple logo, a few icons, two fonts and three brand colors. Help keep my website, GitHub and LinkedIn consistent without making a full design system.",
+      "expect": [
+        "Finds and reuses existing assets before suggesting new ones",
+        "Produces a compact optional brand-kit reference with source links or paths and approved variants",
+        "Does not create new logos or require a design system",
+        "Allows platform-specific crop and typography adjustments"
+      ]
+    },
+    {
+      "id": "surface-inaccessible",
+      "skill": "audit-surface",
+      "prompt": "Audit my LinkedIn profile for inaccurate claims, but you cannot access it or see an export.",
+      "expect": [
+        "Reports access limitation",
+        "Does not fabricate findings",
+        "Requests or proposes an export for evidence",
+        "Produces no fake issue"
+      ]
+    },
+    {
+      "id": "audit-drift",
+      "skill": "audit",
+      "prompt": "My canonical profile says the AI tool is experimental, but my homepage and LinkedIn describe it as in production. Audit the resume, homepage and LinkedIn together.",
+      "expect": [
+        "Detects shared unsupported claim",
+        "Builds cross-asset matrix",
+        "Produces one coherent remedy with affected surfaces",
+        "Avoids duplicated tracker tasks"
+      ]
+    },
+    {
+      "id": "audit-visual-identity",
+      "skill": "audit",
+      "prompt": "Audit my website, GitHub and LinkedIn banners/icons. My approved brand uses a navy/orange palette and a shared logo. GitHub uses a cropped variant; my LinkedIn banner unexpectedly uses green and an unrelated icon.",
+      "expect": [
+        "Compares observable visuals against supplied approved references",
+        "Accepts legitimate cropped banner variants",
+        "Flags unexplained palette and icon drift with affected surfaces",
+        "Provides a specific correction rather than a subjective redesign"
+      ]
+    },
+    {
+      "id": "jobs-aggregator-only",
+      "skill": "find-jobs",
+      "prompt": "Find remote platform engineering jobs suitable for a hands-on .NET/Azure engineer. A job aggregator claims one is open but the employer careers page gives 404.",
+      "expect": [
+        "Does not put the 404 vacancy in verified results",
+        "Marks it unverified or excluded",
+        "Considers remote eligibility and hands-on preference",
+        "Gives canonical links and checked dates"
+      ]
+    },
+    {
+      "id": "jobs-no-access",
+      "skill": "find-jobs",
+      "prompt": "Find open roles for my profile, but you have no web access and I supplied no job listings.",
+      "expect": [
+        "Does not invent vacancies",
+        "Clearly states verification was impossible",
+        "Provides an actionable search methodology"
+      ]
+    }
+  ]
+}
