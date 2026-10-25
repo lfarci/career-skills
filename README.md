@@ -65,6 +65,8 @@ A workspace README maps these roles to existing canonical records. They are user
 
 Use local folders, GitHub repositories or any Markdown-capable storage. Keep existing paths when mapped; setup is optional. See the [portable workspace model](docs/WORKSPACE.md) for the layout and operating rules. No actual user notes are migrated by changing this reference model.
 
+The [workspace decision specification](docs/CAREER-WORKSPACE-SPEC.md) captures the agreed behavior, rejected alternatives, testing boundaries and deferred work.
+
 ## Getting started
 
 1. Install just the skill directories you want using your agent's Agent Skills workflow (or [skills.sh](https://skills.sh/)); no repository-wide setup is required.
