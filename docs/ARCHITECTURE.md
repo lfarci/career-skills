@@ -7,6 +7,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 | Skill | Inputs | Deliverable | Done when |
 | --- | --- | --- | --- |
 | `setup-career-skills` | Existing sources, profile links, user preferences | Small workspace configuration and setup summary | Sources, visibility, surfaces and progress tracker are recorded or explicitly unresolved |
+| `validate-workspace` | Observed structural drift or a direct validation request, existing source map and permissions | Checked mappings/links, narrow fix or proposed patch | Only real path/authority issues resolved or noted; no speculative migration |
 | `reflect` | Experiences, preferences, goals, existing profile | Professional reflection brief | Fact, aspiration, trade-off, and unresolved question are separated |
 | `maintain-profile` | User's requested focus (or a clarifying conversation), existing facts and new evidence | If unscoped, one intent question; otherwise a targeted review, profile addition or minimal patch | No unrequested audit or edit, duplicate record, unsupported promotion or hidden conflict |
 | `build-resume` | Supported career facts, optional job post and format | Resume source/exports plus checks | Facts verified, readable output, extraction checked when available |
@@ -46,7 +47,7 @@ Read accessible resources within granted permissions. Produce a proposal when wr
 
 ### Composition
 
-Each skill must be executable without installing any other skill. Where two skills are present they may cooperate, but responsibility remains separated: `audit-surface` is a single-asset evidence review; `audit` performs reconciliation across assets; `personal-brand` decides the strategy; `maintain-profile` owns updates to facts.
+Each skill must be executable without installing any other skill. Where two skills are present they may cooperate, but responsibility remains separated: `audit-surface` is a single-asset evidence review; `audit` performs reconciliation across assets; `personal-brand` decides the strategy; `maintain-profile` owns updates to facts. `setup-career-skills` maps the initial workspace; `validate-workspace` repairs concrete structural drift **only when encountered**, and never takes over factual/profile edits. Other skills can resolve paths themselves when the validator is not installed.
 
 ### Tracker behavior
 
@@ -56,7 +57,7 @@ Track issues in the system explicitly selected during setup. If absent, provide 
 
 **Manual:** `setup-career-skills`, `reflect`, `review-research`, `plan-development`, `review-progress`, `personal-brand`, `benchmark-profile`, `define-design-brief`, `create-design-assets`, `review-design`, `audit`.
 
-**Discoverable:** `maintain-profile`, `build-resume`, `find-companies`, `find-jobs`, `audit-surface`.
+**Discoverable:** `validate-workspace`, `maintain-profile`, `build-resume`, `find-companies`, `find-jobs`, `audit-surface`.
 
 Manual skills are deliberately selected by name for bounded sessions. Discoverable skills have concrete, concise trigger descriptions. The manual-only flag is a host-specific hint, not a portable guarantee. Validate routing empirically; see [behavioral evaluations](EVALUATION.md).
 
@@ -88,6 +89,8 @@ Use career-direction for reflection and internal decisions, career-evidence for 
 career-direction owns the private north star, interests, internal decisions and goals. career-evidence owns demonstrated experience, achievements, qualifications and supporting sources. career-development owns growth action plans and progress reviews. Link these canonical records instead of copying them. The personal-brand skill owns positioning guidance under brand/ and reusable text/adaptations under assets/. Private input never implies permission to publish; plans remain distinct from accomplishments. benchmark-profile brings in inspected external examples; audit checks alignment with internal evidence and approved references. Treat comparison subjects as inspiration, not claims to copy or evidence of hiring success.
 
 ## Shared workspace contract
+
+`validate-workspace` has an independent, narrowly triggered responsibility for structural mappings and link integrity. It may be invoked by an agent while another skill is working, but is not a mandatory runtime dependency or an automatic full scan. Its repair permissions are limited by the active task. See [on-demand validation](WORKSPACE.md#on-demand-workspace-validation).
 
 Use the [portable Markdown workspace model](WORKSPACE.md) as the logical data model across skills. setup-career-skills maps existing records to it in a chosen workspace index; other skills consult that index when available without depending on the setup package. Directory names and schemas are optional. Each record has one canonical authority; outputs link evidence rather than replicate it. Storage can be local, GitHub or another Markdown-capable provider. Private records, approved public text and actual publication have separate boundaries.
 

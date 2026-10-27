@@ -75,6 +75,14 @@ Use readable headings and relative links; no mandatory YAML, IDs or database. Se
 
 Before editing, read current canonical records and preserve unrelated changes. Use available version/conflict controls and the chosen write workflow. Confirm saves and links; when writes are unavailable, provide a proposed patch without claiming success. Skills remain useful from pasted input or selected files without an index, another skill or a specific provider.
 
+## On-demand workspace validation
+
+Use `validate-workspace` **only when needed**: a configured path no longer resolves, a relative link is broken, the chosen index is stale, or two candidates claim to be the same canonical record. Direct user requests for workspace validation also qualify. A normal working layout, even with custom folder names or uncreated homes, needs no scan or refactor.
+
+The validator reads the relevant index and records, checks only affected mappings, and prefers updating the mapping or link to moving files. Missing setup does not block another skill from using supplied records. Do not infer permission to reorganize or delete from repository write access; structural moves need explicit authorization. A task that only requires an index link may use an already-authorized narrow fix, otherwise provide a patch for approval.
+
+Initial discovery and configuration belong to `setup-career-skills`; factual updates belong to `maintain-profile`. `validate-workspace` handles structural integrity and hands the resolved paths back to the active workflow. Invocation between skills depends on the agent host; none may require the validator to be installed.
+
 ## Skill contracts and paths
 
 Each SKILL.md defines a concise Input / Scope / Output contract: required records or supplied material, the responsibility boundary, and the destination/result. Contract paths are relative to the chosen career workspace root and are defaults; the workspace index maps them to existing files. They are not installation paths or mandatory filenames. Without an index, use supplied inputs and clarify only missing authority or destination decisions relevant to the task.
