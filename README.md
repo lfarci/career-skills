@@ -83,6 +83,7 @@ This is an initial **behavioral-specification release**. The sixteen skill packa
 
 ```bash
 python3 scripts/validate_skills.py
+python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
 This checks packaging, references, invocation intent and scenario inventory. It does not run an agent. See [behavioral evaluations](docs/EVALUATION.md) for live-agent smoke runs and human review.

@@ -14,3 +14,5 @@ jobs:
           python-version: '3.12'
       - name: Validate structure and test inventory
         run: python3 scripts/validate_skills.py
+      - name: Exercise evaluation runner with a mock agent
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
