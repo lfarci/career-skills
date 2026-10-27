@@ -5,6 +5,11 @@ description: Review progress against a professional development plan using actua
 
 # Review Progress
 
+## Contract
+- **Input:** profile/development.md, the review period and actual activity/outcome evidence.
+- **Scope:** Assess and revise development commitments; propose factual updates separately rather than publishing achievements.
+- **Output:** The same development plan and dated reviews: progress, blockers, justified adjustments and next actions.
+
 ## Review the evidence
 - Read the current plan, goals, previous review and available outcomes. Establish the review period and ask only for missing evidence that changes the assessment. Remain useful with a pasted plan; do not require another skill or tracker.
 - Compare intended outcomes with what was done and demonstrated. Distinguish reported activity, completed learning, applied capability and externally corroborated results. Missing evidence means unknown, not failure or completion.

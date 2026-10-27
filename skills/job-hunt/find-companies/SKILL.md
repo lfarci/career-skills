@@ -5,6 +5,11 @@ description: Research employers that match a user's professional profile, career
 
 # Find Companies
 
+## Contract
+- **Input:** profile/ experience, direction, location and work constraints; existing research/companies/ references.
+- **Scope:** Assess employer fit independently of vacancy availability; do not apply or contact employers.
+- **Output:** Shortlist first; save selected employers to research/companies/<company>.md with fit, sources/check dates and unknowns.
+
 ## Establish fit criteria
 - Read the user's selected profile and career direction. Reuse explicit current preferences; ask only missing information that materially changes the search. Do not infer preferred roles or industries solely from past employers.
 - Establish desired work and growth, demonstrated strengths, location/commute, remote or hybrid needs, employment geography, working languages and relevant eligibility constraints. Clarify industry, company size, employment model, compensation or values only when they affect selection.

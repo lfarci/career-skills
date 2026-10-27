@@ -7,6 +7,11 @@ description: Inspect one professional asset—such as a resume, LinkedIn profile
 
 Verify an individual professional asset against available evidence and its intended audience. This is not a full SEO, accessibility, performance or security audit.
 
+## Contract
+- **Input:** One surface identified in assets/services.md or supplied directly, its observed content and relevant profile/, brand/ and staged references.
+- **Scope:** Inspect one surface for factual/presentation issues; ask how to reconcile differences rather than assuming staged or live content is correct.
+- **Output:** Evidence-backed findings in the response or the user’s existing review/tracker record, tied to the exact surface and inspection limits.
+
 ## Steps
 
 1. Identify the exact asset, accessible version, date checked and intended audience. State which sections cannot be accessed; accept pasted or exported content.

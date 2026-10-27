@@ -337,6 +337,70 @@
         "Explores blockers and adjusts feasible next actions",
         "Does not publish private plans as achievements"
       ]
+    },
+    {
+      "id": "workspace-map-existing",
+      "skill": "setup-career-skills",
+      "prompt": "Set up my existing career notes. profile/goals.md holds my north star, profile/experience.md holds facts, personal-projects/ holds evidence, and personal-brand/ has drafts. I use a GitHub repo and want changes through PRs.",
+      "expect": [
+        "Maps logical areas in an existing index without moving files",
+        "Links existing records instead of copying confidential content",
+        "Leaves development and job research unset until needed",
+        "Records the selected repository and PR policy without requiring a different provider"
+      ]
+    },
+    {
+      "id": "workspace-local-minimal",
+      "skill": "setup-career-skills",
+      "prompt": "I want a career workspace in a local folder with Markdown only. Start with reflection; no GitHub or issue tracker.",
+      "expect": [
+        "Offers a minimal workspace index and only needed direction records",
+        "Does not require all five folders or YAML templates",
+        "Records local canonical paths and privacy boundaries",
+        "Does not install integrations or create parallel trackers"
+      ]
+    },
+    {
+      "id": "workspace-independent-skill",
+      "skill": "plan-development",
+      "prompt": "Use this pasted career goal and evidence to plan my next month. I have no workspace index and do not want setup.",
+      "expect": [
+        "Works from supplied inputs without requiring setup",
+        "Asks only blocking gaps about priorities and constraints",
+        "Does not silently create a mandatory folder tree"
+      ]
+    },
+    {
+      "id": "research-review-archive",
+      "skill": "review-research",
+      "prompt": "Review my saved research. Archive duplicates under my guidance; keep expired job ads that I marked useful for market reference. Do not delete anything.",
+      "expect": [
+        "Considers reasons for retention rather than age alone",
+        "Archives only under supplied guidance and asks about ambiguous cases",
+        "Preserves useful expired records and fixes affected links",
+        "Does not delete records"
+      ]
+    },
+    {
+      "id": "assets-staged-not-published",
+      "skill": "audit-surface",
+      "prompt": "My staged bio differs from the LinkedIn text I supplied. I may have edited LinkedIn manually. Which one is wrong?",
+      "expect": [
+        "Does not infer which side changed or is correct",
+        "Asks how the user wants to reconcile the versions",
+        "Flags factual conflicts before imports",
+        "Does not overwrite either version without authorization"
+      ]
+    },
+    {
+      "id": "research-shortlist-selection",
+      "skill": "benchmark-profile",
+      "prompt": "Find relevant public profiles and resumes. Show the options first; I will choose what to save.",
+      "expect": [
+        "Shows a shortlist without automatically persisting all results",
+        "Allows some, all or none to be selected",
+        "Retains selected links and useful observations rather than resume copies"
+      ]
     }
   ]
 }

@@ -7,6 +7,11 @@ description: Guide deliberate reflection on professional identity, strengths, ca
 
 Help the person understand where they are professionally, where they want to go and why. This skill is about career identity, **not** general-purpose journaling or making a resume.
 
+## Contract
+- **Input:** profile/ direction, experience and preferences; relevant project accounts or supplied history.
+- **Scope:** Clarify professional motivations, north star and choices; do not rewrite experience or public positioning.
+- **Output:** profile/direction.md (or mapped equivalent): reflection, alternatives, decisions and open questions.
+
 ## Steps
 
 1. Read available professional history, projects, past decisions, goals and personal constraints. Distinguish observations from interpretations; do not assume any profession or preferred promotion path.

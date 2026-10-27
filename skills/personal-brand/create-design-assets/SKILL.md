@@ -5,6 +5,11 @@ description: Explore concepts, create and refine reusable visual assets for a pr
 
 # Create Design Assets
 
+## Contract
+- **Input:** The current design brief in brand/, selected concept/references and required asset uses.
+- **Scope:** Explore agreed concepts, produce and verify visual outputs; do not redefine professional positioning.
+- **Output:** Versioned options/sources in assets/drafts/; approved reusable masters/exports in assets/staged/; linked visual rules in brand/identity.md.
+
 ## Establish the input
 - Read the current brief and requested deliverables. Ask only blocking gaps about purpose, audience, usage, desired impression or scope before suggesting directions. If discovery is needed, offer define-design-brief when available or ask those questions here; never require another skill.
 - Reuse only references and choices the user explicitly makes the basis of this task. Do not infer a geometric/tech direction or preserve a website font from history alone. Keep work career-facing; personal-brand owns professional positioning.

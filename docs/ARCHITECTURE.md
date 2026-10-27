@@ -19,6 +19,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 | `review-design` | Actual assets/revisions and current brief | Prioritized evidence-backed design findings | Fit, craft and readiness issues have concrete remedies and inspection limits |
 | `audit-surface` | One accessible asset and available benchmarks | Evidence-backed single-surface findings | All inspected claims and access limits accounted for |
 | `audit` | Multiple assets, canonical facts, goals and optional visual references | Cross-asset discrepancy matrix and proposed tracker tasks | Material overlaps and conflicts reconciled, duplicates removed |
+| `review-research` | Selected saved references and retention guidance | Reviewed/archived research and linked findings | Changes follow guidance, useful history stays available and no automatic deletion occurs |
 | `find-companies` | Profile, career direction, location and work constraints | Evidence-backed target-employer shortlist | Company fit and vacancy availability are separate; practical constraints and unknowns are explicit |
 | `find-jobs` | Skills/goals, constraints, current official vacancies | Ranked verified opportunities with links and timestamps | Each verified role has live first-party evidence, transparent fit, no fabricated details |
 
@@ -30,7 +31,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 - **Evidence:** source backing a fact, including user testimony (label its nature).
 - **Goal:** a desired or considered future state, not an achieved qualification.
 - **Positioning:** audience-specific wording derived from facts and goals.
-- **Asset:** a resume, profile, website, portfolio entry, credential page, or other public professional surface.
+- **Asset:** reusable text or visual material prepared for external presentation; a surface is the destination where it is published.
 - **Canonical source:** the user's chosen authoritative location for factual records (can be files, not a single prescribed file).
 
 Capture uncertainty without forcing everything into one scale: distinguish *confirmed/corroborated/inferred/unverified* evidence from *current/historical/planned/superseded/unknown* time status. Mark approximations as approximate.
@@ -74,4 +75,19 @@ Use career-direction for reflection and internal decisions, career-evidence for 
 
 ## Private direction and public expression
 
-career-direction owns the private north star, interests, internal decisions and goals. career-evidence owns demonstrated experience, achievements, qualifications and supporting sources. career-development owns growth action plans and progress reviews. Link these canonical records instead of copying them. personal-brand owns explicitly selected public positioning, canonical reusable text snippets and adaptations for public surfaces. Private input never implies permission to publish; plans remain distinct from accomplishments. benchmark-profile brings in inspected external examples; audit checks alignment with internal evidence and approved references. Treat comparison subjects as inspiration, not claims to copy or evidence of hiring success.
+career-direction owns the private north star, interests, internal decisions and goals. career-evidence owns demonstrated experience, achievements, qualifications and supporting sources. career-development owns growth action plans and progress reviews. Link these canonical records instead of copying them. The personal-brand skill owns positioning guidance under brand/ and reusable text/adaptations under assets/. Private input never implies permission to publish; plans remain distinct from accomplishments. benchmark-profile brings in inspected external examples; audit checks alignment with internal evidence and approved references. Treat comparison subjects as inspiration, not claims to copy or evidence of hiring success.
+
+## Shared workspace contract
+
+Use the [portable Markdown workspace model](WORKSPACE.md) as the logical data model across skills. setup-career-skills maps existing records to it in a chosen workspace index; other skills consult that index when available without depending on the setup package. Directory names and schemas are optional. Each record has one canonical authority; outputs link evidence rather than replicate it. Storage can be local, GitHub or another Markdown-capable provider. Private records, approved public text and actual publication have separate boundaries.
+
+## Agreed workspace homes
+
+The physical reference model is profile/, projects/, brand/, assets/ and research/, distinct from skill package categories. Profile includes factual background, capabilities, direction, preferences and development. Projects describe purpose, contribution and learning without automatically becoming evidence. Brand guides positioning and visual identity; actual reusable outputs live in assets/drafts/ or approved assets/staged/. assets/services.md describes external surfaces. The whole workspace is private; the external service establishes actual published state. Discrepancies are user-reconciled without mandatory stored publication snapshots.
+
+Research retains selected linked references and useful observations, one record per company/opportunity/comparator as useful. Store links to other people's resumes, not copied files. review-research provides requested archival maintenance; do not automatically delete or maintain research in the background. Earlier logical skill categories do not require matching user directories.
+
+
+## Skill input/output contracts
+
+Each skill declares Input, Scope and Output in its SKILL.md. Inputs identify relevant source records or supplied material; scope identifies the work and a meaningful boundary; output identifies a reviewable result and its default workspace destination. These are lightweight Markdown contracts, not a formal schema or required execution chain. The [workspace guide](WORKSPACE.md#skill-contracts-and-paths) defines relative-path resolution and existing-record mapping once. Do not paste a shared workspace preamble into every skill.

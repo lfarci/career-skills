@@ -5,6 +5,11 @@ description: Turn a professional direction and demonstrated experience into a re
 
 # Plan Development
 
+## Contract
+- **Input:** profile/ direction, skills, preferences and constraints; relevant project/evidence links.
+- **Scope:** Plan growth toward chosen goals; do not declare planned learning achieved.
+- **Output:** profile/development.md (or mapped plan): prioritized outcomes, actions, effort, evidence milestones and review points.
+
 ## Establish the starting point
 - Read the user's chosen direction, relevant demonstrated experience and constraints. Ask only missing priorities, available time, budget or deadlines that affect the plan. Do not assume promotion, management, certifications or a technology track is the goal.
 - Separate demonstrated capabilities from interests and aspirations. Identify gaps relevant to the chosen work; do not turn every job-ad requirement or peer credential into a necessary gap. If direction is undecided, clarify it without requiring another skill.

@@ -7,6 +7,11 @@ description: Find current job vacancies suited to a person's professional profil
 
 Find *live, verifiable* openings—not just roles that sound suitable. Search broadly, verify narrowly, and explain match quality without overstating certainty.
 
+## Contract
+- **Input:** profile/ capabilities, goals and constraints; selected company records and current employer/recruiter listings.
+- **Scope:** Verify and compare specific vacancies; do not apply or generate unsolicited application materials.
+- **Output:** Shortlist first; save selected roles to research/opportunities/<role>.md, linking company records and retaining requirements, sources, checked dates and fit.
+
 ## Steps
 
 1. Read the user's career record or supplied resume, confirmed preferences and constraints. Capture target functions, seniority, locations/time zones, remote/hybrid preferences, languages, employment eligibility, compensation expectations and exclusions **only when known**. Ask one targeted question if a missing hard constraint prevents useful searching; otherwise use declared assumptions.

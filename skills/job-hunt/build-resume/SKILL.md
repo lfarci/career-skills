@@ -7,6 +7,11 @@ description: Build, improve or tailor a truthful resume from supported professio
 
 Produce an evidence-based resume readable by humans and reliably extractable by modern applicant tracking systems. There is no universal ATS score or format guaranteed to pass every system.
 
+## Contract
+- **Input:** Supported profile/ facts, selected project evidence, brand/ guidance and an optional research/opportunities/ role.
+- **Scope:** Author or tailor a truthful resume; do not alter career facts to match the vacancy or submit an application.
+- **Output:** Resume sources/exports in assets/drafts/resumes/; explicitly approved versions in assets/staged/resumes/, with verification and intentional tailoring recorded.
+
 ## Steps
 
 1. Read an existing resume, verified career profile or supplied experience. Accept a partial source: do not require a canonical repository. Identify target role, location, language, job description and desired length/format when available.

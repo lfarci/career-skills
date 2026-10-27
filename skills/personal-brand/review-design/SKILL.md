@@ -5,6 +5,11 @@ description: Critique career-facing visual assets such as personal logos, profes
 
 # Review Design
 
+## Contract
+- **Input:** Exact visual assets/revisions under assets/ and the relevant brand/ brief and rules.
+- **Scope:** Critique conceptual fit and craft; do not edit assets or confer approval through a review.
+- **Output:** Findings in the response or mapped brand/ review record: asset references, evidence, priorities and unchecked items.
+
 ## Establish the review
 - Identify the exact assets/revisions and current brief: goal, audience, usage, desired impression and constraints. Ask only missing context that changes the judgment. Review existing work without requiring a new discovery or creation cycle.
 - Inspect actual files/renderings; distinguish observed issues from assumptions. If assets are inaccessible, report the limit and request what is needed rather than inventing findings.

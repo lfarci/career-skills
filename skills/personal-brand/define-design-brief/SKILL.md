@@ -5,6 +5,11 @@ description: Interview a professional to define the brief for career-facing visu
 
 # Define Design Brief
 
+## Contract
+- **Input:** The user’s current design request, explicitly selected references and relevant brand/ guidance.
+- **Scope:** Interview about visual purpose and deliverables; do not inherit historical aesthetics or produce assets.
+- **Output:** brand/discovery.md (or mapped brief): substantive answers, scope, intended impression, constraints and unresolved choices.
+
 ## Interview
 - Ask one high-level question at a time. Start with what the user wants to create or improve and why; wait before suggesting deliverables, fonts or styles. If the current request already answers this, ask the next missing question.
 - Explore purpose, professional context/domain, audience, where/how the design will be used, and what it should make people feel, associate or remember. Probe vague answers and conflicting needs like a design-focused grill-me interview; do not require that skill.

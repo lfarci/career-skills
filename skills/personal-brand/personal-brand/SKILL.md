@@ -7,6 +7,11 @@ description: Define and improve a coherent professional narrative across public 
 
 Define the selected public professional narrative and reusable wording for different audiences. Treat private profile facts, north star, interests, action plans and internal decisions as inputs, not permission to publish. Exclude private doubts, constraints and plans unless explicitly selected for public use; label aspirations without implying achievements. Do not rewrite source facts to match a preferred slogan.
 
+## Contract
+- **Input:** Selected profile/ facts and goals, project evidence, brand/ guidance and assets/services.md.
+- **Scope:** Define positioning and audience-specific messaging; do not change source facts or research a competing company list.
+- **Output:** brand/positioning.md for guidance; reusable text in assets/drafts/, promoted to assets/staged/ only after approval.
+
 ## Steps
 
 1. Review verified professional history, user's intended career direction and constraints. Separate existing strengths from aspirational capabilities.

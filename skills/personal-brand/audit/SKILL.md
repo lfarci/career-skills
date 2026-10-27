@@ -7,6 +7,11 @@ description: Audit alignment across multiple professional assets, including resu
 
 Find *relationships* and contradictions among professional assets; don't merely concatenate individual reports. Use `audit-surface` when available, but require no other skill.
 
+## Contract
+- **Input:** Multiple observed surfaces from assets/services.md plus profile/ authority, brand/ guidance and applicable staged assets.
+- **Scope:** Reconcile cross-surface discrepancies; do not redesign the identity or automatically overwrite either side.
+- **Output:** A cross-surface discrepancy matrix and deduplicated actions in the existing review/tracker record or response; factual conflicts and user decisions are explicit.
+
 ## Steps
 
 1. Discover the agreed canonical facts, goals, current positioning, **optional approved brand assets/tokens**, and all relevant assets. Record which assets are current, planned, private or inaccessible. Confirm the requested scope without blocking on inaccessible sources.
