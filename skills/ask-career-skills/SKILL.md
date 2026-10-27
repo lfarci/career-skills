@@ -1,10 +1,10 @@
 ---
-name: whats-next
+name: ask-career-skills
 description: Help me choose which Career Skills workflow to use next.
 disable-model-invocation: true
 ---
 
-# What's Next?
+# Ask Career Skills
 
 Recommend a next step in Career Skills. This is a **manual navigation skill**, not a required orchestrator. Users can run any other skill directly, with or without setup.
 

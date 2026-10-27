@@ -2,7 +2,7 @@
 
 ## User journey and routing
 
-The [user journey](USER-JOURNEY.md) illustrates an optional first-session sequence and later independent branches. `whats-next` is a user-invoked **router**, not a runtime orchestrator: it chooses and explains one useful skill without executing it, installing dependencies or making changes. The package remains usable without setup or other installed skills. The diagram is guidance, not an execution graph.
+The [user journey](USER-JOURNEY.md) illustrates an optional first-session sequence and later independent branches. `ask-career-skills` is a user-invoked **router**, not a runtime orchestrator: it chooses and explains one useful skill without executing it, installing dependencies or making changes. The package remains usable without setup or other installed skills. The diagram is guidance, not an execution graph.
 
 ## Skill boundaries
 
@@ -11,7 +11,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 | Skill | Inputs | Deliverable | Done when |
 | --- | --- | --- | --- |
 | `setup-career-skills` | Existing sources, profile links, user preferences | Small workspace configuration and setup summary | Sources, visibility, surfaces and progress tracker are recorded or explicitly unresolved |
-| `whats-next` | Current goal, prior completed tasks, available source map when relevant | One recommended skill and ready-to-use request | Next step is justified without invoking other skills or changing records |
+| `ask-career-skills` | Current goal, prior completed tasks, available source map when relevant | One recommended skill and ready-to-use request | Next step is justified without invoking other skills or changing records |
 | `reflect` | Experiences, preferences, goals, existing profile | Professional reflection brief | Fact, aspiration, trade-off, and unresolved question are separated |
 | `maintain-profile` | Canonical records and new evidence | Minimal proposed/applied factual patch and change log | No duplicate record, unsupported promotion, or unreported conflict |
 | `build-resume` | Supported career facts, optional job post and format | Resume source/exports plus checks | Facts verified, readable output, extraction checked when available |
@@ -59,7 +59,7 @@ Track issues in the system explicitly selected during setup. If absent, provide 
 
 ## Invocation policy
 
-**Manual:** `setup-career-skills`, `whats-next`, `reflect`, `review-research`, `plan-development`, `review-progress`, `personal-brand`, `benchmark-profile`, `define-design-brief`, `create-design-assets`, `review-design`, `audit`.
+**Manual:** `setup-career-skills`, `ask-career-skills`, `reflect`, `review-research`, `plan-development`, `review-progress`, `personal-brand`, `benchmark-profile`, `define-design-brief`, `create-design-assets`, `review-design`, `audit`.
 
 **Discoverable:** `maintain-profile`, `build-resume`, `find-companies`, `find-jobs`, `audit-surface`.
 
@@ -69,7 +69,7 @@ Generic names such as `audit` and `reflect` remain stable for compatibility. Ren
 
 ## Portability
 
-Each skill is a self-contained leaf directory with `SKILL.md`; domain packages are grouped under `skills/<group>/<name>/SKILL.md`, while cross-cutting `setup-career-skills` and `whats-next` remain at the top level. Group directories have no SKILL.md. Each leaf has standard `name` and `description` frontmatter. Manual skills additionally use host-specific `disable-model-invocation: true`; other hosts may ignore this extension and the core Agent Skills format does not define invocation controls. Install by leaf directory or skill name.
+Each skill is a self-contained leaf directory with `SKILL.md`; domain packages are grouped under `skills/<group>/<name>/SKILL.md`, while cross-cutting `setup-career-skills` and `ask-career-skills` remain at the top level. Group directories have no SKILL.md. Each leaf has standard `name` and `description` frontmatter. Manual skills additionally use host-specific `disable-model-invocation: true`; other hosts may ignore this extension and the core Agent Skills format does not define invocation controls. Install by leaf directory or skill name.
 
 ## Deferred, not separately packaged in v1
 
@@ -86,7 +86,7 @@ Keep strategy, discovery, production and critique independently invocable under 
 
 ## Domain grouping
 
-Use career-direction for reflection and internal decisions, career-evidence for demonstrated experience and canonical facts, and career-development for growth planning and progress; personal-brand for positioning, visuals and audits of professional presentation; job-hunt for resumes and vacancy search. Keep `setup-career-skills` and `whats-next` at the top level: the former maps records and permissions; the latter recommends an independent next task. Grouping does not change invocation names, ownership boundaries or independent installation.
+Use career-direction for reflection and internal decisions, career-evidence for demonstrated experience and canonical facts, and career-development for growth planning and progress; personal-brand for positioning, visuals and audits of professional presentation; job-hunt for resumes and vacancy search. Keep `setup-career-skills` and `ask-career-skills` at the top level: the former maps records and permissions; the latter recommends an independent next task. Grouping does not change invocation names, ownership boundaries or independent installation.
 
 ## Private direction and public expression
 

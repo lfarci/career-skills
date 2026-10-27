@@ -7,7 +7,7 @@
 ```mermaid
 flowchart TD
     S["setup-career-skills<br/>(optional workspace mapping)"] --> Q{"What do you need now?"}
-    W["whats-next<br/>(optional navigation)"] -. "guides a choice" .-> Q
+    W["ask-career-skills<br/>(optional navigation)"] -. "guides a choice" .-> Q
     Q -->|"Facts need reconciling"| P["maintain-profile"]
     Q -->|"Direction unclear"| R["reflect"]
     P -. "When useful" .-> R
@@ -40,7 +40,7 @@ Solid arrows identify the choice being made. Dashed arrows identify **optional f
 | User wants to... | Skill | Result |
 | --- | --- | --- |
 | Set up or reconnect existing sources | `setup-career-skills` | Mapped workspace and authority |
-| Choose a next task without knowing the skill names | `whats-next` | One next-step recommendation |
+| Choose a next task without knowing the skill names | `ask-career-skills` | One next-step recommendation |
 | Correct or add career facts | `maintain-profile` | Supported canonical updates |
 | Decide where their career should go | `reflect` | Reflection and direction brief |
 | Build a growth plan / review one | `plan-development` / `review-progress` | Plan / evidence-based check-in |
@@ -52,9 +52,9 @@ Solid arrows identify the choice being made. Dashed arrows identify **optional f
 | Learn from public career examples | `benchmark-profile` | Comparator observations |
 | Revisit retained career research | `review-research` | Keep, refresh or guided archive |
 
-## How `whats-next` behaves
+## How `ask-career-skills` behaves
 
-Invoke **`whats-next`** explicitly, for example:
+Invoke **`ask-career-skills`** explicitly, for example:
 
 - *"I finished setup; what's next?"* → inspect what is known and suggest profile reconciliation or reflection **only when needed**.
 - *"My profile is already accurate and I want to apply for jobs."* → recommend `find-jobs`, `find-companies` or `build-resume` depending on the immediate objective.
