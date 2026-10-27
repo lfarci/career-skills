@@ -13,12 +13,12 @@ EXPECTED = {
     "setup-career-skills", "plan-development", "review-progress", "review-research",
     "reflect", "maintain-profile", "build-resume", "personal-brand", "benchmark-profile",
     "define-design-brief", "create-design-assets", "review-design", "audit-surface",
-    "audit", "find-jobs", "find-companies", "whats-next",
+    "audit", "find-jobs", "find-companies", "ask-career-skills",
 }
 MANUAL = {
     "setup-career-skills", "reflect", "review-research", "plan-development",
     "review-progress", "personal-brand", "benchmark-profile", "define-design-brief",
-    "create-design-assets", "review-design", "audit", "whats-next",
+    "create-design-assets", "review-design", "audit", "ask-career-skills",
 }
 
 

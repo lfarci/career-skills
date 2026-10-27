@@ -403,8 +403,8 @@
       ]
     },
     {
-      "id": "whats-next-after-setup",
-      "skill": "whats-next",
+      "id": "ask-career-skills-after-setup",
+      "skill": "ask-career-skills",
       "prompt": "I finished setting up my career workspace. My experience files need checking and I haven't decided on a long-term direction. What should I do next?",
       "expect": [
         "Selects maintain-profile as the most useful next action and explains why",
@@ -414,8 +414,8 @@
       ]
     },
     {
-      "id": "whats-next-goal-overrides-flow",
-      "skill": "whats-next",
+      "id": "ask-career-skills-goal-overrides-flow",
+      "skill": "ask-career-skills",
       "prompt": "My profile is already accurate and I have a clear direction. I want to find open positions to apply to. What skill should I run next?",
       "expect": [
         "Selects find-jobs rather than repeating setup, factual maintenance or reflection",
@@ -425,8 +425,8 @@
       ]
     },
     {
-      "id": "whats-next-logo-draft",
-      "skill": "whats-next",
+      "id": "ask-career-skills-logo-draft",
+      "skill": "ask-career-skills",
       "prompt": "I have a finished first logo draft and a current brief. I only want professional critique before deciding whether to refine it. What's next?",
       "expect": [
         "Selects review-design rather than restarting design discovery",
@@ -436,8 +436,8 @@
       ]
     },
     {
-      "id": "whats-next-no-setup",
-      "skill": "whats-next",
+      "id": "ask-career-skills-no-setup",
+      "skill": "ask-career-skills",
       "prompt": "I don't have a workspace index and don't want to run setup. I have some pasted experience details and want to improve my resume. What should I use?",
       "expect": [
         "Recommends build-resume directly without requiring setup",

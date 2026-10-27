@@ -29,4 +29,4 @@ Run identical scenarios on each relevant harness. Record host/version, installed
 
 Discovery scenarios do not name skills. Manual-only behavior is host-specific and not guaranteed across clients. Use an unassisted baseline when feasible. This smoke suite is a small regression check, not a statistical benchmark; human assessment remains necessary.
 
-The opt-in smoke set includes an explicit `whats-next` navigation case. Review the returned recommendation and agent trace: the router should **recommend**, not invoke, other skills or write files.
+The opt-in smoke set includes an explicit `ask-career-skills` navigation case. Review the returned recommendation and agent trace: the router should **recommend**, not invoke, other skills or write files.
