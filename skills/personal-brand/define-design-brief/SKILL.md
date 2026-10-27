@@ -1,6 +1,7 @@
 ---
 name: define-design-brief
-description: Interview a professional to define the brief for career-facing visual assets such as a personal logo, portfolio identity, profile banners or typography. Use when goals, audience, scope or intended impression need clarification; not for asset generation or design critique.
+description: Interview for a professional design brief covering goals, audience, usage and intended impression.
+disable-model-invocation: true
 ---
 
 # Define Design Brief
