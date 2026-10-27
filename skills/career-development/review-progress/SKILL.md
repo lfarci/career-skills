@@ -1,6 +1,7 @@
 ---
 name: review-progress
-description: Review progress against a professional development plan using actual evidence, reflect on blockers and adjust next steps. Use for a career growth check-in or plan revision; not public profile audits or assuming training completion proves competence.
+description: Review a career development plan against completed work, demonstrated outcomes and blockers.
+disable-model-invocation: true
 ---
 
 # Review Progress

@@ -1,6 +1,6 @@
 ---
 name: find-companies
-description: Research employers that match a user's professional profile, career direction, location and work constraints, including companies without current vacancies. Use to build or refine a target-company shortlist; not primarily to search jobs, apply or contact employers.
+description: Research target employers fitting career direction, interests and geographic or remote-work constraints.
 ---
 
 # Find Companies

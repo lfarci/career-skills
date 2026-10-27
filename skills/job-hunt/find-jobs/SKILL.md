@@ -1,6 +1,6 @@
 ---
 name: find-jobs
-description: Find current job vacancies suited to a person's professional profile, skills, goals and constraints, verify each opening from an employer or authorized recruiting source, and rank opportunities transparently. Use when the person asks for matching jobs, vacancies, roles to apply for, or an employer-specific opening search.
+description: Find and verify current job openings; rank roles against career evidence and working constraints.
 ---
 
 # Find Matching Jobs
