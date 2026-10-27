@@ -6,26 +6,26 @@ Each skill works independently and does not require GitHub, a particular AI harn
 
 ## Skills
 
-| Skill | Purpose | Intended invocation |
+| Skill | Purpose | Invocation |
 | --- | --- | --- |
-| [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Discover existing records, assets, preferences, and progress tracker | Explicit setup |
-| [`reflect`](skills/career-direction/reflect/SKILL.md) | Explore and articulate professional identity and goals | Explicit reflection |
-| [`maintain-profile`](skills/career-evidence/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Reusable behavior |
-| [`build-resume`](skills/job-hunt/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Explicit authoring |
-| [`plan-development`](skills/career-development/plan-development/SKILL.md) | Turn career direction and evidence gaps into a feasible growth plan | Explicit planning |
-| [`review-progress`](skills/career-development/review-progress/SKILL.md) | Review development evidence and adjust the plan | Explicit check-in |
-| [`personal-brand`](skills/personal-brand/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Explicit planning |
-| [`define-design-brief`](skills/personal-brand/define-design-brief/SKILL.md) | Interview about career visual needs and agree on an actionable brief | Explicit discovery |
-| [`create-design-assets`](skills/personal-brand/create-design-assets/SKILL.md) | Explore concepts and produce scoped professional visual assets | Explicit creation |
-| [`benchmark-profile`](skills/personal-brand/benchmark-profile/SKILL.md) | Research relevant public profiles and resumes for evidence-backed improvements | Explicit benchmarking |
-| [`review-design`](skills/personal-brand/review-design/SKILL.md) | Critique visual fit, craft and readiness against the brief | Explicit review |
-| [`audit-surface`](skills/personal-brand/audit-surface/SKILL.md) | Audit an individual professional asset | Reusable behavior |
-| [`audit`](skills/personal-brand/audit/SKILL.md) | Audit factual and observable visual alignment across multiple professional assets | Explicit audit |
-| [`review-research`](skills/career-evidence/review-research/SKILL.md) | Review retained references and archive under user guidance | Explicit maintenance |
-| [`find-companies`](skills/job-hunt/find-companies/SKILL.md) | Research employers matching career direction, location and constraints, with or without vacancies | Explicit research |
-| [`find-jobs`](skills/job-hunt/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Explicit search |
+| [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Discover existing records, assets, preferences, and progress tracker | Manual |
+| [`reflect`](skills/career-direction/reflect/SKILL.md) | Explore and articulate professional identity and goals | Manual |
+| [`maintain-profile`](skills/career-evidence/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Discoverable |
+| [`build-resume`](skills/job-hunt/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Discoverable |
+| [`plan-development`](skills/career-development/plan-development/SKILL.md) | Turn career direction and evidence gaps into a feasible growth plan | Manual |
+| [`review-progress`](skills/career-development/review-progress/SKILL.md) | Review development evidence and adjust the plan | Manual |
+| [`personal-brand`](skills/personal-brand/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Manual |
+| [`define-design-brief`](skills/personal-brand/define-design-brief/SKILL.md) | Interview about career visual needs and agree on an actionable brief | Manual |
+| [`create-design-assets`](skills/personal-brand/create-design-assets/SKILL.md) | Explore concepts and produce scoped professional visual assets | Manual |
+| [`benchmark-profile`](skills/personal-brand/benchmark-profile/SKILL.md) | Research relevant public profiles and resumes for evidence-backed improvements | Manual |
+| [`review-design`](skills/personal-brand/review-design/SKILL.md) | Critique visual fit, craft and readiness against the brief | Manual |
+| [`audit-surface`](skills/personal-brand/audit-surface/SKILL.md) | Audit an individual professional asset | Discoverable |
+| [`audit`](skills/personal-brand/audit/SKILL.md) | Audit factual and observable visual alignment across multiple professional assets | Manual |
+| [`review-research`](skills/career-evidence/review-research/SKILL.md) | Review retained references and archive under user guidance | Manual |
+| [`find-companies`](skills/job-hunt/find-companies/SKILL.md) | Research employers matching career direction, location and constraints, with or without vacancies | Discoverable |
+| [`find-jobs`](skills/job-hunt/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Discoverable |
 
-An **explicit** skill is normally run when requested; a **reusable** skill is useful for an agent to discover and apply during a related task. Invocation flags vary by harness, so the files use portable skill metadata rather than relying on any one platform's invocation behavior.
+**Manual** means the user selects the named skill; **Discoverable** means an agent may select it for a matching task. Manual skills declare `disable-model-invocation: true` on supporting hosts. This field is not part of the core Agent Skills specification and some hosts may ignore it. See the [invocation policy](docs/ARCHITECTURE.md#invocation-policy).
 
 ### Organization
 
@@ -69,7 +69,7 @@ The [workspace decision specification](docs/CAREER-WORKSPACE-SPEC.md) captures t
 
 ## Getting started
 
-1. Install just the skill directories you want using your agent's Agent Skills workflow (or [skills.sh](https://skills.sh/)); no repository-wide setup is required.
+1. Install individual skills via your agent's workflow or `npx skills add lfarci/career-skills --skill <name>` ([Skills CLI](https://www.skills.sh/docs/cli)). Nested skills are independently installable; no repository-wide setup is required.
 2. Run `setup-career-skills` if you have existing career notes, resumes, web profiles, or an issue tracker you want the skills to use consistently.
 3. Run one task-focused skill. For example: *“Audit alignment among my resume, GitHub profile, website, and LinkedIn export.”*
 
@@ -85,9 +85,11 @@ This is an initial **behavioral-specification release**. The sixteen skill packa
 python3 scripts/validate_skills.py
 ```
 
+This checks packaging, references, invocation intent and scenario inventory. It does not run an agent. See [behavioral evaluations](docs/EVALUATION.md) for live-agent smoke runs and human review.
+
 ## Contributing
 
-Changes should maintain small, independently invocable skills with clear boundaries and testable completion criteria. Run the structural validator and add or update behavioral scenarios when changing responsibilities or triggers. Use synthetic examples rather than committing real career profiles or personal information.
+Changes should maintain small, independently invocable skills with clear boundaries and testable completion criteria. Run the structural validator, update behavioral scenarios when changing responsibilities or triggers, and follow [AGENTS.md](AGENTS.md). Use synthetic examples rather than committing real career profiles or personal information.
 
 ## License
 
