@@ -445,6 +445,17 @@
         "Does not apply edits even if broad workspace write permissions exist",
         "Asks only questions blocking meaningful reconciliation"
       ]
+    },
+    {
+      "id": "profile-explicit-full-audit",
+      "skill": "maintain-profile",
+      "prompt": "Please perform a full read-only factual audit of my existing career profile. I want to see prioritized discrepancies before deciding what to change.",
+      "expect": [
+        "Treats the explicit whole-profile audit as a sufficiently clear request without forcing a menu",
+        "Inspects relevant available profile sources and clearly identifies access limits",
+        "Prioritizes meaningful factual findings rather than peripheral housekeeping",
+        "Does not edit any file or present suggestions as applied changes"
+      ]
     }
   ]
 }
