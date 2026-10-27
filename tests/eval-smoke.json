@@ -41,6 +41,14 @@
     {
       "id": "profile-no-intent-new",
       "mode": "explicit"
+    },
+    {
+      "id": "workspace-stale-index",
+      "mode": "discovery"
+    },
+    {
+      "id": "workspace-valid-custom-layout",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [
