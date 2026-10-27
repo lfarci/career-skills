@@ -9,6 +9,7 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | Skill | Purpose | Invocation |
 | --- | --- | --- |
 | [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Discover existing records, assets, preferences, and progress tracker | Manual |
+| [`whats-next`](skills/whats-next/SKILL.md) | Recommend which career workflow to use after setup or at any point | Manual |
 | [`reflect`](skills/career-direction/reflect/SKILL.md) | Explore and articulate professional identity and goals | Manual |
 | [`maintain-profile`](skills/career-evidence/maintain-profile/SKILL.md) | Reconcile evidence and maintain factual career records | Discoverable |
 | [`build-resume`](skills/job-hunt/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Discoverable |
@@ -37,6 +38,7 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | `personal-brand/` | Public messaging, reusable text, visual identity and presentation quality | `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`, `benchmark-profile`, `audit-surface`, `audit` |
 | `job-hunt/` | Application materials and opportunity search | `build-resume`, `find-jobs`, `find-companies` |
 | `setup-career-skills/` | Cross-cutting workspace setup | `setup-career-skills` |
+| `whats-next/` | Optional navigation among independent skills | `whats-next` |
 
 Groups organize the repository; they are not installable umbrella skills. Install individual leaf directories. Existing skill names are unchanged except for the design lifecycle split below. Paths for previously top-level skills have moved into their groups; update installation sources accordingly.
 
@@ -67,17 +69,23 @@ Use local folders, GitHub repositories or any Markdown-capable storage. Keep exi
 
 The [workspace decision specification](docs/CAREER-WORKSPACE-SPEC.md) captures the agreed behavior, rejected alternatives, testing boundaries and deferred work.
 
+## After setup: suggested journey
+
+There is **no required flow** after `setup-career-skills`. Reconcile facts with `maintain-profile` if needed, clarify direction with `reflect` if needed, then work directly on development, brand, job search or research.
+
+See the [user journey with Mermaid diagram and routing guide](docs/USER-JOURNEY.md). Use `whats-next` at any time for a single recommended next action, without invoking any other skill.
+
 ## Getting started
 
 1. Install individual skills via your agent's workflow or `npx skills add lfarci/career-skills --skill <name>` ([Skills CLI](https://www.skills.sh/docs/cli)). Nested skills are independently installable; no repository-wide setup is required.
 2. Run `setup-career-skills` if you have existing career notes, resumes, web profiles, or an issue tracker you want the skills to use consistently.
-3. Run one task-focused skill. For example: *“Audit alignment among my resume, GitHub profile, website, and LinkedIn export.”*
+3. Choose a task-focused skill directly or run `whats-next` for guidance. For example: *“Audit alignment among my resume, GitHub profile, website, and LinkedIn export.”*
 
 Configuration discovered during setup belongs in the **user's chosen private workspace**, not in this public skill repository. See [architecture and contracts](docs/ARCHITECTURE.md) and [evaluation cases](tests/cases.json).
 
 ## Scope and status
 
-This is an initial **behavioral-specification release**. The sixteen skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
+This is an initial **behavioral-specification release**. The seventeen skill packages contain instructions and acceptance criteria, and a lightweight static validator checks the packaging. A full cross-harness benchmark and live integration tests are future work. Resume rendering requires an environment with suitable export tools; job discovery requires current-accessible job sources.
 
 ## Validation
 
