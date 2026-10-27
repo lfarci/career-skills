@@ -8,7 +8,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 | --- | --- | --- | --- |
 | `setup-career-skills` | Existing sources, profile links, user preferences | Small workspace configuration and setup summary | Sources, visibility, surfaces and progress tracker are recorded or explicitly unresolved |
 | `reflect` | Experiences, preferences, goals, existing profile | Professional reflection brief | Fact, aspiration, trade-off, and unresolved question are separated |
-| `maintain-profile` | Canonical records and new evidence | Minimal proposed/applied factual patch and change log | No duplicate record, unsupported promotion, or unreported conflict |
+| `maintain-profile` | User's requested focus (or a clarifying conversation), existing facts and new evidence | If unscoped, one intent question; otherwise a targeted review, profile addition or minimal patch | No unrequested audit or edit, duplicate record, unsupported promotion or hidden conflict |
 | `build-resume` | Supported career facts, optional job post and format | Resume source/exports plus checks | Facts verified, readable output, extraction checked when available |
 | `plan-development` | Chosen direction, demonstrated capabilities and constraints | Prioritized private growth plan | Actions have realistic scope, evidence milestones and review points |
 | `review-progress` | Current plan, review period and actual outcomes | Evidence-based review and adjusted next steps | Progress and plan changes are traceable without inventing competence |
