@@ -1,6 +1,7 @@
 ---
 name: review-research
-description: Review saved career research for continued usefulness, stale information and duplication, and archive under the user's guidance. Use for an explicitly requested cleanup of company, opportunity or comparator references; not scheduled maintenance, automatic deletion or a new market search.
+description: Review saved career research for usefulness, outdated claims, duplication and user-guided archiving.
+disable-model-invocation: true
 ---
 
 # Review Research

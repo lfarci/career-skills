@@ -1,6 +1,7 @@
 ---
 name: plan-development
-description: Turn a professional direction and demonstrated experience into a realistic development plan with prioritized skill gaps, practice, learning and evidence milestones. Use for career growth planning; not deciding a career direction, recording qualifications or writing public claims.
+description: Plan professional growth with prioritized skill gaps, applied practice and evidence milestones.
+disable-model-invocation: true
 ---
 
 # Plan Development

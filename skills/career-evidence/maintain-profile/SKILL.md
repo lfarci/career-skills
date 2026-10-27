@@ -1,6 +1,6 @@
 ---
 name: maintain-profile
-description: "Reconcile changes to canonical professional records: experience, qualifications, certifications, projects, achievements, and supporting evidence. Use when updating a career profile, correcting stale facts or resolving inconsistent documents."
+description: Reconcile evidence-backed career facts, qualifications, experience and projects in a canonical profile.
 ---
 
 # Maintain a Canonical Career Profile

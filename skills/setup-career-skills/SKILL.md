@@ -1,6 +1,7 @@
 ---
 name: setup-career-skills
-description: Configure career skills by discovering the user's existing professional records, public profiles, preferred progress tracker, storage and publication boundaries. Use when the user asks to set up, initialize or configure the career-skills collection.
+description: Set up a private career workspace by mapping existing records, external profiles and permissions.
+disable-model-invocation: true
 ---
 
 # Setup Career Skills

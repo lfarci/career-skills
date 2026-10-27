@@ -1,6 +1,7 @@
 ---
 name: reflect
-description: Guide deliberate reflection on professional identity, strengths, career aspirations and trade-offs. Use when someone explicitly wants to clarify their professional direction, values at work or long-term technical or leadership goals; not for routine profile updates.
+description: Explore career direction, motivations, trade-offs and professional goals through guided reflection.
+disable-model-invocation: true
 ---
 
 # Reflect on Professional Identity
