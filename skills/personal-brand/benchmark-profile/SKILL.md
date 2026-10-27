@@ -1,6 +1,7 @@
 ---
 name: benchmark-profile
-description: Research comparable public professional profiles, portfolios and resumes to identify inspiration and evidence-backed improvements to career presentation. Use for external peer or aspirational benchmarking; not internal career reflection, factual audits, copying others' wording or searching job vacancies.
+description: Benchmark public career profiles, resumes and portfolios against relevant peer and aspirational examples.
+disable-model-invocation: true
 ---
 
 # Benchmark Profile

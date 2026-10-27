@@ -1,6 +1,7 @@
 ---
 name: personal-brand
-description: Define and improve a coherent professional narrative across public profiles, resumes, portfolios and a personal website. Use for professional positioning, audience-specific messaging and planning improvements across several assets.
+description: Define professional positioning, messaging and audience-specific presentation across career surfaces.
+disable-model-invocation: true
 ---
 
 # Personal Brand
@@ -20,7 +21,7 @@ Define the selected public professional narrative and reusable wording for diffe
 4. Maintain a canonical public messaging document (or existing equivalent) with reusable short/long bios, headlines, introductions and project descriptions as scoped. Link surface-specific adaptations to their source and intended audience; do not duplicate private records or invent claims.
 5. Define the distinct purpose of each surface. Different headlines and appropriately sized or cropped graphics can communicate one consistent identity.
 6. When visual consistency matters, maintain or propose a **small optional brand kit** that points to reusable approved banners, logos, icons, palette colors and fonts. Read [the lightweight brand-kit guide](references/brand-kit.md) only for this branch. Recommend or create new assets only when needed and requested; avoid mandatory design systems.
-   When original visual identity design is requested, use `define-design-brief` for discovery, `create-design-assets` for concepts/production, or `review-design` for critique when available; keep positioning here. Remain independently useful without it.
+   Keep original visual design in its separate discovery, creation or review workflow when requested; this skill owns positioning.
 7. Determine which assets merit an individual audit or a full cross-asset alignment audit. Use `audit-surface` and `audit` when available, but remain independently functional if they are not installed.
 8. Produce prioritized recommendations or reviewable proposed edits. Never claim a platform has changed until the modification is confirmed, and ask before public publishing.
 

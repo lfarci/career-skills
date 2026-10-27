@@ -1,6 +1,6 @@
 ---
 name: audit-surface
-description: Inspect one professional asset—such as a resume, LinkedIn profile export, GitHub README, personal website or portfolio entry—for factual accuracy, outdated claims and presentation quality. Use for a single-surface review.
+description: Review one career surface, CV, profile or portfolio page for evidence-backed claims and presentation issues.
 ---
 
 # Audit One Professional Surface

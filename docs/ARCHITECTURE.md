@@ -52,9 +52,19 @@ Each skill must be executable without installing any other skill. Where two skil
 
 Track issues in the system explicitly selected during setup. If absent, provide a Markdown checklist instead. Before creating an issue, look for an existing equivalent and update it if appropriate. Ensure each issue names the problematic asset(s), factual basis, desired outcome and verifiable acceptance criteria. Never claim success without confirmation from the actual destination.
 
+## Invocation policy
+
+**Manual:** `setup-career-skills`, `reflect`, `review-research`, `plan-development`, `review-progress`, `personal-brand`, `benchmark-profile`, `define-design-brief`, `create-design-assets`, `review-design`, `audit`.
+
+**Discoverable:** `maintain-profile`, `build-resume`, `find-companies`, `find-jobs`, `audit-surface`.
+
+Manual skills are deliberately selected by name for bounded sessions. Discoverable skills have concrete, concise trigger descriptions. The manual-only flag is a host-specific hint, not a portable guarantee. Validate routing empirically; see [behavioral evaluations](EVALUATION.md).
+
+Generic names such as `audit` and `reflect` remain stable for compatibility. Rename only after a demonstrated collision and an approved migration plan.
+
 ## Portability
 
-Each skill is a self-contained leaf directory with `SKILL.md`; domain packages are grouped under `skills/<group>/<name>/SKILL.md`, while cross-cutting setup remains at the top level. Group directories have no SKILL.md. Each leaf has `name` and `description` frontmatter. Some agents support extra fields to disable automatic invocation; those are intentionally omitted from the portable baseline. The README describes intended usage rather than assuming a universal host mechanism.
+Each skill is a self-contained leaf directory with `SKILL.md`; domain packages are grouped under `skills/<group>/<name>/SKILL.md`, while setup remains at the top level. Group directories have no SKILL.md. Each leaf has standard `name` and `description` frontmatter. Manual skills additionally use host-specific `disable-model-invocation: true`; other hosts may ignore this extension and the core Agent Skills format does not define invocation controls. Install by leaf directory or skill name.
 
 ## Deferred, not separately packaged in v1
 

@@ -6,3 +6,6 @@ __pycache__/
 *.local.md
 *.local.yaml
 *.local.yml
+
+# Local behavioral evaluation transcripts
+eval-results/

@@ -1,6 +1,7 @@
 ---
 name: audit
-description: Audit alignment across multiple professional assets, including resume, personal website, LinkedIn, GitHub, portfolio and credentials. Use for a complete career-presence consistency review or to prepare coordinated improvement issues.
+description: Audit consistency across multiple professional surfaces, such as websites, resumes, GitHub and LinkedIn.
+disable-model-invocation: true
 ---
 
 # Audit Cross-Asset Alignment

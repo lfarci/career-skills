@@ -1,6 +1,6 @@
 ---
 name: build-resume
-description: Build, improve or tailor a truthful resume from supported professional information, including ATS-compatible layout and language. Use for CV creation, job-specific resume tailoring, bullet rewriting, readability checks and export requests.
+description: Build, tailor or review a truthful CV or resume using career evidence, job requirements and ATS-readable formatting.
 ---
 
 # Build a Resume

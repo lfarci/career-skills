@@ -1,6 +1,7 @@
 ---
 name: review-design
-description: Critique career-facing visual assets such as personal logos, professional profile banners, portfolio graphics and typography against their brief and intended use. Use for design quality, conceptual fit and production-readiness review; not factual profile audits, cross-surface drift audits or creating replacements.
+description: Critique professional identity visuals for concept fit, craft, legibility and production readiness.
+disable-model-invocation: true
 ---
 
 # Review Design

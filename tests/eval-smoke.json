@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "note": "Opt-in live-agent smoke suite. Score responses and invocation traces manually.",
+  "existing_cases": [
+    {
+      "id": "profile-conflicting-credential",
+      "mode": "discovery"
+    },
+    {
+      "id": "resume-unsupported-metrics",
+      "mode": "discovery"
+    },
+    {
+      "id": "jobs-aggregator-only",
+      "mode": "discovery"
+    },
+    {
+      "id": "surface-inaccessible",
+      "mode": "discovery"
+    },
+    {
+      "id": "brand-private-boundary",
+      "mode": "explicit"
+    },
+    {
+      "id": "identity-preserve-options-and-revisions",
+      "mode": "explicit"
+    },
+    {
+      "id": "workspace-map-existing",
+      "mode": "explicit"
+    },
+    {
+      "id": "audit-drift",
+      "mode": "explicit"
+    }
+  ],
+  "negative_cases": [
+    {
+      "id": "unrelated-coffee",
+      "mode": "discovery",
+      "skill": null,
+      "prompt": "How should I store opened roasted coffee beans?",
+      "expect": [
+        "No career skill is auto-invoked for unrelated coffee-storage advice."
+      ]
+    },
+    {
+      "id": "unrelated-sql",
+      "mode": "discovery",
+      "skill": null,
+      "prompt": "Explain SQL GROUP BY using a small student table.",
+      "expect": [
+        "No career skill is auto-invoked for an unrelated database lesson."
+      ]
+    }
+  ]
+}
