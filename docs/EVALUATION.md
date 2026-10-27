@@ -28,3 +28,5 @@ Exit status: 0 if all criteria pass, 1 if any fail, 2 if any remain unscored/unk
 Run identical scenarios on each relevant harness. Record host/version, installed skill set, invocation evidence, resulting artifacts and access limits. Direct calls default to `$skill` syntax; adapt for hosts with different syntax.
 
 Discovery scenarios do not name skills. Manual-only behavior is host-specific and not guaranteed across clients. Use an unassisted baseline when feasible. This smoke suite is a small regression check, not a statistical benchmark; human assessment remains necessary.
+
+The opt-in smoke set includes an explicit `whats-next` navigation case. Review the returned recommendation and agent trace: the router should **recommend**, not invoke, other skills or write files.

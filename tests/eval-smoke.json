@@ -33,6 +33,10 @@
     {
       "id": "audit-drift",
       "mode": "explicit"
+    },
+    {
+      "id": "whats-next-after-setup",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [

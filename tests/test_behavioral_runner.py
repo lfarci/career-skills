@@ -15,7 +15,8 @@ from run_behavioral_evals import review, run, scenarios  # noqa: E402
 class SmokeRunnerTests(unittest.TestCase):
     def test_scenarios_contain_discovery_explicit_and_negative(self) -> None:
         items = scenarios()
-        self.assertEqual(len(items), 10)
+        self.assertEqual(len(items), 11)
+        self.assertTrue(any(x.get("skill") == "whats-next" and x["mode"] == "explicit" for x in items))
         self.assertEqual({x["mode"] for x in items}, {"discovery", "explicit"})
         self.assertTrue(any(x.get("skill") is None for x in items))
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "What's Next?"
+  short_description: "Choose the next Career Skills workflow"
+  default_prompt: "Use $whats-next to recommend the next useful Career Skills task from my current progress."
