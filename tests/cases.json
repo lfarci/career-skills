@@ -401,6 +401,61 @@
         "Allows some, all or none to be selected",
         "Retains selected links and useful observations rather than resume copies"
       ]
+    },
+    {
+      "id": "profile-no-intent-existing",
+      "skill": "maintain-profile",
+      "prompt": "Use maintain-profile. I have an existing career profile in my notes.",
+      "expect": [
+        "Asks what the user wants to focus on before inspecting the whole workspace",
+        "Offers a few clear task directions in one concise conversational question",
+        "Does not audit all records, list unrelated stale items or apply opportunistic corrections",
+        "Uses the user's answer to scope any later evidence review"
+      ]
+    },
+    {
+      "id": "profile-no-intent-new",
+      "skill": "maintain-profile",
+      "prompt": "Use maintain-profile. I'm starting from scratch, and I don't have a profile or workspace index yet.",
+      "expect": [
+        "Asks which profile area or purpose to start with rather than constructing an entire profile",
+        "Uses a short conversational question without a full interview form",
+        "Does not require setup, an existing folder tree or a storage provider",
+        "Does not invent experience or create files before a task is selected"
+      ]
+    },
+    {
+      "id": "profile-specific-direct-update",
+      "skill": "maintain-profile",
+      "prompt": "Update only the certification completion date in my private profile from 2025-09-12 to 2025-10-12. My completion document confirms the later date. I authorize this private record change.",
+      "expect": [
+        "Does not ask a generic what-do-you-want-to-do question again",
+        "Limits checks and edits to the relevant certification entry",
+        "Verifies available evidence, distinguishing supplied testimony from independent corroboration",
+        "Reports a precise applied change only if write access exists, otherwise a patch"
+      ]
+    },
+    {
+      "id": "profile-review-without-edits",
+      "skill": "maintain-profile",
+      "prompt": "Please review only the qualifications section of my career profile for factual inconsistencies. Do not edit any files yet.",
+      "expect": [
+        "Stays within the qualifications section",
+        "Returns a prioritized read-only assessment rather than a comprehensive workspace cleanup",
+        "Does not apply edits even if broad workspace write permissions exist",
+        "Asks only questions blocking meaningful reconciliation"
+      ]
+    },
+    {
+      "id": "profile-explicit-full-audit",
+      "skill": "maintain-profile",
+      "prompt": "Please perform a full read-only factual audit of my existing career profile. I want to see prioritized discrepancies before deciding what to change.",
+      "expect": [
+        "Treats the explicit whole-profile audit as a sufficiently clear request without forcing a menu",
+        "Inspects relevant available profile sources and clearly identifies access limits",
+        "Prioritizes meaningful factual findings rather than peripheral housekeeping",
+        "Does not edit any file or present suggestions as applied changes"
+      ]
     }
   ]
 }

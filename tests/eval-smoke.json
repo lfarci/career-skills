@@ -33,6 +33,14 @@
     {
       "id": "audit-drift",
       "mode": "explicit"
+    },
+    {
+      "id": "profile-no-intent-existing",
+      "mode": "explicit"
+    },
+    {
+      "id": "profile-no-intent-new",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [
