@@ -69,6 +69,8 @@ Use local folders, GitHub repositories or any Markdown-capable storage. Keep exi
 
 When an active skill encounters a **broken source mapping or link**, it may load `validate-workspace` for a scoped repair, **if installed and supported by the agent host**. Direct user requests for workspace validation are supported too. A valid custom layout does not need migration. See the [task execution flow](docs/ARCHITECTURE.md#task-execution-flow).
 
+For agent-driven repair during other skills, install `validate-workspace` alongside those leaf skills (for example, `npx skills add lfarci/career-skills --skill validate-workspace`). Installing a task skill alone does not install the helper; its absence should never block the task.
+
 The [workspace decision specification](docs/CAREER-WORKSPACE-SPEC.md) captures the agreed behavior, rejected alternatives, testing boundaries and deferred work.
 
 ## Getting started
