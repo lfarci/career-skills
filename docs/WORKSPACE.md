@@ -114,6 +114,28 @@ Use readable headings and relative links; no mandatory YAML, IDs or database. Se
 
 Before editing, read current canonical records and preserve unrelated changes. Use available version/conflict controls and the chosen write workflow. Confirm saves and links; when writes are unavailable, provide a proposed patch without claiming success. Skills remain useful from pasted input or selected files without an index, another skill or a specific provider.
 
+## Minimal workspace index
+
+Keep the first `career/README.md` small. For example, adapt these fields without introducing a required schema:
+
+```markdown
+# Career workspace
+Storage: private local folder or repository
+Write policy: propose changes / approved direct edits / pull requests
+Canonical areas: profile/, projects/, brand/, assets/, research/
+
+## Source inventory
+| Existing source | Decision | Managed destination | Notes |
+| --- | --- | --- | --- |
+| Path or user-provided link | imported / pending / excluded | profile/experience.md (if selected) | source date, unresolved differences |
+
+## Boundaries
+Publication: separate approval required
+Unresolved mappings: list only actual blockers
+```
+
+Include only source references needed to support future work. The index must not contain passwords, private file contents, or a dump of every discovered document. Update source-import status when selected content has actually been written and verified.
+
 ## On-demand workspace validation
 
 `validate-workspace` is the structural exception handler for a failed mapped path, broken link or competing canonical record, and it also handles **explicit workspace-structure reviews**. During another task it checks only the blocker; during a requested review it checks the existing workspace index, mapped records and relevant links. Custom legacy folder names with working index mappings are operational, and intentionally uncreated areas or pasted inputs need no repair during normal tasks. When specifically asked to check alignment with the managed standard, report deviations and propose a scoped migration, without treating them as automatically broken links.

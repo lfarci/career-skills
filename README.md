@@ -55,7 +55,7 @@ The former `design-identity` package is replaced by these three design skills; u
 ## Design principles
 
 - **Facts, goals, and positioning are different:** a verified job history is not an aspiration or a marketing claim.
-- **One canonical record:** respect the user's established source of truth, rather than require a new schema or duplicate it in every destination.
+- **One canonical record:** in a managed workspace, selected facts have one authoritative record under the standard `career/` homes. Earlier documents remain linked sources, not competing managed copies.
 - **Independently useful:** a skill can work with pasted documents even without a preconfigured workspace.
 - **Verify, don't invent:** preserve source links, date qualifiers, uncertainty, and claims that cannot be confirmed.
 - **Reviewable mutations:** do not silently publish, apply for a job, alter public profiles, or create tracker items without authorization.
