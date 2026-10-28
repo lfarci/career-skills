@@ -1,41 +1,30 @@
 ---
 name: setup-career-skills
-description: Set up a private career workspace by mapping existing records, external profiles and permissions.
+description: Set up a standardized private career/ workspace, optionally discovering existing resumes and career records as sources.
 disable-model-invocation: true
 ---
 
 # Setup Career Skills
 
-Discover the user's existing ecosystem before prescribing any structure. Run this on request, not automatically before every skill.
-
-Read [the portable workspace model](references/workspace-model.md) when setting up or mapping career records. Use its five logical areas and minimal index; adapt existing files instead of enforcing a directory tree.
+Initialize a clean, **standardized** private `career/` workspace; existing notes, resumes and profiles may supply its initial content. Run only when requested. Read [workspace initialization and source rules](references/workspace-model.md) when building the workspace.
 
 ## Contract
-- **Input:** Existing career records, storage location, service accounts and write preferences.
-- **Scope:** Map canonical records and permissions; do not migrate or populate unrelated career content.
-- **Output:** Workspace README.md (or chosen index): source map, storage/write policy, service references and unset areas.
+
+- **Input:** Chosen storage location and write policy, optional existing career documents or accessible source locations.
+- **Scope:** Initialize the five named homes as needed, build a source/index map, and selectively seed approved records; migrate a legacy tree only after a separate plan and approval.
+- **Output:** `career/README.md` (or proposed equivalent when writing is unavailable), initial canonical records if authorized, source-import status and a concise summary.
 
 ## Steps
 
-1. Inspect available workspace files, repository configuration, existing career notes and accessible profile sources. Report what you discovered. Never ask the user for a fact that is already available and unambiguous.
-2. Collect **only missing decisions**, conversationally in small, related groups:
-   - Where are canonical professional facts kept? If nowhere, offer plain Markdown in a user-selected private location.
-   - Which public assets exist (resume, website, LinkedIn, GitHub, portfolio, credentials)? Which are read-only or writable?
-   - If visual identity matters, where are existing banners, logos, icons, palette notes and font choices stored? This is optional; do not require creating a brand kit.
-   - Where should ongoing work be tracked (GitHub Issues, another tracker, Markdown checklist, or nowhere)? Which repository/project and labels, if applicable?
-   - What are the privacy boundaries, languages, target roles and audiences? These are optional and may remain unanswered.
-   - Should suggestions be proposed only, or are edits to designated private records authorized? Public publication always requires explicit approval.
-3. Agree on a workspace root and index (reuse a career README when available). Map profile, projects, brand, assets and research to their canonical files or sections, marking missing areas as unset. Create only needed records, link existing projects/profile facts, and keep the entire workspace private, including public-ready drafts and staged assets. Record a small human-readable workspace configuration in the user's chosen location. Use Markdown by default. Store references and preferences; link to source records rather than copying confidential profile data. Never commit the user's configuration to the public career-skills repository.
-4. Summarize discovered assets, any optional visual-brand kit/location, canonical authority, tracker destination, permissions, and unresolved questions. Validate linked paths and accessible integrations where possible. If an actual mapping defect blocks setup, use `validate-workspace` when available for a narrow repair; otherwise propose the fix here. Do not require that skill or perform a separate full scan. Offer a **single optional next step** based on known gaps, such as `maintain-profile` if facts need reconciliation or `reflect` if direction is unclear. Users may instead choose any task directly; `ask-career-skills` can help them choose when available, without being a dependency.
-
-## Output
-
-A `Career Skills Setup` summary with canonical source, asset inventory, progress tracker and privacy/write policies, plus the chosen configuration file location (or a proposed document if writing is unavailable).
+1. **Choose the destination.** Determine whether the user wants a fresh managed `career/` or to align an existing one. When unspecified, propose a fresh `career/` in their preferred private storage. If that path already holds records, preserve it: offer a different private location for a fresh root or a planned migration of the existing tree. Confirm where writes are allowed and whether a PR is required.
+2. **Discover usable sources.** Inspect only user-supplied or permitted documents: old career notes, CVs, project records, qualifications, portfolio/LinkedIn exports and relevant repositories. Share a short source inventory and suggest the first useful subset. If nothing exists, ask one question about the first profile area to capture. Do not require importing anything.
+3. **Plan canonical records.** Map approved source material into `profile/`, `projects/`, `brand/`, `assets/` or `research/` with the names from the reference. Distinguish background facts from aspirations, brand wording, drafts and public state. For conflicting claims or unclear ownership, present the specific choice instead of silently choosing a source. Leave unselected originals untouched.
+4. **Create or propose.** With task-specific write authorization, initialize `career/README.md` and only needed folders/Markdown files; extract selected information with provenance and uncertainty rather than bulk-copying the old tree. Record source location, what was imported, pending work and permissions. For migration of an occupied `career/`, first show a path/link/collision plan and obtain explicit approval before moving files; use `validate-workspace` when available for structural checks, not as a required dependency.
+5. **Verify and conclude.** Check created paths/links and state exactly what was saved, skipped or blocked. Suggest **one optional next content task** when useful (e.g., `maintain-profile` to reconcile uncertain facts). `ask-career-skills` may help users choose, but neither skill is required to start a task directly.
 
 ## Done when
 
-- Every configured source and tracker is explicitly identified or marked as unset.
-- Existing folders and repositories are respected; no mandatory schema migration.
-- No credentials, API tokens, sensitive documents or private personal details are duplicated into public configuration.
-- Skills can still run independently if setup was skipped or incomplete.
-
+- The selected root and source-import permissions are recorded or their absence is explicit.
+- The managed destination uses `career/` and standardized home names, with only needed records created.
+- Sources are traceable, originals preserved and conflicting claims not invented as established facts.
+- Writes, migration and link checks are reported accurately; other skills remain independently usable.
