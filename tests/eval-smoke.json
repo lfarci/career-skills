@@ -117,6 +117,18 @@
     {
       "id": "setup-resume-valid-continue-next-step",
       "mode": "explicit"
+    },
+    {
+      "id": "setup-named-folder-is-root",
+      "mode": "explicit"
+    },
+    {
+      "id": "setup-consolidation-is-not-lossless",
+      "mode": "explicit"
+    },
+    {
+      "id": "setup-cutover-checks-inbound-links",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [
