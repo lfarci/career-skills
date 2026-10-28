@@ -80,7 +80,7 @@ brand/ contains guidance, not a second asset library. identity.md can describe f
 1. **Discover (read-only).** With permission, look for existing career notes, resumes, portfolio/project documents, certificates, published profile exports and other user-supplied sources. Record where they are and what each might contribute; ask before expanding access or reading sensitive material.
 2. **Select and map.** Present a concise inventory and recommend which sources/sections to bring in first. Let the user choose. Map selected claims to `profile/`, project records to `projects/`, positioning and design guidance to `brand/`, reusable artifacts to `assets/`, and selected outside references to `research/`. External documents are **inputs**, not automatically authoritative workspace files.
 3. **Create the canonical destination.** After confirming storage and write policy, initialize `career/README.md` plus all five standard homes with short per-home README files, even if no substantive records are imported into some yet. Extract selected content into canonical Markdown records; **do not bulk-copy old workspaces or invent filler data**. Treat `profile/experience.md` as a complete *role-history* record for the chosen sources (including internships where supported), not a dump of client engagements; place assignments and project evidence in `projects/` with links. Retain source locations, dates when known and uncertainty; ask about real contradictions or omissions.
-4. **Verify and hand off.** Check that imported records and references resolve and that original source documents remain untouched. Record imported, pending and rejected/uncertain sources in the workspace index, and a sensible next content task such as `maintain-profile`. Import need not finish in one session.
+4. **Review gaps and continue.** Check new records and links, and list what is captured, missing, uncertain and intentionally deferred. Ask the next most useful question, including about unconsidered existing documents and essential facts absent from selected sources; don't stop after the first import batch. Save a short `in progress` / `paused` / `ready` / `blocked` checkpoint with the selected next area in `career/README.md`. Finish guided onboarding only when the user confirms the chosen scope is sufficient or chooses minimal setup. No fixed questionnaire or fully populated five-home requirement.
 
 **Existing `career/` already occupied?** Offer two explicit choices: use a different private repository/folder whose managed root can be `career/`, or plan a controlled migration **in place** using `validate-workspace`. Never overwrite the existing root, create a hidden duplicate authority, or move/delete old files without a selected migration plan and approval. Import can also be read-only when no write destination is available.
 
@@ -140,6 +140,8 @@ Unresolved mappings: list only actual blockers
 ```
 
 Include only source references needed to support future work. The index must not contain passwords, private file contents, or a dump of every discovered document. Update source-import status when selected content has actually been written and verified.
+
+For guided onboarding, add a brief **Setup progress** entry: status (`in progress`, `ready`, `paused`, `blocked`), covered areas, missing/conflicting or deferred items, and the specific next user decision. The initial scaffold and first import batch are not by themselves proof that the onboarding conversation is complete.
 
 ## On-demand workspace validation
 

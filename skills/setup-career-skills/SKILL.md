@@ -1,30 +1,31 @@
 ---
 name: setup-career-skills
-description: Set up a standardized private career/ workspace, optionally discovering existing resumes and career records as sources.
+description: Guide me through setting up a standardized private career workspace: find existing sources, ask about missing information and import selected records step by step.
 disable-model-invocation: true
 ---
 
 # Setup Career Skills
 
-Initialize a clean, **standardized** private `career/` workspace; existing notes, resumes and profiles may supply its initial content. Run only when requested. Read [workspace initialization and source rules](references/workspace-model.md) when building the workspace.
+**Guide the user through a resumable onboarding conversation**, not just directory creation. Initialize a private `career/` with five named homes. Existing notes, resumes, profiles and projects are potential sources; never import all of them without selection. Read [setup conversation and source rules](references/workspace-model.md) when starting or resuming.
 
 ## Contract
 
-- **Input:** Chosen storage location and write policy, optional existing career documents or accessible source locations.
-- **Scope:** Initialize the five named homes as needed, build a source/index map, and selectively seed approved records; migrate a legacy tree only after a separate plan and approval.
-- **Output:** `career/README.md` (or proposed equivalent when writing is unavailable), initial canonical records if authorized, source-import status and a concise summary.
+- **Input:** User's setup goal, preferred private storage and write policy when known, existing documents or permission to look for sources.
+- **Scope:** Discover sources, identify meaningful gaps, scaffold the standard workspace and progressively import user-selected records. An occupied legacy root requires an explicit adoption choice.
+- **Output:** A verified `career/README.md` (or proposed plan without write access), five tracked home folders when authorized, an import/gap status, and **a concrete next question or confirmed completion**.
 
 ## Steps
 
-1. **Choose the destination.** Determine whether the user wants a fresh managed `career/` or to align an existing one. When unspecified, propose a fresh `career/` in their preferred private storage. If that path already holds records, preserve it: offer a different private location for a fresh root or a planned migration of the existing tree. Confirm where writes are allowed and whether a PR is required.
-2. **Discover usable sources.** Inspect only user-supplied or permitted documents: old career notes, CVs, project records, qualifications, portfolio/LinkedIn exports and relevant repositories. Share a short source inventory and suggest the first useful subset. If nothing exists, ask one question about the first profile area to capture. Do not require importing anything.
-3. **Plan canonical records.** Map approved source material into `profile/`, `projects/`, `brand/`, `assets/` or `research/` with the names from the reference. Keep **profile/experience.md for employer/role history** (including user-confirmed internships), **projects/ for assignments, engagements and project outcomes**; other profile records own qualifications, skills and direction. Compare selected source timelines for potentially omitted roles and ask only about concrete discrepancies; do not invent missing entries. Keep aspirations, brand wording, drafts and public state separate. Leave unselected originals untouched.
-4. **Create or propose.** With task-specific write authorization, initialize `career/README.md` and **all five standard homes** (`profile/`, `projects/`, `brand/`, `assets/`, `research/`). In Git, give each home a short `README.md` identifying responsibility and initial status, so the folder actually exists in version control; do **not** invent factual content or add nested placeholder files. Import selected facts with provenance instead of bulk-copying the old tree. Record imported versus pending sources and permissions. For occupied-root migration, first show a path/link/collision plan and obtain explicit approval; `validate-workspace` is optional.
-5. **Verify and conclude.** Check created paths/links and state exactly what was saved, skipped or blocked. Suggest **one optional next content task** when useful (e.g., `maintain-profile` to reconcile uncertain facts). `ask-career-skills` may help users choose, but neither skill is required to start a task directly.
+1. **Orient and resume.** Check the conversation and any existing `career/README.md` for the chosen destination, prior answers, imported content and pending work. Never repeat answered questions or restart setup after partial completion. If the destination is occupied, offer a separate private `career/` or an approved in-place migration; do not overwrite.
+2. **Ask about existing sources.** Proactively ask whether the user has an old resume, notes, role/project history, certificates, portfolio or professional-profile exports, including where the agent may look. Use known accessible locations as suggestions rather than scanning indiscriminately. Inventory permitted sources briefly, flag unreadable ones and **ask whether anything important is missing**. If none exist, guide a small conversational intake from scratch.
+3. **Plan coverage with the user.** Identify the highest-value initial information and compare it with selected sources: employers, roles, dates and internships; assignments/projects; skills and qualifications; education/languages; goals/preferences; brand/assets; optional research and publication destinations. Mark each relevant area as supported, missing, conflicting or deferred. **Ask one focused question at a time** to resolve important omissions or choose what to import next. Don't require complete information in every area or a fixed questionnaire.
+4. **Scaffold and import selectively.** Confirm private location, scope and write/PR permission. Create `career/README.md` and all five standard homes with a short README per home so Git tracks them. Add only selected substantive records with source references, evidence limits and uncertainty. Keep `profile/experience.md` for role history (including supported internships), detailed engagements and project outcomes under `projects/`; never bulk-copy or silently rewrite old sources.
+5. **Review and continue.** After each import batch, check created paths/links and give a short checkpoint: **captured, still missing/uncertain, explicitly deferred, and recommended next focus**. Update `career/README.md` with source decisions and onboarding progress. **Do not treat an initial successful write as the end of guided setup**; ask the next useful question or offer to review another selected area. Respect a request to pause, skip or stop.
+6. **Finish intentionally.** When the user confirms that the desired setup scope is covered, or explicitly chooses a minimal setup, summarize what is usable, which areas remain pending and what to do next. Mark the checkpoint as **ready**, **paused** or **blocked**, accurately distinguishing workspace creation from information completeness. Suggest one optional next workflow; setup and individual task skills remain independent.
 
 ## Done when
 
-- The selected root and source-import permissions are recorded or their absence is explicit.
-- The managed destination visibly contains `career/README.md` and five tracked standard home folders; only user-selected content records are created.
-- Sources are traceable, originals preserved and conflicting claims not invented as established facts.
-- Writes, migration and link checks are reported accurately; other skills remain independently usable.
+- The user was guided through source discovery, a meaningful gap review and their chosen import scope, or explicitly chose a shorter setup.
+- Five standard homes and an index exist if writing was authorized; actual writes and link checks are verified.
+- Sources, known gaps, decisions and resume point are traceable; originals and permissions are respected.
+- A mere scaffold/first import is never described as a fully completed guided onboarding without the user's agreement.

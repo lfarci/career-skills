@@ -88,7 +88,7 @@ See the [user journey with Mermaid diagram and routing guide](docs/USER-JOURNEY.
 ## Getting started
 
 1. Install individual skills via your agent's workflow or `npx skills add lfarci/career-skills --skill <name>` ([Skills CLI](https://www.skills.sh/docs/cli)). Nested skills are independently installable; no repository-wide setup is required.
-2. Run `setup-career-skills` when you want a managed workspace. It proposes a clean `career/` with five tracked home directories, discovers existing documents you choose to share, and imports only selected information with permission. If `career/` already exists, choose a separate private location or a controlled migration.
+2. Run `setup-career-skills` for **guided onboarding**: select a private destination, find existing career sources, answer focused questions about missing information, and approve selected imports. It creates five tracked home directories and keeps a resumable progress checkpoint; it doesn't stop merely because the first files were created. An existing `career/` is preserved unless you approve a controlled migration.
 3. Choose a task-focused skill directly or run `ask-career-skills` for guidance. For example: *“Audit alignment among my resume, GitHub profile, website, and LinkedIn export.”*
 
 Configuration discovered during setup belongs in the **user's chosen private workspace**, not in this public skill repository. See [architecture and contracts](docs/ARCHITECTURE.md) and [evaluation cases](tests/cases.json).
