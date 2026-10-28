@@ -4,6 +4,8 @@
 
 The [user journey](USER-JOURNEY.md) illustrates an optional first-session sequence and later independent branches. `ask-career-skills` is a user-invoked **router**, not a runtime orchestrator: it chooses and explains one useful skill without executing it, installing dependencies or making changes. The package remains usable without setup or other installed skills. The diagram is guidance, not an execution graph.
 
+Setup has its own guided intake loop (see the [onboarding diagram](USER-JOURNEY.md#guided-setup-within-the-first-session)): source discovery → selected imports → gap review → user decision to continue, defer or finish. This loop is inside `setup-career-skills`, not an orchestration requirement for other leaf skills.
+
 ## Task execution flow
 
 The user selects a career task (optionally after setup or using a separate navigation skill). This diagram is the **runtime decision model**, not an onboarding sequence or a required chain.
@@ -27,7 +29,7 @@ flowchart TD
     F -->|"Resolved or fallback available"| T
     F -->|"Still blocked"| X["Report blocker without unrelated work"]
     V --> O["Return structural status, checked paths and needed approval"]
-    S --> N["Standard career/ root, selected source imports, permissions"]
+    S --> N["Five homes + source/gap checkpoint; continue questions until user finishes or pauses"]
     T --> Z["Return scoped result"]
 ```
 
@@ -42,7 +44,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 
 | Skill | Inputs | Deliverable | Done when |
 | --- | --- | --- | --- |
-| `setup-career-skills` | Selected private destination, authorized existing sources and write policy | Standard `career/` index, initial records/import inventory or proposed adoption plan | Only selected material enters the canonical homes; sources and permissions are traceable |
+| `setup-career-skills` | Destination, accessible sources, initial career information and user's choices | Standard `career/` index, needed homes, guided intake and resumable source/gap checkpoint | User confirms chosen coverage or pauses; no first-batch success mistaken for completed onboarding |
 | `ask-career-skills` | Current goal, prior completed tasks, available source map when relevant | One recommended skill and ready-to-use request | Next step is justified without invoking other skills or changing records |
 | `validate-workspace` | Explicit alignment review, approved legacy migration or blocked record path | Checked structure, migration proposal, scoped repair or blocker status | Only authorized paths move; existing records and links are preserved |
 | `reflect` | Experiences, preferences, goals, existing profile | Professional reflection brief | Fact, aspiration, trade-off, and unresolved question are separated |
@@ -135,7 +137,7 @@ Use the [standardized private Markdown workspace](WORKSPACE.md) as the target fo
 
 The [logical data-flow diagram](WORKSPACE.md#logical-data-flow) distinguishes canonical career records, positioning guidance, reusable assets and actual publication. Structural validation changes mappings between these records, not their content.
 
-The managed physical workspace uses `career/profile/`, `career/projects/`, `career/brand/`, `career/assets/` and `career/research/`, distinct from skill installation categories. New canonical records go into these homes; external or legacy documents remain sources unless the user authorizes importing or migrating them. Profile includes factual background, capabilities, direction, preferences and development. Projects describe purpose, contribution and learning without automatically becoming evidence. Brand guides positioning and visual identity; actual reusable outputs live in assets/drafts/ or approved assets/staged/. assets/services.md describes external surfaces. The whole workspace is private; the external service establishes actual published state. Discrepancies are user-reconciled without mandatory stored publication snapshots.
+The managed physical workspace uses `career/profile/`, `career/projects/`, `career/brand/`, `career/assets/` and `career/research/`, distinct from skill installation categories. Setup creates only needed standard homes, recording remaining homes as pending in the workspace index; substantive records are imported only when selected. New canonical records go into these homes; external or legacy documents remain sources unless the user authorizes importing or migrating them. Profile includes factual background, capabilities, direction, preferences and development. Projects describe purpose, contribution and learning without automatically becoming evidence. Brand guides positioning and visual identity; actual reusable outputs live in assets/drafts/ or approved assets/staged/. assets/services.md describes external surfaces. The whole workspace is private; the external service establishes actual published state. Discrepancies are user-reconciled without mandatory stored publication snapshots.
 
 Research retains selected linked references and useful observations, one record per company/opportunity/comparator as useful. Store links to other people's resumes, not copied files. review-research provides requested archival maintenance; do not automatically delete or maintain research in the background. Earlier logical skill categories do not require matching user directories.
 
