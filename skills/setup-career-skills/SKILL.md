@@ -1,6 +1,6 @@
 ---
 name: setup-career-skills
-description: Guide me through setting up a standardized private career workspace: find existing sources, ask about missing information and import selected records step by step.
+description: "Guide me through setting up a standardized private career workspace: find existing sources, ask about missing information and import selected records step by step."
 disable-model-invocation: true
 ---
 

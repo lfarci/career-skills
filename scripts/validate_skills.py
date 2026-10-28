@@ -7,6 +7,8 @@ import re
 import sys
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 EXPECTED = {
@@ -42,16 +44,22 @@ def main() -> int:
             errors.append(f"{name}: invalid frontmatter boundaries")
             continue
         head, body = front.groups()
-        declared = re.search(r"^name:\s*(\S+)\s*$", head, re.MULTILINE)
-        description = re.search(r"^description:\s*(.+)$", head, re.MULTILINE)
-        disable = re.search(r"^disable-model-invocation:\s*(\S+)\s*$", head, re.MULTILINE)
-        if not declared or declared.group(1) != name:
+        try:
+            metadata = yaml.safe_load(head)
+        except yaml.YAMLError as exc:
+            errors.append(f"{name}: invalid YAML frontmatter: {exc}")
+            continue
+        if not isinstance(metadata, dict):
+            errors.append(f"{name}: YAML frontmatter must be a mapping")
+            continue
+        if metadata.get("name") != name:
             errors.append(f"{name}: frontmatter name mismatch")
-        if not description or not 1 <= len(description.group(1).strip(" '\"")) <= 1024:
-            errors.append(f"{name}: description must contain 1-1024 characters")
-        if name in MANUAL and (not disable or disable.group(1) != "true"):
+        description = metadata.get("description")
+        if not isinstance(description, str) or not 1 <= len(description.strip()) <= 1024:
+            errors.append(f"{name}: description must be a string of 1-1024 characters")
+        if name in MANUAL and metadata.get("disable-model-invocation") is not True:
             errors.append(f"{name}: manual skill needs disable-model-invocation: true")
-        if name not in MANUAL and disable is not None:
+        if name not in MANUAL and "disable-model-invocation" in metadata:
             errors.append(f"{name}: discoverable skill must omit the manual-only flag")
         if "## Contract" not in body or "## Done when" not in body:
             errors.append(f"{name}: missing contract or completion criteria")

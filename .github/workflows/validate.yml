@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install YAML validator
+        run: python3 -m pip install -r requirements-dev.txt
       - name: Validate structure and test inventory
         run: python3 scripts/validate_skills.py
       - name: Exercise evaluation runner with a mock agent
