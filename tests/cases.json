@@ -737,10 +737,10 @@
       "skill": "setup-career-skills",
       "prompt": "Continue setup-career-skills from career/README.md. Its setup status is paused: role history and qualifications imported; brand and project sources pending; next decision was whether to import internship and project evidence. We previously approved read-only project-source review.",
       "expect": [
-        "Reads or uses saved onboarding progress rather than starting the setup interview again",
-        "Preserves previous choices, imported records and permissions",
-        "Proactively proposes the documented next intake decision with one focused question",
-        "Does not duplicate records, assume write permission or mark paused sources as imported"
+        "Validates workspace index, selected existing files/links, canonical ownership and pending setup state before resuming imports",
+        "Preserves earlier choices, imported records and permissions instead of starting the setup interview again",
+        "Proposes targeted repairs for validation problems before editing, or proceeds directly when valid",
+        "Asks one focused question about the saved next decision without duplicating records or assuming writes are authorized"
       ]
     },
     {
@@ -772,7 +772,7 @@
       "expect": [
         "First asks where the user wants to initialize the managed workspace, with helpful storage examples",
         "Does not silently choose the current repository or assume a default career/ path is the destination",
-        "Does not inspect workspace content, request all source information or write files before the location is chosen",
+        "Does not inspect the workspace or create a folder before the user chooses a destination",
         "Asks one concise question and leaves later discovery and imports for subsequent turns"
       ]
     },
@@ -796,6 +796,39 @@
         "Inspects only the selected target for workspace progress after the destination is confirmed",
         "Asks for an adoption/migration decision if that destination is occupied",
         "Proceeds with permission-aware source discovery and no writes in read-only mode"
+      ]
+    },
+    {
+      "id": "setup-new-empty-create-useful-files",
+      "skill": "setup-career-skills",
+      "prompt": "Continue setup-career-skills. I already chose an empty private repository for a new managed career workspace and approved local Markdown writes. My existing CV lists a software engineer role and an internship; I've approved importing both as the first batch. There is no prior workspace to resume.",
+      "expect": [
+        "Recognizes the new-workspace branch rather than running a migration or resume validation",
+        "Creates or proposes an index and meaningful profile/experience.md containing the selected supported roles, not merely an empty directory",
+        "Does not invent additional roles or bulk-copy unselected source files",
+        "Saves onboarding progress and asks one useful next question rather than stopping after the first write"
+      ]
+    },
+    {
+      "id": "setup-resume-invalid-workspace-before-import",
+      "skill": "setup-career-skills",
+      "prompt": "Resume setup-career-skills in the private career/ location we confirmed last session. It contains a README with status 'in progress' that links profile/experience.md, but that file was renamed and the link no longer resolves. The index lists projects as the next import. Please continue the setup.",
+      "expect": [
+        "Recognizes resume mode and verifies the index and referenced paths before starting the pending projects import",
+        "Reports the specific broken experience mapping and proposes a narrow repair instead of treating it as a fresh workspace",
+        "Does not silently move, rename, overwrite or duplicate existing records",
+        "After resolving or proposing repair, retains the pending project step and prior answers rather than restarting onboarding"
+      ]
+    },
+    {
+      "id": "setup-resume-valid-continue-next-step",
+      "skill": "setup-career-skills",
+      "prompt": "Resume setup-career-skills in my confirmed private career/ location. Existing career/README.md has status 'paused', mapped profile records and valid links, with source review completed and 'select project evidence' as the next decision. All checked paths resolve; no writes have been authorized for this session.",
+      "expect": [
+        "Checks the saved index, canonical records, links and pending items before continuing",
+        "Reports the existing workspace as usable without requiring a redesign, migration or new scaffold",
+        "Uses the saved next decision and asks one concise question about project evidence rather than repeating old questions",
+        "Does not write files or require installation of the optional validate-workspace skill"
       ]
     }
   ]

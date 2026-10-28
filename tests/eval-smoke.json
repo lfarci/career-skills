@@ -105,6 +105,18 @@
     {
       "id": "setup-location-first-existing-dir",
       "mode": "explicit"
+    },
+    {
+      "id": "setup-new-empty-create-useful-files",
+      "mode": "explicit"
+    },
+    {
+      "id": "setup-resume-invalid-workspace-before-import",
+      "mode": "explicit"
+    },
+    {
+      "id": "setup-resume-valid-continue-next-step",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [

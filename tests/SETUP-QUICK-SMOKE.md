@@ -1,6 +1,6 @@
 # Setup quick smoke: two-turn feedback loop
 
-**Purpose:** Check the conversational behavior of `setup-career-skills` in a real agent host without migrating actual career records.
+**Purpose:** Check new-workspace behavior in a real agent host, using a disposable repository. For resumption, also run `setup-resume-invalid-workspace-before-import` and verify the agent checks broken links before import.
 
 **Preparation:** Install/load the `skills/setup-career-skills/SKILL.md` revision under test into a **fresh agent session**. Use a disposable test workspace, not the user's existing notes. Verify the loaded skill revision (do not accidentally exercise the last installed `main` version). Keep the same agent session across both turns. This is a **live manual test**, not an existing CI evaluation or a substitute for OpenCode-specific tool traces.
 

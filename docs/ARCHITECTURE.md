@@ -4,7 +4,7 @@
 
 The [user journey](USER-JOURNEY.md) illustrates an optional first-session sequence and later independent branches. `ask-career-skills` is a user-invoked **router**, not a runtime orchestrator: it chooses and explains one useful skill without executing it, installing dependencies or making changes. The package remains usable without setup or other installed skills. The diagram is guidance, not an execution graph.
 
-Setup has its own guided intake loop (see the [onboarding diagram](USER-JOURNEY.md#guided-setup-within-the-first-session)): source discovery → selected imports → gap review → user decision to continue, defer or finish. This loop is inside `setup-career-skills`, not an orchestration requirement for other leaf skills.
+Setup confirms the destination, then either **creates from scratch** or **validates existing structure/progress before resuming** (see [the onboarding diagram](USER-JOURNEY.md#guided-setup-within-the-first-session)). It asks one next question after each approved import; this is internal to setup, not a mandatory execution chain for other skills. The separate `validate-workspace` helper is optional for difficult structural blockers.
 
 ## Task execution flow
 

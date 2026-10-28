@@ -1,37 +1,32 @@
-# Setup conversation and source reference
+# Setup reference: new or resume
 
-## Start or resume
+## Location and routing
 
-`setup-career-skills` is an interactive, **resumable** onboarding workflow. **For every new setup, the first question is where the user wants to initialize the workspace.** A visible `career/` directory, current Git repository or previous source location is not implicit permission to adopt it. Ask for a user-chosen private storage location; offer current repository, another repository or local directory as examples, not assumptions. If a specific location is already provided in the new request, confirm it without requesting the same information twice. A resumed session can reuse a previously confirmed destination. **Only after choosing/confirming the location**, inspect the target for existing workspace content and progress; if occupied, let the user choose to continue it, plan an approved migration or select a different destination. Do not overwrite. If the user explicitly requests an index-only/minimal setup, respect the shorter scope.
+Always establish the user's chosen private workspace location **before examining workspace data**. A `career/` in the current repository is not implicit consent to use it. If the user names the destination in their request, respect it without a redundant question; on an established resume, reuse its recorded location. Do not invent a second nested root to avoid an occupied one.
 
-## Source discovery and intake
+**New:** Selected destination is empty or absent. Ask about accessible existing CVs, career notes, resumes, portfolios, project records, GitHub/LinkedIn exports and credentials. Inventory only approved sources, recommend the first *useful* import, and ask one focused question. With permission, create `career/README.md` plus selected records; don't conclude after creating an empty scaffold. The user may explicitly choose index-only setup.
 
-Suggest relevant candidate sources: previous CVs/resume repositories, existing career notes, professional role histories, project files, credential records, portfolio, website, GitHub/LinkedIn profiles and exports. Ask which can be read, where, and whether another useful source is missing. Inventory authorized sources and summarize their expected value before importing. Don't search private storage indiscriminately or bulk-copy entire legacy trees.
+**Resume:** Selected destination has an existing managed `career/` or partial records. Before creating or importing anything, verify:
+- `career/README.md` existence and recorded root, permissions, source map and onboarding status; if missing, inspect existing records and propose a minimal index repair.
+- Referenced canonical files, links and folders **actually** exist; unused homes need not exist.
+- Canonical ownership is unambiguous: no conflicting active profile/brand/project records, accidental duplicate roots, or unexplained imports.
+- Which records are captured, missing, conflicting or deferred, and the last pending user decision.
 
-With no source available, collect a small first area conversationally. With sources, assess coverage and source conflicts for the **selected scope**. Look for role dates, internship omissions, projects/assignments, skills, qualifications, education, languages, direction/preferences, brand/assets and optional market research. These are **prompts for gaps**, not all required fields. If a selected source mentions an experience missing from the proposed role history, explicitly ask about it before concluding.
+Return a **short validation result** (usable / issues needing repair / blocked) and the specific next question. If blocked, resolve or propose a targeted correction first. The optional `validate-workspace` skill can assist with difficult structure/links; it is not required and its use must not turn a resume into automatic reorganization. A usable older layout can stay as-is until the user requests standardization. Preserve prior permissions, answers and records. Don't ask the same question again.
 
-Follow-up examples (choose only the best next question, adapting known context):
-- “I found your old resume and project notes. Do you have any other career records you want considered before we choose what to import?”
-- “Your resume lists two internships not yet in the new experience file. Should we include them in the first pass?”
-- “We've captured your roles, skills and certifications. Education and languages are not yet covered. Would you like to handle those next, or defer them?”
-- “The workspace structure is ready. Would you like a quick minimal handoff, or should we continue populating your profile from the sources?”
+If the chosen destination contains unrelated files or uncertain ownership, ask whether to adopt it, choose another location or plan an approved migration. No overwriting, moving or deleting without a separate proposal and approval. Git `D career/...` after a rename can represent deleted *tracked paths*, not present directories: inspect the filesystem.
 
-Do not ask the same question twice, and do not make every optional category a blocker.
+## Standard records and authority
 
-## Physical workspace and ownership
+The managed root uses these **home names as needed**, not as mandatory empty folders:
+- `profile/`: background, employer/role history (including supported internships), skills, credentials, goals, development.
+- `projects/`: consulting engagements, assignments, contributions, outcomes and project evidence.
+- `brand/`: messaging, positioning and visual guidance.
+- `assets/`: staged/draft reusable materials and service descriptions.
+- `research/`: selected employers, roles and comparators.
 
-The **managed** private root is `career/`, indexed by `career/README.md`. Use `profile/`, `projects/`, `brand/`, `assets/` and `research/` as the standard physical home names **when needed**. The index can document homes not yet created; Git cannot track empty directories, and filler README files are not required. Create substantive content only when selected. `profile/experience.md` owns employers, roles/grades and dates, including source-supported internships; detailed engagements and project outcomes belong under `projects/`. Keep facts, aspirations, public wording, drafts and published state distinct.
+`profile/experience.md` owns jobs and dates, not detailed client engagements. Distinguish facts from plans, branding and published state. Preserve original sources with provenance; import only user-selected claims, never auto-sync or bulk-copy a legacy tree. Do not invent credentials, impact metrics or project maturity.
 
-If `career/` is already occupied, offer a fresh private destination elsewhere or a controlled in-place migration with a path/link/collision plan and explicit approval. Old documents are **sources**, not competing maintained copies; preserve them. After a Git-tracked root rename, `D career/...` entries may be deleted tracked paths rather than folders physically in the new root. Verify actual files.
+## Lightweight progress checkpoint
 
-## Checkpoint and completion
-
-Keep a **short onboarding section** in `career/README.md` (no rigid schema):
-- Status: `in progress`, `ready`, `paused` or `blocked`.
-- Sources: imported, pending, skipped/declined, plus provenance and evidence limits.
-- Coverage: relevant area + captured/missing/conflicting/deferred; do not inventory irrelevant personal details.
-- Next action: the specific user-selected area or one unresolved question, and granted write/PR permission.
-
-After **each selected batch**, report what's done, a significant gap or uncertainty, and the next useful **one-question** follow-up. A successful file write proves only that batch; it does not conclude the conversation. Resume later from saved state. Finish only when the user confirms their chosen scope is sufficient, explicitly chooses an index-only setup, or pauses; report pending information honestly. No write access: provide proposed paths/content without claiming persistence.
-
-No publication or external synchronization is inferred. Don't silently promote planned credentials, unsupported metrics or client-confidential details. `maintain-profile` owns subsequent factual corrections, but setup can ask and reconcile initial intake facts directly without requiring that skill.
+Keep `career/README.md` readable: destination, authorized write policy, source map, captured/pending/deferred areas, setup status (`in progress`, `ready`, `paused`, `blocked`) and one next decision. Do not keep an elaborate migration log or repeat the whole interview. After each approved batch, verify what was written and ask **one** useful next question. The user can stop, pause or skip categories. No external publication is inferred.
