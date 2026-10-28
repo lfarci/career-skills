@@ -34,3 +34,5 @@ Workspace validation is a **discoverable structural exception handler**, not an 
 Negative smoke case `workspace-healthy-resume-no-helper` checks that working profile paths do not activate the validator while an ordinary resume task proceeds. The expected result is based on **invocation traces**, not just the assistant's final text.
 
 The opt-in smoke set includes an explicit `ask-career-skills` navigation case. Review the returned recommendation and agent trace: the router should **recommend**, not invoke, other skills or write files.
+
+**Standard workspace adoption smoke:** Test clean `career/` initialization from selected old sources, explicit physical migration of an occupied `career/`, and router selection for a first-time workspace. Verify actual file writes and absence of bulk copies, link integrity, preservation of originals, scope/approval, and no automatic publication. These scenarios remain opt-in agent tests, not proof of observed behavior.

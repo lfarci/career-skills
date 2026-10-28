@@ -5,12 +5,12 @@
     {
       "id": "setup-existing",
       "skill": "setup-career-skills",
-      "prompt": "Set up these skills. I already have career notes in a private repo, a website and LinkedIn export. I'd like to track fixes in GitHub Issues.",
+      "prompt": "Set up Career Skills in a private repository. I have old career notes, an existing resume, a portfolio and a LinkedIn export in separate places. I want a clean, shared career/ workspace and I track tasks in GitHub Issues.",
       "expect": [
-        "Discovers existing information before asking",
-        "Asks for missing tracker details only",
-        "Records privacy and write boundaries",
-        "Does not publish personal data"
+        "Recommends a standardized career/ destination with only needed canonical files and folders",
+        "Inventories accessible prior materials as optional sources without silently copying everything",
+        "Checks chosen private location, permissions and issue tracker before any writes",
+        "Preserves original documents and does not publish anything"
       ]
     },
     {
@@ -341,23 +341,23 @@
     {
       "id": "workspace-map-existing",
       "skill": "setup-career-skills",
-      "prompt": "Set up my existing career notes. profile/goals.md holds my north star, profile/experience.md holds facts, personal-projects/ holds evidence, and personal-brand/ has drafts. I use a GitHub repo and want changes through PRs.",
+      "prompt": "Set up a new managed career workspace from my legacy notes. Source files include profile/goals.md, profile/experience.md, personal-projects/ and personal-brand/. I use a private GitHub repo and prefer PRs.",
       "expect": [
-        "Maps logical areas in an existing index without moving files",
-        "Links existing records instead of copying confidential content",
-        "Leaves development and job research unset until needed",
-        "Records the selected repository and PR policy without requiring a different provider"
+        "Identifies legacy records as import sources and maps them to standard profile/, projects/ and brand/ destinations",
+        "Proposes a fresh career/ destination with an index, not permanent personal-projects/ and personal-brand/ canonical homes",
+        "Preserves the source tree; imports only selected records and records provenance/unknowns",
+        "Respects branch and PR policies and creates only needed canonical files"
       ]
     },
     {
       "id": "workspace-local-minimal",
       "skill": "setup-career-skills",
-      "prompt": "I want a career workspace in a local folder with Markdown only. Start with reflection; no GitHub or issue tracker.",
+      "prompt": "I want a new managed career workspace in a local folder, using only Markdown. Start with reflection, and I have no existing documents or tracker.",
       "expect": [
-        "Offers a minimal workspace index and only needed direction records",
-        "Does not require all five folders or YAML templates",
-        "Records local canonical paths and privacy boundaries",
-        "Does not install integrations or create parallel trackers"
+        "Proposes a private career/ root with a career/README.md and profile/ as the first needed home",
+        "Uses standard home names but avoids empty placeholder directories or a full interview",
+        "Records local storage and write boundaries, and asks a focused starting question",
+        "Does not require integrations, additional skills, or pre-existing source documents"
       ]
     },
     {
@@ -471,12 +471,12 @@
     {
       "id": "workspace-valid-custom-layout",
       "skill": "validate-workspace",
-      "prompt": "Please validate my career workspace. I keep profile facts in career/profile/ and branding files in career/personal-brand/, with the index mapping both correctly. I have not created research/ because I do not need it.",
+      "prompt": "Please validate the structural integrity of my existing legacy career workspace. I keep branding files in career/personal-brand/ with a correct index mapping, and career/research/ is not needed. I am NOT asking to migrate or standardize it today.",
       "expect": [
-        "Accepts the documented custom directory mapping as valid rather than forcing names",
-        "Treats unused or missing logical homes as optional, not automatically broken",
-        "Returns a concise valid result without writing or creating folders",
-        "Does not mistake user-record folder naming for skill package organization"
+        "Accepts the documented legacy directory mapping as operationally valid for the requested path-integrity check",
+        "Treats unused or missing optional homes as non-errors and leaves the legacy workspace unchanged",
+        "Returns an accurate structural status and checked scope without creating files",
+        "Does not start a physical migration when the user expressly declined one"
       ]
     },
     {
@@ -493,12 +493,12 @@
     {
       "id": "workspace-no-unrequested-migration",
       "skill": "validate-workspace",
-      "prompt": "While writing a job application, an agent noticed my career workspace lacks brand/ and research/ folders. Those areas are not needed for the application. Should it create them or reorganize my notes?",
+      "prompt": "While writing a job application, an agent noticed my legacy career/ lacks brand/ and research/ folders. They are not needed for the application. Should it create them or reorganize my notes?",
       "expect": [
-        "Does not treat unused missing folders as structural errors",
-        "Recommends continuing the original job-application task without a full migration",
-        "Does not create folders, rewrite links or demand first-time setup",
-        "Respects existing records and optional layout rules"
+        "Uses the existing working source mapping without triggering a migration during the unrelated task",
+        "Does not treat missing unused standard folders as an immediate task blocker",
+        "Does not create folders or reorganize user files without explicit scope and approval",
+        "Allows the original job-application task to proceed"
       ]
     },
     {
@@ -609,6 +609,83 @@
         "Explains that structural repair is separate from the resume and maintain-profile workflows",
         "Gives one actionable invocation and the expected input (index path, broken link or source files)",
         "Does not execute an unrelated skill or claim to have fixed the workspace"
+      ]
+    },
+    {
+      "id": "setup-fresh-selective-import",
+      "skill": "setup-career-skills",
+      "prompt": "Set up a new private career/ in a new repo. My old resume, profile notes and project files are available, but I only authorize importing my recent role and two selected projects. I want the originals left alone.",
+      "expect": [
+        "Creates or proposes standard career/README.md with profile/ and projects/ records only as needed",
+        "Discovers authorized sources but imports only the selected role/projects, not a full old directory copy",
+        "Captures source file locations and uncertainty without treating resume wording as independent verification",
+        "Confirms originals are untouched, with a concise imported/pending summary"
+      ]
+    },
+    {
+      "id": "setup-occupied-destination",
+      "skill": "setup-career-skills",
+      "prompt": "I want a clean standard career/ but my private notes repository already has a populated career/ with personal-brand/, personal-projects/ and profile/. Please start without losing any prior work.",
+      "expect": [
+        "Detects the occupied canonical root before writing",
+        "Offers a separate private location for a fresh career/ or a controlled in-place migration",
+        "Does not create a competing nested career/ or overwrite existing sources",
+        "Gets a concrete choice and needed permissions before structural changes"
+      ]
+    },
+    {
+      "id": "setup-source-conflict",
+      "skill": "setup-career-skills",
+      "prompt": "Create a new career/ profile using my old CV and the credential history note as sources. The CV calls a certificate earned in August but the later note says the exam was scheduled for September. Both are accessible.",
+      "expect": [
+        "Identifies conflicting achievement status rather than choosing the more impressive credential claim",
+        "Separates user-supplied source testimony from independent corroboration",
+        "Records the unresolved conflict or asks one focused question before asserting an earned credential",
+        "Preserves originals and uses only supported content in the new canonical profile"
+      ]
+    },
+    {
+      "id": "setup-readonly-import",
+      "skill": "setup-career-skills",
+      "prompt": "I want a new standardized career/ using two career documents I've pasted, but you only have read access to my storage. Build a plan for profile/ and brand/ without writing anything.",
+      "expect": [
+        "Produces a clear proposed directory/file plan with standard destinations",
+        "Uses pasted inputs to identify possible source material and provenance",
+        "Does not claim files were created without write tools or permission",
+        "Offers a small reversible patch or content proposal rather than imposing integrations"
+      ]
+    },
+    {
+      "id": "workspace-migrate-standard-homes",
+      "skill": "validate-workspace",
+      "prompt": "I explicitly want to align my existing private career/ with the Career Skills physical standard. It currently contains career/personal-brand/, career/personal-projects/ and career/services.md. Inventory links and propose moves to the standard locations. Do not edit files until I approve a plan.",
+      "expect": [
+        "Identifies standard target homes career/brand/, career/projects/ and career/assets/services.md",
+        "Inspects relevant content and link dependencies before proposing renames",
+        "Produces a migration plan preserving history and checking target path collisions",
+        "Does not apply moves or edit factual content before approval"
+      ]
+    },
+    {
+      "id": "ask-career-skills-new-adoption",
+      "skill": "ask-career-skills",
+      "prompt": "My existing CV, notes and project documents are scattered across places. I want to start a clean canonical career/ in a private repository and bring over selected information. Which skill should I invoke?",
+      "expect": [
+        "Recommends setup-career-skills instead of validate-workspace or maintain-profile as the initial action",
+        "Explains standardized homes and source-document selection without implying bulk copying",
+        "Provides a specific ready-to-use setup request and necessary input",
+        "Does not auto-execute setup or edit a repository"
+      ]
+    },
+    {
+      "id": "workspace-import-sources-not-auto-sync",
+      "skill": "setup-career-skills",
+      "prompt": "I've connected my private resume repository and a LinkedIn profile export. Please initialize career/ but don't copy or synchronize either source yet.",
+      "expect": [
+        "Can initialize a minimal standardized index only with permitted writes",
+        "Records candidate source locations as pending or unselected without importing factual claims",
+        "Does not crawl unrelated documents or silently synchronize external content",
+        "Leaves originals untouched and explains the next optional source-selection decision"
       ]
     }
   ]

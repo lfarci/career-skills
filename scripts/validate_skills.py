@@ -92,6 +92,12 @@ def main() -> int:
         if item.get("mode") != "discovery" or not item.get("prompt"):
             errors.append(f"Invalid negative discovery case: {item['id']}")
         seen.add(item["id"])
+    workspace = ROOT / "docs" / "WORKSPACE.md"
+    if not workspace.is_file() or any(
+        heading not in workspace.read_text(encoding="utf-8")
+        for heading in ("## Standard managed layout", "## Initialize from existing sources", "## Adopt and migrate an existing career tree")
+    ):
+        errors.append("Missing standardized workspace initialization and adoption guidance")
     journey = ROOT / "docs" / "USER-JOURNEY.md"
     if not journey.is_file() or "```mermaid" not in journey.read_text(encoding="utf-8"):
         errors.append("Missing Mermaid user journey diagram")
