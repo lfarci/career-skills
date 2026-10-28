@@ -1,6 +1,6 @@
 # Career workspace
 
-Use ordinary Markdown and links in user-selected private storage: local files, a Git repository, Drive, OneDrive or another Markdown-capable provider. **For a Career Skills-managed workspace, use a common physical `career/` root with the five homes below.** They are career records, not installable skill categories. A managed workspace uses these five standard home names, creating directories as needed. Task skills also work without a managed workspace.
+Use ordinary Markdown and links in user-selected private storage: local files, a Git repository, Drive, OneDrive or another Markdown-capable provider. **For a Career Skills-managed workspace, use one chosen root (conventionally `career/`) with the five homes below.** They are career records, not installable skill categories. A managed workspace uses these five standard home names, creating directories as needed. Task skills also work without a managed workspace.
 
 ## Five homes
 
@@ -16,7 +16,7 @@ Profile grounds brand and growth decisions; projects can supply evidence. Brand 
 
 ## Logical data flow
 
-The five homes are **standard physical destinations within a managed `career/` workspace**, as well as distinct responsibilities. A folder can remain uncreated until needed. Links describe information flow, not permission to synchronize records automatically.
+The five homes are **standard physical destinations within the chosen managed workspace root**, as well as distinct responsibilities. A folder can remain uncreated until needed. Links describe information flow, not permission to synchronize records automatically.
 
 ```mermaid
 flowchart LR
@@ -34,7 +34,7 @@ The profile is authoritative for personal facts and selected intentions, while a
 
 ## Standard managed layout
 
-New managed workspaces use these home names. Create directories and substantive records only when needed by the user's selected work; a workspace index can show pending areas before their folders exist. Individual filenames below are examples, not mandatory templates. A Git repository does not track empty directories, so do not add filler files solely to make all homes visible.
+New managed workspaces use these home names directly under the selected root, usually `career/` but potentially another user-named folder. Create directories and substantive records only when needed by the user's selected work; a workspace index can show pending areas before their folders exist. Individual filenames below are examples, not mandatory templates. A Git repository does not track empty directories, so do not add filler files solely to make all homes visible.
 
 ```text
 career/
@@ -70,21 +70,21 @@ brand/ contains guidance, not a second asset library. identity.md can describe f
 
 ## Initialize from existing sources
 
-`setup-career-skills` is the entry point when the user wants a **managed** career workspace. Confirm the user's chosen location before inspecting or creating files; never silently choose the current repository or invent a nested root. After choosing the destination, distinguish **new creation** (empty target) from **resumption** (existing workspace). For resumption, validate the index, mapped files/links, canonical ownership and saved progress **before continuing imports**. Reuse the confirmed location and previous decisions rather than restarting the interview.
+`setup-career-skills` is the entry point when the user wants a **managed** career workspace. Confirm the **exact workspace root** before inspecting or creating files. A user-named folder is the root itself; when the user specifies a repository as the parent, propose its `career/` folder. Never silently choose the current repository, add a nested `career/`, or create an empty folder as a standalone onboarding result. After choosing the destination, distinguish **new creation** (empty target) from **resumption** (existing workspace). For resumption, validate the index, mapped files/links, canonical ownership and saved progress **before continuing imports**. Reuse the confirmed location and previous decisions rather than restarting the interview.
 
 1. **Confirm destination and mode.** Ask where the workspace belongs (unless already specified or confirmed). Inspect the selected location only. If an existing workspace is present, **validate before any changes**; repair broken mappings only with approval, then resume saved pending work. Otherwise start fresh. Ambiguous occupied directories require the user's decision; don't overwrite or create a duplicate root.
 2. **Discover (read-only).** With permission, look for existing career notes, resumes, portfolio/project documents, certificates, published profile exports and other user-supplied sources. Record where they are and what each might contribute; ask before expanding access or reading sensitive material.
 3. **Select and map.** Present a concise inventory and recommend which sources/sections to bring in first. Let the user choose. Map selected claims to `profile/`, project records to `projects/`, positioning and design guidance to `brand/`, reusable artifacts to `assets/`, and selected outside references to `research/`. External documents are **inputs**, not automatically authoritative workspace files.
-4. **Create the canonical destination.** After confirming storage and write policy, initialize `career/README.md` plus the standard homes needed for selected content, documenting unused homes as pending without creating empty folders. Extract selected content into canonical Markdown records; **do not bulk-copy old workspaces or invent filler data**. Treat `profile/experience.md` as a complete *role-history* record for the chosen sources (including internships where supported), not a dump of client engagements; place assignments and project evidence in `projects/` with links. Retain source locations, dates when known and uncertainty; ask about real contradictions or omissions.
-5. **Review gaps and continue.** Check new records and links, and list what is captured, missing, uncertain and intentionally deferred. Ask the next most useful question, including about unconsidered existing documents and essential facts absent from selected sources; don't stop after the first import batch. Save a short `in progress` / `paused` / `ready` / `blocked` checkpoint with the selected next area in `career/README.md`. Finish guided onboarding only when the user confirms the chosen scope is sufficient or chooses minimal setup. No fixed questionnaire or fully populated five-home requirement.
+4. **Create the canonical destination.** After confirming storage and write policy, initialize `README.md` at the selected root plus the standard homes needed for selected content, documenting unused homes as pending without creating empty folders. Extract selected content into canonical Markdown records; **do not bulk-copy old workspaces or invent filler data**. Treat `profile/experience.md` as a complete *role-history* record for the chosen sources (including internships where supported), not a dump of client engagements; place assignments and project evidence in `projects/` with links. Retain source locations, dates when known and uncertainty; ask about real contradictions or omissions.
+5. **Review gaps and continue.** Check new records and links, and list what is captured, missing, uncertain and intentionally deferred. Ask the next most useful question, including about unconsidered existing documents and essential facts absent from selected sources; don't stop after the first import batch. Save a short `in progress` / `paused` / `ready` / `blocked` checkpoint with the selected next area in the root `README.md`. Finish guided onboarding only when the user confirms the chosen scope is sufficient or chooses minimal setup. No fixed questionnaire or fully populated five-home requirement.
 
-**Existing `career/` already occupied?** Offer two explicit choices: use a different private repository/folder whose managed root can be `career/`, or plan a controlled migration **in place** using `validate-workspace`. Never overwrite the existing root, create a hidden duplicate authority, or move/delete old files without a selected migration plan and approval. Import can also be read-only when no write destination is available.
+**Chosen root already occupied?** Resume the existing workspace after lightweight validation, or let the user choose a different root. If they explicitly request a physical migration, propose a plan before moving anything; `validate-workspace` is optional. Never overwrite the existing root, create a hidden duplicate authority, or move/delete old files without a selected migration plan and approval. Import can also be read-only when no write destination is available.
 
 ## Adopt and migrate an existing career tree
 
 If the user requests **physical alignment**, compare their current tree with the standard root. For example, `career/personal-projects/` may map to `career/projects/`, `career/personal-brand/` to `career/brand/` and `career/services.md` to `career/assets/services.md`. These are **candidate changes**, never automatic renames.
 
-For a selected migration, inventory affected files, collisions, inbound/outbound links and source ownership. Produce a proposed path map, preserve Git history (e.g. Git moves in a reviewable PR), update references and verify links after approved writes. Keep any unsupported or conflicting data in its original source until the user decides. Changes to factual content or public platforms are separate tasks.
+For a selected migration, inventory affected files, collisions, inbound/outbound links **across the accessible repository** and source ownership. A condensed import is not automatically a lossless replacement: preserve source evidence and links needed by the new records. Produce a proposed path map, preserve Git history where practical, update references and verify both workspace links and links from elsewhere after approved writes; explicitly report inaccessible scope. Keep any unsupported or conflicting data in its original source until the user decides. Changes to factual content or public platforms are separate tasks.
 
 An existing custom layout can remain **operational** through its index even before migration. When the user explicitly asks to assess standardization, report deviations and a migration proposal; during an unrelated skill's task, correct only concrete broken paths. Physical alignment is the default destination for new managed work, not a prerequisite for using individual skills.
 
@@ -107,7 +107,7 @@ An existing custom layout can remain **operational** through its index even befo
 
 ## Workspace index and record rules
 
-Use `career/README.md` as the managed workspace entry point: record storage location, source and ownership map, relevant original sources (imported, pending, excluded), optional tracker, branch/PR workflow, read/write boundaries, external publication permissions and unresolved decisions. Link rather than duplicate supporting documents; never store credentials in it.
+Use the chosen root's `README.md` (typically `career/README.md`) as the managed workspace entry point: record storage location, source and ownership map, relevant original sources (imported, pending, excluded), optional tracker, branch/PR workflow, read/write boundaries, external publication permissions and unresolved decisions. Link rather than duplicate supporting documents; never store credentials in it.
 
 For an existing workspace, map before migrating. Legacy files may remain source documents until approved extraction or relocation. A folder's name never proves what a file contains; inspect the material needed for the user's selected scope. Ask only relevant missing decisions.
 

@@ -830,6 +830,39 @@
         "Uses the saved next decision and asks one concise question about project evidence rather than repeating old questions",
         "Does not write files or require installation of the optional validate-workspace skill"
       ]
+    },
+    {
+      "id": "setup-named-folder-is-root",
+      "skill": "setup-career-skills",
+      "prompt": "I'm setting up with setup-career-skills. I chose to create a folder named career-workspace in my current private notes repository. The target does not exist yet. My CV has already been approved for importing an initial role summary. Proceed.",
+      "expect": [
+        "Treats career-workspace/ itself as the managed root, with career-workspace/README.md and career-workspace/profile/, not an additional career-workspace/career/",
+        "Uses the five standard home names directly under the chosen root when needed",
+        "Creates useful approved records and a progress checkpoint rather than only an empty directory",
+        "Does not change an existing career/ elsewhere or repeat the chosen location question"
+      ]
+    },
+    {
+      "id": "setup-consolidation-is-not-lossless",
+      "skill": "setup-career-skills",
+      "prompt": "We have a new setup-career-skills workspace summarizing all 34 Markdown notes from my old career/ source into 21 curated Markdown records. The new files link back to detailed source evidence. Can I now safely replace and delete the old career/ tree?",
+      "expect": [
+        "Explains that coverage of all areas or a smaller summary does not prove a lossless migration",
+        "Identifies the new workspace's dependency on detailed evidence and relative links into the old career/ tree",
+        "Preserves originals unless an explicit user-approved backup or evidence-retention and replacement plan is performed",
+        "Recommends a specific safe next step without automatically deleting or moving sources"
+      ]
+    },
+    {
+      "id": "setup-cutover-checks-inbound-links",
+      "skill": "setup-career-skills",
+      "prompt": "During setup, I explicitly approved archiving the old career/ under backup/career/ and promoting the new workspace to career/. New career/ has 21 records, and links within career/ pass. But other repository notes still link to career/personal-brand/ and career/personal-projects/. Can we mark the cutover complete?",
+      "expect": [
+        "Verifies or requires checking inbound references from other repository Markdown files into the moved/replaced workspace, not just links within new career/",
+        "Checks preserved original evidence and links inside backup/career/ that might be affected by the move",
+        "Identifies stale inbound paths or incomplete scan coverage and refuses to claim global link integrity",
+        "Offers a targeted update or exception report and leaves original materials safe pending explicit approval"
+      ]
     }
   ]
 }
