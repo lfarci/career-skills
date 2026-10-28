@@ -32,3 +32,5 @@ Discovery scenarios do not name skills. Manual-only behavior is host-specific an
 Workspace validation is a **discoverable structural exception handler**, not an always-on audit. Test both a task-driven broken path and a directly requested workspace review. The smoke set covers these plus a valid custom layout. Check the agent's skill-loading trace, status accuracy, write authorization, file/links verification, and return to the original task. A successful static test or fluent response alone does not prove delegation.
 
 Negative smoke case `workspace-healthy-resume-no-helper` checks that working profile paths do not activate the validator while an ordinary resume task proceeds. The expected result is based on **invocation traces**, not just the assistant's final text.
+
+The opt-in smoke set includes an explicit `ask-career-skills` navigation case. Review the returned recommendation and agent trace: the router should **recommend**, not invoke, other skills or write files.

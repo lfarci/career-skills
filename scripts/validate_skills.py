@@ -13,12 +13,12 @@ EXPECTED = {
     "setup-career-skills", "plan-development", "review-progress", "review-research",
     "reflect", "maintain-profile", "build-resume", "personal-brand", "benchmark-profile",
     "define-design-brief", "create-design-assets", "review-design", "audit-surface",
-    "audit", "find-jobs", "find-companies", "validate-workspace",
+    "audit", "find-jobs", "find-companies", "validate-workspace", "ask-career-skills",
 }
 MANUAL = {
     "setup-career-skills", "reflect", "review-research", "plan-development",
     "review-progress", "personal-brand", "benchmark-profile", "define-design-brief",
-    "create-design-assets", "review-design", "audit",
+    "create-design-assets", "review-design", "audit", "ask-career-skills",
 }
 
 
@@ -92,6 +92,9 @@ def main() -> int:
         if item.get("mode") != "discovery" or not item.get("prompt"):
             errors.append(f"Invalid negative discovery case: {item['id']}")
         seen.add(item["id"])
+    journey = ROOT / "docs" / "USER-JOURNEY.md"
+    if not journey.is_file() or "```mermaid" not in journey.read_text(encoding="utf-8"):
+        errors.append("Missing Mermaid user journey diagram")
     if not (ROOT / "AGENTS.md").is_file() or not (ROOT / "docs" / "EVALUATION.md").is_file():
         errors.append("Missing agent guidance or evaluation documentation")
     if errors:

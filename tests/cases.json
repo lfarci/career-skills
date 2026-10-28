@@ -555,6 +555,61 @@
         "Recommends asking one profile task question instead of loading an unneeded structural audit",
         "Does not treat available files as permission to edit or reorganize them"
       ]
+    },
+    {
+      "id": "ask-career-skills-after-setup",
+      "skill": "ask-career-skills",
+      "prompt": "I finished setting up my career workspace. My experience files need checking and I haven't decided on a long-term direction. What should I do next?",
+      "expect": [
+        "Selects maintain-profile as the most useful next action and explains why",
+        "Offers reflect as a distinct optional follow-up, not a mandatory chain",
+        "Includes a ready-to-use invocation example",
+        "Does not execute either skill or edit any workspace records"
+      ]
+    },
+    {
+      "id": "ask-career-skills-goal-overrides-flow",
+      "skill": "ask-career-skills",
+      "prompt": "My profile is already accurate and I have a clear direction. I want to find open positions to apply to. What skill should I run next?",
+      "expect": [
+        "Selects find-jobs rather than repeating setup, factual maintenance or reflection",
+        "Explains job search requirements and what the skill returns",
+        "Provides a concrete next prompt",
+        "Does not pretend current vacancies were searched or verified"
+      ]
+    },
+    {
+      "id": "ask-career-skills-logo-draft",
+      "skill": "ask-career-skills",
+      "prompt": "I have a finished first logo draft and a current brief. I only want professional critique before deciding whether to refine it. What's next?",
+      "expect": [
+        "Selects review-design rather than restarting design discovery",
+        "Explains the assets and brief needed for critique",
+        "Distinguishes reviewing from approving or automatically redesigning",
+        "Makes no edits or artifact claims"
+      ]
+    },
+    {
+      "id": "ask-career-skills-no-setup",
+      "skill": "ask-career-skills",
+      "prompt": "I don't have a workspace index and don't want to run setup. I have some pasted experience details and want to improve my resume. What should I use?",
+      "expect": [
+        "Recommends build-resume directly without requiring setup",
+        "Works with pasted evidence and distinguishes missing support",
+        "Does not require installation of unrelated skills",
+        "Does not claim any resume was edited"
+      ]
+    },
+    {
+      "id": "ask-career-skills-structure",
+      "skill": "ask-career-skills",
+      "prompt": "My career notes are already set up, but the profile path in the workspace index is broken. I want to fix the structure before updating my resume. Which Career Skills skill should I run?",
+      "expect": [
+        "Recommends validate-workspace when installed rather than repeating setup or auditing career facts",
+        "Explains that structural repair is separate from the resume and maintain-profile workflows",
+        "Gives one actionable invocation and the expected input (index path, broken link or source files)",
+        "Does not execute an unrelated skill or claim to have fixed the workspace"
+      ]
     }
   ]
 }
