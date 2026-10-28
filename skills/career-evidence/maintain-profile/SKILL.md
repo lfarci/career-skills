@@ -1,39 +1,36 @@
 ---
 name: maintain-profile
-description: Reconcile evidence-backed career facts, qualifications, experience and projects in a canonical profile.
+description: Maintain evidence-backed career facts (experience, skills, qualifications and projects). Ask what to focus on when invoked without a specific request.
 ---
 
 # Maintain a Canonical Career Profile
 
-Maintain the private evidence-backed professional record: experience, projects, achievements, qualifications, feedback and supporting sources. Within profile/, distinguish facts from direction (interests, north star and internal decisions) and development plans; the respective skills maintain their own sections and link rather than duplicate them. Do not decide how they should be marketed. Use the person's existing source of truth, not a mandatory profile file or provider.
+Maintain the user's private source of truth for experience, projects, achievements, qualifications and supporting evidence. Keep facts separate from career direction, development plans and public positioning. Use existing records if available; setup is optional.
 
 ## Contract
-- **Input:** New user testimony or source evidence, existing profile/ facts and relevant projects/ records.
-- **Scope:** Reconcile factual career records; keep aspirations and development commitments distinct from demonstrated outcomes.
-- **Output:** Relevant profile/ fact records or projects/<project>.md: minimal supported updates, sources and unresolved conflicts.
+- **Input:** A requested task or, when unspecified, the user's intention; relevant facts, evidence and existing records if any.
+- **Scope:** Establish the focus first, then examine or update only records needed for that task.
+- **Output:** One clarifying question when unscoped; otherwise a targeted profile section, factual assessment or supported patch.
 
 ## Steps
 
-1. Discover the canonical source and its organization; if uncertain, identify the candidate authorities. Read relevant records before editing.
-2. Identify the event or correction and its evidence. Separate **evidence status** (user-confirmed, independently corroborated, inferred, unverified) from **time status** (current, historical, planned, superseded, unknown).
-3. Compare the incoming information with existing facts. Resolve contradictions with evidence or explicitly leave them unresolved. Preserve approximate metrics as approximate, and distinguish credentials planned from earned.
-4. Propose the smallest change to the authoritative record. Apply only changes permitted by the user's instruction and access. Do not propagate private/client-sensitive details to public assets.
-5. Treat private records as input, never permission to expose them. Keep internal doubts, constraints, decisions and aspirations private unless the user selects them for public use; never turn plans into achieved claims.
-6. Identify downstream surfaces potentially affected, but do not directly rewrite them unless separately requested. Describe what changed, why and what remains unknown.
+1. **Establish intent before investigating.** A bare invocation or “help with my profile” is not a request to audit or edit everything. If the conversation does not identify a task, ask **one short question**, such as: *“Would you like to add information, correct a fact, review accuracy, or start a profile?”* Stop there until the user responds. Reuse known context; never ask this again for an already-clear request.
+2. **Choose a useful starting point.** If records exist but the requested focus is unclear, ask which area or outcome matters. If starting from scratch, ask what to capture first (work history, projects, skills or qualifications). Gather missing details conversationally, one relevant question at a time. Do not require a full questionnaire, setup process or new folder tree. If the user explicitly requests a full audit, that is a valid scope.
+3. **Inspect only relevant evidence.** Find the applicable canonical record; compare new information with existing facts. Do not turn available workspace access into a general sweep, speculative corrections or an unrelated TODO list. Resolve contradictory sources where possible; otherwise mark the conflict. If the selected source path is stale or its canonical mapping is ambiguous, use `validate-workspace` when available to resolve only that structural blocker, then resume the requested profile task; otherwise offer a minimal path fix.
+4. **Classify claims correctly.** Distinguish evidence status (user-confirmed, corroborated, inferred, unverified) from time status (current, historical, planned, superseded, unknown). Do not promote planned credentials, inflate skills or remove legitimate approximations.
+5. **Separate review from editing.** A request to review is read-only unless the user also requests changes. For an authorized update, make the smallest evidence-backed change consistent with the user's instruction and permissions. Prior workspace write access alone is not a request to perform an unsolicited cleanup. Never expose private or client-sensitive details on public surfaces.
+6. **Close concisely.** Report what was checked, what changed or remains proposed, and only the conflicts relevant to the selected goal. Flag downstream surfaces when materially affected, but do not modify or publish them without a separate request.
 
 ## Output
 
-- File- or record-specific change proposal or confirmed patch
-- Supporting source/reference and evidence confidence
-- Conflict and uncertainty register, if applicable
-- Downstream affected-asset suggestions (not automatically published)
+- **No stated task:** Just the intent question, not a workspace audit.
+- **Existing records:** Focused read-only findings or a minimal patch with source and evidence status.
+- **No existing records:** A user-selected first section or a small plan, without inventing details.
+- **No write access:** A proposed patch, never a claim of completion.
 
 ## Done when
 
-- Re-running identical input produces no duplicate records or unnecessary edits.
-- Every changed fact is supported by user confirmation or labeled source evidence.
-- Historical, aspirational and present states are not conflated.
-- Canonical records remain the authority; duplicate copies are not introduced.
-- Unresolved conflicts are visible, not silently fixed.
-- When changes cannot be applied, an accurate patch is supplied without claiming success.
-
+- The user's intention determines the work; no unrequested review or edit was performed.
+- Every changed fact has support, and repeated input causes no duplicates or needless edits.
+- Unresolved conflicts and actual write status are explicit.
+- Private facts, aspirations and public messaging remain distinct.

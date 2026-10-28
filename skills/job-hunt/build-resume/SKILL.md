@@ -14,7 +14,7 @@ Produce an evidence-based resume readable by humans and reliably extractable by 
 
 ## Steps
 
-1. Read an existing resume, verified career profile or supplied experience. Accept a partial source: do not require a canonical repository. Identify target role, location, language, job description and desired length/format when available.
+1. Read an existing resume, verified career profile or supplied experience. Accept a partial source: do not require a canonical repository. Identify target role, location, language, job description and desired length/format when available. If a configured career source path no longer resolves, use `validate-workspace` when installed for that specific mapping; otherwise continue from available evidence or propose a path correction.
 2. Identify the strongest relevant evidence. Build a career narrative with correct role names, organizations, dates, responsibilities and contributions. Treat approximate achievements as approximate; ask or flag when important factual evidence is missing.
 3. Write a concise summary and accomplishment-oriented experience bullets. Use language from a supplied job posting naturally only where supported by evidence. Differentiate individual contribution from team outcomes.
 4. Structure the resume with conventional headings, single-column reading order where appropriate, selectable text and usable links. Prefer an editable source (Markdown or equivalent); generate PDF/DOCX/HTML only when requested and tools exist.
