@@ -2,6 +2,8 @@
 
 **Purpose:** Test the minimal real-user prompt and chosen-folder semantics in a disposable repository. Test resumption separately with `setup-resume-invalid-workspace-before-import`.
 
+For small-model cases with reproducible prompts, expected behavior, and trace-based scoring, see [Manual setup scenarios for small models](SETUP-SMALL-MODEL-SCENARIOS.md).
+
 **Preparation:** Install/load the `skills/setup-career-skills/SKILL.md` revision under test into a **fresh agent session**. Use a disposable test workspace, not the user's existing notes. Verify the loaded skill revision (do not accidentally exercise the last installed `main` version). Keep the same agent session across both turns. This is a **live manual test**, not an existing CI evaluation or a substitute for OpenCode-specific tool traces.
 
 ## Turn 1: no sources supplied
