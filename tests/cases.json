@@ -599,6 +599,17 @@
         "Does not require installation of unrelated skills",
         "Does not claim any resume was edited"
       ]
+    },
+    {
+      "id": "ask-career-skills-structure",
+      "skill": "ask-career-skills",
+      "prompt": "My career notes are already set up, but the profile path in the workspace index is broken. I want to fix the structure before updating my resume. Which Career Skills skill should I run?",
+      "expect": [
+        "Recommends validate-workspace when installed rather than repeating setup or auditing career facts",
+        "Explains that structural repair is separate from the resume and maintain-profile workflows",
+        "Gives one actionable invocation and the expected input (index path, broken link or source files)",
+        "Does not execute an unrelated skill or claim to have fixed the workspace"
+      ]
     }
   ]
 }

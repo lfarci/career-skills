@@ -28,6 +28,8 @@ flowchart TD
 
 Solid arrows identify the choice being made. Dashed arrows identify **optional follow-on activities**. None of these arrows implies the next skill must be installed or automatically invoked.
 
+`validate-workspace` is a separate on-demand structural helper, not a normal onboarding stage. Other installed skills may load it when a broken path blocks their task. See the [runtime execution flow](ARCHITECTURE.md#task-execution-flow).
+
 ## Suggested first session
 
 1. **`setup-career-skills` (optional):** Map the user's existing records, assets, sources of truth, write permissions and tracker. It doesn't require completing a career interview or migrating files.
@@ -40,6 +42,7 @@ Solid arrows identify the choice being made. Dashed arrows identify **optional f
 | User wants to... | Skill | Result |
 | --- | --- | --- |
 | Set up or reconnect existing sources | `setup-career-skills` | Mapped workspace and authority |
+| Check or repair workspace paths, links and source mappings | `validate-workspace` | Structural status or scoped repair |
 | Choose a next task without knowing the skill names | `ask-career-skills` | One next-step recommendation |
 | Correct or add career facts | `maintain-profile` | Supported canonical updates |
 | Decide where their career should go | `reflect` | Reflection and direction brief |

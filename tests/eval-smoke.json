@@ -61,6 +61,10 @@
     {
       "id": "ask-career-skills-after-setup",
       "mode": "explicit"
+    },
+    {
+      "id": "ask-career-skills-structure",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [
