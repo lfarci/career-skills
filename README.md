@@ -65,7 +65,7 @@ The former `design-identity` package is replaced by these three design skills; u
 
 The entire workspace is private, including material prepared for public use. Its five homes are **profile/** (background, capabilities, direction and development), **projects/** (work accounts and evidence links), **brand/** (positioning, audiences and visual guidance), **assets/** (drafts, approved staged outputs and service descriptions), and **research/** (selected companies, opportunities and comparable profiles).
 
-A managed workspace uses the **physical** `career/` root with these standardized directory names, and `career/README.md` is its entry point. Existing resumes, old notes, project records and profile exports are potential **sources** to populate new canonical Markdown records: select and verify them rather than bulk-copying or silently moving the originals. Reuse approved assets; staged material is not proof of publication. Research is retained selectively.
+A managed workspace uses the **physical** `career/` root with these standardized directory names, with a brief README in **each of the five homes** so all directories are visible even before their content is imported. `career/README.md` is its entry point. Existing resumes, old notes, project records and profile exports are potential **sources** to populate new canonical Markdown records: select and verify them rather than bulk-copying or silently moving the originals. Reuse approved assets; staged material is not proof of publication. Research is retained selectively.
 
 Use a private local folder, GitHub repository or another Markdown-capable provider. `setup-career-skills` defaults to a **fresh `career/`** in a selected private location; if one already exists, it offers a different destination or a planned, approved migration in place. An existing custom layout remains usable while migration is pending, and standalone task skills never require setup. See [workspace initialization and adoption](docs/WORKSPACE.md#initialize-from-existing-sources).
 
@@ -88,7 +88,7 @@ See the [user journey with Mermaid diagram and routing guide](docs/USER-JOURNEY.
 ## Getting started
 
 1. Install individual skills via your agent's workflow or `npx skills add lfarci/career-skills --skill <name>` ([Skills CLI](https://www.skills.sh/docs/cli)). Nested skills are independently installable; no repository-wide setup is required.
-2. Run `setup-career-skills` when you want a managed workspace. It proposes a clean `career/`, discovers existing documents you choose to share, and imports selected information into the standard homes with permission. If `career/` already exists, choose a separate private location or a controlled migration.
+2. Run `setup-career-skills` when you want a managed workspace. It proposes a clean `career/` with five tracked home directories, discovers existing documents you choose to share, and imports only selected information with permission. If `career/` already exists, choose a separate private location or a controlled migration.
 3. Choose a task-focused skill directly or run `ask-career-skills` for guidance. For example: *“Audit alignment among my resume, GitHub profile, website, and LinkedIn export.”*
 
 Configuration discovered during setup belongs in the **user's chosen private workspace**, not in this public skill repository. See [architecture and contracts](docs/ARCHITECTURE.md) and [evaluation cases](tests/cases.json).

@@ -77,6 +77,14 @@
     {
       "id": "ask-career-skills-new-adoption",
       "mode": "explicit"
+    },
+    {
+      "id": "setup-tracked-scaffold-not-ghosts",
+      "mode": "explicit"
+    },
+    {
+      "id": "setup-role-history-with-internships",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [

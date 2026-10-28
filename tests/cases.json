@@ -354,10 +354,10 @@
       "skill": "setup-career-skills",
       "prompt": "I want a new managed career workspace in a local folder, using only Markdown. Start with reflection, and I have no existing documents or tracker.",
       "expect": [
-        "Proposes a private career/ root with a career/README.md and profile/ as the first needed home",
-        "Uses standard home names but avoids empty placeholder directories or a full interview",
-        "Records local storage and write boundaries, and asks a focused starting question",
-        "Does not require integrations, additional skills, or pre-existing source documents"
+        "Proposes a private career/ root with a workspace README and five short home READMEs, even though only profile facts may be populated",
+        "Uses standardized physical folder names but does not fabricate content or demand an interview",
+        "Records local storage/write boundaries and asks one focused starting question",
+        "Does not require integrations, other skills, or existing documents"
       ]
     },
     {
@@ -616,10 +616,10 @@
       "skill": "setup-career-skills",
       "prompt": "Set up a new private career/ in a new repo. My old resume, profile notes and project files are available, but I only authorize importing my recent role and two selected projects. I want the originals left alone.",
       "expect": [
-        "Creates or proposes standard career/README.md with profile/ and projects/ records only as needed",
-        "Discovers authorized sources but imports only the selected role/projects, not a full old directory copy",
-        "Captures source file locations and uncertainty without treating resume wording as independent verification",
-        "Confirms originals are untouched, with a concise imported/pending summary"
+        "Creates or proposes career/README.md and five tracked homes using short per-home READMEs",
+        "Imports only the selected role and projects; leaves unrelated home READMEs marked pending and the originals untouched",
+        "Captures source file locations and uncertainty without treating resume wording as independently verified",
+        "Distinguishes a role-history record in profile/ from selected professional engagements in projects/"
       ]
     },
     {
@@ -682,10 +682,32 @@
       "skill": "setup-career-skills",
       "prompt": "I've connected my private resume repository and a LinkedIn profile export. Please initialize career/ but don't copy or synchronize either source yet.",
       "expect": [
-        "Can initialize a minimal standardized index only with permitted writes",
-        "Records candidate source locations as pending or unselected without importing factual claims",
+        "Can initialize the index and five minimal tracked home READMEs with permitted writes",
+        "Records candidate source locations as pending, without importing factual claims",
         "Does not crawl unrelated documents or silently synchronize external content",
-        "Leaves originals untouched and explains the next optional source-selection decision"
+        "Leaves original sources untouched and explains the next import-selection decision"
+      ]
+    },
+    {
+      "id": "setup-tracked-scaffold-not-ghosts",
+      "skill": "setup-career-skills",
+      "prompt": "I renamed my old Git-tracked career/ directory to career-old/ and asked setup-career-skills for a new standardized career/. Import only selected profile facts. In my editor I still see deleted paths under career/personal-brand/ and career/personal-projects/ from the old Git state.",
+      "expect": [
+        "Distinguishes deleted legacy tracked paths from physically present directories using filesystem evidence rather than the editor alone",
+        "Creates career/README.md and all five canonical home directories with lightweight trackable README files",
+        "Does not recreate personal-brand/ or personal-projects/ inside the new managed career/",
+        "Leaves career-old/ intact and reports the source-control rename/deletion state without misrepresenting which paths exist"
+      ]
+    },
+    {
+      "id": "setup-role-history-with-internships",
+      "skill": "setup-career-skills",
+      "prompt": "Set up my career workspace from my resume and older notes. The resume includes two internships, paid roles at three grades, and a detailed cloud engagement spanning two grades. Start with role history, and keep assignment evidence separate.",
+      "expect": [
+        "Places employer, function, grade, date ranges and source-supported internships in profile/experience.md",
+        "Does not mistake a long-running client engagement for an additional employment role",
+        "Keeps cloud assignment and project outcome details under projects/ when selected, linking from role history instead of mixing them",
+        "Flags conflicts or missing role dates rather than silently dropping internships or inventing details"
       ]
     }
   ]

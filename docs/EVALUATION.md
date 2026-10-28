@@ -36,3 +36,5 @@ Negative smoke case `workspace-healthy-resume-no-helper` checks that working pro
 The opt-in smoke set includes an explicit `ask-career-skills` navigation case. Review the returned recommendation and agent trace: the router should **recommend**, not invoke, other skills or write files.
 
 **Standard workspace adoption smoke:** Test clean `career/` initialization from selected old sources, explicit physical migration of an occupied `career/`, and router selection for a first-time workspace. Verify actual file writes and absence of bulk copies, link integrity, preservation of originals, scope/approval, and no automatic publication. These scenarios remain opt-in agent tests, not proof of observed behavior.
+
+Setup regression tests from a real OpenCode session cover Git's deleted legacy paths after renaming an old career root, explicit creation of the five trackable home directories, and separation of role history (including internships) from assignments/project details. Review physical files and staged Git changes, not only an editor's deleted-path display. These remain behavioral scenarios requiring actual host execution.

@@ -34,12 +34,13 @@ The profile is authoritative for personal facts and selected intentions, while a
 
 ## Standard managed layout
 
-New managed workspaces use these names. Individual files are examples, not mandatory templates; create only records needed by the user's work. A Git repository does not store empty directories, so unused homes need not be populated with placeholders.
+New managed workspaces use these names. Create the five named home directories at setup, each with a **short `README.md`** so Git tracks the structure and humans see the same organized workspace immediately. The README states ownership and whether content is pending; it is navigation, not invented professional data. Individual content files below are examples, not mandatory templates; populate only those approved by the user.
 
 ```text
 career/
   README.md
   profile/
+    README.md
     experience.md
     education.md
     qualifications.md
@@ -49,22 +50,26 @@ career/
     preferences.md
     development.md
   projects/
+    README.md
     project-name.md
   brand/
+    README.md
     positioning.md
     identity.md
   assets/
+    README.md
     drafts/
     staged/
     services.md
   research/
+    README.md
     companies/
     opportunities/
     profiles/
     archive/
 ```
 
-Create only needed records; combine or split files when useful. direction.md can hold north star, values, motivations, interests and goals. development.md holds actions, evidence milestones and dated progress reviews. Project records describe purpose, status, contribution, skills used, learning, relevance to a resume and links to work; do not copy source code or the project's backlog.
+The five home READMEs can remain minimal until populated; do not write unsupported facts just to fill a directory. Create only needed substantive records; combine or split files when useful. direction.md can hold north star, values, motivations, interests and goals. development.md holds actions, evidence milestones and dated progress reviews. Project records describe purpose, status, contribution, skills used, learning, relevance to a resume and links to work; do not copy source code or the project's backlog.
 
 brand/ contains guidance, not a second asset library. identity.md can describe fonts, palette, logo and composition rules, linking actual sources under assets/. Design interview answers can live in brand/discovery.md. **Legacy source filenames** such as `goals.md` or `certifications.md` can inform the new records; don't rename or import a file solely because its name looks similar.
 
@@ -74,7 +79,7 @@ brand/ contains guidance, not a second asset library. identity.md can describe f
 
 1. **Discover (read-only).** With permission, look for existing career notes, resumes, portfolio/project documents, certificates, published profile exports and other user-supplied sources. Record where they are and what each might contribute; ask before expanding access or reading sensitive material.
 2. **Select and map.** Present a concise inventory and recommend which sources/sections to bring in first. Let the user choose. Map selected claims to `profile/`, project records to `projects/`, positioning and design guidance to `brand/`, reusable artifacts to `assets/`, and selected outside references to `research/`. External documents are **inputs**, not automatically authoritative workspace files.
-3. **Create the canonical destination.** After confirming storage and write policy, initialize `career/README.md` and only the needed standardized homes. Extract or summarize selected content into appropriate canonical Markdown records; **do not bulk-copy whole old workspaces**. Do not claim sourced text was independently verified: retain source links or locations, source dates when known, and uncertainty on contested facts. Ask about contradictions before choosing one claim.
+3. **Create the canonical destination.** After confirming storage and write policy, initialize `career/README.md` plus all five standard homes with short per-home README files, even if no substantive records are imported into some yet. Extract selected content into canonical Markdown records; **do not bulk-copy old workspaces or invent filler data**. Treat `profile/experience.md` as a complete *role-history* record for the chosen sources (including internships where supported), not a dump of client engagements; place assignments and project evidence in `projects/` with links. Retain source locations, dates when known and uncertainty; ask about real contradictions or omissions.
 4. **Verify and hand off.** Check that imported records and references resolve and that original source documents remain untouched. Record imported, pending and rejected/uncertain sources in the workspace index, and a sensible next content task such as `maintain-profile`. Import need not finish in one session.
 
 **Existing `career/` already occupied?** Offer two explicit choices: use a different private repository/folder whose managed root can be `career/`, or plan a controlled migration **in place** using `validate-workspace`. Never overwrite the existing root, create a hidden duplicate authority, or move/delete old files without a selected migration plan and approval. Import can also be read-only when no write destination is available.
