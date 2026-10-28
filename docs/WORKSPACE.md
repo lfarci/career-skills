@@ -1,6 +1,6 @@
 # Career workspace
 
-Use ordinary Markdown and links in user-selected private storage: local files, a Git repository, Drive, OneDrive or another Markdown-capable provider. **For a Career Skills-managed workspace, use a common physical `career/` root with the five homes below.** They are career records, not installable skill categories. Unused folders and individual records can be created on demand; task skills also work without a managed workspace.
+Use ordinary Markdown and links in user-selected private storage: local files, a Git repository, Drive, OneDrive or another Markdown-capable provider. **For a Career Skills-managed workspace, use a common physical `career/` root with the five homes below.** They are career records, not installable skill categories. A complete setup scaffolds all five homes with minimal READMEs; substantive records are added on demand. Task skills also work without a managed workspace.
 
 ## Five homes
 
