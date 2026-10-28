@@ -1,38 +1,35 @@
-# Setup reference: new or resume
+# Career workspace rules
 
-## Location and routing
+Read this reference when importing career sources, choosing canonical records or resuming a previous setup. The **chosen folder itself** is the workspace root. An existing `career/` in the current repository is not automatically the selected destination.
 
-Confirm the **exact workspace root** before reading workspace data. If the user says “create a folder named `career-workspace`”, use `career-workspace/README.md` and `career-workspace/profile/`, **not** `career-workspace/career/`. If they instead select a repository as the *parent*, propose `<repo>/career/` as the root. Don't assume an existing `career/` is chosen. Reuse a root already specified or confirmed; state the resolved path before writes, asking again only for a genuinely ambiguous parent-vs-root choice. Do not create an empty folder as a separate setup milestone unless explicitly requested.
+## Record ownership
 
-**New:** Selected destination is empty or absent. Ask about accessible existing CVs, career notes, resumes, portfolios, project records, GitHub/LinkedIn exports and credentials. Inventory only approved sources, recommend the first *useful* import, and ask one focused question. With permission, create `<chosen-root>/README.md` plus selected records; don't conclude after creating an empty scaffold. The user may explicitly choose index-only setup.
+Create these homes **as needed**, directly under the chosen root:
 
-**Resume:** Selected destination has an existing managed `career/` or partial records. Before creating or importing anything, verify:
-- `<chosen-root>/README.md` existence and recorded root, permissions, source map and onboarding status; if missing, inspect existing records and propose a minimal index repair.
-- Referenced canonical files, links and folders **actually** exist; unused homes need not exist.
-- Canonical ownership is unambiguous: no conflicting active profile/brand/project records, accidental duplicate roots, or unexplained imports.
-- Which records are captured, missing, conflicting or deferred, and the last pending user decision.
+- `profile/`: identity, employers/grades/dates (including supported internships), skills, qualifications and goals.
+- `projects/`: consulting assignments, personal projects, contributions and evidence.
+- `brand/`: positioning, audiences and visual guidance.
+- `assets/`: staged and draft reusable materials.
+- `research/`: selected companies, opportunities and comparisons.
 
-Return a **short validation result** (usable / issues needing repair / blocked) and the specific next question. If blocked, resolve or propose a targeted correction first. The optional `validate-workspace` skill can assist with difficult structure/links; it is not required and its use must not turn a resume into automatic reorganization. A usable older layout can stay as-is until the user requests standardization. Preserve prior permissions, answers and records. Don't ask the same question again.
+`profile/experience.md` holds employer and role history, while assignments and their outcomes belong in `projects/` when selected. Distinguish verified or user-reported facts from aspirations, messaging and live publication. Reuse supported facts without inventing achievements, dates or credentials.
 
-If the chosen destination contains unrelated files or uncertain ownership, ask whether to adopt it, choose another location or plan an approved migration. No overwriting, moving or deleting without a separate proposal and approval. Git `D career/...` after a rename can represent deleted *tracked paths*, not present directories: inspect the filesystem.
+## New: source handling
 
-## Source coverage and safe cutover
+Ask which sources the user authorizes you to read. Start with indexes and summaries of CVs, prior notes, resumes, portfolios, project records and credentials; open detailed records only for the approved import or a relevant conflict. Recommend a useful first subset. Extract selected claims into canonical records and link original evidence. Preserve uncertainty and separate grade from functional role. A summary does not replace its supporting source. The user may choose minimal index-only setup.
 
-Review the chosen root's index and source map first, then read detailed files **only as needed** to produce the selected records. For “set up everything available”, inventory each relevant area and record what was imported, summarized, linked, unavailable or deferred; avoid dumping every file into the conversation. A consolidated summary is useful but **does not replace its full evidence**. Never claim sources can be deleted or safely replaced just because the new index covers every area. Keep original sources or preserve enough traceable evidence for future work; explain dependencies on paths outside the workspace.
+When the user expressly asks to create the chosen folder first, create it with available permission **and continue** into source discovery; an empty directory is not the end of setup.
 
-If the user explicitly approves replacing/moving an existing workspace, first identify source files, destination collisions and external dependencies. Preserve source content as agreed, update provenance links, then verify links **both within the new workspace and pointing into it from the rest of the accessible repository**, plus links in any moved archive/backup. Fix or report stale references before describing the cutover as complete. If only part of the repository is accessible, label verification partial; do not claim global link integrity. Structural migration is a separate user-approved operation, never an automatic consequence of import.
+## Resume: validation
 
-## Standard records and authority
+Before changing an existing workspace:
 
-The managed root uses these **home names as needed**, not as mandatory empty folders:
-- `profile/`: background, employer/role history (including supported internships), skills, credentials, goals, development.
-- `projects/`: consulting engagements, assignments, contributions, outcomes and project evidence.
-- `brand/`: messaging, positioning and visual guidance.
-- `assets/`: staged/draft reusable materials and service descriptions.
-- `research/`: selected employers, roles and comparators.
+- Check root `README.md`, including source map, authorized writes and saved next decision. If absent, inspect existing records and propose an index repair.
+- Resolve referenced files and local links; note missing material and conflicting canonical owners. Unused homes need not exist.
+- Recover captured, pending and deferred areas, and prior answers. Report `usable`, `needs repair` or `blocked` and the smallest next action.
 
-`profile/experience.md` owns jobs and dates, not detailed client engagements. Distinguish facts from plans, branding and published state. Preserve original sources with provenance; import only user-selected claims, never auto-sync or bulk-copy a legacy tree. Do not invent credentials, impact metrics or project maturity.
+A usable legacy layout can remain operational. `validate-workspace` is optional for difficult structural issues, not required for normal setup. Preserve current user choices instead of restarting the interview.
 
-## Lightweight progress checkpoint
+## Lightweight checkpoint
 
-Keep `<chosen-root>/README.md` readable: destination, authorized write policy, source map, captured/pending/deferred areas, setup status (`in progress`, `ready`, `paused`, `blocked`) and one next decision. Do not keep an elaborate migration log or repeat the whole interview. After each approved batch, verify what was written and ask **one** useful next question. The user can stop, pause or skip categories. No external publication is inferred.
+The root `README.md` records the destination, approved source and write scope, captured/pending/deferred areas, setup status (`in progress`, `paused`, `ready`, `blocked`) and **one next decision**. After each approved import, verify the actual files and links, then update this checkpoint. Stop only when the user pauses or confirms that the selected setup scope is complete.
