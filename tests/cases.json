@@ -709,6 +709,61 @@
         "Keeps cloud assignment and project outcome details under projects/ when selected, linking from role history instead of mixing them",
         "Flags conflicts or missing role dates rather than silently dropping internships or inventing details"
       ]
+    },
+    {
+      "id": "setup-asks-about-existing-sources",
+      "skill": "setup-career-skills",
+      "prompt": "Use setup-career-skills to help me set up a new private career workspace. I haven't mentioned any previous documents or specific profile information yet. Please guide me.",
+      "expect": [
+        "Proactively asks a concise, relevant question about possible existing resumes, notes, professional profiles or source locations",
+        "Explains the standard career/ workspace in a user-oriented way without jumping into a broad audit",
+        "Does not invent career history or import unselected sources",
+        "Establishes the next useful guided intake step rather than treating an empty scaffold as completion"
+      ]
+    },
+    {
+      "id": "setup-first-batch-does-not-end-intake",
+      "skill": "setup-career-skills",
+      "prompt": "We're in the middle of setup-career-skills. I authorized profile facts and direct writes; the agent has just created career/README.md, career/profile/experience.md, skills.md and certifications.md. Other source files are available, including leadership-and-projects.md, and we haven't discussed education, languages or personal projects. The link checks passed. What should happen now?",
+      "expect": [
+        "Treats successful initial imports and link checks as a checkpoint, not full guided onboarding",
+        "Reports captured and still missing or uncertain areas, including specific source candidates",
+        "Recommends the most useful next focus and asks one concise follow-up question rather than ending with a generic optional suggestion",
+        "Stores or proposes a resumable progress checkpoint without importing unrelated documents without approval"
+      ]
+    },
+    {
+      "id": "setup-resume-in-progress",
+      "skill": "setup-career-skills",
+      "prompt": "Continue setup-career-skills from career/README.md. Its setup status is paused: role history and qualifications imported; brand and project sources pending; next decision was whether to import internship and project evidence. We previously approved read-only project-source review.",
+      "expect": [
+        "Reads or uses saved onboarding progress rather than starting the setup interview again",
+        "Preserves previous choices, imported records and permissions",
+        "Proactively proposes the documented next intake decision with one focused question",
+        "Does not duplicate records, assume write permission or mark paused sources as imported"
+      ]
+    },
+    {
+      "id": "setup-quick-index-only",
+      "skill": "setup-career-skills",
+      "prompt": "Use setup-career-skills, but I explicitly want a minimal index-only workspace today. Create the five standard homes and READMEs without importing anything. We can handle all profile information later.",
+      "expect": [
+        "Respects the explicitly minimal requested scope rather than insisting on a lengthy interview",
+        "Creates or proposes the five standard home READMEs and a workspace index subject to write permissions",
+        "Marks selected content coverage as deferred and does not fabricate personal details",
+        "Accurately reports minimal setup ready versus still-deferred career content and gives one optional continuation"
+      ]
+    },
+    {
+      "id": "setup-gap-question-internships",
+      "skill": "setup-career-skills",
+      "prompt": "The new career/profile/experience.md contains my current consultancy and prior full-time employer, but the old CV I approved for review lists two internships. You have already imported the full-time roles. Continue onboarding.",
+      "expect": [
+        "Identifies the two source-supported internships as missing from the current role-history coverage",
+        "Asks a focused question about importing or confirming them rather than silently ignoring them",
+        "Keeps detailed client assignments and project outcomes outside role history",
+        "Updates or proposes the setup checkpoint and distinguishes pending from confirmed facts"
+      ]
     }
   ]
 }
