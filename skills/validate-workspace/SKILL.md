@@ -5,7 +5,7 @@ description: Validate career workspace structure on request, or repair stale sou
 
 # Validate Career Workspace
 
-Keep existing career records findable. Map the user's layout to the five logical areas (profile, projects, brand, assets, research); physical folder names are optional. Use this skill **on demand**, not as a prerequisite for other skills.
+Keep career records findable and, when requested, align an existing workspace to the standard physical `career/` homes: `profile/`, `projects/`, `brand/`, `assets/`, `research/`. Legacy paths can remain operational via mappings until an authorized migration. Use this skill **on demand**, not as a prerequisite for other skills.
 
 ## Contract
 
@@ -15,9 +15,9 @@ Keep existing career records findable. Map the user's layout to the five logical
 
 ## Steps
 
-1. **Choose scope.** For a *task blocker*, examine only the failed record lookup or affected link. For an *explicit workspace review*, inspect the chosen index, its mapped existing records and their relevant links; report inaccessible areas. An absent index or uncreated logical home is valid when a task can use supplied records. Initial workspace configuration belongs to `setup-career-skills`.
-2. **Verify the mapping.** Find the current canonical source and resolve applicable paths from the workspace index or supplied files. Check target existence, relative links and whether the same factual record has competing authorities. Separate actual broken references from intentional alternative layouts.
-3. **Select a repair.** Prefer updating a stale index entry or link over relocating files. When the canonical owner is uncertain, ask one focused question. Before a move, rename, merge or deletion, present the affected paths, link updates and conflict/data-loss risks, and obtain specific approval.
+1. **Choose scope.** For a *task blocker*, check only the failed lookup/link; a working legacy mapping does not trigger migration. For an *explicit workspace review*, inspect the index and mapped existing records; when the user asks for **standardization**, also compare physical homes with the standard `career/` layout. Report inaccessible areas. An uncreated unused home or absent index does not block work from supplied records. Initial workspace creation and source imports belong to `setup-career-skills`.
+2. **Verify the mapping.** Resolve existing canonical paths and relevant links, identify competing authorities, and separate broken references from usable legacy mappings. For an explicit alignment request, inventory proposed moves, path collisions and affected inbound/outbound links before editing.
+3. **Select a repair.** For a broken link, prefer a small index/link fix. For user-requested standardization, propose relocation to canonical home names, including link updates, conflicts and history preservation (use a reviewable PR when relevant). Ask about ambiguous ownership. Moving, renaming, merging or deleting requires a specific approved plan.
 4. **Apply within scope.** Make a narrow index/link correction only if the active user request and write policy authorize it; otherwise present a patch. Preserve unrelated changes and follow the provider's version/PR workflow. Verify that changed references resolve after the write.
 5. **Return a result.** Use `valid` for checked mappings without defects, `repaired` for a confirmed fix, `proposed` for a fix awaiting approval/access and `blocked` when the required authority or files remain unknown. Name the affected paths and any unresolved question. When called from another task, return the resolved locator so the original task can continue; an unresolved blocker may instead require supplied evidence.
 

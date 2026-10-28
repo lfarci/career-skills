@@ -65,6 +65,18 @@
     {
       "id": "ask-career-skills-structure",
       "mode": "explicit"
+    },
+    {
+      "id": "setup-fresh-selective-import",
+      "mode": "explicit"
+    },
+    {
+      "id": "workspace-migrate-standard-homes",
+      "mode": "explicit"
+    },
+    {
+      "id": "ask-career-skills-new-adoption",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [

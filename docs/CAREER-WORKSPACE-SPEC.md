@@ -2,6 +2,17 @@
 
 Status: synthesized from the design conversation on 25 October 2026. Records agreed behavior and explicitly identifies deferred choices; it is not a claim that every behavior has been implemented or tested.
 
+## Updated workspace direction (28 October 2026)
+
+**This decision supersedes the earlier layout-flexibility default below**, while preserving the history of the original design choices. `docs/WORKSPACE.md` is the operational source of truth.
+
+- A Career Skills-managed workspace now has a **standard physical `career/` root** with five homes: `profile/`, `projects/`, `brand/`, `assets/` and `research/`. Individual records, nested folders, storage providers and trackers remain flexible.
+- The normal adoption path starts in a **fresh private destination**, then discovers user-authorized existing documents as **sources** and selectively extracts relevant content into canonical files, keeping provenance, unresolved conflicts and the originals. Source discovery is opt-in, not indiscriminate syncing or copying.
+- If `career/` is already occupied, offer a separate destination or an approved **in-place physical migration** with path mapping, conflict review, link updates and preservation of Git history. `validate-workspace` can guide structural migration on request, but never forces it during unrelated tasks.
+- A legacy workspace may continue to work through its existing index until the user chooses migration. Individual skills must still work from pasted inputs without onboarding.
+- Earlier user stories about **mapping alone as the expected end state**, and phrases saying folder names are purely optional in a *managed destination*, are superseded. The safety intent survives: avoid unauthorized changes to existing material, only create needed records, and never require setup to run an individual skill.
+- This is a public skill-workflow change; **no private user workspace is modified** as part of the specification update.
+
 ## Problem Statement
 
 A professional needs a private, durable account of their career that agents can use to support reflection, growth, research and public presentation. Independent skills are less useful when they invent incompatible records, duplicate facts or confuse aspirations, approved wording and live published content.

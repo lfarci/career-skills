@@ -8,7 +8,7 @@ Each skill works independently and does not require GitHub, a particular AI harn
 
 | Skill | Purpose | Invocation |
 | --- | --- | --- |
-| [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Discover existing records, assets, preferences, and progress tracker | Manual |
+| [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Initialize a standard private career/ workspace from selected existing sources | Manual |
 | [`ask-career-skills`](skills/ask-career-skills/SKILL.md) | Recommend which career workflow to use after setup or at any point | Manual |
 | [`validate-workspace`](skills/validate-workspace/SKILL.md) | Validate workspace structure or repair broken mappings during another task | Discoverable |
 | [`reflect`](skills/career-direction/reflect/SKILL.md) | Explore and articulate professional identity and goals | Manual |
@@ -55,7 +55,7 @@ The former `design-identity` package is replaced by these three design skills; u
 ## Design principles
 
 - **Facts, goals, and positioning are different:** a verified job history is not an aspiration or a marketing claim.
-- **One canonical record:** respect the user's established source of truth, rather than require a new schema or duplicate it in every destination.
+- **One canonical record:** in a managed workspace, selected facts have one authoritative record under the standard `career/` homes. Earlier documents remain linked sources, not competing managed copies.
 - **Independently useful:** a skill can work with pasted documents even without a preconfigured workspace.
 - **Verify, don't invent:** preserve source links, date qualifiers, uncertainty, and claims that cannot be confirmed.
 - **Reviewable mutations:** do not silently publish, apply for a job, alter public profiles, or create tracker items without authorization.
@@ -65,15 +65,19 @@ The former `design-identity` package is replaced by these three design skills; u
 
 The entire workspace is private, including material prepared for public use. Its five homes are **profile/** (background, capabilities, direction and development), **projects/** (work accounts and evidence links), **brand/** (positioning, audiences and visual guidance), **assets/** (drafts, approved staged outputs and service descriptions), and **research/** (selected companies, opportunities and comparable profiles).
 
-A workspace README maps these roles to existing canonical records. They are user-record concepts, not the installable skill categories above. Reuse shared bios, headlines and visual masters; staged material is not proof of publication. Inspect external surfaces where possible, and ask the user to reconcile differences. Research is selected before saving and reviewed on request; prefer guided archiving, with deletion manual.
+A managed workspace uses the **physical** `career/` root with these standardized directory names, and `career/README.md` is its entry point. Existing resumes, old notes, project records and profile exports are potential **sources** to populate new canonical Markdown records: select and verify them rather than bulk-copying or silently moving the originals. Reuse approved assets; staged material is not proof of publication. Research is retained selectively.
 
-Use local folders, GitHub repositories or any Markdown-capable storage. Keep existing paths when mapped; setup is optional. See the [portable workspace model](docs/WORKSPACE.md) for the layout and operating rules. No actual user notes are migrated by changing this reference model.
+Use a private local folder, GitHub repository or another Markdown-capable provider. `setup-career-skills` defaults to a **fresh `career/`** in a selected private location; if one already exists, it offers a different destination or a planned, approved migration in place. An existing custom layout remains usable while migration is pending, and standalone task skills never require setup. See [workspace initialization and adoption](docs/WORKSPACE.md#initialize-from-existing-sources).
 
-When an active skill encounters a **broken source mapping or link**, it may load `validate-workspace` for a scoped repair, **if installed and supported by the agent host**. Direct user requests for workspace validation are supported too. A valid custom layout does not need migration. See the [task execution flow](docs/ARCHITECTURE.md#task-execution-flow).
+When an active skill encounters a **broken source mapping or link**, it may load `validate-workspace` for a scoped repair, **if installed and supported by the agent host**. Direct user requests for workspace validation are supported too. An existing layout with working paths should not be migrated during unrelated tasks; users can request physical alignment explicitly. See the [task execution flow](docs/ARCHITECTURE.md#task-execution-flow).
 
 For agent-driven repair during other skills, install `validate-workspace` alongside those leaf skills (for example, `npx skills add lfarci/career-skills --skill validate-workspace`). Installing a task skill alone does not install the helper; its absence should never block the task.
 
 The [workspace decision specification](docs/CAREER-WORKSPACE-SPEC.md) captures the agreed behavior, rejected alternatives, testing boundaries and deferred work.
+
+### Example: adopting an old career tree
+
+An existing `career/personal-projects/`, `career/personal-brand/` and root `career/services.md` can remain as source material while the user reviews a proposed move to `career/projects/`, `career/brand/` and `career/assets/services.md`. The agent inventories content and links, gets approval, then verifies the chosen changes in a reviewable PR. **No files in the public Career Skills repository are migrated by this documentation change.**
 
 ## After setup: suggested journey
 
@@ -84,7 +88,7 @@ See the [user journey with Mermaid diagram and routing guide](docs/USER-JOURNEY.
 ## Getting started
 
 1. Install individual skills via your agent's workflow or `npx skills add lfarci/career-skills --skill <name>` ([Skills CLI](https://www.skills.sh/docs/cli)). Nested skills are independently installable; no repository-wide setup is required.
-2. Run `setup-career-skills` if you have existing career notes, resumes, web profiles, or an issue tracker you want the skills to use consistently.
+2. Run `setup-career-skills` when you want a managed workspace. It proposes a clean `career/`, discovers existing documents you choose to share, and imports selected information into the standard homes with permission. If `career/` already exists, choose a separate private location or a controlled migration.
 3. Choose a task-focused skill directly or run `ask-career-skills` for guidance. For example: *“Audit alignment among my resume, GitHub profile, website, and LinkedIn export.”*
 
 Configuration discovered during setup belongs in the **user's chosen private workspace**, not in this public skill repository. See [architecture and contracts](docs/ARCHITECTURE.md) and [evaluation cases](tests/cases.json).
