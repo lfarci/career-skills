@@ -97,6 +97,14 @@
     {
       "id": "setup-resume-in-progress",
       "mode": "explicit"
+    },
+    {
+      "id": "setup-location-first-no-assumptions",
+      "mode": "explicit"
+    },
+    {
+      "id": "setup-location-first-existing-dir",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [

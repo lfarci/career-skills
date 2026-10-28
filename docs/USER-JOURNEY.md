@@ -36,7 +36,7 @@ The setup skill **stays engaged** through multiple user-approved intake steps. A
 
 ```mermaid
 flowchart TD
-    S["Start or resume setup"] --> D["Choose private career/ destination"]
+    S["Start or resume setup"] --> D["Ask user where to initialize; reuse confirmed location on resume"]
     D --> I["Ask about existing sources and access"]
     I --> C["Identify coverage and missing information"]
     C --> Q{"User-selected next focus?"}

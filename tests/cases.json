@@ -713,9 +713,9 @@
     {
       "id": "setup-asks-about-existing-sources",
       "skill": "setup-career-skills",
-      "prompt": "Use setup-career-skills to help me set up a new private career workspace. I haven't mentioned any previous documents or specific profile information yet. Please guide me.",
+      "prompt": "We're continuing setup-career-skills. I've already confirmed that I want my managed workspace in a new private repo, and the destination is empty. I haven't mentioned previous documents or specific profile information yet. Guide me.",
       "expect": [
-        "Proactively asks a concise, relevant question about possible existing resumes, notes, professional profiles or source locations",
+        "After the workspace location is already confirmed, proactively asks one concise question about existing resumes, career notes or other source locations",
         "Explains the standard career/ workspace in a user-oriented way without jumping into a broad audit",
         "Does not invent career history or import unselected sources",
         "Establishes the next useful guided intake step rather than treating an empty scaffold as completion"
@@ -763,6 +763,39 @@
         "Asks a focused question about importing or confirming them rather than silently ignoring them",
         "Keeps detailed client assignments and project outcomes outside role history",
         "Updates or proposes the setup checkpoint and distinguishes pending from confirmed facts"
+      ]
+    },
+    {
+      "id": "setup-location-first-no-assumptions",
+      "skill": "setup-career-skills",
+      "prompt": "Use setup-career-skills to help me create a career workspace. Please start in read-only mode and guide me one question at a time.",
+      "expect": [
+        "First asks where the user wants to initialize the managed workspace, with helpful storage examples",
+        "Does not silently choose the current repository or assume a default career/ path is the destination",
+        "Does not inspect workspace content, request all source information or write files before the location is chosen",
+        "Asks one concise question and leaves later discovery and imports for subsequent turns"
+      ]
+    },
+    {
+      "id": "setup-location-first-existing-dir",
+      "skill": "setup-career-skills",
+      "prompt": "Use setup-career-skills to initialize my career workspace. I'm currently in a Git repository that contains a career/ directory. Start with read-only exploration.",
+      "expect": [
+        "Asks the user where they want to initialize, rather than treating the current career/ directory as already selected",
+        "Does not inspect or mutate career/ before destination confirmation",
+        "After location selection, distinguishes continuing existing records from creating a new workspace or planning an explicit migration",
+        "Does not assume existing directory contents can be overwritten"
+      ]
+    },
+    {
+      "id": "setup-location-explicit-in-request",
+      "skill": "setup-career-skills",
+      "prompt": "Use setup-career-skills. I want the managed career/ root inside my private repo at ./workspace-notes. The location is confirmed; start read-only.",
+      "expect": [
+        "Respects the explicitly selected destination without repeating the same where-question",
+        "Inspects only the selected target for workspace progress after the destination is confirmed",
+        "Asks for an adoption/migration decision if that destination is occupied",
+        "Proceeds with permission-aware source discovery and no writes in read-only mode"
       ]
     }
   ]

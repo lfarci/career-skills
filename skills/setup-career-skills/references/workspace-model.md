@@ -2,7 +2,7 @@
 
 ## Start or resume
 
-`setup-career-skills` is an interactive, **resumable** onboarding workflow. Read the existing `career/README.md` first when present. If the user says only “set up my career workspace”, make a helpful recommendation then ask **one high-value question** about sources or destination based on what is already known. If the user explicitly requests an index-only/minimal setup, do that and mark other areas deferred; do not force a lengthy interview.
+`setup-career-skills` is an interactive, **resumable** onboarding workflow. **For every new setup, the first question is where the user wants to initialize the workspace.** A visible `career/` directory, current Git repository or previous source location is not implicit permission to adopt it. Ask for a user-chosen private storage location; offer current repository, another repository or local directory as examples, not assumptions. If a specific location is already provided in the new request, confirm it without requesting the same information twice. A resumed session can reuse a previously confirmed destination. **Only after choosing/confirming the location**, inspect the target for existing workspace content and progress; if occupied, let the user choose to continue it, plan an approved migration or select a different destination. Do not overwrite. If the user explicitly requests an index-only/minimal setup, respect the shorter scope.
 
 ## Source discovery and intake
 
