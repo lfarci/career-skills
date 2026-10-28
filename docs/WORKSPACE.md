@@ -14,6 +14,24 @@ Use ordinary Markdown and links in any user-selected storage: local files, a Git
 
 Profile grounds brand and growth decisions; projects can supply evidence. Brand guides assets. Selected research informs market understanding, targeting, presentation and development. Research about someone else never proves a personal capability. A project is not automatically evidence: link the repository, outcome or feedback supporting a particular claim.
 
+## Logical data flow
+
+The five homes below represent **sources of responsibility**, not directories that must exist. Links describe allowed information flow; they do not authorize automated updates.
+
+```mermaid
+flowchart LR
+    J["projects/<br/>work records and evidence links"] -.->|"selected evidence"| P["profile/<br/>facts, goals and development"]
+    P -->|"grounds claims"| B["brand/<br/>positioning and identity guidance"]
+    P -->|"supports reusable content"| A["assets/<br/>drafts and approved staged outputs"]
+    B -->|"guides"| A
+    R["research/<br/>selected market references"] -.->|"informs choices"| B
+    R -.->|"informs plans"| P
+    A -->|"separately authorized publication"| X["Published surfaces<br/>(outside the private workspace)"]
+    X -.->|"observed state and reconciliation"| A
+```
+
+The profile is authoritative for personal facts and selected intentions, while a published site or account is authoritative **only for what is actually live**. Projects and research can support decisions but do not automatically establish a person's achievements. Brand guidance informs reusable assets; staged assets never establish publication. Corrections propagate to other records or external surfaces only through the user's selected task and permissions.
+
 ## Reference layout
 
 ```text
@@ -74,6 +92,12 @@ For existing notes, map before moving: profile/goals.md may already hold directi
 Use readable headings and relative links; no mandatory YAML, IDs or database. Separate facts, user preferences, interpretations and aspirations. Retain source/date and current/planned/superseded status where material. Decisions include rationale; actions include next steps and evidence/review points. Preserve uncertainty and meaningful history.
 
 Before editing, read current canonical records and preserve unrelated changes. Use available version/conflict controls and the chosen write workflow. Confirm saves and links; when writes are unavailable, provide a proposed patch without claiming success. Skills remain useful from pasted input or selected files without an index, another skill or a specific provider.
+
+## On-demand workspace validation
+
+`validate-workspace` is the structural exception handler for a failed mapped path, broken link or competing canonical record, and it also handles **explicit workspace-structure reviews**. During another task it checks only the blocker; during a requested review it checks the existing workspace index, mapped records and relevant links. Valid custom folder names, intentionally uncreated areas and use of pasted inputs require no repair.
+
+Initial configuration remains `setup-career-skills`' responsibility. Prefer repairing a mapping or link to moving records. A narrow index fix needs task-specific write authorization; a move, merge, rename or deletion requires an explicit plan and approval. The validator returns a structural status and usable path (or blocker) to the original workflow. Its availability and invocation depend on the host; every task skill remains independently usable.
 
 ## Skill contracts and paths
 

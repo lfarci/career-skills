@@ -456,6 +456,105 @@
         "Prioritizes meaningful factual findings rather than peripheral housekeeping",
         "Does not edit any file or present suggestions as applied changes"
       ]
+    },
+    {
+      "id": "workspace-stale-index",
+      "skill": "validate-workspace",
+      "prompt": "I'm building a resume. The career workspace index points to profile/skills-old.md but the record was renamed to profile/skills.md. My private workspace policy allows fixes to index links, not moving or editing the records. Can you unblock the resume work?",
+      "expect": [
+        "Recognizes a concrete structural trigger without starting a full workspace audit",
+        "Verifies the old and new target paths before fixing the minimal source-map reference",
+        "Edits only the authorized index link when access permits, or clearly proposes the patch",
+        "Hands the resolved source path back for resume work without changing profile facts"
+      ]
+    },
+    {
+      "id": "workspace-valid-custom-layout",
+      "skill": "validate-workspace",
+      "prompt": "Please validate my career workspace. I keep profile facts in career/profile/ and branding files in career/personal-brand/, with the index mapping both correctly. I have not created research/ because I do not need it.",
+      "expect": [
+        "Accepts the documented custom directory mapping as valid rather than forcing names",
+        "Treats unused or missing logical homes as optional, not automatically broken",
+        "Returns a concise valid result without writing or creating folders",
+        "Does not mistake user-record folder naming for skill package organization"
+      ]
+    },
+    {
+      "id": "workspace-ambiguous-authority",
+      "skill": "validate-workspace",
+      "prompt": "An index lists two candidate files as the canonical career experience record: profile/experience.md and archives/work-history.md. Both exist, and I have not chosen one. Please repair my workspace mapping.",
+      "expect": [
+        "Detects ambiguous canonical authority instead of choosing the newest or most detailed file",
+        "Asks one targeted question to identify the intended authority",
+        "Does not merge, delete, rename or move files without approval",
+        "Can propose a reversible mapping patch once the conflict is resolved"
+      ]
+    },
+    {
+      "id": "workspace-no-unrequested-migration",
+      "skill": "validate-workspace",
+      "prompt": "While writing a job application, an agent noticed my career workspace lacks brand/ and research/ folders. Those areas are not needed for the application. Should it create them or reorganize my notes?",
+      "expect": [
+        "Does not treat unused missing folders as structural errors",
+        "Recommends continuing the original job-application task without a full migration",
+        "Does not create folders, rewrite links or demand first-time setup",
+        "Respects existing records and optional layout rules"
+      ]
+    },
+    {
+      "id": "workspace-authorized-reorganization",
+      "skill": "validate-workspace",
+      "prompt": "I explicitly authorize reorganizing my private project records from career/old-projects/ to career/projects/. First check the linked records and show which paths will change; ask me before making irreversible moves. Don't touch other areas.",
+      "expect": [
+        "Verifies source and destination records and links before moving any files",
+        "Outlines a scoped move/link-update and conflict or data-loss handling plan",
+        "Honors the stated request to request approval before irreversible moves",
+        "Reports what was actually changed, and does not touch unrelated career contents"
+      ]
+    },
+    {
+      "id": "workspace-no-setup-required",
+      "skill": "validate-workspace",
+      "prompt": "I have only pasted my job history here and do not maintain a career workspace index. Another Career Skills workflow just needs these facts for a resume; is workspace repair required?",
+      "expect": [
+        "Explains that no index or setup is necessary for work from supplied input",
+        "Does not create a workspace or question the user's storage choice",
+        "Allows the original resume task to proceed independently",
+        "Does not manufacture a workspace integrity problem"
+      ]
+    },
+    {
+      "id": "workspace-full-review-request",
+      "skill": "validate-workspace",
+      "prompt": "Please validate the structure of my whole private career workspace. Review the workspace index, its five mapped areas where they exist and the links among those records. I want findings only, no edits.",
+      "expect": [
+        "Treats explicit validation as a broad structural review, rather than checking one assumed broken path",
+        "Checks mapped existing records and applicable relative links, identifying access limits",
+        "Returns a valid, proposed or blocked structural status and exact affected paths",
+        "Does not rewrite content or turn the request into a credential/brand audit"
+      ]
+    },
+    {
+      "id": "workspace-minimal-fix-status",
+      "skill": "validate-workspace",
+      "prompt": "While building my resume, the index has a stale link to profile/qualifications-old.md; the correct file profile/qualifications.md exists. I authorize correcting just that index link, not other files.",
+      "expect": [
+        "Checks that the target exists, and edits only the authorized mapping",
+        "Verifies the corrected link resolves after actual write access permits the change",
+        "Returns repaired only if the write and verification succeeded; otherwise returns proposed or blocked",
+        "Resumes the original task with the corrected path or states its blocker"
+      ]
+    },
+    {
+      "id": "workspace-user-goal-first",
+      "skill": "validate-workspace",
+      "prompt": "I started maintain-profile without saying what I want to change. My career index works and all paths resolve. Should the validator run a full structure review first?",
+      "expect": [
+        "Identifies missing task intent rather than workspace drift",
+        "Keeps the existing functioning workspace unchanged",
+        "Recommends asking one profile task question instead of loading an unneeded structural audit",
+        "Does not treat available files as permission to edit or reorganize them"
+      ]
     }
   ]
 }

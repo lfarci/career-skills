@@ -41,6 +41,22 @@
     {
       "id": "profile-no-intent-new",
       "mode": "explicit"
+    },
+    {
+      "id": "workspace-stale-index",
+      "mode": "discovery"
+    },
+    {
+      "id": "workspace-valid-custom-layout",
+      "mode": "explicit"
+    },
+    {
+      "id": "workspace-full-review-request",
+      "mode": "explicit"
+    },
+    {
+      "id": "workspace-user-goal-first",
+      "mode": "discovery"
     }
   ],
   "negative_cases": [
@@ -60,6 +76,16 @@
       "prompt": "Explain SQL GROUP BY using a small student table.",
       "expect": [
         "No career skill is auto-invoked for an unrelated database lesson."
+      ]
+    },
+    {
+      "id": "workspace-healthy-resume-no-helper",
+      "mode": "discovery",
+      "skill": null,
+      "prompt": "Help tailor my CV to a software engineering role. My existing career workspace index already points to valid current profile records; here is the relevant experience text. Please use this information directly.",
+      "expect": [
+        "validate-workspace is not invoked automatically when relevant source paths already work; ordinary task skills may still be invoked.",
+        "The resume task proceeds from supplied facts without a structural scan or unwanted workspace changes."
       ]
     }
   ]
