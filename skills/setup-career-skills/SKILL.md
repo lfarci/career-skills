@@ -1,31 +1,29 @@
 ---
 name: setup-career-skills
-description: "Guide me through setting up a standardized private career workspace: find existing sources, ask about missing information and import selected records step by step."
+description: "Guide me through creating or resuming a private career workspace, discovering sources, and completing setup interactively."
 disable-model-invocation: true
 ---
 
 # Setup Career Skills
 
-**Guide the user through a resumable onboarding conversation**, not just directory creation. Initialize a private `career/` with five named homes. Existing notes, resumes, profiles and projects are potential sources; never import all of them without selection. Read [setup conversation and source rules](references/workspace-model.md) when starting or resuming.
+Guide **new creation or resumption** of a private, Markdown-first `career/` workspace. Ask **one useful question at a time**; create useful records, not merely a directory. Read [workspace setup rules](references/workspace-model.md) for ownership, validation and source handling.
 
 ## Contract
 
-- **Input:** User's setup goal, preferred private storage and write policy when known, existing documents or permission to look for sources.
-- **Scope:** Discover sources, identify meaningful gaps, scaffold the standard workspace and progressively import user-selected records. An occupied legacy root requires an explicit adoption choice.
-- **Output:** A verified `career/README.md` (or proposed plan without write access), standard homes as needed, an import/gap status, and **a concrete next question or confirmed completion**.
+- **Input:** User's chosen workspace location, available sources and write permissions, as established during conversation.
+- **Scope:** Create a new workspace or validate and resume an existing one. Never silently migrate or overwrite.
+- **Output:** Verified index and approved records (or a proposal without write access), a short setup checkpoint and the next question.
 
 ## Steps
 
-1. **Orient and resume.** Check the conversation and any existing `career/README.md` for the chosen destination, prior answers, imported content and pending work. Never repeat answered questions or restart setup after partial completion. If the destination is occupied, offer a separate private `career/` or an approved in-place migration; do not overwrite.
-2. **Ask about existing sources.** Proactively ask whether the user has an old resume, notes, role/project history, certificates, portfolio or professional-profile exports, including where the agent may look. Use known accessible locations as suggestions rather than scanning indiscriminately. Inventory permitted sources briefly, flag unreadable ones and **ask whether anything important is missing**. If none exist, guide a small conversational intake from scratch.
-3. **Plan coverage with the user.** Identify the highest-value initial information and compare it with selected sources: employers, roles, dates and internships; assignments/projects; skills and qualifications; education/languages; goals/preferences; brand/assets; optional research and publication destinations. Mark each relevant area as supported, missing, conflicting or deferred. **Ask one focused question at a time** to resolve important omissions or choose what to import next. Don't require complete information in every area or a fixed questionnaire.
-4. **Create and import selectively.** Confirm private location, scope and write/PR permission. Create `career/README.md` and only the standard home folders needed for selected records; record other homes as pending in the index, without empty placeholders. Import supported claims with source references, evidence limits and uncertainty. Keep `profile/experience.md` for role history (including supported internships), detailed engagements and project outcomes under `projects/`; never bulk-copy or silently rewrite old sources.
-5. **Review and continue.** After each import batch, check created paths/links and give a short checkpoint: **captured, still missing/uncertain, explicitly deferred, and recommended next focus**. Update `career/README.md` with source decisions and onboarding progress. **Do not treat an initial successful write as the end of guided setup**; ask the next useful question or offer to review another selected area. Respect a request to pause, skip or stop.
-6. **Finish intentionally.** When the user confirms that the desired setup scope is covered, or explicitly chooses a minimal setup, summarize what is usable, which areas remain pending and what to do next. Mark the checkpoint as **ready**, **paused** or **blocked**, accurately distinguishing workspace creation from information completeness. Suggest one optional next workflow; setup and individual task skills remain independent.
+1. **Choose location first.** For a new setup conversation, ask where the workspace should live—even if the current repository has `career/`. Don't assume the current directory or invent `career-workspace/career/`. If the user already gave an explicit location or is resuming a previously confirmed location, don't repeat the question. Confirm permission before writes.
+2. **Choose the path from what exists.** Inspect **only the selected location**. If empty, follow **New**. If a workspace exists, follow **Resume**. If the directory contains unrelated or ambiguous data, ask whether to adopt it or use another location; preserve everything.
+3. **New:** Ask about existing CVs, notes, profiles, projects and credentials. Recommend a useful first subset; after approval, write `career/README.md` and selected canonical records under the standard homes. Avoid empty folders, unsupported facts or an index-only handoff unless the user explicitly requests that minimal scope.
+4. **Resume:** **Validate before continuing:** check the workspace index, actual mapped files, relevant links, canonical ownership, saved setup status and pending imports. If available, `validate-workspace` can help with structural problems; otherwise perform these checks directly. Report defects and propose approved repairs **before further imports**. Do not require a validator installation, move old files or redo completed intake. Continue from the saved next question.
+5. **Iterate and finish.** After each approved import or repair, verify files/links and update a short `career/README.md` checkpoint (captured, missing/conflicting, deferred, next decision; status `in progress`, `paused`, `ready` or `blocked`). Ask the next useful question. Only finish when the user confirms their chosen scope is sufficient, requests minimal setup or pauses; do not hand off unfinished intake to another skill.
 
 ## Done when
 
-- The user was guided through source discovery, a meaningful gap review and their chosen import scope, or explicitly chose a shorter setup.
-- The index and selected standard homes exist if writing was authorized; actual writes and link checks are verified.
-- Sources, known gaps, decisions and resume point are traceable; originals and permissions are respected.
-- A mere scaffold/first import is never described as a fully completed guided onboarding without the user's agreement.
+- The location and new/resume path are clear; an existing workspace was validated **before** resuming changes.
+- Actual writes, source boundaries, pending gaps and the next action are accurately recorded.
+- Existing material remains intact without unapproved moves, duplication or publication.

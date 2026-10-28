@@ -28,30 +28,34 @@ flowchart TD
 
 Solid arrows identify the choice being made. Dashed arrows identify **optional follow-on activities**. None of these arrows implies the next skill must be installed or automatically invoked.
 
-`validate-workspace` is a separate on-demand structural helper for broken paths and explicitly requested physical migration, not a compulsory onboarding stage. Other installed skills may load it when a broken path blocks their task. See the [runtime execution flow](ARCHITECTURE.md#task-execution-flow).
+`validate-workspace` remains a separate on-demand structural helper, not a compulsory dependency. Resuming setup includes a **lightweight structural check**; call the helper only if needed and available. Other installed skills may load it when a broken path blocks their task. See the [runtime execution flow](ARCHITECTURE.md#task-execution-flow).
 
 ## Guided setup within the first session
 
-The setup skill **stays engaged** through multiple user-approved intake steps. A directory scaffold is an initial checkpoint, not a reason to end onboarding.
+The setup skill has **two paths** after the user confirms the destination: create from scratch or validate an existing workspace and resume its saved progress. It stays engaged through user-approved intake steps rather than ending after creating a directory.
 
 ```mermaid
 flowchart TD
-    S["Start or resume setup"] --> D["Choose private career/ destination"]
-    D --> I["Ask about existing sources and access"]
-    I --> C["Identify coverage and missing information"]
-    C --> Q{"User-selected next focus?"}
-    Q -->|"Import or answer"| W["Create/update only approved records"]
-    W --> R["Verify and show captured / missing / deferred"]
+    S["Start setup"] --> D["Confirm workspace location"]
+    D --> E{"Workspace already exists?"}
+    E -->|"No"| N["New: discover sources, choose initial records"]
+    E -->|"Yes"| V["Resume: validate index, links and progress first"]
+    V --> H{"Usable?"}
+    H -->|"Needs repair"| X["Propose and approve targeted fix"]
+    X --> V
+    H -->|"Yes"| Q{"Next selected step?"}
+    N --> Q
+    Q -->|"Import or answer"| W["Write approved records and verify"]
+    W --> R["Save brief progress checkpoint"]
     R --> Q
-    Q -->|"Pause"| P["Save progress and next question"]
-    Q -->|"Scope sufficient"| F["Confirm readiness and optional next skill"]
+    Q -->|"Pause or done"| F["Save status and next decision"]
 ```
 
-Ask the next useful question using known answers, without forcing all five homes to contain substantive data. Record what is imported, still uncertain or deliberately deferred in `career/README.md`. The user can request **minimal/index-only setup** or pause; return to the recorded checkpoint later.
+For a resume, verify the index, relevant links, canonical records and pending items **before further edits**. `validate-workspace` is optional for structural problems; setup can do its own lightweight checks. Ask the next useful question using known answers; do not require all five homes to contain substantive data. Save missing/deferred work and the next decision in `career/README.md`.
 
 ## Suggested first session
 
-1. **`setup-career-skills` (optional):** Guide the user through destination choice, source discovery, missing-information questions and approved imports. Review progress after each batch, offer the next useful intake step, and mark readiness or a pause explicitly. A full fixed questionnaire is not required.
+1. **`setup-career-skills` (optional):** Confirm the destination, then either create a new workspace from selected sources or **validate the existing workspace before resuming**. Continue one question at a time, save progress and stop when the user agrees. No fixed questionnaire is required.
 2. **`maintain-profile`, when facts need attention:** Reconcile experience, qualifications and project evidence. Skip if existing records are already reliable; users can come back whenever something changes.
 3. **`reflect`, when direction is unclear:** Clarify motivations, preferences and trade-offs. Skip if the user has an established direction.
 4. **Choose a branch:** Development, branding, job search or market research can proceed independently or concurrently. Skills read the relevant existing evidence and do not require a prescribed predecessor.
