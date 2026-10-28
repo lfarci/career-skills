@@ -6,7 +6,7 @@
 
 ```mermaid
 flowchart TD
-    S["setup-career-skills<br/>(optional workspace mapping)"] --> Q{"What do you need now?"}
+    S["setup-career-skills<br/>(fresh career/ + selected imports)"] --> Q{"What do you need now?"}
     W["ask-career-skills<br/>(optional navigation)"] -. "guides a choice" .-> Q
     Q -->|"Facts need reconciling"| P["maintain-profile"]
     Q -->|"Direction unclear"| R["reflect"]
@@ -28,11 +28,11 @@ flowchart TD
 
 Solid arrows identify the choice being made. Dashed arrows identify **optional follow-on activities**. None of these arrows implies the next skill must be installed or automatically invoked.
 
-`validate-workspace` is a separate on-demand structural helper, not a normal onboarding stage. Other installed skills may load it when a broken path blocks their task. See the [runtime execution flow](ARCHITECTURE.md#task-execution-flow).
+`validate-workspace` is a separate on-demand structural helper for broken paths and explicitly requested physical migration, not a compulsory onboarding stage. Other installed skills may load it when a broken path blocks their task. See the [runtime execution flow](ARCHITECTURE.md#task-execution-flow).
 
 ## Suggested first session
 
-1. **`setup-career-skills` (optional):** Map the user's existing records, assets, sources of truth, write permissions and tracker. It doesn't require completing a career interview or migrating files.
+1. **`setup-career-skills` (optional):** Choose a private destination for a fresh standardized `career/`, discover existing documents with permission, and select what to import as canonical records. If `career/` is occupied, choose a different private destination or plan an approved in-place migration; don't overwrite it. No full career interview is required.
 2. **`maintain-profile`, when facts need attention:** Reconcile experience, qualifications and project evidence. Skip if existing records are already reliable; users can come back whenever something changes.
 3. **`reflect`, when direction is unclear:** Clarify motivations, preferences and trade-offs. Skip if the user has an established direction.
 4. **Choose a branch:** Development, branding, job search or market research can proceed independently or concurrently. Skills read the relevant existing evidence and do not require a prescribed predecessor.
@@ -41,8 +41,8 @@ Solid arrows identify the choice being made. Dashed arrows identify **optional f
 
 | User wants to... | Skill | Result |
 | --- | --- | --- |
-| Set up or reconnect existing sources | `setup-career-skills` | Mapped workspace and authority |
-| Check or repair workspace paths, links and source mappings | `validate-workspace` | Structural status or scoped repair |
+| Create a common career/ workspace from existing documents | `setup-career-skills` | Standard workspace, source inventory and selected records |
+| Align an old directory tree or repair broken links | `validate-workspace` | Migration plan, structural status or scoped repair |
 | Choose a next task without knowing the skill names | `ask-career-skills` | One next-step recommendation |
 | Correct or add career facts | `maintain-profile` | Supported canonical updates |
 | Decide where their career should go | `reflect` | Reflection and direction brief |
@@ -68,4 +68,4 @@ The result is a **recommendation**, not a hand-off that executes another skill. 
 
 ## Workspace, permissions and feedback
 
-The five homes in [WORKSPACE.md](WORKSPACE.md) describe where user records belong, not steps of this journey. A skill can run using pasted documents without setup. Fact records, aspirations, messaging, approved assets and published surfaces remain distinct. Every task follows the user's existing permissions; navigation alone does not alter data or publish anything.
+The five standardized physical homes in [WORKSPACE.md](WORKSPACE.md) describe where managed career records belong, not mandatory skill execution steps. A skill can run using pasted documents without setup. Fact records, aspirations, messaging, approved assets and published surfaces remain distinct. Every task follows the user's existing permissions; navigation alone does not alter data or publish anything.

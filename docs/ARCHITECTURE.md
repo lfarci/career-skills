@@ -11,7 +11,7 @@ The user selects a career task (optionally after setup or using a separate navig
 ```mermaid
 flowchart TD
     A["User request"] --> B{"Requested outcome?"}
-    B -->|"Initial configuration"| S["setup-career-skills"]
+    B -->|"Create/adopt managed career/"| S["setup-career-skills"]
     B -->|"Workspace structure review"| V["validate-workspace: review mapped records"]
     B -->|"Career task"| K["Chosen task skill"]
     K --> G{"Goal/scope clear?"}
@@ -27,7 +27,7 @@ flowchart TD
     F -->|"Resolved or fallback available"| T
     F -->|"Still blocked"| X["Report blocker without unrelated work"]
     V --> O["Return structural status, checked paths and needed approval"]
-    S --> N["Return source map and permission boundaries"]
+    S --> N["Standard career/ root, selected source imports, permissions"]
     T --> Z["Return scoped result"]
 ```
 
@@ -42,9 +42,9 @@ Following the small, composable skill approach, each skill has a distinct trigge
 
 | Skill | Inputs | Deliverable | Done when |
 | --- | --- | --- | --- |
-| `setup-career-skills` | Existing sources, profile links, user preferences | Small workspace configuration and setup summary | Sources, visibility, surfaces and progress tracker are recorded or explicitly unresolved |
+| `setup-career-skills` | Selected private destination, authorized existing sources and write policy | Standard `career/` index, initial records/import inventory or proposed adoption plan | Only selected material enters the canonical homes; sources and permissions are traceable |
 | `ask-career-skills` | Current goal, prior completed tasks, available source map when relevant | One recommended skill and ready-to-use request | Next step is justified without invoking other skills or changing records |
-| `validate-workspace` | Explicit review or specific broken mapping; relevant files and permissions | `valid`, `repaired`, `proposed` or `blocked` status with verified paths | Checked scope is explicit; repairs are minimal and authorized; original task can resume where possible |
+| `validate-workspace` | Explicit alignment review, approved legacy migration or blocked record path | Checked structure, migration proposal, scoped repair or blocker status | Only authorized paths move; existing records and links are preserved |
 | `reflect` | Experiences, preferences, goals, existing profile | Professional reflection brief | Fact, aspiration, trade-off, and unresolved question are separated |
 | `maintain-profile` | User's requested focus (or a clarifying conversation), existing facts and new evidence | If unscoped, one intent question; otherwise a targeted review, profile addition or minimal patch | No unrequested audit or edit, duplicate record, unsupported promotion or hidden conflict |
 | `build-resume` | Supported career facts, optional job post and format | Resume source/exports plus checks | Facts verified, readable output, extraction checked when available |
@@ -84,7 +84,7 @@ Read accessible resources within granted permissions. Produce a proposal when wr
 
 ### Composition
 
-Each skill must be executable without installing any other skill. Where two skills are present they may cooperate, but responsibility remains separated: `audit-surface` is a single-asset evidence review; `audit` performs reconciliation across assets; `personal-brand` decides the strategy; `maintain-profile` owns updates to facts. `setup-career-skills` maps the initial workspace; `validate-workspace` reviews structure when asked or repairs concrete drift during another task. Other skills can resolve paths themselves when the validator is not installed.
+Each skill must be executable without installing any other skill. Where two skills are present they may cooperate, but responsibility remains separated: `audit-surface` is a single-asset evidence review; `audit` performs reconciliation across assets; `personal-brand` decides the strategy; `maintain-profile` owns updates to facts. `setup-career-skills` initializes the standardized destination and selectively imports approved source material; `validate-workspace` plans an explicitly requested legacy migration or repairs concrete drift during another task. Other skills can resolve paths themselves when the validator is not installed.
 
 ### Tracker behavior
 
@@ -119,7 +119,7 @@ Keep strategy, discovery, production and critique independently invocable under 
 
 ## Domain grouping
 
-Use career-direction for reflection and internal decisions, career-evidence for demonstrated experience and canonical facts, and career-development for growth planning and progress; personal-brand for positioning, visuals and audits of professional presentation; job-hunt for resumes and vacancy search. Keep `setup-career-skills`, `ask-career-skills` and `validate-workspace` at the top level: the first configures sources, the second helps users choose, and the third repairs structural blockers. They are independent. Grouping does not change invocation names, ownership boundaries or independent installation.
+Use career-direction for reflection and internal decisions, career-evidence for demonstrated experience and canonical facts, and career-development for growth planning and progress; personal-brand for positioning, visuals and audits of professional presentation; job-hunt for resumes and vacancy search. Keep `setup-career-skills`, `ask-career-skills` and `validate-workspace` at the top level: the first initializes a standardized destination and selects sources, the second helps users choose, and the third checks or aligns physical structure on request and repairs blockers. They are independent. Grouping does not change invocation names, ownership boundaries or independent installation.
 
 ## Private direction and public expression
 
@@ -129,13 +129,13 @@ career-direction owns the private north star, interests, internal decisions and 
 
 Structural scope and permissions are defined in [on-demand workspace validation](WORKSPACE.md#on-demand-workspace-validation).
 
-Use the [portable Markdown workspace model](WORKSPACE.md) as the logical data model across skills. setup-career-skills maps existing records to it in a chosen workspace index; other skills consult that index when available without depending on the setup package. Directory names and schemas are optional. Each record has one canonical authority; outputs link evidence rather than replicate it. Storage can be local, GitHub or another Markdown-capable provider. Private records, approved public text and actual publication have separate boundaries.
+Use the [standardized private Markdown workspace](WORKSPACE.md) as the target for Career Skills-managed work: a `career/` root with `profile/`, `projects/`, `brand/`, `assets/` and `research/` homes. `setup-career-skills` can create a fresh destination from selected existing sources; a user-approved legacy migration can align an occupied root. Other skills consult the index when available but remain independently usable from supplied files. Individual filenames and subfolders are flexible; canonical ownership, privacy and external publication boundaries are explicit.
 
 ## Agreed workspace homes
 
 The [logical data-flow diagram](WORKSPACE.md#logical-data-flow) distinguishes canonical career records, positioning guidance, reusable assets and actual publication. Structural validation changes mappings between these records, not their content.
 
-The physical reference model is profile/, projects/, brand/, assets/ and research/, distinct from skill package categories. Profile includes factual background, capabilities, direction, preferences and development. Projects describe purpose, contribution and learning without automatically becoming evidence. Brand guides positioning and visual identity; actual reusable outputs live in assets/drafts/ or approved assets/staged/. assets/services.md describes external surfaces. The whole workspace is private; the external service establishes actual published state. Discrepancies are user-reconciled without mandatory stored publication snapshots.
+The managed physical workspace uses `career/profile/`, `career/projects/`, `career/brand/`, `career/assets/` and `career/research/`, distinct from skill installation categories. New canonical records go into these homes; external or legacy documents remain sources unless the user authorizes importing or migrating them. Profile includes factual background, capabilities, direction, preferences and development. Projects describe purpose, contribution and learning without automatically becoming evidence. Brand guides positioning and visual identity; actual reusable outputs live in assets/drafts/ or approved assets/staged/. assets/services.md describes external surfaces. The whole workspace is private; the external service establishes actual published state. Discrepancies are user-reconciled without mandatory stored publication snapshots.
 
 Research retains selected linked references and useful observations, one record per company/opportunity/comparator as useful. Store links to other people's resumes, not copied files. review-research provides requested archival maintenance; do not automatically delete or maintain research in the background. Earlier logical skill categories do not require matching user directories.
 

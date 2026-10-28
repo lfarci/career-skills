@@ -17,7 +17,7 @@ Recommend a next step in Career Skills. This is a **manual navigation skill**, n
 
 1. Identify the user's immediate goal and last completed task from the conversation. Check a workspace index or existing records **only when needed** to avoid recommending already-completed work. Work without setup or workspace access; use stated assumptions instead of making the user repeat answers.
 2. Route by the **outcome**, not by a fixed sequence:
-   - Initial workspace mapping: `setup-career-skills`; broken paths or ambiguous source mapping: `validate-workspace` (if installed); changed career facts: `maintain-profile`; uncertain direction: `reflect`.
+   - Initialize a clean standardized `career/` or discover prior documents to import: `setup-career-skills`; explicitly align/migrate an occupied legacy workspace or repair broken paths: `validate-workspace` (if installed); changed career facts: `maintain-profile`; uncertain direction: `reflect`.
    - Career growth: `plan-development` for a plan or `review-progress` for an existing one.
    - Positioning: `personal-brand`; inspect one surface: `audit-surface`; reconcile multiple surfaces: `audit`.
    - Visual identity: `define-design-brief` for discovery, `create-design-assets` for production, `review-design` for critique.
