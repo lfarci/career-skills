@@ -49,6 +49,14 @@
     {
       "id": "workspace-valid-custom-layout",
       "mode": "explicit"
+    },
+    {
+      "id": "workspace-full-review-request",
+      "mode": "explicit"
+    },
+    {
+      "id": "workspace-user-goal-first",
+      "mode": "discovery"
     }
   ],
   "negative_cases": [

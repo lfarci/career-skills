@@ -29,4 +29,4 @@ Run identical scenarios on each relevant harness. Record host/version, installed
 
 Discovery scenarios do not name skills. Manual-only behavior is host-specific and not guaranteed across clients. Use an unassisted baseline when feasible. This smoke suite is a small regression check, not a statistical benchmark; human assessment remains necessary.
 
-Workspace validation is a **discoverable on-demand repair**, not an always-on audit. The smoke set includes structural drift encountered during resume work and a manual check that valid custom paths do not trigger migration. Review the agent trace to distinguish actually loaded skill instructions from an unassisted response.
+Workspace validation is a **discoverable structural exception handler**, not an always-on audit. Test both a task-driven broken path and a directly requested workspace review. The smoke set covers these plus a valid custom layout. Check the agent's skill-loading trace, status accuracy, write authorization, file/links verification, and return to the original task. A successful static test or fluent response alone does not prove delegation.

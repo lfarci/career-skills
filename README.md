@@ -9,7 +9,7 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | Skill | Purpose | Invocation |
 | --- | --- | --- |
 | [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Discover existing records, assets, preferences, and progress tracker | Manual |
-| [`validate-workspace`](skills/validate-workspace/SKILL.md) | Check and minimally repair stale workspace mappings, paths or links on demand | Discoverable |
+| [`validate-workspace`](skills/validate-workspace/SKILL.md) | Validate workspace structure or repair broken mappings during another task | Discoverable |
 | [`reflect`](skills/career-direction/reflect/SKILL.md) | Explore and articulate professional identity and goals | Manual |
 | [`maintain-profile`](skills/career-evidence/maintain-profile/SKILL.md) | Ask for a focus when needed, then review or update factual career records | Discoverable |
 | [`build-resume`](skills/job-hunt/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Discoverable |
@@ -67,7 +67,7 @@ A workspace README maps these roles to existing canonical records. They are user
 
 Use local folders, GitHub repositories or any Markdown-capable storage. Keep existing paths when mapped; setup is optional. See the [portable workspace model](docs/WORKSPACE.md) for the layout and operating rules. No actual user notes are migrated by changing this reference model.
 
-When an active skill encounters a **real workspace-structure issue**, it can use `validate-workspace` to repair the relevant mapping or return a proposed patch. This is not a required setup or recurring audit; a working custom layout should be left alone. The invocation mechanism depends on the agent host.
+When an active skill encounters a **broken source mapping or link**, it may load `validate-workspace` for a scoped repair, **if installed and supported by the agent host**. Direct user requests for workspace validation are supported too. A valid custom layout does not need migration. See the [task execution flow](docs/ARCHITECTURE.md#task-execution-flow).
 
 The [workspace decision specification](docs/CAREER-WORKSPACE-SPEC.md) captures the agreed behavior, rejected alternatives, testing boundaries and deferred work.
 

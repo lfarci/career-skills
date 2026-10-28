@@ -522,6 +522,39 @@
         "Allows the original resume task to proceed independently",
         "Does not manufacture a workspace integrity problem"
       ]
+    },
+    {
+      "id": "workspace-full-review-request",
+      "skill": "validate-workspace",
+      "prompt": "Please validate the structure of my whole private career workspace. Review the workspace index, its five mapped areas where they exist and the links among those records. I want findings only, no edits.",
+      "expect": [
+        "Treats explicit validation as a broad structural review, rather than checking one assumed broken path",
+        "Checks mapped existing records and applicable relative links, identifying access limits",
+        "Returns a valid, proposed or blocked structural status and exact affected paths",
+        "Does not rewrite content or turn the request into a credential/brand audit"
+      ]
+    },
+    {
+      "id": "workspace-minimal-fix-status",
+      "skill": "validate-workspace",
+      "prompt": "While building my resume, the index has a stale link to profile/qualifications-old.md; the correct file profile/qualifications.md exists. I authorize correcting just that index link, not other files.",
+      "expect": [
+        "Checks that the target exists, and edits only the authorized mapping",
+        "Verifies the corrected link resolves after actual write access permits the change",
+        "Returns repaired only if the write and verification succeeded; otherwise returns proposed or blocked",
+        "Resumes the original task with the corrected path or states its blocker"
+      ]
+    },
+    {
+      "id": "workspace-user-goal-first",
+      "skill": "validate-workspace",
+      "prompt": "I started maintain-profile without saying what I want to change. My career index works and all paths resolve. Should the validator run a full structure review first?",
+      "expect": [
+        "Identifies missing task intent rather than workspace drift",
+        "Keeps the existing functioning workspace unchanged",
+        "Recommends asking one profile task question instead of loading an unneeded structural audit",
+        "Does not treat available files as permission to edit or reorganize them"
+      ]
     }
   ]
 }

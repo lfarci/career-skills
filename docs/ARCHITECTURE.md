@@ -1,5 +1,37 @@
 # Architecture and behavioral contracts
 
+## Task execution flow
+
+The user selects a career task (optionally after setup or using a separate navigation skill). This diagram is the **runtime decision model**, not an onboarding sequence or a required chain.
+
+```mermaid
+flowchart TD
+    A["User request"] --> B{"Requested outcome?"}
+    B -->|"Initial configuration"| S["setup-career-skills"]
+    B -->|"Workspace structure review"| V["validate-workspace: review mapped records"]
+    B -->|"Career task"| K["Chosen task skill"]
+    K --> G{"Goal/scope clear?"}
+    G -->|"No"| Q["Ask one task-specific question"]
+    Q --> K
+    G -->|"Yes"| R["Resolve only relevant records"]
+    R --> C{"Structural blocker?"}
+    C -->|"No"| T["Perform requested task"]
+    C -->|"Yes"| V2["validate-workspace if installed; otherwise local path check"]
+    V2 --> D{"Usable record found?"}
+    D -->|"Yes"| T
+    D -->|"No"| F["Proposed fix, focused question or supplied-input fallback"]
+    F -->|"Resolved or fallback available"| T
+    F -->|"Still blocked"| X["Report blocker without unrelated work"]
+    V --> O["Return structural status, checked paths and needed approval"]
+    S --> N["Return source map and permission boundaries"]
+    T --> Z["Return scoped result"]
+```
+
+- **Intent:** `maintain-profile` (and other task skills) should establish the user's requested focus before broad inspection. A specific request proceeds directly; an unscoped task asks one question.
+- **Source resolution:** Consult the relevant part of the private workspace index when present. If supplied material is sufficient, continue without setup or a validator.
+- **Exception:** The validator is a separate *model-discoverable* skill because other workflows can need it. The agent must have it installed and its host must support discovery/loading; a reference to the name alone does not guarantee delegation. Other skills retain their own minimal path-check fallback.
+- **Repair boundary:** Resolving a link is structural; changing a credential is factual; changing a headline is presentation; publishing a profile is an external action. Each has its own task intent and permission boundary.
+
 ## Skill boundaries
 
 Following the small, composable skill approach, each skill has a distinct trigger and independently evaluable output. A second skill is justified when work has an independent invocation, responsibility, and completion boundary—not merely a different platform, output format, or checklist.
@@ -7,7 +39,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 | Skill | Inputs | Deliverable | Done when |
 | --- | --- | --- | --- |
 | `setup-career-skills` | Existing sources, profile links, user preferences | Small workspace configuration and setup summary | Sources, visibility, surfaces and progress tracker are recorded or explicitly unresolved |
-| `validate-workspace` | Observed structural drift or a direct validation request, existing source map and permissions | Checked mappings/links, narrow fix or proposed patch | Only real path/authority issues resolved or noted; no speculative migration |
+| `validate-workspace` | Explicit review or specific broken mapping; relevant files and permissions | `valid`, `repaired`, `proposed` or `blocked` status with verified paths | Checked scope is explicit; repairs are minimal and authorized; original task can resume where possible |
 | `reflect` | Experiences, preferences, goals, existing profile | Professional reflection brief | Fact, aspiration, trade-off, and unresolved question are separated |
 | `maintain-profile` | User's requested focus (or a clarifying conversation), existing facts and new evidence | If unscoped, one intent question; otherwise a targeted review, profile addition or minimal patch | No unrequested audit or edit, duplicate record, unsupported promotion or hidden conflict |
 | `build-resume` | Supported career facts, optional job post and format | Resume source/exports plus checks | Facts verified, readable output, extraction checked when available |
@@ -47,7 +79,7 @@ Read accessible resources within granted permissions. Produce a proposal when wr
 
 ### Composition
 
-Each skill must be executable without installing any other skill. Where two skills are present they may cooperate, but responsibility remains separated: `audit-surface` is a single-asset evidence review; `audit` performs reconciliation across assets; `personal-brand` decides the strategy; `maintain-profile` owns updates to facts. `setup-career-skills` maps the initial workspace; `validate-workspace` repairs concrete structural drift **only when encountered**, and never takes over factual/profile edits. Other skills can resolve paths themselves when the validator is not installed.
+Each skill must be executable without installing any other skill. Where two skills are present they may cooperate, but responsibility remains separated: `audit-surface` is a single-asset evidence review; `audit` performs reconciliation across assets; `personal-brand` decides the strategy; `maintain-profile` owns updates to facts. `setup-career-skills` maps the initial workspace; `validate-workspace` reviews structure when asked or repairs concrete drift during another task. Other skills can resolve paths themselves when the validator is not installed.
 
 ### Tracker behavior
 
@@ -90,7 +122,7 @@ career-direction owns the private north star, interests, internal decisions and 
 
 ## Shared workspace contract
 
-`validate-workspace` has an independent, narrowly triggered responsibility for structural mappings and link integrity. It may be invoked by an agent while another skill is working, but is not a mandatory runtime dependency or an automatic full scan. Its repair permissions are limited by the active task. See [on-demand validation](WORKSPACE.md#on-demand-workspace-validation).
+Structural scope and permissions are defined in [on-demand workspace validation](WORKSPACE.md#on-demand-workspace-validation).
 
 Use the [portable Markdown workspace model](WORKSPACE.md) as the logical data model across skills. setup-career-skills maps existing records to it in a chosen workspace index; other skills consult that index when available without depending on the setup package. Directory names and schemas are optional. Each record has one canonical authority; outputs link evidence rather than replicate it. Storage can be local, GitHub or another Markdown-capable provider. Private records, approved public text and actual publication have separate boundaries.
 

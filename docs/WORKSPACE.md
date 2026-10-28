@@ -77,11 +77,9 @@ Before editing, read current canonical records and preserve unrelated changes. U
 
 ## On-demand workspace validation
 
-Use `validate-workspace` **only when needed**: a configured path no longer resolves, a relative link is broken, the chosen index is stale, or two candidates claim to be the same canonical record. Direct user requests for workspace validation also qualify. A normal working layout, even with custom folder names or uncreated homes, needs no scan or refactor.
+`validate-workspace` is the structural exception handler for a failed mapped path, broken link or competing canonical record, and it also handles **explicit workspace-structure reviews**. During another task it checks only the blocker; during a requested review it checks the existing workspace index, mapped records and relevant links. Valid custom folder names, intentionally uncreated areas and use of pasted inputs require no repair.
 
-The validator reads the relevant index and records, checks only affected mappings, and prefers updating the mapping or link to moving files. Missing setup does not block another skill from using supplied records. Do not infer permission to reorganize or delete from repository write access; structural moves need explicit authorization. A task that only requires an index link may use an already-authorized narrow fix, otherwise provide a patch for approval.
-
-Initial discovery and configuration belong to `setup-career-skills`; factual updates belong to `maintain-profile`. `validate-workspace` handles structural integrity and hands the resolved paths back to the active workflow. Invocation between skills depends on the agent host; none may require the validator to be installed.
+Initial configuration remains `setup-career-skills`' responsibility. Prefer repairing a mapping or link to moving records. A narrow index fix needs task-specific write authorization; a move, merge, rename or deletion requires an explicit plan and approval. The validator returns a structural status and usable path (or blocker) to the original workflow. Its availability and invocation depend on the host; every task skill remains independently usable.
 
 ## Skill contracts and paths
 
