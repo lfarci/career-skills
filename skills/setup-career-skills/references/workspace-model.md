@@ -20,7 +20,7 @@ Do not ask the same question twice, and do not make every optional category a bl
 
 ## Physical workspace and ownership
 
-The **managed** private root is `career/`, indexed by `career/README.md`. Scaffold `profile/`, `projects/`, `brand/`, `assets/` and `research/` with a brief `README.md` in each (purpose and pending/ready status), because Git cannot track empty directories. Create substantive content only when selected. `profile/experience.md` owns employers, roles/grades and dates, including source-supported internships; detailed engagements and project outcomes belong under `projects/`. Keep facts, aspirations, public wording, drafts and published state distinct.
+The **managed** private root is `career/`, indexed by `career/README.md`. Use `profile/`, `projects/`, `brand/`, `assets/` and `research/` as the standard physical home names **when needed**. The index can document homes not yet created; Git cannot track empty directories, and filler README files are not required. Create substantive content only when selected. `profile/experience.md` owns employers, roles/grades and dates, including source-supported internships; detailed engagements and project outcomes belong under `projects/`. Keep facts, aspirations, public wording, drafts and published state distinct.
 
 If `career/` is already occupied, offer a fresh private destination elsewhere or a controlled in-place migration with a path/link/collision plan and explicit approval. Old documents are **sources**, not competing maintained copies; preserve them. After a Git-tracked root rename, `D career/...` entries may be deleted tracked paths rather than folders physically in the new root. Verify actual files.
 
