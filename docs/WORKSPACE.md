@@ -14,6 +14,24 @@ Use ordinary Markdown and links in any user-selected storage: local files, a Git
 
 Profile grounds brand and growth decisions; projects can supply evidence. Brand guides assets. Selected research informs market understanding, targeting, presentation and development. Research about someone else never proves a personal capability. A project is not automatically evidence: link the repository, outcome or feedback supporting a particular claim.
 
+## Logical data flow
+
+The five homes below represent **sources of responsibility**, not directories that must exist. Links describe allowed information flow; they do not authorize automated updates.
+
+```mermaid
+flowchart LR
+    J["projects/<br/>work records and evidence links"] -. "selected evidence" .-> P["profile/<br/>facts, goals and development"]
+    P -->|"grounds claims"| B["brand/<br/>positioning and identity guidance"]
+    P -->|"supports reusable content"| A["assets/<br/>drafts and approved staged outputs"]
+    B -->|"guides"| A
+    R["research/<br/>selected market references"] -. "informs choices" .-> B
+    R -. "informs plans" .-> P
+    A -->|"separately authorized publication"| X["Published surfaces<br/>(outside the private workspace)"]
+    X -. "observed state and reconciliation" .-> A
+```
+
+The profile is authoritative for personal facts and selected intentions, while a published site or account is authoritative **only for what is actually live**. Projects and research can support decisions but do not automatically establish a person's achievements. Brand guidance informs reusable assets; staged assets never establish publication. Corrections propagate to other records or external surfaces only through the user's selected task and permissions.
+
 ## Reference layout
 
 ```text

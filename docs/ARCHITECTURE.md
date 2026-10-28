@@ -128,6 +128,8 @@ Use the [portable Markdown workspace model](WORKSPACE.md) as the logical data mo
 
 ## Agreed workspace homes
 
+The [logical data-flow diagram](WORKSPACE.md#logical-data-flow) distinguishes canonical career records, positioning guidance, reusable assets and actual publication. Structural validation changes mappings between these records, not their content.
+
 The physical reference model is profile/, projects/, brand/, assets/ and research/, distinct from skill package categories. Profile includes factual background, capabilities, direction, preferences and development. Projects describe purpose, contribution and learning without automatically becoming evidence. Brand guides positioning and visual identity; actual reusable outputs live in assets/drafts/ or approved assets/staged/. assets/services.md describes external surfaces. The whole workspace is private; the external service establishes actual published state. Discrepancies are user-reconciled without mandatory stored publication snapshots.
 
 Research retains selected linked references and useful observations, one record per company/opportunity/comparator as useful. Store links to other people's resumes, not copied files. review-research provides requested archival maintenance; do not automatically delete or maintain research in the background. Earlier logical skill categories do not require matching user directories.
