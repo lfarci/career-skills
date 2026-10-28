@@ -20,14 +20,14 @@ The five homes below represent **sources of responsibility**, not directories th
 
 ```mermaid
 flowchart LR
-    J["projects/<br/>work records and evidence links"] -. "selected evidence" .-> P["profile/<br/>facts, goals and development"]
+    J["projects/<br/>work records and evidence links"] -.->|"selected evidence"| P["profile/<br/>facts, goals and development"]
     P -->|"grounds claims"| B["brand/<br/>positioning and identity guidance"]
     P -->|"supports reusable content"| A["assets/<br/>drafts and approved staged outputs"]
     B -->|"guides"| A
-    R["research/<br/>selected market references"] -. "informs choices" .-> B
-    R -. "informs plans" .-> P
+    R["research/<br/>selected market references"] -.->|"informs choices"| B
+    R -.->|"informs plans"| P
     A -->|"separately authorized publication"| X["Published surfaces<br/>(outside the private workspace)"]
-    X -. "observed state and reconciliation" .-> A
+    X -.->|"observed state and reconciliation"| A
 ```
 
 The profile is authoritative for personal facts and selected intentions, while a published site or account is authoritative **only for what is actually live**. Projects and research can support decisions but do not automatically establish a person's achievements. Brand guidance informs reusable assets; staged assets never establish publication. Corrections propagate to other records or external surfaces only through the user's selected task and permissions.
