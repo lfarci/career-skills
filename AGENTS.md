@@ -80,3 +80,5 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: Cut to 14 skills for the MVP; a removed skill's durable rules (e.g. research retention) stay in docs/WORKSPACE.md so nothing is lost.
 - 2026-10-29: Web-search skills need an explicit stopping rule; without one find-jobs retried blocked sites (403/429) until timeout. With it, the run finished in ~2 min with 2 verified roles.
 - 2026-10-29: A rule placed in a later section (`## Resume`) loses to the step the agent is executing; put stop-and-ask gates inside the step that routes to them. "Resume setup" is not approval to restructure.
+- 2026-10-29: A fixed record header (Status/Checked/Source) in a references/ template made a free model's research records uniform on the first try; prefer templates over scripts until drift is shown.
+- 2026-10-29: Without an explicit tool boundary, find-jobs scripted curl over 20 listing pages; say "host web tools, one page at a time".

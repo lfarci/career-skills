@@ -27,7 +27,7 @@ description: Research target employers fitting career direction, interests and g
 ## Compare and hand off
 - Return a concise shortlist with company, fit rationale, practical location/remote constraints, evidence, concerns/unknowns and vacancy status. Explain ranking against the user's priorities; avoid unsupported numeric fit scores. Exclude known hard-constraint conflicts or label clearly if retained for exploration.
 - Distinguish observed facts from inferred fit. State important trade-offs and what would change the recommendation. Prefer a few substantiated candidates over an unfiltered directory.
-- Ask where to save a target-company list unless established; update existing records instead of duplicating them. Record criteria, source dates and unresolved checks; confirm actual saves.
+- Save each selected employer with the [company record](references/company-record.md) header. Ask where to save a target-company list unless established; update existing records instead of duplicating them. Record criteria, source dates and unresolved checks; confirm actual saves.
 - Offer focused vacancy research with find-jobs when available, but remain independently useful without it. Do not subscribe to alerts, apply, upload documents, follow companies or contact anyone without separate authorization.
 
 When the workspace has a root `README.md` index, add a link to each new record under `Records`.

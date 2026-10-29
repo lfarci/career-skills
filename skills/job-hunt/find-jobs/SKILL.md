@@ -17,12 +17,15 @@ Find *live, verifiable* openings—not just roles that sound suitable. Search br
 1. Read the user's career record or supplied resume, confirmed preferences and constraints. Capture target functions, seniority, locations/time zones, remote/hybrid preferences, languages, employment eligibility, compensation expectations and exclusions **only when known**. Ask one targeted question if a missing hard constraint prevents useful searching; otherwise use declared assumptions.
 2. Search current job sources. Use employer careers pages and direct links to employer-controlled or authorized ATS postings (for example Workday, Greenhouse, Lever, SmartRecruiters) as primary verification sources. Search engines, aggregators and social platforms may provide leads but are not sufficient proof that a job remains open.
 3. For every candidate, open the actual employer/authorized listing where accessible. Check the position title, employer, location, remote policy, advertised seniority, required skills, application link, requisition ID if available, and whether the vacancy is currently available. Record the date/time of verification. If the source cannot be accessed or the opening cannot be verified, put it in a separate **unverified leads** section rather than the verified shortlist.
-   Keep the search bounded: a few sources and at most about ten candidates. When a source returns 403/429 or needs sign-in, do not retry it; after two blocked sources or no verifiable listing, stop searching and report what you have.
+   Use the host's web search and page-fetch tools one page at a time; paging through a whole job board with scripts is out of scope. Keep the search bounded: a few sources and at most about ten candidates. When a source returns 403/429 or needs sign-in, do not retry it; after two blocked sources or no verifiable listing, stop searching and report what you have.
 4. Deduplicate syndicated postings and reposts by employer, requisition ID and canonical URL. Exclude obviously closed, expired or inconsistent postings. Never infer a salary, visa policy or fully remote status from silence.
 5. Assess each job against demonstrated skills, desired professional direction, hard constraints, and explicit stretch areas. Explain positives, gaps and risk of mismatch. Do not equate keyword similarity with fit or recommend people-management roles by default.
 6. Return a ranked shortlist with direct application URLs, evidence and relevant dates. Surface uncertainty, and optionally suggest a tailored resume using `build-resume` when installed. Do not auto-apply, upload private documents or contact employers without express permission.
 
 ## Output: Verified Job Shortlist
+
+Save each selected role with the [opportunity record](references/opportunity-record.md) header, linking its company record when one exists in research/companies/.
+
 
 For each verified listing: title; employer; location and working arrangement (as published); canonical employer/ATS URL; requisition ID when available; verified-at timestamp; relevant requirements; strong matches; meaningful gaps; any known hard-constraint conflicts; concise fit rationale.
 
