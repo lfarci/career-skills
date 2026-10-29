@@ -38,6 +38,18 @@ opencode run -c -m opencode/big-pickle "Create it in a new folder named career h
 
 Symlinks make the checked-out branch the version under test. `-c` continues the last session for multi-turn flows. Inspect the files written under `career/`, not only the reply.
 
+### Smoke set through the runner
+
+```bash
+cd /tmp   # never from the checkout
+for id in $(python3 -c "import json;s=json.load(open('$REPO/tests/eval-smoke.json'));print(' '.join(c['id'] for k in ('existing_cases','negative_cases') for c in s[k]))"); do
+  python3 $REPO/scripts/run_behavioral_evals.py --agent-command "python3 $REPO/scripts/opencode_adapter.py" \
+    --case-id $id --harness-label "opencode big-pickle" --timeout 420 --output /tmp/evr/$id.json
+done
+```
+
+Run cases one at a time: concurrent free-model runs returned empty replies. OpenCode takes its project from `$PWD`, so the adapter and runner set it to a fresh scratch dir; with only `cwd` changed, agents wrote into the checkout.
+
 ### Other harnesses
 
 Free Zen models answer only through the OpenCode client (direct API calls return `FreeUsageLimitError`), so other harnesses need their own credentials:
