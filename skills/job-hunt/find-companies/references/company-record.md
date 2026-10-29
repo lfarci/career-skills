@@ -8,6 +8,7 @@ Save to `research/companies/<company-slug>.md`. Header fields are fixed; section
 Status: <shortlisted | target | watching | excluded>
 Checked: <YYYY-MM-DD>
 Source: <official careers or company URL>
+Jobs board: <ats>:<slug>   (omit when unknown; e.g. greenhouse:acme, lever:acme, recruitee:acme)
 
 ## Fit
 ## Practical constraints
