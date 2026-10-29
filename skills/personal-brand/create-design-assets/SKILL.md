@@ -29,8 +29,9 @@ disable-model-invocation: true
 
 ## Verify and deliver
 - Read [SVG guidance](references/svg-tooling.md) for vector masters and [package structure](references/asset-structure.md) for saving. Use image generation for raster drafts and vector tools/direct SVG for actual vector assets. Render and inspect; label unchecked work.
-- Keep options and revisions separate with stable IDs (A/v1, A/v2); preserve alternatives and feedback. Deliver only scoped assets plus applicable visual rules in identity.md, linked to actual files. Document fonts/licences, palette, layout and logo rules as applicable.
+- Keep options and revisions separate with stable IDs (A/v1 is file `a-v1`); preserve alternatives and feedback. Deliver only scoped assets plus applicable visual rules in identity.md, linked to actual files. Document fonts/licences, palette, layout and logo rules as applicable.
 - Verify scoped applications: rendered files, sizes, crops and applicable logo variants. Self-check independently of review-design.
+- Before reporting, run `python3 scripts/check_assets.py <workspace-root>` from this skill's folder when Python 3 is available and fix every error (misnamed files, scratch files in assets/, missing identity.md). Without Python, check the same rules from [package structure](references/asset-structure.md) by listing files.
 - Obtain explicit approval for an exact revision before marking approved; retain history. Do not publish beyond authorized scope or claim checks not performed.
 
 ## Done when

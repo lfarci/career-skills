@@ -75,3 +75,5 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: A contract that lives in one skill is invisible to the others; standalone `maintain-profile` invented a single `profile.md`. Shared contracts live in docs/WORKSPACE.md with validator-checked verbatim copies in the skills that write them.
 - 2026-10-29: Deterministic checks belong in a shipped script, not prose: setup now runs `scripts/check_workspace.py`, and OpenCode found and ran it from the npx-installed `.agents/skills/` copy.
 - 2026-10-29: Loading a module with `importlib` for tests requires registering it in `sys.modules` before `exec_module` when it defines dataclasses.
+- 2026-10-29: Every file-producing skill needs a naming contract plus a check; without one a single session mixed `option-a_v1` and `at-a-v1` names and left render helpers in assets/.
+- 2026-10-29: Free test models are often text-only; visual skills need an explicit can't-see-images branch or they burn the turn on improvised pixel analysis.

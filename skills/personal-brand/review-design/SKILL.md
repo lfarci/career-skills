@@ -13,7 +13,7 @@ disable-model-invocation: true
 
 ## Establish the review
 - Identify the exact assets/revisions and current brief: goal, audience, usage, desired impression and constraints. Ask only missing context that changes the judgment. Review existing work without requiring a new discovery or creation cycle.
-- Inspect actual files/renderings; distinguish observed issues from assumptions. If assets are inaccessible, report the limit and request what is needed rather than inventing findings.
+- Inspect actual files/renderings; distinguish observed issues from assumptions. When you can view images, look at the renders. When you cannot, review from the SVG source (viewBox, geometry, stroke widths at target sizes, colours and contrast, text versus outlines), the brief and recorded checks, and list visual judgments such as silhouette, balance and resemblance under **Unchecked: needs image review**. Use only existing check scripts or simple file inspection; improvised image-analysis code is out of scope. Deliver the findings in one pass. If assets are inaccessible, report the limit and request what is needed rather than inventing findings.
 - Keep the review focused on professional identity and career applications. Leave factual claims and cross-surface compliance to audit; remain independently useful without those skills.
 
 ## Assess
