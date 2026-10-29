@@ -1,6 +1,6 @@
 # Index template
 
-Adapt freely; keep it short. The index links records and tracks setup. Facts live in the records.
+Adapt freely; keep it short. The index links records and tracks setup. Facts live in the records. All paths are relative to the workspace root (a source next to the root is `../old-notes/...`). Other skills add links under `Records`; only setup edits `Setup progress`.
 
 ```markdown
 # Career workspace
@@ -18,8 +18,8 @@ Publication: separate approval required
 ## Source inventory
 | Source | Decision | Destination | Notes |
 | --- | --- | --- | --- |
-| old-notes/resume-2024.md | imported | profile/experience.md, profile/education.md | dated 2024 |
-| old-notes/linkedin.pdf | pending | | not yet read |
+| ../old-notes/resume-2024.md | imported | profile/experience.md, profile/education.md | dated 2024 |
+| ../old-notes/linkedin.pdf | pending | | not yet read |
 
 ## Setup progress
 Status: in progress

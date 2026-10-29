@@ -2,3 +2,5 @@ interface:
   display_name: "Ask Career Skills"
   short_description: "Choose the next Career Skills workflow"
   default_prompt: "Use $ask-career-skills to recommend the next useful Career Skills task from my current progress."
+policy:
+  allow_implicit_invocation: false

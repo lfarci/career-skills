@@ -137,6 +137,12 @@ Unresolved mappings: list only actual blockers
 
 Include only source references needed to support future work. The index links records; facts imported from sources go into the canonical records, never into the index. The index must not contain passwords, private file contents, or a dump of every discovered document. Update source-import status when selected content has actually been written and verified.
 
+**Index contract shared by all skills.** Every path in the index is relative to the workspace root (a source beside the root is `../old-notes/resume.md`). Section ownership:
+
+- `Records`: any skill that creates a canonical record adds one link here.
+- `Source inventory`: updated by whichever skill imports a source (normally setup or `maintain-profile`).
+- `Setup progress`: owned by `setup-career-skills`. Other skills leave it untouched and report their own next steps in their reply or their own record.
+
 For guided onboarding, add a brief **Setup progress** entry: status (`in progress`, `ready`, `paused`, `blocked`), covered areas, missing/conflicting or deferred items, and the specific next user decision. The initial scaffold and first import batch are not by themselves proof that the onboarding conversation is complete.
 
 ## On-demand workspace validation

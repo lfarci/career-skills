@@ -1,0 +1,6 @@
+interface:
+  display_name: "Reflect"
+  short_description: "Clarify career direction, motivations and trade-offs"
+  default_prompt: "Use $reflect to help me clarify where I want my career to go and why."
+policy:
+  allow_implicit_invocation: false

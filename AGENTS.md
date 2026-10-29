@@ -18,6 +18,16 @@ Skill groups under `skills/`, each owning one question:
 
 Groups are folders, not skills. Every leaf installs and runs alone.
 
+## Priorities
+
+Aim for a stable MVP: fewer, rock-solid skills over richness. Simplify or remove a skill when it adds little.
+
+1. **Workspace creation and profile import**: `setup-career-skills`, `maintain-profile`, `validate-workspace`, and the `career/` contracts (record map, index, paths).
+2. **Visual identity**: `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`.
+3. **Opportunities**: `find-companies`, `find-jobs`, `build-resume`.
+
+Nice-to-have, first candidates for simplification or removal: `benchmark-profile`, `review-research`, `audit`, `plan-development`, `review-progress`, `reflect`, `ask-career-skills`.
+
 ## Quality bar for a skill
 
 - **Distinct purpose**: one trigger, one responsibility, one completion boundary. A different platform, format or count (one vs. many) is a branch inside a skill, not a new skill. Merge or remove a skill that fails this; justify it in an issue.
@@ -36,6 +46,11 @@ Boundaries and invocation policy: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). 
 4. Run `python3 scripts/validate_skills.py` and `python3 -m unittest discover -s tests -p 'test_*.py'` (needs `pyyaml`).
 5. For behavior changes, run a live agent ([docs/EVALUATION.md](docs/EVALUATION.md)); static checks prove packaging only.
 
+Evaluate at two levels, both with a synthetic persona in a scratch dir outside the repo:
+
+- **Per skill**: each user-triggerable skill alone, from a natural prompt, checking its contract and `Done when`.
+- **Full flow**: setup, then the priority skills on the same workspace, checking integration: shared files land where the record map says, the index contract holds (paths relative to root, section ownership), formats stay consistent, and no skill copies another's records.
+
 Use synthetic personas only; keep real personal data out of this repo.
 
 ## Learnings
@@ -46,3 +61,5 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: Patching SKILL.md with phrases from one failing transcript (folder names, `question` tool, OpenCode paths) bloats the skill and generalizes poorly; state the host-neutral rule instead.
 - 2026-10-29: Downstream skills copy the workspace's shape: if setup stores facts in README, `maintain-profile` edits README too. Fix the producer.
 - 2026-10-29: OpenCode with the free `opencode/big-pickle` model runs skills headless and discovers `.opencode/skills/<name>/SKILL.md` symlinks to this checkout, so branch edits are tested live (see docs/EVALUATION.md).
+- 2026-10-29: Shared files need an explicit owner. Without one, `personal-brand` rewrote setup's progress checkpoint and setup wrote source paths relative to the agent's start dir instead of the root.
+- 2026-10-29: `audit-surface` vs `audit` was a count (one vs. many), not a responsibility; merged into `audit`.

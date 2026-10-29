@@ -4,7 +4,7 @@ Structural CI checks packaging, frontmatter, references and case coverage. It ca
 
 ## Opt-in smoke suite
 
-`tests/cases.json` contains synthetic scenarios covering all 16 skills. `tests/eval-smoke.json` selects a small set for an actual agent run: automatic discovery, explicit invocation and unrelated negative cases.
+`tests/cases.json` contains synthetic scenarios covering every skill. `tests/eval-smoke.json` selects a small set for an actual agent run: automatic discovery, explicit invocation and unrelated negative cases.
 
 1. Install the relevant skills into an isolated test workspace on the agent under test. Select the branch being reviewed and confirm nested leaf discovery; the Skills CLI accepts `npx skills add lfarci/career-skills --skill find-jobs` on the default branch. For pre-merge testing, use a local checkout or installer branch/ref support.
 2. Configure an agent command or thin adapter that reads a user prompt from stdin and prints the response on stdout. Run it with the actual installed skills. The runner does **not** paste SKILL.md into the prompt.
@@ -22,6 +22,21 @@ Structural CI checks packaging, frontmatter, references and case coverage. It ca
    ```
 
 Exit status: 0 if all criteria pass, 1 if any fail, 2 if any remain unscored/unknown. Agent-command failures make the run fail. Transcripts are gitignored because they may contain sensitive output.
+
+## OpenCode recipe (free model, headless)
+
+```bash
+curl -fsSL https://opencode.ai/install | bash        # installs ~/.opencode/bin/opencode
+export PATH=$HOME/.opencode/bin:$PATH
+opencode models | grep free                          # e.g. opencode/big-pickle, no credentials needed
+mkdir -p /tmp/eval/.opencode/skills && cd /tmp/eval && git init -q
+for f in $(find ~/path/to/career-skills/skills -name SKILL.md); do d=$(dirname $f); ln -sfn $d .opencode/skills/$(basename $d); done
+# add a synthetic persona under ./old-notes, then:
+opencode run -m opencode/big-pickle "I want to set up my private career workspace using setup-career-skills. My old notes are in ./old-notes."
+opencode run -c -m opencode/big-pickle "Create it in a new folder named career here. Yes, you may read old-notes and write local files."
+```
+
+Symlinks make the checked-out branch the version under test. `-c` continues the last session for multi-turn flows. Inspect the files written under `career/`, not only the reply.
 
 ## Interpreting results
 
