@@ -854,6 +854,17 @@
         "Creates or updates a minimal README.md index linking the new records",
         "Asks one next question"
       ]
+    },
+    {
+      "id": "setup-resume-facts-in-index-asks-first",
+      "skill": "setup-career-skills",
+      "prompt": "Resume my career workspace setup in ./career. (Its README.md has '## Captured facts' with education, skills, certifications and goals, and only profile/experience.md exists.)",
+      "expect": [
+        "Runs the Resume checks before importing and reports needs repair",
+        "Lists proposed records and moves, then asks for approval",
+        "Changes no file in this turn",
+        "After approval, README.md becomes index-only and the checker reports usable"
+      ]
     }
   ]
 }

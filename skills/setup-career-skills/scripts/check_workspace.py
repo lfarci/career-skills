@@ -22,6 +22,7 @@ HOMES = ("profile", "projects", "brand", "assets", "research")
 STATUSES = ("in progress", "paused", "ready", "blocked")
 LINK = re.compile(r"(?<!!)\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 EXTERNAL = ("http://", "https://", "mailto:", "#")
+INDEX_SECTIONS = {"records", "source inventory", "setup progress", "boundaries", "next decision", "notes"}
 
 
 @dataclass
@@ -71,6 +72,11 @@ def check_index(root: Path, index: Path, report: Report) -> None:
     records_body = section(text, "Records")
     if not records_body:
         report.warnings.append("README.md: no '## Records' section")
+    content = [h for h in re.findall(r"^##\s+(.+?)\s*$", text, re.M) if h.strip().lower() not in INDEX_SECTIONS]
+    if content and not records_body:
+        report.errors.append(
+            "README.md: index holds content sections (" + ", ".join(content) + "); move facts into records and link them under '## Records'"
+        )
     linked = {(root / t).resolve() for t in local_links(text)}
     for home in HOMES:
         for md in sorted((root / home).rglob("*.md")) if (root / home).is_dir() else []:
