@@ -55,6 +55,14 @@ class CheckAssetsTest(unittest.TestCase):
         self.touch("brand/identity.md", "Status: pending\n")
         self.assertTrue(self.ca.check(self.root)["warnings"])
 
+    def test_resume_outputs_are_not_design_assets(self) -> None:
+        self.touch("assets/drafts/resumes/general/resume.pdf")
+        self.touch("assets/drafts/resumes/general/resume.log")
+        self.touch("assets/staged/resumes/general/resume.pdf")
+        self.assertEqual(self.ca.check(self.root), {"errors": [], "warnings": []})
+        self.touch("assets/drafts/logos/A v1.svg")
+        self.assertTrue(self.ca.check(self.root)["errors"])
+
     def test_missing_root(self) -> None:
         self.assertEqual(self.ca.main([str(self.root / "nope")]), 2)
 
