@@ -71,6 +71,9 @@ def main() -> int:
             errors.append(f"{name}: missing contract or completion criteria")
         if len(body.strip()) < 250:
             errors.append(f"{name}: unexpectedly short skill body")
+        for rel in re.findall(r"(?<![\w/.-])(scripts/[\w./-]+\.py)", body):
+            if not (path.parent / rel).is_file():
+                errors.append(f"{name}: referenced {rel} must ship inside the skill folder")
         for rel in re.findall(r"\]\((references/[^)#]+)", body):
             if not (path.parent / rel).is_file():
                 errors.append(f"{name}: broken bundled reference {rel}")
@@ -89,6 +92,11 @@ def main() -> int:
     for required in ("setup-career-skills", "maintain-profile"):
         if required in packages and not marker.search(packages[required].read_text(encoding="utf-8")):
             errors.append(f"{required}: missing record-map block")
+    shipped: dict[str, bytes] = {}
+    for script in sorted(SKILLS.rglob("scripts/*.py")):
+        content = script.read_bytes()
+        if shipped.setdefault(script.name, content) != content:
+            errors.append(f"{script.relative_to(ROOT).as_posix()}: differs from another skill's copy of {script.name}")
     cases = json.loads((ROOT / "tests" / "cases.json").read_text(encoding="utf-8"))["cases"]
     covered = {case["skill"] for case in cases}
     if covered != EXPECTED:

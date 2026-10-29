@@ -36,6 +36,15 @@ Nice-to-have, first candidates for simplification or removal: `benchmark-profile
 - **Checkable `## Done when`** and a short `## Contract` (Input / Scope / Output).
 - Write per Matt Pocock's [writing-for-agents](https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents): descriptions are trigger pointers, positive phrasing, push branch-only material into `references/`.
 
+### Scripts in skills
+
+Use a script when a check or transform is deterministic (workspace index/link checks, templates); the SKILL.md tells the agent to run it and gives a by-reading fallback.
+
+- Ship it inside the skill that uses it: `skills/<group>/<skill>/scripts/`, referenced from SKILL.md as `scripts/<name>.py`, so `npx skills add … --skill <name>` installs it. No cross-skill imports or repo paths at runtime; when two skills need one helper, keep verbatim copies (validator checks they match).
+- Python 3 standard library only, cross-platform (`pathlib`, UTF-8, no shell-outs), harness-agnostic.
+- Follow [PEP 8](https://peps.python.org/pep-0008/) and the [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html): type hints, `argparse` CLI, small functions with docstrings, text plus `--json` output, exit codes 0 ok / 1 findings / 2 unusable input.
+- Unit tests in `tests/test_<script>.py`. Check installs with `npx -y skills add <checkout> --skill <name> -a opencode -y` in a scratch dir.
+
 Boundaries and invocation policy: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Routing and first session: [docs/USER-JOURNEY.md](docs/USER-JOURNEY.md). Terms: [GLOSSARY.md](GLOSSARY.md).
 
 ## Change workflow
@@ -64,3 +73,5 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: Shared files need an explicit owner. Without one, `personal-brand` rewrote setup's progress checkpoint and setup wrote source paths relative to the agent's start dir instead of the root.
 - 2026-10-29: `audit-surface` vs `audit` was a count (one vs. many), not a responsibility; merged into `audit`.
 - 2026-10-29: A contract that lives in one skill is invisible to the others; standalone `maintain-profile` invented a single `profile.md`. Shared contracts live in docs/WORKSPACE.md with validator-checked verbatim copies in the skills that write them.
+- 2026-10-29: Deterministic checks belong in a shipped script, not prose: setup now runs `scripts/check_workspace.py`, and OpenCode found and ran it from the npx-installed `.agents/skills/` copy.
+- 2026-10-29: Loading a module with `importlib` for tests requires registering it in `sys.modules` before `exec_module` when it defines dataclasses.
