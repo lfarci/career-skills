@@ -5,6 +5,7 @@ Write policy: propose changes; direct edits only when approved
 Publication: separate approval required
 
 ## Records
+- [Contact](profile/contact.md)
 - [Experience](profile/experience.md)
 - [Skills](profile/skills.md)
 - [Education](profile/education.md)

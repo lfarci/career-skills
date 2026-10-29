@@ -648,7 +648,7 @@
     {
       "id": "setup-asks-about-existing-sources",
       "skill": "setup-career-skills",
-      "prompt": "We're continuing setup-career-skills. I've already confirmed that I want my managed workspace in a new private repo, and the destination is empty. I haven't mentioned previous documents or specific profile information yet. Guide me.",
+      "prompt": "We're continuing setup-career-skills. I've already confirmed that my managed workspace is this new private repo (the current directory), and it is empty. I haven't mentioned previous documents or specific profile information yet. Guide me.",
       "expect": [
         "After the workspace location is already confirmed, proactively asks one concise question about existing resumes, career notes or other source locations",
         "Explains the standard career/ workspace in a user-oriented way without jumping into a broad audit",
