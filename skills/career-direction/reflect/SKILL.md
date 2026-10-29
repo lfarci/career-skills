@@ -32,6 +32,8 @@ Help the person understand where they are professionally, where they want to go 
 - Development priorities to hand off to a private action plan; plan-development can structure it when available
 - Open questions and decisions
 
+When the workspace has a root `README.md` index, add a link to each new record under `Records`.
+
 ## Done when
 
 - Facts, user preferences, aspirations and hypotheses are unambiguously separated.

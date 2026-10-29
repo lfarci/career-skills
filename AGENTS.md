@@ -78,3 +78,4 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: Every file-producing skill needs a naming contract plus a check; without one a single session mixed `option-a_v1` and `at-a-v1` names and left render helpers in assets/.
 - 2026-10-29: Free test models are often text-only; visual skills need an explicit can't-see-images branch or they burn the turn on improvised pixel analysis.
 - 2026-10-29: Cut to 14 skills for the MVP; a removed skill's durable rules (e.g. research retention) stay in docs/WORKSPACE.md so nothing is lost.
+- 2026-10-29: Web-search skills need an explicit stopping rule; without one find-jobs retried blocked sites (403/429) until timeout. With it, the run finished in ~2 min with 2 verified roles.

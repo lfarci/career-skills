@@ -23,6 +23,8 @@ disable-model-invocation: true
 - Include purpose, audience, usage, desired impression, agreed scope, constraints, reference links and unresolved questions. Let the user correct the summary. Do not invent answers or generate assets.
 - Offer creation as the next stage. create-design-assets may use this brief if installed, but the document must stand alone. Leave visual concept research and selection to creation; do not force users through the interview again.
 
+When the workspace has a root `README.md` index, add a link to each new record under `Records`.
+
 ## Done when
 - The brief supports concrete design decisions and the requested deliverables are explicit.
 - Answers and unresolved choices are recorded at the agreed destination, or supplied as a reviewable handoff when saving is unavailable.

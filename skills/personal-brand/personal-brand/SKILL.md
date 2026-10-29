@@ -35,6 +35,8 @@ Define the selected public professional narrative and reusable wording for diffe
 - Optional visual brand-kit links and usage guidance when applicable
 - Prioritized actions, dependencies and approval needs
 
+When the workspace has a root `README.md` index, add a link to each new record under `Records`.
+
 ## Done when
 
 - Positioning is coherent with verified career facts and selected goals.

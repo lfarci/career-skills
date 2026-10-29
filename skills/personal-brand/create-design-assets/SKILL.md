@@ -34,6 +34,8 @@ disable-model-invocation: true
 - Before reporting, run `python3 scripts/check_assets.py <workspace-root>` from this skill's folder when Python 3 is available and fix every error (misnamed files, scratch files in assets/, missing identity.md). Without Python, check the same rules from [package structure](references/asset-structure.md) by listing files.
 - Obtain explicit approval for an exact revision before marking approved; retain history. Do not publish beyond authorized scope or claim checks not performed.
 
+When the workspace has a root `README.md` index, add a link to each new record under `Records`.
+
 ## Done when
 - Concept choice preceded drafts; versions, feedback and approval are traceable.
 - Scoped source files/exports and applicable usage rules are saved and linked.

@@ -25,6 +25,8 @@ Produce an evidence-based resume readable by humans and reliably extractable by 
 
 Resume source and requested exports when possible, plus a concise validation summary: relevance choices, verified key claims, format checks and any unresolved assumptions.
 
+When the workspace has a root `README.md` index, add a link to each new record under `Records`.
+
 ## Done when
 
 - No fabricated title, skill, certification, metric or business impact appears.
