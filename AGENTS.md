@@ -83,3 +83,4 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: A fixed record header (Status/Checked/Source) in a references/ template made a free model's research records uniform on the first try; prefer templates over scripts until drift is shown.
 - 2026-10-29: Without an explicit tool boundary, find-jobs scripted curl over 20 listing pages; say "host web tools, one page at a time".
 - 2026-10-29: Weak free models (nemotron-lightning, flint) fail on harness behaviour (sub-agents wandering, out-of-dir writes), not skill wording. Record them in tests/SETUP-SCENARIOS.md; fix only what a host-neutral rule or a checker catches (e.g. empty records).
+- 2026-10-29: OpenCode Zen free models work only inside the OpenCode client; pointing Codex at the Zen endpoint returns FreeUsageLimitError. A second harness needs the user's Codex or Claude login.
