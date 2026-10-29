@@ -26,7 +26,7 @@ Aim for a stable MVP: fewer, rock-solid skills over richness. Simplify or remove
 2. **Visual identity**: `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`.
 3. **Opportunities**: `find-companies`, `find-jobs`, `build-resume`.
 
-Secondary: `audit`, `plan-development`, `reflect`, `ask-career-skills`. Removed for the MVP: `benchmark-profile`, `review-research`, `review-progress` (merged); re-add only with a demonstrated need.
+Secondary: `audit`, `plan-development`, `reflect` (kept: sole owner of profile/direction.md, which brand and job search consume), `ask-career-skills` (kept: router for the manual skills, zero context load). Removed for the MVP: `benchmark-profile`, `review-research`, `review-progress` (merged); re-add only with a demonstrated need.
 
 ## Quality bar for a skill
 
