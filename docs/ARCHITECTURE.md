@@ -44,7 +44,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 
 | Skill | Inputs | Deliverable | Done when |
 | --- | --- | --- | --- |
-| `setup-career-skills` | Destination, accessible sources, initial career information and user's choices | Standard `career/` index, needed homes, guided intake and resumable source/gap checkpoint | User confirms chosen coverage or pauses; no first-batch success mistaken for completed onboarding |
+| `setup-career-skills` | Destination, accessible sources, initial career information and user's choices | Canonical records in the needed homes, plus a `README.md` index that links them, inventories sources and saves a resumable checkpoint (no copied facts) | User confirms chosen coverage or pauses; no first-batch success mistaken for completed onboarding |
 | `ask-career-skills` | Current goal, prior completed tasks, available source map when relevant | One recommended skill and ready-to-use request | Next step is justified without invoking other skills or changing records |
 | `validate-workspace` | Explicit alignment review, approved legacy migration or blocked record path | Checked structure, migration proposal, scoped repair or blocker status | Only authorized paths move; existing records and links are preserved |
 | `reflect` | Experiences, preferences, goals, existing profile | Professional reflection brief | Fact, aspiration, trade-off, and unresolved question are separated |
@@ -94,9 +94,9 @@ Track issues in the system explicitly selected during setup. If absent, provide 
 
 ## Invocation policy
 
-**Manual:** `setup-career-skills`, `ask-career-skills`, `reflect`, `review-research`, `plan-development`, `review-progress`, `personal-brand`, `benchmark-profile`, `define-design-brief`, `create-design-assets`, `review-design`, `audit`.
+**Manual:** `ask-career-skills`, `reflect`, `review-research`, `plan-development`, `review-progress`, `personal-brand`, `benchmark-profile`, `define-design-brief`, `create-design-assets`, `review-design`, `audit`.
 
-**Discoverable:** `validate-workspace`, `maintain-profile`, `build-resume`, `find-companies`, `find-jobs`, `audit-surface`.
+**Discoverable:** `setup-career-skills`, `validate-workspace`, `maintain-profile`, `build-resume`, `find-companies`, `find-jobs`, `audit-surface`.
 
 Manual skills are deliberately selected by name for bounded sessions. Discoverable skills have concrete, concise trigger descriptions. The manual-only flag is a host-specific hint, not a portable guarantee. Validate routing empirically; see [behavioral evaluations](EVALUATION.md).
 

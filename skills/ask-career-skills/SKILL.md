@@ -15,7 +15,7 @@ Recommend a next step in Career Skills. This is a **manual navigation skill**, n
 
 ## Steps
 
-1. Identify the user's immediate goal and last completed task from the conversation. Check a workspace index or existing records **only when needed** to avoid recommending already-completed work. Work without setup or workspace access; use stated assumptions instead of making the user repeat answers.
+1. Identify the user's immediate goal and last completed task from the conversation. Check a workspace index or existing records **only when needed** to avoid recommending already-completed work. When an index exists, read its setup status: `in progress` or `paused` setup is unfinished, so offer resuming it as an option rather than calling setup complete. Work without setup or workspace access; use stated assumptions instead of making the user repeat answers.
 2. Route by the **outcome**, not by a fixed sequence:
    - Initialize a clean standardized `career/` or discover prior documents to import: `setup-career-skills`; explicitly align/migrate an occupied legacy workspace or repair broken paths: `validate-workspace` (if installed); changed career facts: `maintain-profile`; uncertain direction: `reflect`.
    - Career growth: `plan-development` for a plan or `review-progress` for an existing one.

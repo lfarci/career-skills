@@ -1,50 +1,60 @@
 ---
 name: setup-career-skills
-description: "Use only when the user explicitly asks to create or resume a private career workspace; treat a named folder as the root, import approved facts, and save setup progress."
+description: "Create, import into, or resume a private career workspace (career/ with profile, projects, brand, assets, research). Use when the user wants to organize career notes, old resumes or profile exports into one workspace, or continue a saved setup."
 ---
 
 # Setup Career Skills
 
-Use this workflow only for an explicit setup or resume request. Ask one question at a time. Read and change only the selected workspace and sources the user approved.
+Turn the user's scattered career material into a private workspace made of two things: an **index** (`README.md` at the root) and **canonical records** in the standard homes. The index points; records hold facts. Ask one question at a time and touch only the root and sources the user approved.
 
 ## Contract
 
-- **Input:** A confirmed workspace root, approved career facts or sources, and permission for requested local writes.
-- **Output:** Verified useful records plus a resumable README checkpoint, or one specific blocker.
+- **Input:** A confirmed workspace root, approved sources or facts supplied in the conversation, and write permission.
+- **Output:** Verified canonical records, an index that links them with a source inventory and setup checkpoint, and one next question; or one specific blocker.
 
-## Tool guardrail
+## Record map
 
-Never call `execute`, Node, Python, or another code runner to inspect or change files, even if the host offers one. **Path rule:** When the user says `resume <folder> here`, `<folder>` is the workspace root relative to OpenCode's starting directory. First read `<folder>/README.md`, then only the record paths it identifies. Example: `resume career-skill-resume here` means read `career-skill-resume/README.md` first. Never read `README.md` at the starting directory, inspect or list the starting or parent directory, or search for another folder with a similar name. If that exact README cannot be read, report that the named workspace is unavailable; do not ask where the root is. Do not ask the user to repeat a saved decision you can read. Ask questions in plain text; do not call the `question` tool. A saved next decision is a pending question, not permission to pick an answer. If the `question` tool is used and errors, stop tool use and put that unanswered question in the final response. Never retry it, choose a default, or assume the user's answer.
+Every imported fact goes into a canonical record, never into the index. Create a file only when it receives content.
 
-## Fast path: named folder, facts, and write permission
+| Fact | Record |
+| --- | --- |
+| Employers, titles/grades, dates, internships | `profile/experience.md` |
+| Degrees and schools | `profile/education.md` |
+| Certifications, licences, awards | `profile/qualifications.md` |
+| Skills and tools | `profile/skills.md` |
+| Spoken languages | `profile/languages.md` |
+| Goals, north star, considered next steps | `profile/direction.md` |
+| Location, work mode, commute, contract, salary preferences | `profile/preferences.md` |
+| Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
+| Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
+| Reusable resumes, bios, banners | `assets/drafts/` or `assets/staged/` (approved) |
+| Saved companies, job ads, comparator profiles | `research/` |
 
-When the user names a new folder, says local writes are allowed, and supplies career facts, those choices are already confirmed. Do not ask to confirm the folder or permission. Create a plain directory with the host's `mkdir` or file tool. This is not a request for a Git repository, branch, task, or worktree: do not call worktree or repository-creation tools. Create exactly:
+Keep each record plain Markdown with headings and relative links. Note the source file and its date beside imported facts; mark approximations and conflicts instead of resolving them silently. A goal stays a goal: "considering AZ-305" belongs in `direction.md`, not `qualifications.md`.
 
-- `<named-folder>/README.md`
-- `<named-folder>/profile/experience.md`
+Contact details (e-mail, phone, address) stay in their source unless the user asks to import them; then they go to `profile/contact.md`, never the index.
 
-Treat `<named-folder>` itself as the root. Do not add `<named-folder>/career/`. Record only supplied facts; save progress in the README; verify both files; then ask one next decision.
+## Steps
 
-## Run protocol
+1. **Resolve the root.** The folder the user names is the root itself; create no nested `career/` inside it. When the user names a parent repository, propose its `career/` folder. When no destination is named, ask where the workspace should live and wait before reading or writing anything. Use an ordinary directory; Git worktrees, branches and new repositories are separate requests.
+2. **Route.** Inspect only the root. Absent or empty means **New**. A root with an index or records means **Resume** (see below). Ambiguous existing material: ask whether to use it or choose another root.
+3. **Inventory sources.** Read only sources the user named or approved. List each one with what it could contribute and its proposed record(s), then recommend a first batch. When the user already approved reading and writing, import that batch directly; otherwise ask which sources to import. With no sources at all, ask one focused question about the user's current role and history instead of creating an empty scaffold.
+4. **Import the batch.** Write the selected facts into records using the record map. Write only what the sources support: no invented duties, metrics, dates or credentials.
+5. **Write the index.** Create or update `README.md` from the [index template](references/index-template.md): root, write policy, homes in use, a link to every record, the source inventory (`imported` / `pending` / `excluded` with destination), and a **Setup progress** block with status (`in progress`, `paused`, `ready`, `blocked`), gaps and one next decision. The index links records; it holds no copied facts.
+6. **Verify.** Re-read or list every written file and check the index links resolve. A write counts only after this check. Without a working write or read tool, report the blocker and offer the content as a proposal.
+7. **Ask the next question.** Summarize verified files and gaps, then ask one useful question in plain text, such as an unimported source, a missing role, or an assignment worth a project record. The first batch rarely completes onboarding: continue batch by batch until the user says the scope is enough or pauses, then set the status.
 
-1. **Resolve the root.** A user-named folder is the root itself. For `resume <folder> here`, the first read must be `<folder>/README.md` (for example, `career-skill-resume/README.md`). If no destination is named, ask where to put the workspace and stop before inspecting or writing anything. Never assume the current directory or a suggested default is the destination. If the question tool errors, is unavailable, or receives no answer, stop and report that the root is undecided; create no workspace files. If the selected root contains unrelated or ambiguous material, ask whether to use it or choose another root.
-2. **Route.** Inspect only the selected root. An absent or empty root is New. A root with a career README or records is Resume. Preserve existing files; never silently overwrite, move, or delete them. A workspace folder is an ordinary directory, not a Git worktree or new repository.
-3. **Import.** Career facts supplied in the conversation are an approved source. When local writes are authorized, import supported facts now without asking again. Put employer and role history in `profile/experience.md`. Do not invent duties, technologies, credentials, achievements, or dates. If no facts or approved sources are available, ask one focused question and wait; do not make an empty scaffold. If that question tool errors or the user has not answered, stop without creating any files.
-4. **Save progress.** After every approved import, create or update the root `README.md`. Record root, sources used, records created, captured facts, missing/deferred information, status (`in progress`, `paused`, `ready`, or `blocked`), and one next decision.
-5. **Use supported tools safely.** Follow the tool guardrail above. Use only file or shell tools actually listed by the host. Do not invent APIs or use a code-execution runtime for filesystem work. Do not use worktree, branch, task, or repository-creation tools for ordinary workspace folders. Do not issue delete or move commands during ordinary setup. Never call a question tool to re-confirm a destination or write permission already supplied by the user.
-6. **Verify before reporting.** After writing, read the files or list the workspace to confirm the exact paths and contents. A write is complete only after the host reports success and the follow-up read/listing confirms it. If no supported write or verification tool is available, report the blocker; do not claim completion.
-7. **Stop at the next decision.** Summarize verified files and remaining gaps, then ask one useful next question in plain text. If the `question` tool fails, make no further tool calls; put that question in the final response and stop. Never assume the answer or continue until the user replies.
+When you cannot obtain the user's answer (a question tool fails or the session ends), stop and put the pending question in your final reply. A next decision saved in the index is a pending question, never permission to pick an answer.
 
-## Resume checks
+## Resume
 
-Before importing into an existing workspace, check its README, mapped files, local links, record ownership, and saved next decision. Report whether it is usable, needs repair, or is blocked. Preserve existing choices, avoid duplicate records, and resume at the saved decision.
+Read the root `README.md` first, then only the records it links. Check links resolve, records have one owner, and the saved next decision. Report `usable`, `needs repair` or `blocked`, then continue from the saved decision without re-asking answered questions. An index that holds facts directly (older setups) is `needs repair`: propose moving those facts into records before importing more. `validate-workspace` can help with difficult structural problems when installed; setup works without it.
 
-Consult [workspace rules](references/workspace-model.md) when mapping sources, records, or prior progress. Read [cutover checks](references/cutover.md) only when the user requests and authorizes moving, archiving, or replacing an existing workspace. Preserve original evidence and external references.
+Consult [workspace rules](references/workspace-model.md) for source handling details. Read [cutover checks](references/cutover.md) only when the user asks to move, archive or replace an existing workspace.
 
 ## Done when
 
-The selected root has a verified index and useful approved records, or one specific blocker is reported. The README accurately saves progress and the next decision.
-
-Writes stay within the approved scope. Publication requires separate approval.
-
-Never choose an unanswered user decision, including a decision restored from the README.
+- Every imported fact lives in exactly one canonical record named by the record map, with its source.
+- The index links every record, lists sources with their decision, and saves status plus one next decision; it contains no copied facts or contact details.
+- All writes were verified; writes stayed within the approved root; nothing was published.
+- An unanswered decision, including one restored from the index, stays unanswered.

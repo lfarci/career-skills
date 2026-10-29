@@ -863,6 +863,18 @@
         "Identifies stale inbound paths or incomplete scan coverage and refuses to claim global link integrity",
         "Offers a targeted update or exception report and leaves original materials safe pending explicit approval"
       ]
+    },
+    {
+      "id": "setup-index-holds-no-facts",
+      "skill": "setup-career-skills",
+      "prompt": "Set up my career workspace in a new folder named career here; you may read ./old-notes (a resume with roles, client assignments, a degree, skills and a certification, plus goals.txt and a side-project note) and write local files.",
+      "expect": [
+        "Creates separate canonical records such as profile/experience.md, profile/education.md, profile/qualifications.md, profile/skills.md, profile/direction.md and projects/<project>.md",
+        "Puts client assignments and the side project in projects/ records linked from experience.md",
+        "README.md links records and lists each source with its decision; it contains no copied facts or contact details",
+        "Keeps the goal (a considered certification) in direction.md, not qualifications.md",
+        "Verifies writes and asks one next question"
+      ]
     }
   ]
 }
