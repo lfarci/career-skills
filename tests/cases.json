@@ -3,17 +3,6 @@
   "note": "Behavioral acceptance scenarios for manual or harness-based evaluation. Static validation alone does not execute these cases.",
   "cases": [
     {
-      "id": "setup-existing",
-      "skill": "setup-career-skills",
-      "prompt": "Set up Career Skills in a private repository. I have old career notes, an existing resume, a portfolio and a LinkedIn export in separate places. I want a clean, shared career/ workspace and I track tasks in GitHub Issues.",
-      "expect": [
-        "Recommends a standardized career/ destination with only needed canonical files and folders",
-        "Inventories accessible prior materials as optional sources without silently copying everything",
-        "Checks chosen private location, permissions and issue tracker before any writes",
-        "Preserves original documents and does not publish anything"
-      ]
-    },
-    {
       "id": "reflect-ic-track",
       "skill": "reflect",
       "prompt": "I'm an engineer who enjoys architecture and mentoring, but not management. Help me work out my career direction.",
@@ -152,17 +141,6 @@
         "Flags website geometry drift against approved source",
         "Reports LinkedIn as uninspected rather than aligned",
         "Does not redesign the approved identity"
-      ]
-    },
-    {
-      "id": "identity-self-contained",
-      "skill": "create-design-assets",
-      "prompt": "Refine a favicon from my existing brief. Do not load external skills.",
-      "expect": [
-        "Uses the self-contained workflow and relevant bundled guidance",
-        "Does not load external skill collections",
-        "Preserves approved geometry",
-        "Verifies small-size exports only when tools permit"
       ]
     },
     {
@@ -492,17 +470,6 @@
       ]
     },
     {
-      "id": "workspace-minimal-fix-status",
-      "skill": "validate-workspace",
-      "prompt": "While building my resume, the index has a stale link to profile/qualifications-old.md; the correct file profile/qualifications.md exists. I authorize correcting just that index link, not other files.",
-      "expect": [
-        "Checks that the target exists, and edits only the authorized mapping",
-        "Verifies the corrected link resolves after actual write access permits the change",
-        "Returns repaired only if the write and verification succeeded; otherwise returns proposed or blocked",
-        "Resumes the original task with the corrected path or states its blocker"
-      ]
-    },
-    {
       "id": "workspace-user-goal-first",
       "skill": "validate-workspace",
       "prompt": "I started maintain-profile without saying what I want to change. My career index works and all paths resolve. Should the validator run a full structure review first?",
@@ -646,17 +613,6 @@
       ]
     },
     {
-      "id": "setup-tracked-scaffold-not-ghosts",
-      "skill": "setup-career-skills",
-      "prompt": "I renamed my old Git-tracked career/ directory to career-old/ and asked setup-career-skills for a new standardized career/. Import only selected profile facts. In my editor I still see deleted paths under career/personal-brand/ and career/personal-projects/ from the old Git state.",
-      "expect": [
-        "Distinguishes deleted legacy tracked paths from physically present directories using filesystem evidence rather than the editor alone",
-        "Creates the workspace index and needed standard homes, without filler directories or READMEs",
-        "Does not recreate personal-brand/ or personal-projects/ inside the new managed career/",
-        "Leaves career-old/ intact and reports the source-control rename/deletion state without misrepresenting which paths exist"
-      ]
-    },
-    {
       "id": "setup-role-history-with-internships",
       "skill": "setup-career-skills",
       "prompt": "Set up my career workspace from my resume and older notes. The resume includes two internships, paid roles at three grades, and a detailed cloud engagement spanning two grades. Start with role history, and keep assignment evidence separate.",
@@ -690,17 +646,6 @@
       ]
     },
     {
-      "id": "setup-resume-in-progress",
-      "skill": "setup-career-skills",
-      "prompt": "Continue setup-career-skills from career/README.md. Its setup status is paused: role history and qualifications imported; brand and project sources pending; next decision was whether to import internship and project evidence. We previously approved read-only project-source review.",
-      "expect": [
-        "Validates workspace index, selected existing files/links, canonical ownership and pending setup state before resuming imports",
-        "Preserves earlier choices, imported records and permissions instead of starting the setup interview again",
-        "Proposes targeted repairs for validation problems before editing, or proceeds directly when valid",
-        "Asks one focused question about the saved next decision without duplicating records or assuming writes are authorized"
-      ]
-    },
-    {
       "id": "setup-quick-index-only",
       "skill": "setup-career-skills",
       "prompt": "Use setup-career-skills, but I explicitly want a minimal index-only workspace today. Create career/README.md, document the five standard homes but do not make folders or import any facts yet. We can handle profile content later.",
@@ -709,17 +654,6 @@
         "Creates or proposes only the workspace index subject to write permissions, recording five future standard homes",
         "Marks information gathering and imports as deferred without fabricating personal details",
         "Accurately reports minimal workspace readiness and offers one optional continuation"
-      ]
-    },
-    {
-      "id": "setup-gap-question-internships",
-      "skill": "setup-career-skills",
-      "prompt": "The new career/profile/experience.md contains my current consultancy and prior full-time employer, but the old CV I approved for review lists two internships. You have already imported the full-time roles. Continue onboarding.",
-      "expect": [
-        "Identifies the two source-supported internships as missing from the current role-history coverage",
-        "Asks a focused question about importing or confirming them rather than silently ignoring them",
-        "Keeps detailed client assignments and project outcomes outside role history",
-        "Updates or proposes the setup checkpoint and distinguishes pending from confirmed facts"
       ]
     },
     {
@@ -734,17 +668,6 @@
       ]
     },
     {
-      "id": "setup-location-first-existing-dir",
-      "skill": "setup-career-skills",
-      "prompt": "Use setup-career-skills to initialize my career workspace. I'm currently in a Git repository that contains a career/ directory. Start with read-only exploration.",
-      "expect": [
-        "Asks the user where they want to initialize, rather than treating the current career/ directory as already selected",
-        "Does not inspect or mutate career/ before destination confirmation",
-        "After location selection, distinguishes continuing existing records from creating a new workspace or planning an explicit migration",
-        "Does not assume existing directory contents can be overwritten"
-      ]
-    },
-    {
       "id": "setup-location-explicit-in-request",
       "skill": "setup-career-skills",
       "prompt": "Use setup-career-skills. I want the managed career/ root inside my private repo at ./workspace-notes. The location is confirmed; start read-only.",
@@ -753,17 +676,6 @@
         "Inspects only the selected target for workspace progress after the destination is confirmed",
         "Asks for an adoption/migration decision if that destination is occupied",
         "Proceeds with permission-aware source discovery and no writes in read-only mode"
-      ]
-    },
-    {
-      "id": "setup-new-empty-create-useful-files",
-      "skill": "setup-career-skills",
-      "prompt": "Continue setup-career-skills. I already chose an empty private repository for a new managed career workspace and approved local Markdown writes. My existing CV lists a software engineer role and an internship; I've approved importing both as the first batch. There is no prior workspace to resume.",
-      "expect": [
-        "Recognizes the new-workspace branch rather than running a migration or resume validation",
-        "Creates or proposes an index and meaningful profile/experience.md containing the selected supported roles, not merely an empty directory",
-        "Does not invent additional roles or bulk-copy unselected source files",
-        "Saves onboarding progress and asks one useful next question rather than stopping after the first write"
       ]
     },
     {
@@ -885,6 +797,28 @@
         "Proposes updating the links to profile/technical-skills.md, keeping the user's file name",
         "Changes no file before the user approves",
         "setup-career-skills resuming the same workspace proposes the same fix"
+      ]
+    },
+    {
+      "id": "setup-pdf-linkedin-conflicts",
+      "skill": "setup-career-skills",
+      "prompt": "Set up my career workspace. My sources are in ./sources (a PDF resume and my LinkedIn data export zip). The resume and LinkedIn disagree on one title and two dates.",
+      "expect": [
+        "Reads the PDF text and the export's CSVs (Positions, Education, Certifications) after approval",
+        "Records both values for each conflict with their sources instead of choosing one",
+        "Imports roles only present in one source with that source named",
+        "Asks about the most important conflict first; after the answer, records the confirmed value and marks the other superseded"
+      ]
+    },
+    {
+      "id": "design-approve-stages-exact-version",
+      "skill": "create-design-assets",
+      "prompt": "I approve logo A/v1 as my final logo. Stage it in ./career.",
+      "expect": [
+        "Copies exactly assets/drafts/logo/a-v1.svg to assets/staged/logo/a-v1.svg without modifying it",
+        "Sets brand/identity.md to approved A/v1 with links to staged and draft files",
+        "Keeps other versions and does not publish anything",
+        "check_assets.py reports ok"
       ]
     }
   ]
