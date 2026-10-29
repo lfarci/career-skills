@@ -43,7 +43,7 @@ Use a script when a check or transform is deterministic (workspace index/link ch
 - Ship it inside the skill that uses it: `skills/<group>/<skill>/scripts/`, referenced from SKILL.md as `scripts/<name>.py`, so `npx skills add … --skill <name>` installs it. No cross-skill imports or repo paths at runtime; when two skills need one helper, keep verbatim copies (validator checks they match).
 - Python 3 standard library only, cross-platform (`pathlib`, UTF-8, no shell-outs), harness-agnostic.
 - Follow [PEP 8](https://peps.python.org/pep-0008/) and the [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html): type hints, `argparse` CLI, small functions with docstrings, text plus `--json` output, exit codes 0 ok / 1 findings / 2 unusable input.
-- Unit tests in `tests/test_<script>.py`. Check installs with `npx -y skills add <checkout> --skill <name> -a opencode -y` in a scratch dir.
+- Unit tests in `tests/test_<script>.py`. Check installs with `npx -y skills add <checkout> --skill <name> -a github-copilot -y` in a scratch dir.
 
 Boundaries and invocation policy: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Routing and first session: [docs/USER-JOURNEY.md](docs/USER-JOURNEY.md). Terms: [GLOSSARY.md](GLOSSARY.md).
 
@@ -53,7 +53,7 @@ Boundaries and invocation policy: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). 
 2. One focused branch and PR per issue, body `Fixes #N`.
 3. When responsibilities or triggers change, update `tests/cases.json`, README tables, docs and the `EXPECTED`/`MANUAL` sets in `scripts/validate_skills.py`.
 4. Run `python3 scripts/validate_skills.py` and `python3 -m unittest discover -s tests -p 'test_*.py'` (needs `pyyaml`).
-5. For behavior changes, run a live agent ([docs/EVALUATION.md](docs/EVALUATION.md)); static checks prove packaging only.
+5. For behavior changes, critically review each changed skill against the quality bar, then run one or two targeted live cases on whichever plan has credits (`--harness copilot|codex|opencode`, `--model`; [docs/EVALUATION.md](docs/EVALUATION.md)). The full smoke suite is optional.
 
 Evaluate at two levels, both with a synthetic persona in a scratch dir outside the repo:
 
@@ -69,7 +69,7 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: A fast path that listed "create exactly README + experience.md" made models dump every other fact into the index. Give setup an explicit fact → record map.
 - 2026-10-29: Patching SKILL.md with phrases from one failing transcript (folder names, `question` tool, OpenCode paths) bloats the skill and generalizes poorly; state the host-neutral rule instead.
 - 2026-10-29: Downstream skills copy the workspace's shape: if setup stores facts in README, `maintain-profile` edits README too. Fix the producer.
-- 2026-10-29: OpenCode with the free `opencode/big-pickle` model runs skills headless and discovers `.opencode/skills/<name>/SKILL.md` symlinks to this checkout, so branch edits are tested live (see docs/EVALUATION.md).
+- 2026-10-29: OpenCode discovers `.opencode/skills/<name>/SKILL.md` symlinks to this checkout, so branch edits are tested live (see docs/EVALUATION.md).
 - 2026-10-29: Shared files need an explicit owner. Without one, `personal-brand` rewrote setup's progress checkpoint and setup wrote source paths relative to the agent's start dir instead of the root.
 - 2026-10-29: `audit-surface` vs `audit` was a count (one vs. many), not a responsibility; merged into `audit`.
 - 2026-10-29: A contract that lives in one skill is invisible to the others; standalone `maintain-profile` invented a single `profile.md`. Shared contracts live in docs/WORKSPACE.md with validator-checked verbatim copies in the skills that write them.
@@ -101,3 +101,4 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: Given "approve whatever you draft", personal-brand staged a new title over the previous employer's work and a one-source leadership claim; the audit caught both. Blanket approval covers wording, not unverified claims (#79).
 - 2026-10-29: `npx skills add lfarci/career-skills --skill '*' -y --copy -a <agent>` installs all 14 skills for opencode, github-copilot and codex (.agents/skills/) and claude-code (.claude/skills/); the README Getting started is tested against that (#81).
 - 2026-10-29: A shared folder needs per-kind owners in every checker: create-design-assets' `check_assets.py` flagged build-resume's `assets/drafts/resumes/*/resume.pdf` as a misnamed logo (#83). A file contract with one writer (brand-tokens) misses other paths to the same data: personal-brand's brand kit stored palette and fonts in a free table, so resumes stayed unbranded (#85). Scripts must treat absent optional homes as empty: `search_jobs.py --career` exited 2 on a fresh workspace without research/ (#84).
+- 2026-10-29: The setup runner hardcoded `opencode run` with the free big-pickle model, so tests stalled when that plan ran out. Engines are now a `--harness copilot|codex|opencode` choice (default Copilot) plus `--model`; OpenCode can use any logged-in provider (`github-copilot/<m>`). A quota or missing login exits 75 `HARNESS ERROR`; rerun on another harness, never count it as a skill result (#93).

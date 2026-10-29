@@ -1,86 +1,21 @@
 #!/usr/bin/env python3
-"""Agent adapter for run_behavioral_evals.py: run one prompt in OpenCode inside a scratch dir.
+"""Agent adapter for run_behavioral_evals.py: run one prompt in opencode inside a scratch dir.
 
-Developer tool. Reads the prompt on stdin, creates a temporary directory with every
-skill linked under .opencode/skills/, runs `opencode run`, and prints the reply plus
-the files the agent left behind, so scoring can use files, not only text.
+Developer tool. OpenCode (`opencode run`, any logged-in provider via --model provider/model).
+Reads the prompt on stdin, copies the case fixtures from cwd into a git-initialised scratch dir,
+installs every skill, runs the agent and prints the reply plus the files it created or changed.
+Exits 75 with "HARNESS ERROR" when opencode is missing or not authenticated. Logic lives in harness.py.
 
 Usage (via the runner):
-    python3 scripts/run_behavioral_evals.py \
-        --agent-command 'python3 scripts/opencode_adapter.py --model opencode/big-pickle'
+    python3 scripts/run_behavioral_evals.py --harness opencode --case-id <id>
 """
 from __future__ import annotations
 
-import argparse
-import os
-import shutil
-import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
-LIMIT_MESSAGE = "Free usage limit reached"
-HARNESS_ERROR_EXIT = 75  # EX_TEMPFAIL: harness unavailable, rerun later
-
-ROOT = Path(__file__).resolve().parents[1]
-
-
-def install(workdir: Path) -> None:
-    """Copy every skill package into workdir/.opencode/skills/<name>."""
-    target = workdir / ".opencode" / "skills"
-    target.mkdir(parents=True)
-    for skill in ROOT.joinpath("skills").rglob("SKILL.md"):
-        shutil.copytree(skill.parent, target / skill.parent.name)
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--model", default="opencode/big-pickle")
-    parser.add_argument("--keep", action="store_true", help="keep the scratch directory")
-    args = parser.parse_args()
-    prompt = sys.stdin.read().replace("Use $", "Use the skill ")
-    workdir = Path(tempfile.mkdtemp(prefix="career-eval-"))
-    shutil.copytree(Path.cwd(), workdir, dirs_exist_ok=True)  # case fixtures the runner placed in cwd
-    install(workdir)
-    # OpenCode resolves its project from the Git root; without one it can attach to another
-    # directory (observed: writes into the caller's repo). Make the scratch dir its own repo.
-    subprocess.run(["git", "init", "-q"], cwd=workdir, check=False)
-    before = {p: p.read_bytes() for p in workdir.rglob("*") if p.is_file() and ".git" not in p.parts}
-    opencode = shutil.which("opencode") or str(Path.home() / ".opencode" / "bin" / "opencode")
-    reply = tempfile.TemporaryFile(mode="w+", encoding="utf-8", errors="replace")
-    # --print-logs streams OpenCode's log to stderr; on the free-model limit it would otherwise retry
-    # silently until the runner's timeout, so stop at the first limit message and report it.
-    proc = subprocess.Popen(
-        [opencode, "run", "--print-logs", "-m", args.model, prompt],
-        # OpenCode reads $PWD, not the OS cwd: without this it works in the caller's directory.
-        cwd=workdir, env={**os.environ, "PWD": str(workdir)}, stdout=reply, stderr=subprocess.PIPE, text=True, encoding="utf-8", errors="replace",
-    )
-    stderr_tail: list[str] = []
-    harness_error = None
-    for line in proc.stderr:
-        stderr_tail = (stderr_tail + [line])[-20:]
-        if LIMIT_MESSAGE in line:
-            harness_error = f"OpenCode {LIMIT_MESSAGE.lower()} for {args.model}"
-            proc.kill()
-            break
-    returncode = proc.wait()
-    reply.seek(0)
-    stdout = reply.read()
-    if harness_error:
-        print(f"[adapter] HARNESS ERROR: {harness_error}; not a skill result. Retry after the limit resets.")
-        returncode = HARNESS_ERROR_EXIT
-    else:
-        print(stdout)
-        if not stdout.strip():
-            # Seen when several free-model runs share one OpenCode install concurrently: run cases serially.
-            print("[adapter] empty reply from opencode; stderr tail:\n" + "".join(stderr_tail)[-800:])
-    files = [p.relative_to(workdir).as_posix() for p in sorted(workdir.rglob("*")) if p.is_file() and before.get(p) != p.read_bytes() and not {".opencode", ".git"} & set(p.parts)]
-    print("\n--- files created or changed by the agent ---\n" + ("\n".join(files) if files else "(none)"))
-    print(f"--- scratch dir: {workdir}")
-    if not args.keep:
-        shutil.rmtree(workdir, ignore_errors=True)
-    return returncode
-
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from harness import adapter_main  # noqa: E402
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(adapter_main("opencode"))
