@@ -827,6 +827,7 @@
       "prompt": "Set up my career workspace. My sources are in ./sources (a PDF resume and my LinkedIn data export zip). The resume and LinkedIn disagree on one title and two dates.",
       "expect": [
         "Reads the PDF text and the export's CSVs (Positions, Education, Certifications) after approval",
+        "Lists the archive's members and does not open messages or connections; does not unpack the zip into the workspace root",
         "Records both values for each conflict with their sources instead of choosing one",
         "Imports roles only present in one source with that source named",
         "Asks about the most important conflict first; after the answer, records the confirmed value and marks the other superseded"

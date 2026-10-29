@@ -13,7 +13,7 @@ Check what a surface actually shows against the user's canonical facts and appro
 - **Output:** Findings in the response or the user's existing review/tracker record; with several surfaces, a discrepancy matrix and deduplicated actions.
 
 ## Steps
-1. **Scope.** Identify each surface, accessible version, date checked and audience. Mark inaccessible parts unknown; accept exports and pasted content.
+1. **Scope.** Identify each surface, accessible version, date checked and audience. Mark inaccessible parts unknown; accept exports and pasted content. In an export archive (for example a LinkedIn data zip) read only the profile files the audit needs, in place; leave messages and connections unopened.
 2. **Extract claims** by subject: headline, roles and dates, experience, skills, credentials, projects, links, contact. When visible, note banner, avatar/logo, palette and typography.
 3. **Compare with canonical records.** Classify each difference as **confirmed mismatch**, **needs verification**, **valid tailoring** or **stylistic opportunity**. Compare visuals with the brand kit when one exists; platform crops and font fallbacks are not drift.
 4. **Several surfaces only:** build an alignment matrix (canonical value, each surface's wording or omission, classification), add a visual-identity row when relevant, and check real links between surfaces (site → resume, GitHub → portfolio). Trace root causes and fix source facts before derived copies.
