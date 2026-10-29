@@ -71,7 +71,7 @@ def main() -> int:
             errors.append(f"{name}: missing contract or completion criteria")
         if len(body.strip()) < 250:
             errors.append(f"{name}: unexpectedly short skill body")
-        for rel in re.findall(r"(?<![\w/.-])(scripts/[\w./-]+\.py)", body):
+        for rel in re.findall(r"(?<![\w/.-])((?:scripts|templates)/[\w./-]+\.(?:py|sty|tex))", body):
             if not (path.parent / rel).is_file():
                 errors.append(f"{name}: referenced {rel} must ship inside the skill folder")
         for rel in re.findall(r"\]\((references/[^)#]+)", body):
