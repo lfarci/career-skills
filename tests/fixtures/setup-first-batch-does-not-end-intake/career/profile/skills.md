@@ -1,0 +1,2 @@
+# Skills
+- C#, Azure

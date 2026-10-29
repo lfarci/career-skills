@@ -1,0 +1,4 @@
+Pearson VUE (synthetic)
+Exam: AZ-305
+Status: SCHEDULED
+Date: 2026-11-20
