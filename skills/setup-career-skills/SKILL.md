@@ -51,7 +51,15 @@ When you cannot obtain the user's answer (a question tool fails or the session e
 
 ## Resume
 
-Read the root `README.md` first, then only the records it links. Run `scripts/check_workspace.py <root>` when Python is available. Check links resolve, records have one owner, and the saved next decision. Report `usable`, `needs repair` or `blocked`, then continue from the saved decision without re-asking answered questions. An index that holds facts directly (older setups; the checker names its content sections) is `needs repair`: list the proposed records and moves, then wait for approval before changing any file, unless the user's request already authorizes restructuring. Move contact details only when the user asks. `validate-workspace` can help with difficult structural problems when installed; setup works without it.
+Read the root `README.md` first, then only the records it links. Run `scripts/check_workspace.py <root>` when Python is available. Check links resolve, records have one owner, and the saved next decision. Report `usable`, `needs repair` or `blocked`, then continue from the saved decision without re-asking answered questions. An index that holds facts directly (older setups; the checker names its content sections) is `needs repair`: list the proposed records and moves, then wait for approval before changing any file, unless the user's request already authorizes restructuring. Move contact details only when the user asks. Structural fixes follow the repair rule:
+
+<!-- repair-rule -->
+1. A request to check, review or resume is read-only for structure: report the status and the proposed fix, then ask before changing files.
+2. A link to a renamed or moved record: update the link and the index entry; the user's file name and location win.
+3. Rename or move a record to its standard name only when the user explicitly asks to standardize the layout.
+<!-- /repair-rule -->
+
+`validate-workspace` can help with difficult structural problems when installed; setup works without it.
 
 Consult [workspace rules](references/workspace-model.md) for source handling details. Read [cutover checks](references/cutover.md) only when the user asks to move, archive or replace an existing workspace.
 

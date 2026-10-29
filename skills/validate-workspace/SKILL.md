@@ -13,12 +13,20 @@ Keep career records findable and, when requested, align an existing workspace to
 - **Scope:** Verify structural paths, links and canonical-record ownership; repair only authorized mappings. Career facts and published content belong to other skills.
 - **Output:** One status (`valid`, `repaired`, `proposed` or `blocked`), checked scope, verified changes or patch, and the resolved path or next question.
 
+## Repair rule
+
+<!-- repair-rule -->
+1. A request to check, review or resume is read-only for structure: report the status and the proposed fix, then ask before changing files.
+2. A link to a renamed or moved record: update the link and the index entry; the user's file name and location win.
+3. Rename or move a record to its standard name only when the user explicitly asks to standardize the layout.
+<!-- /repair-rule -->
+
 ## Steps
 
 1. **Choose scope.** For a *task blocker*, check only the failed lookup/link; a working legacy mapping does not trigger migration. For an *explicit workspace review*, inspect the index and mapped existing records; when the user asks for **standardization**, also compare physical homes with the standard `career/` layout. Report inaccessible areas. An uncreated unused home or absent index does not block work from supplied records. Initial workspace creation and source imports belong to `setup-career-skills`.
 2. **Verify the mapping.** For a review, run `python3 scripts/check_workspace.py <root>` from this skill's folder when Python 3 is available (exit 0 usable, 1 errors listed, 2 root missing; `--json` for structured output); otherwise check by reading. Resolve existing canonical paths and relevant links, identify competing authorities, and separate broken references from usable legacy mappings. For an explicit alignment request, inventory proposed moves, path collisions and affected inbound/outbound links before editing.
 3. **Select a repair.** For a broken link, prefer a small index/link fix. For user-requested standardization, propose relocation to canonical home names, including link updates, conflicts and history preservation (use a reviewable PR when relevant). Ask about ambiguous ownership. Moving, renaming, merging or deleting requires a specific approved plan.
-4. **Apply within scope.** Make a narrow index/link correction only if the active user request and write policy authorize it; otherwise present a patch. Preserve unrelated changes and follow the provider's version/PR workflow. Verify that changed references resolve after the write.
+4. **Apply within scope.** Apply a narrow index/link correction only when the user asked for the fix, or when another task is blocked and that task already has write permission; a saved write policy alone is not a request. Otherwise present the patch and ask. Preserve unrelated changes and follow the provider's version/PR workflow. Verify that changed references resolve after the write.
 5. **Return a result.** Use `valid` for checked mappings without defects, `repaired` for a confirmed fix, `proposed` for a fix awaiting approval/access and `blocked` when the required authority or files remain unknown. Name the affected paths and any unresolved question. When called from another task, return the resolved locator so the original task can continue; an unresolved blocker may instead require supplied evidence.
 
 ## Done when
