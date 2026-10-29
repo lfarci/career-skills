@@ -9,10 +9,10 @@ The workspace has an **index** (`career/README.md`: links, source inventory, set
 Skill groups under `skills/`, each owning one question:
 
 - `setup-career-skills`: create, import into or resume the workspace (the entry point).
-- `career-evidence/`: what have I demonstrated? (`maintain-profile` owns facts; `review-research` maintains saved research.)
+- `career-evidence/`: what have I demonstrated? (`maintain-profile` owns facts.)
 - `career-direction/`: what do I want? (`reflect`)
-- `career-development/`: how do I grow? (`plan-development`, `review-progress`)
-- `personal-brand/`: how do I present myself? (positioning, design brief → assets → review, audits, benchmarking)
+- `career-development/`: how do I grow? (`plan-development`: create or review a plan)
+- `personal-brand/`: how do I present myself? (positioning, design brief → assets → review, audits)
 - `job-hunt/`: how do I get there? (`build-resume`, `find-companies`, `find-jobs`)
 - `ask-career-skills` (router: recommends, never runs) and `validate-workspace` (structural repair) are top-level helpers.
 
@@ -26,7 +26,7 @@ Aim for a stable MVP: fewer, rock-solid skills over richness. Simplify or remove
 2. **Visual identity**: `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`.
 3. **Opportunities**: `find-companies`, `find-jobs`, `build-resume`.
 
-Nice-to-have, first candidates for simplification or removal: `benchmark-profile`, `review-research`, `audit`, `plan-development`, `review-progress`, `reflect`, `ask-career-skills`.
+Secondary: `audit`, `plan-development`, `reflect`, `ask-career-skills`. Removed for the MVP: `benchmark-profile`, `review-research`, `review-progress` (merged); re-add only with a demonstrated need.
 
 ## Quality bar for a skill
 
@@ -77,3 +77,4 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: Loading a module with `importlib` for tests requires registering it in `sys.modules` before `exec_module` when it defines dataclasses.
 - 2026-10-29: Every file-producing skill needs a naming contract plus a check; without one a single session mixed `option-a_v1` and `at-a-v1` names and left render helpers in assets/.
 - 2026-10-29: Free test models are often text-only; visual skills need an explicit can't-see-images branch or they burn the turn on improvised pixel analysis.
+- 2026-10-29: Cut to 14 skills for the MVP; a removed skill's durable rules (e.g. research retention) stay in docs/WORKSPACE.md so nothing is lost.

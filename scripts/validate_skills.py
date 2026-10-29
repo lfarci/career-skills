@@ -12,14 +12,14 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 EXPECTED = {
-    "setup-career-skills", "plan-development", "review-progress", "review-research",
-    "reflect", "maintain-profile", "build-resume", "personal-brand", "benchmark-profile",
+    "setup-career-skills", "plan-development",
+    "reflect", "maintain-profile", "build-resume", "personal-brand",
     "define-design-brief", "create-design-assets", "review-design",
     "audit", "find-jobs", "find-companies", "validate-workspace", "ask-career-skills",
 }
 MANUAL = {
-    "reflect", "review-research", "plan-development",
-    "review-progress", "personal-brand", "benchmark-profile", "define-design-brief",
+    "reflect", "plan-development",
+    "personal-brand", "define-design-brief",
     "create-design-assets", "review-design", "ask-career-skills",
 }
 

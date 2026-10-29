@@ -1,6 +1,0 @@
-interface:
-  display_name: "Review Research"
-  short_description: "Review saved career references and archive with guidance"
-  default_prompt: "Use $review-research to review the usefulness of my saved career research and propose entries to refresh or archive."
-policy:
-  allow_implicit_invocation: false

@@ -6,11 +6,11 @@ Use ordinary Markdown and links in user-selected private storage: local files, a
 
 | Directory | Owns | Related skills |
 | --- | --- | --- |
-| profile/ | Background, capabilities, aspirations, preferences and development | reflect, maintain-profile, plan-development, review-progress |
+| profile/ | Background, capabilities, aspirations, preferences and development | reflect, maintain-profile, plan-development |
 | projects/ | Career-oriented project records and links to actual work | maintain-profile; other skills consume selected project evidence |
 | brand/ | Positioning, audiences, messaging principles, design briefs and visual rules | personal-brand, define-design-brief, create-design-assets, review-design |
 | assets/ | Reusable external-facing outputs, drafts, approved staged material and surface descriptions | personal-brand, build-resume, design skills, audits |
-| research/ | User-selected company, opportunity and comparator references; archived research | find-companies, find-jobs, benchmark-profile, review-research |
+| research/ | User-selected company, opportunity and comparator references; archived research | find-companies, find-jobs |
 
 Profile grounds brand and growth decisions; projects can supply evidence. Brand guides assets. Selected research informs market understanding, targeting, presentation and development. Research about someone else never proves a personal capability. A project is not automatically evidence: link the repository, outcome or feedback supporting a particular claim.
 
@@ -121,7 +121,7 @@ An existing custom layout can remain **operational** through its index even befo
 - Keep one useful record per selected company, opportunity or comparator; link an opportunity to its company rather than duplicating the company description. profiles/ includes professional profiles, portfolios and resume references; a comparison across several may be a linked summary.
 - Save sources, checked dates, useful findings, why the user retained the reference, relevance/fit, unknowns and next decisions as applicable. Store links to other people's resumes, not copied resume files. Keep only useful observations, not every query, page or intermediate thought.
 - Research is a long-term reference library. An expired job may still explain market requirements; an older profile can remain useful inspiration. Age alone does not make a record disposable.
-- review-research runs on request. Prefer archiving under user guidance, retaining useful history and updating affected links. Deletion is manual. During unrelated work, an agent noticing stale content asks whether the user wants it reviewed; it does not silently archive, delete or start background maintenance.
+- Research review runs on request. Prefer archiving under user guidance, retaining useful history and updating affected links. Deletion is manual. During unrelated work, an agent noticing stale content asks whether the user wants it reviewed; it does not silently archive, delete or start background maintenance.
 
 ## Workspace index and record rules
 

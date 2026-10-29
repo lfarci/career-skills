@@ -1,31 +1,37 @@
 ---
 name: plan-development
-description: Plan professional growth with prioritized skill gaps, applied practice and evidence milestones.
+description: Plan professional growth, or review progress against an existing plan, with prioritized gaps, applied practice and evidence milestones.
 disable-model-invocation: true
 ---
 
 # Plan Development
 
+One private development plan, created once and revisited at its review points. Plans, completed learning and demonstrated capability stay distinct.
+
 ## Contract
-- **Input:** profile/ direction, skills, preferences and constraints; relevant project/evidence links.
-- **Scope:** Plan growth toward chosen goals; do not declare planned learning achieved.
-- **Output:** profile/development.md (or mapped plan): prioritized outcomes, actions, effort, evidence milestones and review points.
+- **Input:** profile/ direction, skills, preferences and constraints; relevant project evidence; for a review, the current plan, the review period and what actually happened.
+- **Scope:** Create or revise the plan; never declare planned learning achieved or publish it.
+- **Output:** profile/development.md (or mapped plan): prioritized outcomes, actions, effort, evidence milestones, review points, and dated review entries.
 
-## Establish the starting point
-- Read the user's chosen direction, relevant demonstrated experience and constraints. Ask only missing priorities, available time, budget or deadlines that affect the plan. Do not assume promotion, management, certifications or a technology track is the goal.
-- Separate demonstrated capabilities from interests and aspirations. Identify gaps relevant to the chosen work; do not turn every job-ad requirement or peer credential into a necessary gap. If direction is undecided, clarify it without requiring another skill.
+## Choose the branch
+If no plan exists, or the user wants a new one, **create**. If a plan exists and the user reports progress or reaches a review point, **review**. Ask only when it is unclear.
 
-## Build a feasible plan
-- Prioritize a small number of outcomes by relevance and effort. Explain trade-offs and what is deliberately deferred. Balance learning with applied practice, feedback and opportunities to demonstrate capability.
-- For each outcome, specify a concrete action or experiment, approximate effort/cadence, dependencies, observable completion evidence and a review point. Distinguish completing a course from demonstrating a skill.
-- Fit the user's time and budget; use estimates rather than promises. Research current official sources when recommending specific courses, certifications or programs; verify availability, costs and requirements or label them unknown. Keep generic planning independent of external providers.
-- Invite correction of priorities and feasibility. Record assumptions and unresolved choices rather than inventing commitments.
+## Create
+- Read the chosen direction, demonstrated experience and constraints. Ask only for missing priorities, time, budget or deadlines that change the plan. Assume no default goal (promotion, management, certification, a tech track); if direction is undecided, clarify it here.
+- Separate demonstrated capabilities from aspirations. Keep gaps relevant to the chosen work; a job-ad requirement or peer credential is not automatically a gap.
+- Prioritize a few outcomes by relevance and effort; state what is deferred. For each: a concrete action or experiment, approximate effort/cadence, observable completion evidence and a review point. Completing a course differs from demonstrating a skill.
+- Fit time and budget with estimates. Check current official sources for specific courses or certifications, or label cost and availability unknown.
 
-## Save and hand off
-- Ask where to save unless established. Update the existing private action plan instead of creating duplicate trackers. Link the direction and evidence records; do not copy private details into public profiles.
-- Supply a useful standalone plan if tools or other skills are unavailable. review-progress can reassess the plan later, and maintain-profile can record completed, supported outcomes when authorized. Do not schedule tasks, enroll, purchase or publish without a corresponding request.
+## Review
+- Read the plan, previous review and evidence for the period. Ask only for missing evidence that changes the assessment.
+- Compare intended with actual: reported activity, completed learning, applied capability, externally corroborated results. Missing evidence means unknown, not failure.
+- Explore blockers and changed priorities without blame; adjust scope or cadence, or suggest revisiting direction, rather than just adding effort. No percentage-complete or competence scores.
+- Append a dated review entry; label superseded actions instead of deleting them. Propose factual profile updates for demonstrated outcomes separately (maintain-profile can apply them when installed).
+
+## Save
+Ask where to save unless established; update the existing plan rather than creating a duplicate, and link it from the index `Records` when new. Do not schedule, enroll, purchase or publish without a request.
 
 ## Done when
-- Priorities connect to the selected direction and evidence-backed gaps.
-- Actions fit constraints and have completion evidence and review points.
-- Plans, estimates and demonstrated achievements remain distinct; save status and unknowns are explicit.
+- Create: priorities trace to the direction and evidence-backed gaps; every action has effort, completion evidence and a review point.
+- Review: progress is tied to evidence for a stated period, unknowns are explicit, and each change is justified and traceable to the plan.
+- Plans, estimates and achievements stay distinct; save status is explicit.
