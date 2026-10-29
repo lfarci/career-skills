@@ -18,7 +18,7 @@ Avoid collecting the raw assets or font binaries in this public repository. Pres
 
 ## Palette and fonts for resumes and documents
 
-When the user has a palette or fonts (existing or newly agreed), also record them in `brand/identity.md` as the shared brand-tokens block so `build-resume` can apply them. Use `status: approved` only after the user confirms these exact values; otherwise `pending`.
+When the user has a palette or fonts (existing or newly agreed), also record them in `brand/identity.md` as the shared brand-tokens block so `build-resume` can apply them. Write `status: pending` first, even for values the user calls their existing identity: values read from a note, file or site are not yet confirmed. Show the exact values, ask the user to confirm them, and switch to `status: approved` only after they do.
 
 <!-- brand-tokens -->
 Resume and document styling reads one fenced block in `brand/identity.md`. Visual-identity skills write it; `build-resume` reads it. One `key: value` per line; omit keys you have not decided.
