@@ -36,6 +36,17 @@
       ]
     },
     {
+      "id": "resume-pdf-latex",
+      "skill": "build-resume",
+      "prompt": "Build my resume as a PDF from my career workspace.",
+      "expect": [
+        "Writes resume.json only from supported records",
+        "Runs scripts/build_resume.py and reads its JSON status",
+        "Reports a PDF only when the script exits 0 and inspects page 1",
+        "Without a TeX engine delivers .tex and .md and says no PDF exists"
+      ]
+    },
+    {
       "id": "brand-valid-variation",
       "skill": "personal-brand",
       "prompt": "My website says Software Engineer; my resume says Software & Cloud Engineer. Help me align my brand.",
