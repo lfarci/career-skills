@@ -61,6 +61,12 @@ def main() -> int:
             errors.append(f"{name}: manual skill needs disable-model-invocation: true")
         if name not in MANUAL and "disable-model-invocation" in metadata:
             errors.append(f"{name}: discoverable skill must omit the manual-only flag")
+        oa = path.parent / "agents" / "openai.yaml"
+        implicit = (yaml.safe_load(oa.read_text(encoding="utf-8")) or {}).get("policy", {}).get("allow_implicit_invocation") if oa.is_file() else None
+        if name in MANUAL and implicit is not False:
+            errors.append(f"{name}: manual skill needs agents/openai.yaml with policy.allow_implicit_invocation: false")
+        if name not in MANUAL and implicit is False:
+            errors.append(f"{name}: discoverable skill must not disable implicit invocation in openai.yaml")
         if "## Contract" not in body or "## Done when" not in body:
             errors.append(f"{name}: missing contract or completion criteria")
         if len(body.strip()) < 250:

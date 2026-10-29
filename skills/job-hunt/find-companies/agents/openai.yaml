@@ -2,3 +2,5 @@ interface:
   display_name: "Find Companies"
   short_description: "Find employers matching your career goals and constraints"
   default_prompt: "Use $find-companies to research employers matching my profile, career goals, location and work preferences."
+policy:
+  allow_implicit_invocation: true

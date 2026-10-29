@@ -103,7 +103,7 @@ Generic names such as `audit` and `reflect` remain stable for compatibility. Ren
 
 ## Portability
 
-Each skill is a self-contained leaf directory with `SKILL.md`; domain packages are grouped under `skills/<group>/<name>/SKILL.md`, while cross-cutting `setup-career-skills` and `ask-career-skills` remain at the top level. Group directories have no SKILL.md. Each leaf has standard `name` and `description` frontmatter. Manual skills additionally use host-specific `disable-model-invocation: true`; other hosts may ignore this extension and the core Agent Skills format does not define invocation controls. Install by leaf directory or skill name.
+Each skill is a self-contained leaf directory with `SKILL.md`; domain packages are grouped under `skills/<group>/<name>/SKILL.md`, while cross-cutting `setup-career-skills`, `ask-career-skills` and `validate-workspace` remain at the top level. Group directories have no SKILL.md. Each leaf has standard `name` and `description` frontmatter. Manual skills additionally use host-specific `disable-model-invocation: true`; other hosts may ignore this extension and the core Agent Skills format does not define invocation controls. Install by leaf directory or skill name.
 
 ## Deferred, not separately packaged in v1
 

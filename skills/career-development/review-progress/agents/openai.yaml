@@ -1,4 +1,6 @@
 interface:
   display_name: "Review Progress"
   short_description: "Review development evidence and adjust the next steps"
-  default_prompt: "Use $review-progress to guide my professional development."
+  default_prompt: "Use $review-progress to review my development plan against what I actually did this period."
+policy:
+  allow_implicit_invocation: false

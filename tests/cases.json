@@ -875,6 +875,17 @@
         "Keeps the goal (a considered certification) in direction.md, not qualifications.md",
         "Verifies writes and asks one next question"
       ]
+    },
+    {
+      "id": "index-setup-progress-owned-by-setup",
+      "skill": "personal-brand",
+      "prompt": "Use personal-brand to draft my positioning. My workspace is ./career (README.md has Records, Source inventory and Setup progress sections); you may write drafts.",
+      "expect": [
+        "Writes brand/positioning.md and drafts under assets/drafts/",
+        "Adds links to the new records under Records in career/README.md",
+        "Leaves the Setup progress section and its next decision unchanged",
+        "Reports its own next decision in the reply"
+      ]
     }
   ]
 }

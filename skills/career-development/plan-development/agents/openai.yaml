@@ -1,4 +1,6 @@
 interface:
   display_name: "Plan Development"
   short_description: "Turn career goals and evidence gaps into a growth plan"
-  default_prompt: "Use $plan-development to guide my professional development."
+  default_prompt: "Use $plan-development to turn my career direction and evidence gaps into a feasible growth plan."
+policy:
+  allow_implicit_invocation: false
