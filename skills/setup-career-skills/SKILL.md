@@ -1,6 +1,6 @@
 ---
 name: setup-career-skills
-description: "Create or resume a private career workspace when the user explicitly asks; treat a named folder as the root, import approved facts, and save setup progress."
+description: "Use only when the user explicitly asks to create or resume a private career workspace; treat a named folder as the root, import approved facts, and save setup progress."
 ---
 
 # Setup Career Skills
@@ -11,6 +11,10 @@ Use this workflow only for an explicit setup or resume request. Ask one question
 
 - **Input:** A confirmed workspace root, approved career facts or sources, and permission for requested local writes.
 - **Output:** Verified useful records plus a resumable README checkpoint, or one specific blocker.
+
+## Tool guardrail
+
+Never call `execute`, Node, Python, or another code runner to inspect or change files, even if the host offers one. A folder named in the prompt is the exact target path relative to OpenCode's starting directory: read `<folder>/README.md` and only the record paths it identifies using the host's direct file-reading tool. Never read the starting-directory README, inspect or list the starting or parent directory, or search for another folder with a similar name. Use a listed shell or file-writing tool only when a write is needed.
 
 ## Fast path: named folder, facts, and write permission
 
@@ -27,7 +31,7 @@ Treat `<named-folder>` itself as the root. Do not add `<named-folder>/career/`. 
 2. **Route.** Inspect only the selected root. An absent or empty root is New. A root with a career README or records is Resume. Preserve existing files; never silently overwrite, move, or delete them. A workspace folder is an ordinary directory, not a Git worktree or new repository.
 3. **Import.** Career facts supplied in the conversation are an approved source. When local writes are authorized, import supported facts now without asking again. Put employer and role history in `profile/experience.md`. Do not invent duties, technologies, credentials, achievements, or dates. If no facts or approved sources are available, ask one focused question and wait; do not make an empty scaffold. If that question tool errors or the user has not answered, stop without creating any files.
 4. **Save progress.** After every approved import, create or update the root `README.md`. Record root, sources used, records created, captured facts, missing/deferred information, status (`in progress`, `paused`, `ready`, or `blocked`), and one next decision.
-5. **Use supported tools safely.** Use only file or shell tools actually listed by the host. Do not invent APIs or use a code-execution runtime for filesystem work. Do not use worktree, branch, task, or repository-creation tools for ordinary workspace folders. Do not issue delete or move commands during ordinary setup. Never call a question tool to re-confirm a destination or write permission already supplied by the user.
+5. **Use supported tools safely.** Follow the tool guardrail above. Use only file or shell tools actually listed by the host. Do not invent APIs or use a code-execution runtime for filesystem work. Do not use worktree, branch, task, or repository-creation tools for ordinary workspace folders. Do not issue delete or move commands during ordinary setup. Never call a question tool to re-confirm a destination or write permission already supplied by the user.
 6. **Verify before reporting.** After writing, read the files or list the workspace to confirm the exact paths and contents. A write is complete only after the host reports success and the follow-up read/listing confirms it. If no supported write or verification tool is available, report the blocker; do not claim completion.
 7. **Stop at the next decision.** Summarize verified files and remaining gaps, then ask one useful next question. Do not continue into a broad onboarding interview unless the user answers.
 

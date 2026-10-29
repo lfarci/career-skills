@@ -10,7 +10,7 @@ For small-model cases with reproducible prompts, expected behavior, and trace-ba
 
 Send this user request without any other setup instructions:
 
-> Use `setup-career-skills` to help me set up my career workspace.
+> Use setup-career-skills to help me set up my career workspace.
 
 **Expected:** Agent first asks **where to initialize**, without assuming the current repository or inspecting existing records.
 

@@ -8,7 +8,7 @@ Each skill works independently and does not require GitHub, a particular AI harn
 
 | Skill | Purpose | Invocation |
 | --- | --- | --- |
-| [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Create or resume a private career workspace from selected sources | Manual |
+| [`setup-career-skills`](skills/setup-career-skills/SKILL.md) | Create or resume a private career workspace from selected sources | Discoverable |
 | [`ask-career-skills`](skills/ask-career-skills/SKILL.md) | Recommend which career workflow to use after setup or at any point | Manual |
 | [`validate-workspace`](skills/validate-workspace/SKILL.md) | Validate workspace structure or repair broken mappings during another task | Discoverable |
 | [`reflect`](skills/career-direction/reflect/SKILL.md) | Explore and articulate professional identity and goals | Manual |

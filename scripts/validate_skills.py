@@ -18,7 +18,7 @@ EXPECTED = {
     "audit", "find-jobs", "find-companies", "validate-workspace", "ask-career-skills",
 }
 MANUAL = {
-    "setup-career-skills", "reflect", "review-research", "plan-development",
+    "reflect", "review-research", "plan-development",
     "review-progress", "personal-brand", "benchmark-profile", "define-design-brief",
     "create-design-assets", "review-design", "audit", "ask-career-skills",
 }

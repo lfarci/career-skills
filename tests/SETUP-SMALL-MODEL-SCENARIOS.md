@@ -16,7 +16,7 @@ Run each exact prompt below from `$test_root` with:
 opencode run --standalone --format json --model openrouter/openai/gpt-5.4-nano --title "<scenario>" "<prompt>"
 ```
 
-Keep the session ID and output. For scenario 3, create the specified fictional README and role record inside its selected root before starting OpenCode. Do not use real career records.
+The skill must appear in OpenCode's available skill list and the transcript must show a native `skill` call for `setup-career-skills`. Keep the session ID and output. For scenario 3, create the specified fictional README and role record inside its selected root before starting OpenCode. Do not use real career records.
 
 Score observed behavior, not the agent's claims. Require a successful `skill` tool call for `setup-career-skills`, successful write results for expected files, and a later read/listing that verifies them. A missing native skill call, failed write, or claimed file absent from disk is a fail. In non-interactive `opencode run`, a `question` tool can report that it cannot wait for input; score the final response and ensure no dependent writes happen.
 
@@ -46,20 +46,20 @@ Pass when the first response asks one concise question about the destination. Be
 
 ## 3. Resume from a saved decision
 
-Seed only fictional files under `career-skill-resume/`: a README with status `in progress`, one existing ExampleCo role record, and next decision `ask whether to add project evidence`. Then prompt:
+Seed only fictional files under `career-skill-resume/`: a README with status `in progress`, one existing ExampleCo role record, and next decision `choose one priority direction for the next review`. Then prompt:
 
 > Use setup-career-skills to resume `career-skill-resume` here. Continue from its saved next decision.
 
-Pass when OpenCode checks the existing index and role record, keeps the named folder as root, does not duplicate or rewrite the role, and asks one focused question about project evidence. It must not restart location intake or claim setup is complete.
+Pass when OpenCode reads only the named workspace's README and mapped role record, keeps the named folder as root, does not duplicate or rewrite the role, and asks one focused question about the saved priority decision. It must not restart location intake or claim setup is complete.
 
 ## Recorded manual run
 
-On 2026-10-28, the revised skill passed all three scenarios in real OpenCode sessions on `openrouter/openai/gpt-5.4-nano`:
+On 2026-10-29, the revised skill passed all three scenarios in real OpenCode sessions on `openrouter/openai/gpt-5.4-nano`:
 
 | Scenario | Session | Result |
 | --- | --- | --- |
-| 1. Named folder and role | `ses_e7b985cb4ffeMn4gr6SoEzBh6R` | Pass: native skill call, plain named root, two files written and reread, no nested `career/` |
-| 2. Missing destination | `ses_e7b99a6e5ffeNrKWAZ7pC5gC2S` | Pass: asked for the root; the non-interactive question tool errored, then the agent stopped without workspace writes |
-| 3. Resume checkpoint | `ses_e7b994cd5ffePW5LMKlUQJ2T2T` | Pass: read README and existing role, preserved both, reused the saved next decision |
+| 1. Named folder and role | `ses_e7952d6c8ffe9ABiZQZlfI8HEG` | Pass: native skill call; wrote and reread the named root's README and ExampleCo role; no nested `career/`; README saved status, deferred fields, and next decision |
+| 2. Missing destination | `ses_e79528a72ffeyE6AByoqSjrfGf` | Pass: asked for a destination before any workspace read/write; after the natural answer, wrote and reread both files with only the fictional fact |
+| 3. Resume checkpoint | `ses_e79522c57ffeb5l7hqmfWF9ZPD` | Pass: native skill call; direct reads of the named workspace README and role; preserved the saved next decision and asked one focused follow-up |
 
-Earlier runs exposed three failures that drove the changes: the skill was hidden by `disable-model-invocation`; Nano tried unsupported code helpers and claimed nonexistent writes; then it tried to create an OpenCode worktree. A no-destination run also created an empty workspace after its question tool failed. The current skill removes the hidden flag, defines a fast path for explicit new-folder requests, requires a normal directory and available file tools, forbids claiming unverified writes, and stops when a required answer is unavailable.
+Earlier runs exposed failures that drove the changes: Nano tried unsupported code helpers and claimed nonexistent writes, then tried to create an OpenCode worktree. A no-destination run created an empty workspace after its question tool failed. OpenCode also hid the skill while its manual-only flag was set. During the first resume rerun, Nano tried `execute` for a filesystem probe; when that failed, it listed the test directory before reading the selected workspace. The skill now explicitly forbids code runners and parent-directory searches; the fresh rerun used direct reads of only the named workspace. The current version is discoverable for explicit setup requests, defines a fast path for named folders, verifies writes, and stops when a required answer is unavailable.
