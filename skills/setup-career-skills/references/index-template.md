@@ -5,7 +5,7 @@ Adapt freely; keep it short. The index links records and tracks setup. Facts liv
 ```markdown
 # Career workspace
 
-Storage: <private local folder / private repository>
+Storage: <private local folder / private repository>   (the kind, not an absolute path: the folder may move)
 Write policy: <propose changes / approved direct edits / pull requests>
 Publication: separate approval required
 

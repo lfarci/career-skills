@@ -85,3 +85,4 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: Weak free models (nemotron-lightning, flint) fail on harness behaviour (sub-agents wandering, out-of-dir writes), not skill wording. Record them in tests/SETUP-SCENARIOS.md; fix only what a host-neutral rule or a checker catches (e.g. empty records).
 - 2026-10-29: OpenCode Zen free models work only inside the OpenCode client; pointing Codex at the Zen endpoint returns FreeUsageLimitError. A second harness needs the user's Codex or Claude login.
 - 2026-10-29: "Approved" carries over between deliverables unless the skill says selection is per kind; an approved logo made the agent skip banner concepts.
+- 2026-10-29: Two skills that repair the same files need one shared, validator-checked rule; otherwise one fixes the link and the other renames the file. A saved write policy is not a request to write.

@@ -167,6 +167,14 @@ For guided onboarding, add a brief **Setup progress** entry: status (`in progres
 
 `validate-workspace` is the structural exception handler for a failed mapped path, broken link or competing canonical record, and it also handles **explicit workspace-structure reviews**. During another task it checks only the blocker; during a requested review it checks the existing workspace index, mapped records and relevant links. Custom legacy folder names with working index mappings are operational, and intentionally uncreated areas or pasted inputs need no repair during normal tasks. When specifically asked to check alignment with the managed standard, report deviations and propose a scoped migration, without treating them as automatically broken links.
 
+**Repair rule.** Shared by `validate-workspace` and `setup-career-skills` (verbatim copies, validator-checked):
+
+<!-- repair-rule -->
+1. A request to check, review or resume is read-only for structure: report the status and the proposed fix, then ask before changing files.
+2. A link to a renamed or moved record: update the link and the index entry; the user's file name and location win.
+3. Rename or move a record to its standard name only when the user explicitly asks to standardize the layout.
+<!-- /repair-rule -->
+
 Initial configuration remains `setup-career-skills`' responsibility. Prefer repairing a mapping or link to moving records. A narrow index fix needs task-specific write authorization; a move, merge, rename or deletion requires an explicit plan and approval. The validator returns a structural status and usable path (or blocker) to the original workflow. Its availability and invocation depend on the host; every task skill remains independently usable.
 
 ## Skill contracts and paths

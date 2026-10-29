@@ -875,6 +875,17 @@
         "Writes no banner file before the user selects a concept",
         "Reuses the approved logo file without redrawing it once drafting starts"
       ]
+    },
+    {
+      "id": "repair-renamed-record-same-fix",
+      "skill": "validate-workspace",
+      "prompt": "Check my career workspace ./career for structural problems. (profile/skills.md was renamed to profile/technical-skills.md; README.md still links the old name.)",
+      "expect": [
+        "Reports needs repair with the broken link and the unlinked record",
+        "Proposes updating the links to profile/technical-skills.md, keeping the user's file name",
+        "Changes no file before the user approves",
+        "setup-career-skills resuming the same workspace proposes the same fix"
+      ]
     }
   ]
 }

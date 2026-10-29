@@ -89,6 +89,12 @@ def main() -> int:
         copy = marker.search(skill_path.read_text(encoding="utf-8"))
         if copy and canonical and copy.group(1) != canonical.group(1):
             errors.append(f"{skill_path.parent.name}: record map differs from docs/WORKSPACE.md")
+    rule = re.compile(r"<!-- repair-rule -->\n(.*?)<!-- /repair-rule -->", re.DOTALL)
+    canonical_rule = rule.search((ROOT / "docs" / "WORKSPACE.md").read_text(encoding="utf-8"))
+    for required in ("setup-career-skills", "validate-workspace"):
+        copy = rule.search(packages[required].read_text(encoding="utf-8")) if required in packages else None
+        if not copy or not canonical_rule or copy.group(1) != canonical_rule.group(1):
+            errors.append(f"{required}: repair rule missing or differs from docs/WORKSPACE.md")
     for required in ("setup-career-skills", "maintain-profile"):
         if required in packages and not marker.search(packages[required].read_text(encoding="utf-8")):
             errors.append(f"{required}: missing record-map block")
