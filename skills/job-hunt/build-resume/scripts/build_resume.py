@@ -298,7 +298,7 @@ def find_engine(choice: str) -> str | None:
 def compile_tex(engine: str, tex: Path) -> subprocess.CompletedProcess:
     """Run the engine in the output directory."""
     commands = {
-        "tectonic": [engine, "--keep-logs", tex.name],
+        "tectonic": [engine, tex.name],
         "latexmk": [engine, "-pdf", "-interaction=nonstopmode", "-halt-on-error", tex.name],
     }
     command = commands.get(engine, [engine, "-interaction=nonstopmode", "-halt-on-error", tex.name])
@@ -387,6 +387,8 @@ def build(source: Path, out_dir: Path, engine_choice: str, brand: Path | None = 
     if not inspect_pdf(pdf, str(data["name"]), status):
         return 2, status
     status.pdf = pdf.as_posix()
+    for suffix in (".log", ".aux", ".out", ".fls", ".fdb_latexmk", ".xdv"):
+        (out_dir / f"{stem}{suffix}").unlink(missing_ok=True)  # keep only reviewable sources and the PDF
     if status.pages and status.pages > 2:
         status.warnings.append(f"{status.pages} pages: consider trimming")
     return 0, status
