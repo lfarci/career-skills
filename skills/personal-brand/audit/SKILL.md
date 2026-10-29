@@ -1,41 +1,27 @@
 ---
 name: audit
-description: Audit consistency across multiple professional surfaces, such as websites, resumes, GitHub and LinkedIn.
-disable-model-invocation: true
+description: Audit one or several professional surfaces (resume, LinkedIn, GitHub, portfolio, website) against career facts and brand guidance. Use for checking a profile's claims, consistency or visual drift.
 ---
 
-# Audit Cross-Asset Alignment
+# Audit Professional Surfaces
 
-Find *relationships* and contradictions among professional assets; don't merely concatenate individual reports. Use `audit-surface` when available, but require no other skill.
+Check what a surface actually shows against the user's canonical facts and approved brand guidance. One surface gets a findings report; several surfaces also get a cross-surface matrix that finds *relationships*, not concatenated reports. This is not an SEO, accessibility, performance or security audit.
 
 ## Contract
-- **Input:** Multiple observed surfaces from assets/services.md plus profile/ authority, brand/ guidance and applicable staged assets.
-- **Scope:** Reconcile cross-surface discrepancies; do not redesign the identity or automatically overwrite either side.
-- **Output:** A cross-surface discrepancy matrix and deduplicated actions in the existing review/tracker record or response; factual conflicts and user decisions are explicit.
+- **Input:** One or more surfaces from assets/services.md or supplied directly (URL, export or pasted text), plus relevant profile/ facts, brand/ guidance and staged assets.
+- **Scope:** Find factual, presentation and visual-drift issues; ask how to reconcile differences instead of assuming live or staged content is right. Never edit surfaces or overwrite records.
+- **Output:** Findings in the response or the user's existing review/tracker record; with several surfaces, a discrepancy matrix and deduplicated actions.
 
 ## Steps
-
-1. Discover the agreed canonical facts, goals, current positioning, **optional approved brand assets/tokens**, and all relevant assets. Record which assets are current, planned, private or inaccessible. Confirm the requested scope without blocking on inaccessible sources.
-2. Inspect each available asset. Normalize claims by subject: identity/headline, role and dates, experience, skills, credentials, projects, links and contact details. When visible and relevant, also record banners, logo/avatar/icon variants, palette and typography.
-3. Construct a **cross-asset alignment matrix**: canonical value/evidence, each asset's wording or omission, and whether differences are valid audience tailoring, factual conflicts, stale copies or missing details. Add a compact **visual identity** row when a brand kit or observable assets exist; distinguish platform adaptations from meaningful drift.
-4. Check actual link and dependency relationships, such as a website linking to a resume, Github linking to portfolio, and claimed published material existing. Preserve unknown status when access is limited.
-5. Consolidate root causes and prioritize changes. Recommend fixing source facts before derived copies, and coordinating shared changes without making the copy identical everywhere.
-6. Produce tracker-ready tasks containing the affected assets, problem, evidence, acceptance criteria, dependency and verification method. Reuse/update existing matching issues when authorized; otherwise produce a Markdown plan.
-
-## Output: Cross-Asset Alignment Audit
-
-- Inventory and scope, with inaccessible assets clearly marked
-- Canonical source and claim-level comparison matrix
-- Valid differences versus real inconsistencies (including optional visual-identity consistency)
-- Prioritized, de-duplicated remediation backlog
-- Follow-up verification checklist
+1. **Scope.** Identify each surface, accessible version, date checked and audience. Mark inaccessible parts unknown; accept exports and pasted content.
+2. **Extract claims** by subject: headline, roles and dates, experience, skills, credentials, projects, links, contact. When visible, note banner, avatar/logo, palette and typography.
+3. **Compare with canonical records.** Classify each difference as **confirmed mismatch**, **needs verification**, **valid tailoring** or **stylistic opportunity**. Compare visuals with the brand kit when one exists; platform crops and font fallbacks are not drift.
+4. **Several surfaces only:** build an alignment matrix (canonical value, each surface's wording or omission, classification), add a visual-identity row when relevant, and check real links between surfaces (site → resume, GitHub → portfolio). Trace root causes and fix source facts before derived copies.
+5. **Report.** Prioritize by risk. For each actionable item give surface(s), current state, evidence, desired outcome and a verifiable acceptance criterion. Check the tracker for existing issues before proposing new ones; write to a tracker only when authorized, otherwise output issue-ready Markdown.
 
 ## Done when
-
-- Every accessible in-scope asset appears in the audit matrix.
-- Material inconsistencies, including meaningful visual-brand drift where observable, are traced to evidence and impacted surfaces.
-- Different banner dimensions, accessible font substitutions and intentionally tailored variants are not automatically treated as problems.
-- Planned content is not treated as live; inaccessible content is not assumed aligned.
-- Each remediation has actionable acceptance criteria and no duplicates.
-- No public publishing or tracker writes occur without authorization.
-
+- Every accessible in-scope surface was inspected; inaccessible content is reported unknown, not assumed aligned.
+- Confirmed contradictions cite evidence; tailoring and platform variants are not flagged as errors.
+- Planned content is not treated as live.
+- Every high-priority finding has a measurable correction; no duplicate items.
+- Nothing was published or written to a tracker without authorization.

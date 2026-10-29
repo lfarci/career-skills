@@ -19,7 +19,7 @@ Recommend a next step in Career Skills. This is a **manual navigation skill**, n
 2. Route by the **outcome**, not by a fixed sequence:
    - Initialize a clean standardized `career/` or discover prior documents to import: `setup-career-skills`; explicitly align/migrate an occupied legacy workspace or repair broken paths: `validate-workspace` (if installed); changed career facts: `maintain-profile`; uncertain direction: `reflect`.
    - Career growth: `plan-development` for a plan or `review-progress` for an existing one.
-   - Positioning: `personal-brand`; inspect one surface: `audit-surface`; reconcile multiple surfaces: `audit`.
+   - Positioning: `personal-brand`; audit one or several surfaces: `audit`.
    - Visual identity: `define-design-brief` for discovery, `create-design-assets` for production, `review-design` for critique.
    - Opportunities: `find-companies` for target employers, `find-jobs` for live vacancies, `build-resume` for application documents.
    - Examples and retained research: `benchmark-profile` for public examples, `review-research` for user-guided maintenance.
