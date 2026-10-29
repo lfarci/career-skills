@@ -2,76 +2,60 @@
 
 Structural CI checks packaging, frontmatter, references and case coverage. It cannot prove that agents select the correct skills or follow their instructions.
 
-## Opt-in smoke suite
+## How to validate a change
 
-`tests/cases.json` contains synthetic scenarios covering every skill. `tests/eval-smoke.json` selects a small set for an actual agent run: automatic discovery, explicit invocation and unrelated negative cases.
+1. **Critical review first.** The agent maintaining this repo reads each changed skill against the quality bar in AGENTS.md (one purpose, checkable `Done when`, host-neutral wording, record map) and the validator. This catches most problems.
+2. **A few targeted live runs** on whichever subscription has credits: the one or two cases or setup scenarios the change touches. Check files written, not only the reply.
+3. **Full smoke suite: optional**, for larger refactors.
 
-1. Install the relevant skills into an isolated test workspace on the agent under test. Select the branch being reviewed and confirm nested leaf discovery; the Skills CLI accepts `npx skills add lfarci/career-skills --skill find-jobs` on the default branch. For pre-merge testing, use a local checkout or installer branch/ref support.
-2. Configure an agent command or thin adapter that reads a user prompt from stdin and prints the response on stdout. Run it with the actual installed skills. The runner does **not** paste SKILL.md into the prompt.
-3. Run the suite:
+## Choosing the engine
 
-   ```bash
-   python3 scripts/run_behavioral_evals.py --agent-command 'YOUR_AGENT_ADAPTER_COMMAND'
-   ```
-
-4. Inspect `eval-results/smoke.json`, responses, artifacts and available skill-loading/tool traces. Score each `assessments[].status` as `pass`, `fail` or `unknown`, with evidence. A response alone cannot prove whether a skill was loaded.
-5. Summarize the scored results:
-
-   ```bash
-   python3 scripts/run_behavioral_evals.py --review eval-results/smoke.json
-   ```
-
-Exit status: 0 if all criteria pass, 1 if any fail, 2 if any remain unscored/unknown. Agent-command failures make the run fail. Transcripts are gitignored because they may contain sensitive output.
-
-## OpenCode recipe (free model, headless)
-
-```bash
-curl -fsSL https://opencode.ai/install | bash        # installs ~/.opencode/bin/opencode
-export PATH=$HOME/.opencode/bin:$PATH
-opencode models | grep free                          # e.g. opencode/big-pickle, no credentials needed
-mkdir -p /tmp/eval/.opencode/skills && cd /tmp/eval && git init -q
-for f in $(find ~/path/to/career-skills/skills -name SKILL.md); do d=$(dirname $f); ln -sfn $d .opencode/skills/$(basename $d); done
-# add a synthetic persona under ./old-notes, then:
-opencode run -m opencode/big-pickle "I want to set up my private career workspace using setup-career-skills. My old notes are in ./old-notes."
-opencode run -c -m opencode/big-pickle "Create it in a new folder named career here. Yes, you may read old-notes and write local files."
-```
-
-Symlinks make the checked-out branch the version under test. `-c` continues the last session for multi-turn flows. Inspect the files written under `career/`, not only the reply.
-
-### Smoke set through the runner
+Both runners take `--harness {copilot,codex,opencode}` (default `copilot`) and `--model` (passed through; default is the harness's own default). No engine is hardcoded.
 
 ```bash
 cd /tmp   # never from the checkout
-for id in $(python3 -c "import json;s=json.load(open('$REPO/tests/eval-smoke.json'));print(' '.join(c['id'] for k in ('existing_cases','negative_cases') for c in s[k]))"); do
-  python3 $REPO/scripts/run_behavioral_evals.py --agent-command "python3 $REPO/scripts/opencode_adapter.py" \
-    --case-id $id --harness-label "opencode big-pickle" --timeout 420 --output /tmp/evr/$id.json
-done
+python3 $REPO/scripts/run_behavioral_evals.py --harness copilot --case-id <id> --output /tmp/evr/<id>.json
+python3 $REPO/scripts/run_setup_scenarios.py --harness copilot --scenario 2 --follow-up "Use ./career, Markdown."
+python3 $REPO/scripts/run_behavioral_evals.py --review /tmp/evr/<id>.json
 ```
 
-Each case's synthetic files live in `tests/fixtures/<case-id>/` (regenerate with `python3 tests/make_fixtures.py`); the runner copies them into the case's scratch directory and adapters copy their cwd into their own workdir. For Copilot use `--agent-command "python3 $REPO/scripts/copilot_adapter.py"`; each case costs Copilot AI credits, so run the full set only with the owner's approval.
+`--agent-command '<cmd>'` still overrides `--harness` with any adapter that reads the prompt on stdin. Adapters (`scripts/<harness>_adapter.py`, shared logic in `scripts/harness.py`) copy the case fixtures into a git-initialised scratch dir, install every skill, run the agent and print the reply plus the files it created or changed. `--follow-up` turns continue the same session: Copilot `--continue`, Codex `codex exec resume --last`, OpenCode `run -c`.
 
-Run cases one at a time: concurrent free-model runs returned empty replies. OpenCode takes its project from `$PWD`, so the adapter and runner set it to a fresh scratch dir; with only `cwd` changed, agents wrote into the checkout.
+**One plan running out never blocks testing.** When a harness is missing, not logged in, or reports a quota/credit/rate limit, the run stops with exit 75 and `HARNESS ERROR: <harness> ...`. That is not a skill result: rerun with another `--harness` or `--model`. There is no automatic fallback.
 
-### GitHub Copilot CLI (verified 2026-10-29, Copilot CLI 1.0.105)
+### GitHub Copilot CLI (default; verified 2026-10-29, Copilot CLI 1.0.105)
 
 ```bash
-npm i -g @github/copilot                      # `copilot` binary
-export GH_TOKEN=$(gh auth token)              # reuses an existing `gh` login with Copilot access
-mkdir /tmp/cp && cd /tmp/cp && git init -q
-npx -y skills add ~/path/to/career-skills --skill setup-career-skills -a github-copilot -y   # -> .agents/skills/
-copilot skill list                            # confirm the skill is listed under Project skills
-copilot -p "Use the setup-career-skills skill. ..." --allow-all-tools      # add -s for the reply only
-copilot --resume=<id> -p "..." --allow-all-tools                          # continue a session
+npm i -g @github/copilot
+export GH_TOKEN=$(gh auth token)              # adapters do this when GH_TOKEN is unset
 ```
 
-Copilot discovers project skills in `.github/skills/`, `.agents/skills/` or `.claude/skills/`, and personal ones in `~/.copilot/skills/` or `~/.agents/skills/`; keep the personal folders empty during evals so only the installed skills are used. Skills no longer set `disable-model-invocation` (#75): in prompt mode Copilot could not load such skills through its skill tool and does not expand `/skill-name`.agents/skills/` itself, which worked in every smoke case. Without `-s` the output shows each tool call, which is how to confirm a bundled script ran. Verified: setup import, validate-workspace running `scripts/check_workspace.py`, and build-resume compiling a PDF with Tectonic.
+Copilot discovers `.agents/skills/` (also `.github/skills/`, `.claude/skills/`) and personal skills in `~/.copilot/skills/` or `~/.agents/skills/`; keep personal folders empty during evals. Runs use `copilot -p <prompt> --allow-all-tools`; without `-s` the output shows each tool call, which is how to confirm a bundled script ran. Each run spends Copilot AI credits (about 3–7).
 
-### Other harnesses
+### Codex CLI (the owner's ChatGPT/Codex account)
 
-Free Zen models answer only through the OpenCode client (direct API calls return `FreeUsageLimitError`), so other harnesses need their own credentials:
+```bash
+npm i -g @openai/codex
+codex login                                   # or CODEX_API_KEY / OPENAI_API_KEY for one run
+codex login status                            # exit 0 when logged in
+```
 
-- **Codex CLI** (`npm i -g @openai/codex`): `codex login` (ChatGPT plan) or `OPENAI_API_KEY`; install skills with `npx skills add lfarci/career-skills --skill <name> -a codex`; run `codex exec "<prompt>"`.
-- **Claude Code** (`npm i -g @anthropic-ai/claude-code`): Anthropic login or `ANTHROPIC_API_KEY`; install with `-a claude-code`; run `claude -p "<prompt>"`.
+Runs use `codex exec --sandbox workspace-write --skip-git-repo-check <prompt>` in the scratch dir (`--full-auto` is retired). Codex reads `.agents/skills/`. Not yet verified live.
+
+### OpenCode (optional, any provider)
+
+OpenCode is not tied to its free Zen models: `-m provider/model` runs any provider it is logged in to, e.g. `github-copilot/<model>` (Copilot subscription), `openai/<model>`, `openrouter/<model>`. Log in with `opencode auth login`; list with `opencode auth list` and `opencode models`. Without `--model`, OpenCode uses its configured default. Free models (`opencode/big-pickle`) hit "Free usage limit reached" after a few dozen cases and are not a default. OpenCode takes its project from `$PWD`; the adapter sets it and uses `.opencode/skills/`. Run cases serially.
+
+### Manual multi-turn sessions
+
+```bash
+mkdir /tmp/cp && cd /tmp/cp && git init -q
+npx -y skills add ~/path/to/career-skills --skill setup-career-skills -a github-copilot -y   # -> .agents/skills/
+copilot -p "Use the setup-career-skills skill. ..." --allow-all-tools
+copilot --continue -p "..." --allow-all-tools
+```
+
+Each case's synthetic files live in `tests/fixtures/<case-id>/` (regenerate with `python3 tests/make_fixtures.py`). Smoke cases are listed in `tests/eval-smoke.json`; score each `assessments[].status` as `pass`, `fail` or `unknown` with evidence, then `--review` (exit 0 all pass, 1 any fail, 2 any unscored). Transcripts are gitignored.
 
 ## Interpreting results
 
@@ -87,7 +71,7 @@ The opt-in smoke set includes an explicit `ask-career-skills` navigation case. R
 
 **Standard workspace adoption smoke:** Test clean `career/` initialization from selected old sources, explicit physical migration of an occupied `career/`, and router selection for a first-time workspace. Verify actual file writes and absence of bulk copies, link integrity, preservation of originals, scope/approval, and no automatic publication. These scenarios remain opt-in agent tests, not proof of observed behavior.
 
-Setup regression tests from a real OpenCode session cover Git's deleted legacy paths after renaming an old career root, creation of only the needed standard home directories, and separation of role history (including internships) from assignments/project details. Review physical files and staged Git changes, not only an editor's deleted-path display. These remain behavioral scenarios requiring actual host execution.
+Setup regression tests from a real agent session cover Git's deleted legacy paths after renaming an old career root, creation of only the needed standard home directories, and separation of role history (including internships) from assignments/project details. Review physical files and staged Git changes, not only an editor's deleted-path display. These remain behavioral scenarios requiring actual host execution.
 
 **Guided onboarding lifecycle:** Test that `setup-career-skills` asks about existing sources at the outset, maintains a concise captured/missing/deferred checkpoint after a first successful import and offers a focused next question, and resumes from that checkpoint without repeating the interview. An index-only request is a valid explicit shortcut. A successful `patch` and link check do **not** prove the guided session is finished. Live-agent testing requires multi-turn observation; mock-runner tests verify only scenario packaging and plumbing.
 

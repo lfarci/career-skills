@@ -3,11 +3,12 @@
 Three short live checks for `setup-career-skills`. Run them after any setup change; CI does not run an agent.
 
 ```bash
-python3 scripts/run_setup_scenarios.py --model opencode/big-pickle            # all three
-python3 scripts/run_setup_scenarios.py --model <model> --scenario 3            # one
+python3 scripts/run_setup_scenarios.py                                    # all three, Copilot
+python3 scripts/run_setup_scenarios.py --harness codex --scenario 3       # one, Codex
+python3 scripts/run_setup_scenarios.py --harness opencode --model github-copilot/<model>
 ```
 
-The runner makes a fresh temp dir per scenario, installs only this skill under `.agents/skills/`, seeds scenario 3, runs `opencode run`, and prints the reply tail and files left on disk. Score from files and tool trace, not from the reply. Synthetic data only.
+The runner makes a fresh temp dir per scenario, installs only this skill in the harness's skills folder, seeds scenario 3, runs the chosen harness (exit 75 `HARNESS ERROR` when it is missing or out of quota: switch `--harness`/`--model`), and prints the reply tail and files left on disk. Score from files and tool trace, not from the reply. Synthetic data only.
 
 ## 1. Named folder and supplied role
 Prompt names `career-skill-smoke` as the folder, grants writes and gives one ExampleCo role.

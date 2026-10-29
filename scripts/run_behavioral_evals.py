@@ -7,7 +7,6 @@ import json
 import os
 import shlex
 import shutil
-import signal
 import subprocess
 import tempfile
 import sys
@@ -15,6 +14,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from harness import DEFAULT_HARNESS, HARNESSES, kill_tree, new_group_kwargs  # noqa: E402
 FIXTURES = ROOT / "tests" / "fixtures"
 DEFAULT_OUT = ROOT / "eval-results" / "smoke.json"
 
@@ -52,22 +53,10 @@ def review(path: Path) -> int:
     return 1 if failed else 2 if pending else 0
 
 
-def kill_tree(process: subprocess.Popen) -> None:
-    """Kill a process and every descendant (its own process group/session)."""
-    if os.name == "nt":
-        subprocess.run(["taskkill", "/T", "/F", "/PID", str(process.pid)], capture_output=True, check=False)
-    else:
-        try:
-            os.killpg(process.pid, signal.SIGKILL)
-        except ProcessLookupError:
-            pass
-
-
 def run_with_timeout(argv: list[str], prompt: str, timeout: int, cwd: str,
                      env: dict[str, str]) -> tuple[str, str, int]:
     """Run the agent command; on timeout kill its whole process tree and return exit code 124."""
-    group = ({"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP} if os.name == "nt"
-             else {"start_new_session": True})
+    group = new_group_kwargs()
     process = subprocess.Popen(argv, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                text=True, encoding="utf-8", errors="replace", cwd=cwd, env=env, **group)
     try:
@@ -125,20 +114,32 @@ def run(command: str, output: Path, selected: set[str], timeout: int, label: str
     return 0 if all(item["exit_code"] == 0 for item in results) else 1
 
 
+def harness_command(harness: str, model: str | None = None) -> str:
+    """Return the adapter command line for a harness id (copilot, codex or opencode)."""
+    if harness not in HARNESSES:
+        raise ValueError(f"Unknown harness {harness!r}; choose from {sorted(HARNESSES)}")
+    argv = [sys.executable, str(ROOT / "scripts" / f"{harness}_adapter.py")]
+    return shlex.join(argv + (["--model", model] if model else []))
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--agent-command", help="Installed agent or adapter reading prompt from stdin")
+    parser.add_argument("--harness", choices=sorted(HARNESSES), default=DEFAULT_HARNESS,
+                        help="agent CLI to run (default: %(default)s); maps to scripts/<harness>_adapter.py")
+    parser.add_argument("--model", help="model passed to the harness adapter (default: the harness default)")
+    parser.add_argument("--agent-command", help="override: any agent or adapter reading the prompt from stdin")
     parser.add_argument("--case-id", action="append", default=[], help="Restrict to smoke case (repeatable)")
-    parser.add_argument("--harness-label", default="unspecified", help="Agent and host version")
+    parser.add_argument("--harness-label", help="agent and host version (default: harness and model)")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUT)
     parser.add_argument("--timeout", type=int, default=180)
     parser.add_argument("--review", type=Path, help="Summarize manually scored transcript JSON")
     args = parser.parse_args()
     if args.review is not None:
         return review(args.review)
-    if not args.agent_command:
-        parser.error("--agent-command required unless --review is provided")
-    return run(args.agent_command, args.output, set(args.case_id), args.timeout, args.harness_label)
+    command = args.agent_command or harness_command(args.harness, args.model)
+    label = args.harness_label or ("custom agent command" if args.agent_command
+                                   else " ".join(filter(None, [args.harness, args.model])))
+    return run(command, args.output, set(args.case_id), args.timeout, label)
 
 
 if __name__ == "__main__":
