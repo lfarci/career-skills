@@ -50,6 +50,20 @@ done
 
 Run cases one at a time: concurrent free-model runs returned empty replies. OpenCode takes its project from `$PWD`, so the adapter and runner set it to a fresh scratch dir; with only `cwd` changed, agents wrote into the checkout.
 
+### GitHub Copilot CLI (verified 2026-10-29, Copilot CLI 1.0.105)
+
+```bash
+npm i -g @github/copilot                      # `copilot` binary
+export GH_TOKEN=$(gh auth token)              # reuses an existing `gh` login with Copilot access
+mkdir /tmp/cp && cd /tmp/cp && git init -q
+npx -y skills add ~/path/to/career-skills --skill setup-career-skills -a github-copilot -y   # -> .agents/skills/
+copilot skill list                            # confirm the skill is listed under Project skills
+copilot -p "Use the setup-career-skills skill. ..." --allow-all-tools      # add -s for the reply only
+copilot --resume=<id> -p "..." --allow-all-tools                          # continue a session
+```
+
+Copilot discovers project skills in `.github/skills/`, `.agents/skills/` or `.claude/skills/`, and personal ones in `~/.copilot/skills/` or `~/.agents/skills/`; keep the personal folders empty during evals so only the installed skills are used. Without `-s` the output shows each tool call, which is how to confirm a bundled script ran. Verified: setup import, validate-workspace running `scripts/check_workspace.py`, and build-resume compiling a PDF with Tectonic.
+
 ### Other harnesses
 
 Free Zen models answer only through the OpenCode client (direct API calls return `FreeUsageLimitError`), so other harnesses need their own credentials:
