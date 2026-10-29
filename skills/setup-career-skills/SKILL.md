@@ -1,32 +1,48 @@
 ---
 name: setup-career-skills
-description: "Create or resume a private career workspace through guided setup."
-disable-model-invocation: true
+description: "Use only when the user explicitly asks to create or resume a private career workspace; treat a named folder as the root, import approved facts, and save setup progress."
 ---
 
 # Setup Career Skills
 
-Create or resume a private Markdown career workspace. Guide the user **one question at a time**. Consult [workspace rules](references/workspace-model.md) when mapping sources, records or prior progress.
+Use this workflow only for an explicit setup or resume request. Ask one question at a time. Read and change only the selected workspace and sources the user approved.
 
 ## Contract
 
-- **Input:** Confirmed destination, approved career sources and permissions.
-- **Output:** Verified workspace records or a scoped proposal, with a resumable setup checkpoint.
+- **Input:** A confirmed workspace root, approved career facts or sources, and permission for requested local writes.
+- **Output:** Verified useful records plus a resumable README checkpoint, or one specific blocker.
 
-## Steps
+## Tool guardrail
 
-1. **Locate.** Ask where to initialize, unless the location was already confirmed. A user-named folder is the **root itself** (`career-workspace/README.md`); when the user chooses a repository as a *parent*, propose `<repo>/career/`. State the resolved path. **Done when:** the exact root is confirmed.
-2. **Route.** Inspect the chosen root: an empty location starts **New**; existing career records start **Resume**. For unrelated or ambiguous contents, ask whether to adopt them or choose another root. **Done when:** the path is unambiguous and existing content is accounted for.
-3. **New.** Ask about existing CVs, notes, projects and credentials. Inspect approved source indexes first, then relevant detail. Recommend a useful initial import. With permission, create `README.md` and selected records **directly under the chosen root**, using `profile/`, `projects/`, etc. **Done when:** the approved records and links are verified, or the user explicitly chose index-only setup.
-4. **Resume.** Validate `README.md`, mapped records, links, ownership and saved setup status **before further imports**. Report whether the workspace is usable, needs repair or is blocked. Propose targeted fixes with approval, then return to the saved next decision. **Done when:** the validation result and next action are clear.
-5. **Continue.** After each approved batch, verify actual files and update the root `README.md` checkpoint: captured, missing/conflicting, deferred, status and next decision. Ask one useful next question. **Done when:** the user confirms their chosen scope is sufficient or pauses, with an accurate checkpoint.
+Never call `execute`, Node, Python, or another code runner to inspect or change files, even if the host offers one. A folder named in the prompt is the exact target path relative to OpenCode's starting directory: read `<folder>/README.md` and only the record paths it identifies using the host's direct file-reading tool. Never read the starting-directory README, inspect or list the starting or parent directory, or search for another folder with a similar name. Use a listed shell or file-writing tool only when a write is needed.
+
+## Fast path: named folder, facts, and write permission
+
+When the user names a new folder, says local writes are allowed, and supplies career facts, those choices are already confirmed. Do not ask to confirm the folder or permission. Create a plain directory with the host's `mkdir` or file tool. This is not a request for a Git repository, branch, task, or worktree: do not call worktree or repository-creation tools. Create exactly:
+
+- `<named-folder>/README.md`
+- `<named-folder>/profile/experience.md`
+
+Treat `<named-folder>` itself as the root. Do not add `<named-folder>/career/`. Record only supplied facts; save progress in the README; verify both files; then ask one next decision.
+
+## Run protocol
+
+1. **Resolve the root.** A user-named folder is the root itself. If no destination is named, ask where to put the workspace and stop before inspecting or writing anything. Never assume the current directory or a suggested default is the destination. If the question tool errors, is unavailable, or receives no answer, stop and report that the root is undecided; create no workspace files. If the selected root contains unrelated or ambiguous material, ask whether to use it or choose another root.
+2. **Route.** Inspect only the selected root. An absent or empty root is New. A root with a career README or records is Resume. Preserve existing files; never silently overwrite, move, or delete them. A workspace folder is an ordinary directory, not a Git worktree or new repository.
+3. **Import.** Career facts supplied in the conversation are an approved source. When local writes are authorized, import supported facts now without asking again. Put employer and role history in `profile/experience.md`. Do not invent duties, technologies, credentials, achievements, or dates. If no facts or approved sources are available, ask one focused question and wait; do not make an empty scaffold. If that question tool errors or the user has not answered, stop without creating any files.
+4. **Save progress.** After every approved import, create or update the root `README.md`. Record root, sources used, records created, captured facts, missing/deferred information, status (`in progress`, `paused`, `ready`, or `blocked`), and one next decision.
+5. **Use supported tools safely.** Follow the tool guardrail above. Use only file or shell tools actually listed by the host. Do not invent APIs or use a code-execution runtime for filesystem work. Do not use worktree, branch, task, or repository-creation tools for ordinary workspace folders. Do not issue delete or move commands during ordinary setup. Never call a question tool to re-confirm a destination or write permission already supplied by the user.
+6. **Verify before reporting.** After writing, read the files or list the workspace to confirm the exact paths and contents. A write is complete only after the host reports success and the follow-up read/listing confirms it. If no supported write or verification tool is available, report the blocker; do not claim completion.
+7. **Stop at the next decision.** Summarize verified files and remaining gaps, then ask one useful next question. Do not continue into a broad onboarding interview unless the user answers.
+
+## Resume checks
+
+Before importing into an existing workspace, check its README, mapped files, local links, record ownership, and saved next decision. Report whether it is usable, needs repair, or is blocked. Preserve existing choices, avoid duplicate records, and resume at the saved decision.
+
+Consult [workspace rules](references/workspace-model.md) when mapping sources, records, or prior progress. Read [cutover checks](references/cutover.md) only when the user requests and authorizes moving, archiving, or replacing an existing workspace. Preserve original evidence and external references.
 
 ## Done when
 
-The chosen root has a verified index and approved records (or an explicitly minimal scope); progress, remaining gaps and the next decision are recorded, or a specific blocker is reported.
+The selected root has a verified index and useful approved records, or one specific blocker is reported. The README accurately saves progress and the next decision.
 
-## Exceptional operations
-
-A summarized import still depends on its source evidence. If the user approves replacing or moving an existing workspace, follow the separate [cutover checks](references/cutover.md) first. Preserve originals and external references.
-
-Writes stay within the approved scope; publication needs separate approval.
+Writes stay within the approved scope. Publication requires separate approval.
