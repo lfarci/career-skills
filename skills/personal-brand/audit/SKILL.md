@@ -17,11 +17,13 @@ Check what a surface actually shows against the user's canonical facts and appro
 2. **Extract claims** by subject: headline, roles and dates, experience, skills, credentials, projects, links, contact. When visible, note banner, avatar/logo, palette and typography.
 3. **Compare with canonical records.** Classify each difference as **confirmed mismatch**, **needs verification**, **valid tailoring** or **stylistic opportunity**. Compare text with the staged copy and the surface's `Emphasise:` line, and visuals with brand/identity.md when it exists; platform crops and font fallbacks are not drift.
 4. **Several surfaces only:** build an alignment matrix (canonical value, each surface's wording or omission, classification), add a visual-identity row when relevant, and check real links between surfaces (site → resume, GitHub → portfolio). Trace root causes and fix source facts before derived copies.
-5. **Report.** Prioritize by risk. For each actionable item give surface(s), current state, evidence, desired outcome and a verifiable acceptance criterion. Check the tracker for existing issues before proposing new ones; write to a tracker only when authorized, otherwise output issue-ready Markdown.
+5. **Credential surfaces** (Credly, Microsoft Learn transcript, similar): a certification or badge that is missing or outdated in profile/qualifications.md becomes a proposed profile update (name, issuer, date, evidence URL). Ask the user; apply only an approved change, following maintain-profile's record rules. A recurring check is the host's scheduling, not this skill.
+6. **Report.** Prioritize by risk. For each actionable item give surface(s), current state, evidence, desired outcome and a verifiable acceptance criterion. Check the tracker for existing issues before proposing new ones; write to a tracker only when authorized, otherwise output issue-ready Markdown.
 
 ## Done when
 - Every accessible in-scope surface was inspected; inaccessible content is reported unknown, not assumed aligned.
 - Confirmed contradictions cite evidence; tailoring and platform variants are not flagged as errors.
 - Planned content is not treated as live.
 - Every high-priority finding has a measurable correction; no duplicate items.
+- Credentials found only on a surface are proposed as profile updates, never written silently.
 - Nothing was published or written to a tracker without authorization.

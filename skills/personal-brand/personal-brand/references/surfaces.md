@@ -1,6 +1,6 @@
 # brand/surfaces.md
 
-One entry per public presence tied to the profile. Keep it short; omit unknown fields.
+One entry per public presence tied to the profile: its URL, and mainly what it is for and why it is targeted. Keep it short; omit unknown fields. `profile/contact.md` may repeat the main links for resumes; that is fine, it records contact details, not strategy.
 
 ```markdown
 # Surfaces
@@ -24,4 +24,4 @@ One entry per public presence tied to the profile. Keep it short; omit unknown f
 - Last reviewed: 2026-10-29
 ```
 
-Credential pages (Credly, Microsoft Learn transcript) are surfaces too: usually `Emphasise:` which badges to show, and the copy is a link list. A dropped surface keeps its entry with the reason, so it is not proposed again.
+Credential pages (Credly, Microsoft Learn transcript) are surfaces too: usually `Emphasise:` which badges to show, and the copy is a link list. `audit` proposes profile updates for badges missing there. A dropped surface keeps its entry with the reason, so it is not proposed again.

@@ -69,7 +69,7 @@ career/
 <!-- record-map -->
 | Fact | Record |
 | --- | --- |
-| Name and contact details the user chose to import (name, e-mail, phone, public links) | `profile/contact.md` |
+| Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/contact.md` |
 | Employers, titles/grades, dates, internships | `profile/experience.md` |
 | Degrees and schools | `profile/education.md` |
 | Certifications, licences, awards | `profile/qualifications.md` |
@@ -79,7 +79,7 @@ career/
 | Location, work mode, commute, contract, salary preferences | `profile/preferences.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
-| Public surfaces to target (URL, audience, purpose, emphasis) | `brand/surfaces.md` |
+| Every public surface: URL, purpose, why targeted, emphasis (may repeat links from contact.md) | `brand/surfaces.md` |
 | Reusable resumes, bios, banners | `assets/drafts/` or `assets/staged/` (approved) |
 | Saved companies, job ads, comparator profiles | `research/` |
 <!-- /record-map -->
@@ -130,7 +130,7 @@ An existing custom layout can remain **operational** through its index even befo
 
 - drafts/ contains proposed text and visual work; staged/ contains the latest explicitly approved reusable versions. Neither proves publication. Preserve meaningful option/revision history without a mandatory final/ directory.
 - Organize by content/use (bios, headlines, resumes, logos, banners) only when needed. Reuse a shared bio or headline across surfaces; create separate adaptations only for intentional differences. Link rather than duplicate common content or visual masters.
-- brand/surfaces.md (owned by personal-brand) lists each public presence tied to the profile: URL, audience, why it is targeted, what to emphasise, linked copy, status and last-reviewed date. `audit` reads it. A legacy `assets/services.md` is a source to import. Do not assume APIs, scraping or automation work.
+- brand/surfaces.md (owned by personal-brand) lists each public presence tied to the profile: URL, audience, why it is targeted, what to emphasise, linked copy, status and last-reviewed date. `audit` reads it. It is the home for public surface links; `profile/contact.md` may repeat the main ones (site, LinkedIn, X/Bluesky) as contact details for resumes. The duplication is intended: contact details and surface strategy are different concepts. A legacy `assets/services.md` is a source to import. Do not assume APIs, scraping or automation work.
 - Live surfaces establish actual published state; the profile establishes supported personal facts and intentions. Source code can help inspect a website but does not prove what is deployed. A staged asset is not a published snapshot.
 - Compare accessible live content, or user-provided exports/pasted text, with the relevant staged material. State source and inspection date/limits; do not require a historical snapshot store. If there is a difference, ask whether to update the workspace, the external surface or leave an intentional adaptation. Do not guess which side changed.
 - Flag factual incoherence before importing public edits into the profile. Importing wording does not establish the truth of a new credential, role or achievement. Publication requires the user's authorization; manually copying staged material is a valid workflow.
