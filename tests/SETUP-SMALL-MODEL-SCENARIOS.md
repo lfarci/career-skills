@@ -50,7 +50,7 @@ Seed only fictional files under `career-skill-resume/`: a README with status `in
 
 > Use setup-career-skills to resume `career-skill-resume` here. Continue from its saved next decision.
 
-Pass when OpenCode reads only the named workspace's README and mapped role record, keeps the named folder as root, does not duplicate or rewrite the role, and asks one focused question about the saved priority decision. It must not restart location intake or claim setup is complete.
+Pass when OpenCode reads only the named workspace's README and mapped role record, keeps the named folder as root, does not duplicate or rewrite the role, and asks one focused question about the saved priority decision. In non-interactive mode, if the `question` tool errors, it must repeat the unanswered choice in its final response without choosing a default or continuing. It must not restart location intake or claim setup is complete.
 
 ## Recorded manual run
 
@@ -63,3 +63,14 @@ On 2026-10-29, the revised skill passed all three scenarios in real OpenCode ses
 | 3. Resume checkpoint | `ses_e79522c57ffeb5l7hqmfWF9ZPD` | Pass: native skill call; direct reads of the named workspace README and role; preserved the saved next decision and asked one focused follow-up |
 
 Earlier runs exposed failures that drove the changes: Nano tried unsupported code helpers and claimed nonexistent writes, then tried to create an OpenCode worktree. A no-destination run created an empty workspace after its question tool failed. OpenCode also hid the skill while its manual-only flag was set. During the first resume rerun, Nano tried `execute` for a filesystem probe; when that failed, it listed the test directory before reading the selected workspace. The skill now explicitly forbids code runners and parent-directory searches; the fresh rerun used direct reads of only the named workspace. The current version is discoverable for explicit setup requests, defines a fast path for named folders, verifies writes, and stops when a required answer is unavailable.
+
+### Post-merge regression and correction
+
+The first full run against PR #17's merge commit showed that Nano can still mishandle a failed resume question: its `question` tool errored, then it assumed “Role clarity” as the user's answer. No files were changed. A first correction made resume order explicit and said to stop after a question error, but a rerun still assumed “Job search.” The next correction prohibited `question` tool use, but Nano then read the starting-directory README and asked for a root already named in the prompt. The latest correction gives an exact `resume <folder> here` to `<folder>/README.md` mapping and forbids asking for a root again when that read fails.
+
+| Run | Session | Result |
+| --- | --- | --- |
+| PR #17 post-merge, before correction | `ses_e794eb1f7ffer2PO7Ws9eNs02o` | Fail: two `question` tool errors; then assumed “Role clarity” instead of waiting for the user's choice; no workspace writes |
+| After first correction | `ses_e794dc91bffeMZXuv1BkIZ11bv` | Fail: question tool errored; then assumed “Job search”; no workspace writes |
+| After question-tool correction | `ses_e794d2f78ffe6irGXcHxTKZHrT` | Fail: read the starting-directory README, reported it missing, and asked for a root already supplied; no workspace writes |
+| After latest path correction | `ses_e794c7568ffempW2M7Edh0RX6K` | Pass: read only the named workspace README and mapped role; repeated the saved decision as a plain-text question; no assumptions or writes |
