@@ -18,7 +18,7 @@ disable-model-invocation: true
 
 ## Agree on a concept
 - For logos, read [logo principles](references/logo-design-principles.md) for research, visual criteria and similarity limits.
-- Present two or three distinct concepts in words first: ID A/B/C, central idea, relevance to the brief, possible construction and trade-off. Distinguish concept from style. Recommend with reasons; wait for selection before drafting. A concept explicitly selected in the current brief satisfies this step.
+- Present two or three distinct concepts in words first: ID A/B/C, central idea, relevance to the brief, possible construction and trade-off. Distinguish concept from style. Recommend with reasons; wait for selection before drafting. A concept explicitly selected in the current brief satisfies this step. Selection is per deliverable kind: an approved logo, palette or name constrains a new banner or avatar, but the new kind still gets its own concepts and selection before any file is written.
 - Record concept decisions in discovery.md. If all fail, revisit the idea rather than polishing arbitrary shapes.
 
 ## Draft and refine
