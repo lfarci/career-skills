@@ -135,7 +135,7 @@ Publication: separate approval required
 Unresolved mappings: list only actual blockers
 ```
 
-Include only source references needed to support future work. The index must not contain passwords, private file contents, or a dump of every discovered document. Update source-import status when selected content has actually been written and verified.
+Include only source references needed to support future work. The index links records; facts imported from sources go into the canonical records, never into the index. The index must not contain passwords, private file contents, or a dump of every discovered document. Update source-import status when selected content has actually been written and verified.
 
 For guided onboarding, add a brief **Setup progress** entry: status (`in progress`, `ready`, `paused`, `blocked`), covered areas, missing/conflicting or deferred items, and the specific next user decision. The initial scaffold and first import batch are not by themselves proof that the onboarding conversation is complete.
 
