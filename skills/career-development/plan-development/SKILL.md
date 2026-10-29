@@ -17,7 +17,7 @@ One private development plan, created once and revisited at its review points. P
 If no plan exists, or the user wants a new one, **create**. If a plan exists and the user reports progress or reaches a review point, **review**. Ask only when it is unclear.
 
 ## Create
-- Read the chosen direction, demonstrated experience and constraints. Ask only for missing priorities, time, budget or deadlines that change the plan. Assume no default goal (promotion, management, certification, a tech track); if direction is undecided, clarify it here.
+- Read the chosen direction, demonstrated experience and constraints. Ask only for missing priorities, time, budget or deadlines that change the plan. Assume no default goal (promotion, management, certification, a tech track); if direction is undecided, ask one question about the target or suggest `reflect`, and plan only against a stated direction.
 - Separate demonstrated capabilities from aspirations. Keep gaps relevant to the chosen work; a job-ad requirement or peer credential is not automatically a gap.
 - Prioritize a few outcomes by relevance and effort; state what is deferred. For each: a concrete action or experiment, approximate effort/cadence, observable completion evidence and a review point. Completing a course differs from demonstrating a skill.
 - Fit time and budget with estimates. Check current official sources for specific courses or certifications, or label cost and availability unknown.
