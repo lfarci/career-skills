@@ -1,7 +1,6 @@
 ---
 name: review-design
-description: Critique professional identity visuals for concept fit, craft, legibility and production readiness.
-disable-model-invocation: true
+description: Critique professional identity visuals for concept fit, craft, legibility and production readiness. Use only when the user asks for this skill by name.
 ---
 
 # Review Design

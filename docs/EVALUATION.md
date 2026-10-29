@@ -64,7 +64,7 @@ copilot -p "Use the setup-career-skills skill. ..." --allow-all-tools      # add
 copilot --resume=<id> -p "..." --allow-all-tools                          # continue a session
 ```
 
-Copilot discovers project skills in `.github/skills/`, `.agents/skills/` or `.claude/skills/`, and personal ones in `~/.copilot/skills/` or `~/.agents/skills/`; keep the personal folders empty during evals so only the installed skills are used. In prompt mode Copilot cannot load skills marked `disable-model-invocation: true` (ask-career-skills and the personal-brand skills) through its skill tool, and `/skill-name` is not expanded; it then reads the SKILL.md from `.agents/skills/` itself, which worked in every smoke case. Without `-s` the output shows each tool call, which is how to confirm a bundled script ran. Verified: setup import, validate-workspace running `scripts/check_workspace.py`, and build-resume compiling a PDF with Tectonic.
+Copilot discovers project skills in `.github/skills/`, `.agents/skills/` or `.claude/skills/`, and personal ones in `~/.copilot/skills/` or `~/.agents/skills/`; keep the personal folders empty during evals so only the installed skills are used. Skills no longer set `disable-model-invocation` (#75): in prompt mode Copilot could not load such skills through its skill tool and does not expand `/skill-name`.agents/skills/` itself, which worked in every smoke case. Without `-s` the output shows each tool call, which is how to confirm a bundled script ran. Verified: setup import, validate-workspace running `scripts/check_workspace.py`, and build-resume compiling a PDF with Tectonic.
 
 ### Other harnesses
 

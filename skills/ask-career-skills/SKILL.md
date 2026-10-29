@@ -1,7 +1,6 @@
 ---
 name: ask-career-skills
-description: Help me choose which Career Skills workflow to use next.
-disable-model-invocation: true
+description: Help me choose which Career Skills workflow to use next. Use only when the user asks for this skill by name.
 ---
 
 # Ask Career Skills

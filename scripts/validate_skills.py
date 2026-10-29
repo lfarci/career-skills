@@ -57,10 +57,10 @@ def main() -> int:
         description = metadata.get("description")
         if not isinstance(description, str) or not 1 <= len(description.strip()) <= 1024:
             errors.append(f"{name}: description must be a string of 1-1024 characters")
-        if name in MANUAL and metadata.get("disable-model-invocation") is not True:
-            errors.append(f"{name}: manual skill needs disable-model-invocation: true")
-        if name not in MANUAL and "disable-model-invocation" in metadata:
-            errors.append(f"{name}: discoverable skill must omit the manual-only flag")
+        if "disable-model-invocation" in metadata:
+            errors.append(f"{name}: omit disable-model-invocation; hosts such as Copilot CLI then cannot load the skill even by name")
+        if name in MANUAL and "by name" not in (description or ""):
+            errors.append(f"{name}: manual skill description must say to use it only when asked for by name")
         oa = path.parent / "agents" / "openai.yaml"
         implicit = (yaml.safe_load(oa.read_text(encoding="utf-8")) or {}).get("policy", {}).get("allow_implicit_invocation") if oa.is_file() else None
         if name in MANUAL and implicit is not False:

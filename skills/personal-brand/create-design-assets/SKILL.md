@@ -1,7 +1,6 @@
 ---
 name: create-design-assets
-description: Create and refine versioned career visuals such as logos, icons and banners from an agreed design brief.
-disable-model-invocation: true
+description: Create and refine versioned career visuals such as logos, icons and banners from an agreed design brief. Use only when the user asks for this skill by name.
 ---
 
 # Create Design Assets

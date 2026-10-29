@@ -1,7 +1,6 @@
 ---
 name: plan-development
-description: Plan professional growth, or review progress against an existing plan, with prioritized gaps, applied practice and evidence milestones.
-disable-model-invocation: true
+description: Plan professional growth, or review progress against an existing plan, with prioritized gaps, applied practice and evidence milestones. Use only when the user asks for this skill by name.
 ---
 
 # Plan Development

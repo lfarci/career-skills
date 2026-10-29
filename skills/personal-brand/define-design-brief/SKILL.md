@@ -1,7 +1,6 @@
 ---
 name: define-design-brief
-description: Interview for a professional design brief covering goals, audience, usage and intended impression.
-disable-model-invocation: true
+description: Interview for a professional design brief covering goals, audience, usage and intended impression. Use only when the user asks for this skill by name.
 ---
 
 # Define Design Brief

@@ -70,7 +70,7 @@ A skill is justified by its own trigger, responsibility and completion boundary,
 
 **Discoverable:** `setup-career-skills`, `validate-workspace`, `maintain-profile`, `build-resume`, `find-companies`, `find-jobs`, `audit`.
 
-Manual skills set `disable-model-invocation: true` and `agents/openai.yaml` `policy.allow_implicit_invocation: false`; both are host hints, not portable guarantees. Discoverable descriptions carry concise trigger branches. Generic names such as `audit` and `reflect` stay stable; rename only after a demonstrated collision. Validate routing empirically ([EVALUATION.md](EVALUATION.md)).
+Manual skills end their description with "Use only when the user asks for this skill by name." and set `agents/openai.yaml` `policy.allow_implicit_invocation: false` for Codex. They do not set `disable-model-invocation`: Copilot CLI (prompt mode) and Claude Code then hide the skill from the model even when the user names it, Codex and OpenCode v1 ignore it, so the description is the only portable signal. Discoverable descriptions carry concise trigger branches. Generic names such as `audit` and `reflect` stay stable; rename only after a demonstrated collision. Validate routing empirically ([EVALUATION.md](EVALUATION.md)).
 
 ## Portability
 
