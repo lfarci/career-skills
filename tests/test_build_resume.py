@@ -56,6 +56,59 @@ class BuildResumeTest(unittest.TestCase):
         warnings = br.lint(data)
         self.assertEqual(len(warnings), 2)
 
+    def test_parse_brand_tokens(self):
+        text = "# Identity\n\n```brand-tokens\nstatus: approved  # ok\nprimary: #0f766e  # bars\naccent: B45309\n" \
+               "text: #1F2937\nmuted: #DDDDDD\nheading-font: Manrope\n```\n"
+        tokens, warnings = br.parse_brand_tokens(text)
+        self.assertEqual(tokens["status"], "approved")
+        self.assertEqual(tokens["primary"], "0F766E")
+        self.assertEqual(tokens["accent"], "B45309")
+        self.assertNotIn("muted", tokens)  # low contrast dropped
+        self.assertTrue(any("muted" in w and "contrast" in w for w in warnings))
+        self.assertEqual(tokens["heading-font"], "Manrope")
+
+    def test_parse_rejects_bad_hex_and_missing_block(self):
+        tokens, warnings = br.parse_brand_tokens("```brand-tokens\nstatus: approved\nprimary: teal\n```\n")
+        self.assertNotIn("primary", tokens)
+        self.assertTrue(any("hex" in w for w in warnings))
+        self.assertEqual(br.parse_brand_tokens("no block")[0], {})
+
+    def test_pending_tokens_not_applied(self):
+        identity = self.tmp / "identity.md"
+        identity.write_text("```brand-tokens\nstatus: pending\nprimary: #0F766E\n```\n", encoding="utf-8")
+        status = br.Status()
+        self.assertEqual(br.load_brand(identity, False, status), {})
+        self.assertTrue(any("pending" in w for w in status.warnings))
+        self.assertEqual(br.load_brand(identity, True, br.Status())["primary"], "0F766E")
+
+    def test_preamble_colours_and_font_fallback(self):
+        status = br.Status()
+        tokens = {"status": "approved", "primary": "0F766E", "body-font": "Surely Not Installed"}
+        with mock.patch.object(br, "font_available", return_value=False):
+            pre = br.brand_preamble(tokens, "tectonic", status)
+        self.assertIn(r"\definecolor{ResumeAccent}{HTML}{0F766E}", pre)
+        self.assertNotIn("setmainfont", pre)
+        self.assertTrue(any("not installed" in w for w in status.warnings))
+        status = br.Status()
+        with mock.patch.object(br, "font_available", return_value="variable"):
+            self.assertNotIn("setmainfont", br.brand_preamble(tokens, "tectonic", status))
+        self.assertTrue(any("variable font" in w for w in status.warnings))
+        status = br.Status()
+        self.assertNotIn("setmainfont", br.brand_preamble(tokens, "pdflatex", status))
+        with mock.patch.object(br, "font_available", return_value=True):
+            self.assertIn(r"\setmainfont{Surely Not Installed}", br.brand_preamble(tokens, "xelatex", br.Status()))
+
+    def test_no_brand_says_default(self):
+        code, status = br.build(self.src, self.tmp / "out", "none")
+        self.assertEqual(status.brand, "default")
+        self.assertTrue(any("neutral default" in w for w in status.warnings))
+
+    def test_empty_section_skipped_and_flagged(self):
+        data = {"name": "Sam", "sections": [{"title": "Education", "entries": []}]}
+        self.assertNotIn("Education", br.render_latex(data))
+        self.assertNotIn("Education", br.render_markdown(data))
+        self.assertTrue(any("Education" in w for w in br.lint(data)))
+
     def test_invalid_input_exit_1(self):
         self.src.write_text(json.dumps({"sections": [{"title": "X"}]}), encoding="utf-8")
         code, status = br.build(self.src, self.tmp / "out", "none")

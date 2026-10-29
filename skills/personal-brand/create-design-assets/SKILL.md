@@ -25,6 +25,7 @@ disable-model-invocation: true
 - Draft only selected concepts and scoped deliverables. Default to two or three distinct executions unless one is requested. Compare typography/layout for composition work and actual content/crops for banners; skip logo work if not requested.
 - For logos, apply the monochrome, silhouette and construction criteria from the reference. Inspect drafts and remove near-duplicates.
 - Compare under identical conditions and required sizes/backgrounds. Give concise rationale and trade-offs. Preserve accepted features; request feedback before refining. A preference selects a direction, not approval of future versions.
+- When palette or fonts are decided, write the brand-tokens block in brand/identity.md ([format](references/asset-structure.md#brand-tokens)); `status: approved` only after the user approves them.
 - Add typography, palette and applications when relevant; do not force typography-only or banner work through logo design. Generate full export kits only for selected versions.
 
 ## Verify and deliver
