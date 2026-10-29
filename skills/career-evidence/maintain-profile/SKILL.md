@@ -29,6 +29,7 @@ Follow the workspace's existing layout when its index maps records. Otherwise, a
 | Location, work mode, commute, contract, salary preferences | `profile/preferences.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
+| Public surfaces to target (URL, audience, purpose, emphasis) | `brand/surfaces.md` |
 | Reusable resumes, bios, banners | `assets/drafts/` or `assets/staged/` (approved) |
 | Saved companies, job ads, comparator profiles | `research/` |
 <!-- /record-map -->

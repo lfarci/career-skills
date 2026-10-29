@@ -1,6 +1,6 @@
 # Design records and assets
 
-brand/discovery.md holds interview answers and concept choices; brand/identity.md holds visual rules and links to asset files; actual files live under assets/. Staged means approved for reuse, not published.
+brand/identity.md holds the brief, concept choices, the design system and links to asset files; actual files live under assets/. Staged means approved for reuse, not published.
 
 ## File names
 
@@ -16,12 +16,14 @@ All paths relative to the workspace root:
 
 ## identity.md
 
+Suggested sections, only those in use: `## Brief`, `## Design system` (palette roles, fonts with licence links, layout/UI rules), the brand-tokens block, `## Assets` (one line per file: purpose, format, size).
+
 As soon as drafts exist, create or update brand/identity.md with `Status: pending`, the selected concept, and links to each draft master. After the user approves an exact version, copy it to assets/staged/, link the staged file, record palette, fonts (with licence links) and usage rules, and set `Status: approved <version>`. Keep the brand-tokens block below in step with that status: write it as `pending` with the drafts, `approved` only after the user approves the palette and fonts. Keep earlier versions; never overwrite an approved file.
 
 ## Brand tokens
 
 <!-- brand-tokens -->
-Resume and document styling reads one fenced block in `brand/identity.md`. Visual-identity skills write it; `build-resume` reads it. One `key: value` per line; omit keys you have not decided.
+Resume and document styling reads one fenced block in `brand/identity.md`. `visual-identity` writes it; `build-resume` reads it. One `key: value` per line; omit keys you have not decided.
 
 ```brand-tokens
 status: approved          # approved | pending; pending tokens are not applied without the user's say-so

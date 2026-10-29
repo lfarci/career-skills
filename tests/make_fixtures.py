@@ -66,6 +66,34 @@ w("brand-private-boundary","career/profile/direction.md","# Direction (private)\
 w("brand-private-boundary","career/profile/development.md","# Development (private)\n- Action plan: ask manager for an architecture-lead assignment by Q1 (internal).\n- Planned: AI-102 Azure AI Engineer certification (not taken yet).")
 w("brand-private-boundary","career/brand/bio.md","# Public bio (current)\nSoftware engineer at Contoso Consulting.")
 
+base("brand-surfaces-copy", extra_readme="- [Surfaces](brand/surfaces.md)")
+w("brand-surfaces-copy","career/brand/surfaces.md","""# Surfaces
+
+## LinkedIn
+- URL: https://www.linkedin.com/in/alex-testa-example
+- Audience: recruiters and hiring managers in Belgium
+- Why: main recruiter channel
+- Emphasise: .NET/Azure consulting, the AI assistant project
+- Status: active
+- Last reviewed: 2026-10-01
+
+## GitHub profile README
+- URL: https://github.com/alex-testa-example
+- Audience: technical peers, hiring engineers
+- Why: proof of hands-on work
+- Emphasise: stack, the AI assistant project, link to LinkedIn
+- Status: planned
+- Last reviewed: 2026-10-01
+
+## Credly
+- URL: https://www.credly.com/users/alex-testa-example
+- Why: dropped, only one expired badge
+- Status: dropped
+- Last reviewed: 2026-10-01""")
+
+base("identity-existing-palette-to-resume")
+w("identity-existing-palette-to-resume","career/inbox/brand-note.md","# My brand (from my website CSS)\n- Navy #1E3A5F for headings\n- Orange #C2410C for highlights\n- Body text #1F2937, muted #4B5563\n- Fonts: Lato for everything")
+
 svg = lambda label,fill: f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="{fill}"/><text x="100" y="115" font-size="48" text-anchor="middle" fill="#fff">{label}</text></svg>'
 for c in ("identity-preserve-options-and-revisions",):
     base(c, extra_readme="- [Visual identity](brand/identity.md)")
@@ -112,7 +140,7 @@ w(c,"career/README.md","# Career workspace\n\n## Records\n- [Experience](profile
 w(c,"career/profile/experience.md",EXP)
 w(c,"career/personal-brand/bio.md","# Bio\nSee [home lab](../personal-projects/home-lab.md).")
 w(c,"career/personal-projects/home-lab.md","# Home lab\n- k3s cluster, GitOps.")
-w(c,"career/services.md","# Services I offer\n- Freelance .NET code reviews")
+w(c,"career/services.md","# My public profiles\n- LinkedIn: https://www.linkedin.com/in/example\n- GitHub: https://github.com/example")
 
 c="setup-role-history-with-internships"
 w(c,"sources/resume.md","""# Sam Example — Resume (synthetic)

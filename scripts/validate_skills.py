@@ -14,13 +14,12 @@ SKILLS = ROOT / "skills"
 EXPECTED = {
     "setup-career-skills", "plan-development",
     "reflect", "maintain-profile", "build-resume", "personal-brand",
-    "define-design-brief", "create-design-assets", "review-design",
+    "visual-identity",
     "audit", "find-jobs", "find-companies", "validate-workspace", "ask-career-skills",
 }
 MANUAL = {
     "reflect", "plan-development",
-    "personal-brand", "define-design-brief",
-    "create-design-assets", "review-design", "ask-career-skills",
+    "personal-brand", "visual-identity", "ask-career-skills",
 }
 
 
@@ -97,9 +96,8 @@ def main() -> int:
             errors.append(f"{required}: repair rule missing or differs from docs/WORKSPACE.md")
     tokens_block = re.compile(r"<!-- brand-tokens -->\n(.*?)<!-- /brand-tokens -->", re.DOTALL)
     canonical_tokens = tokens_block.search((ROOT / "docs" / "WORKSPACE.md").read_text(encoding="utf-8"))
-    for rel in ("personal-brand/create-design-assets/references/asset-structure.md",
-                "job-hunt/build-resume/references/brand-tokens.md",
-                "personal-brand/personal-brand/references/brand-kit.md"):
+    for rel in ("personal-brand/visual-identity/references/asset-structure.md",
+                "job-hunt/build-resume/references/brand-tokens.md"):
         target = SKILLS / rel
         copy = tokens_block.search(target.read_text(encoding="utf-8")) if target.is_file() else None
         if not copy or not canonical_tokens or copy.group(1) != canonical_tokens.group(1):

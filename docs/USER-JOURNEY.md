@@ -14,10 +14,8 @@ flowchart TD
     Q -->|"Grow professionally"| D["plan-development"]
     Q -->|"Improve public presence"| B["personal-brand"]
     B -. "Inspect one or several surfaces" .-> A["audit"]
-    B -. "Create a visual identity" .-> DB["define-design-brief"]
-    DB -. "Brief ready" .-> DA["create-design-assets"]
-    DA -. "Review an asset" .-> DV["review-design"]
-    DV -. "Refine if needed" .-> DA
+    Q -->|"Design my look"| VI["visual-identity"]
+    VI -. "Tokens style resumes" .-> CV
     Q -->|"Explore employers and roles"| C["find-companies"]
     C -. "Search openings" .-> J["find-jobs"]
     J -. "Tailor application" .-> CV["build-resume"]
@@ -67,8 +65,8 @@ For a resume, verify the index, relevant links, canonical records and pending it
 | Correct or add career facts | `maintain-profile` | Supported canonical updates |
 | Decide where their career should go | `reflect` | Reflection and direction brief |
 | Build a growth plan / review one | `plan-development` | Plan, or evidence-based check-in |
-| Clarify professional messaging | `personal-brand` | Positioning and reusable wording |
-| Design a logo, banner or visuals | `define-design-brief` → `create-design-assets` → `review-design` | Brief, versioned assets, critique (use only needed stages) |
+| Choose what to show publicly and write it (headline, bio, LinkedIn About, GitHub README) | `personal-brand` | Positioning, surfaces record, copy drafts |
+| Record or design a palette, fonts, logo or banner, or review one | `visual-identity` | identity.md (design system, brand tokens), versioned assets or findings |
 | Audit one profile or compare multiple surfaces | `audit` | Surface findings, plus alignment matrix for several |
 | Research employers or live openings | `find-companies` / `find-jobs` | Target companies / verified roles |
 | Create a resume for an opportunity | `build-resume` | Truthful targeted resume |
@@ -79,7 +77,7 @@ Invoke **`ask-career-skills`** explicitly, for example:
 
 - *"I finished setup; what's next?"* → inspect what is known and suggest profile reconciliation or reflection **only when needed**.
 - *"My profile is already accurate and I want to apply for jobs."* → recommend `find-jobs`, `find-companies` or `build-resume` depending on the immediate objective.
-- *"I have a logo draft but it feels off."* → recommend `review-design`; no new design brief required.
+- *"I have a logo draft but it feels off."* → recommend `visual-identity` (review branch); no new brief required.
 - *"I'm learning .NET architecture; what should I work on?"* → recommend `plan-development` (it creates a plan or reviews an existing one).
 
 The result is a **recommendation**, not a hand-off that executes another skill. Users explicitly select the next skill themselves. Where a client does not support manual-invocation flags, the intended behavior may not be enforced by metadata; see [invocation policy](ARCHITECTURE.md#invocation-policy).

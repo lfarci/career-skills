@@ -15,10 +15,8 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | [`maintain-profile`](skills/career-evidence/maintain-profile/SKILL.md) | Ask for a focus when needed, then review or update factual career records | Discoverable |
 | [`build-resume`](skills/job-hunt/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Discoverable |
 | [`plan-development`](skills/career-development/plan-development/SKILL.md) | Create a growth plan or review progress against it | Manual |
-| [`personal-brand`](skills/personal-brand/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Manual |
-| [`define-design-brief`](skills/personal-brand/define-design-brief/SKILL.md) | Interview about career visual needs and agree on an actionable brief | Manual |
-| [`create-design-assets`](skills/personal-brand/create-design-assets/SKILL.md) | Explore concepts and produce scoped professional visual assets | Manual |
-| [`review-design`](skills/personal-brand/review-design/SKILL.md) | Critique visual fit, craft and readiness against the brief | Manual |
+| [`personal-brand`](skills/personal-brand/personal-brand/SKILL.md) | Choose the role and strengths to show publicly and on which surfaces; draft headlines, bios, LinkedIn About and GitHub README text | Manual |
+| [`visual-identity`](skills/personal-brand/visual-identity/SKILL.md) | Record or design a design system (palette, fonts, UI rules) and assets (logo, banners), or review them | Manual |
 | [`audit`](skills/personal-brand/audit/SKILL.md) | Audit one or several professional surfaces for facts, consistency and visual drift | Discoverable |
 | [`find-companies`](skills/job-hunt/find-companies/SKILL.md) | Research employers matching career direction, location and constraints, with or without vacancies | Discoverable |
 | [`find-jobs`](skills/job-hunt/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Discoverable |
@@ -32,21 +30,19 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | `career-direction/` | What do I want, and why? Private north star, interests and decisions | `reflect` |
 | `career-evidence/` | What have I demonstrated? Experience, achievements and supporting records | `maintain-profile` |
 | `career-development/` | How do I grow toward it? Action plans, practice and progress | `plan-development` |
-| `personal-brand/` | Public messaging, reusable text, visual identity and presentation quality | `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`, `audit` |
+| `personal-brand/` | Public presentation: content and surfaces, visual identity, live-surface checks | `personal-brand`, `visual-identity`, `audit` |
 | `job-hunt/` | Application materials and opportunity search | `build-resume`, `find-jobs`, `find-companies` |
 | `setup-career-skills/` | Cross-cutting workspace setup | `setup-career-skills` |
 | `ask-career-skills/` | Optional navigation among independent skills | `ask-career-skills` |
 | `validate-workspace/` | On-demand structural validation and mapping repairs | `validate-workspace` |
 
-Groups organize the repository; they are not installable umbrella skills. Install individual leaf directories. Existing skill names are unchanged except for the design lifecycle split below. Paths for previously top-level skills have moved into their groups; update installation sources accordingly.
+Groups organize the repository; they are not installable umbrella skills. Install individual leaf directories. Paths for previously top-level skills have moved into their groups; update installation sources accordingly.
 
-### Personal-brand lifecycle
+### Brand area
 
-`skills/personal-brand/` groups positioning (`personal-brand`), discovery (`define-design-brief`), production (`create-design-assets`) and critique (`review-design`). The umbrella is an organizational directory, not a skill or required orchestrator. Each leaf is an independently installable package; select the leaf directory when installing.
+Profile is the private truth. `personal-brand` is its public facet: which role and strengths to put forward, which surfaces to target (`brand/surfaces.md`: GitHub, personal site, LinkedIn, Credly, Microsoft Learn…) and the text for each. `visual-identity` is how that brand looks: design system, brand tokens (read by `build-resume`) and assets. `audit` checks live surfaces against all three.
 
-Use discovery → creation → review as needed, reusing the same brief and asset files. Enter at any stage with existing inputs; no compulsory chain or repeated interview. Creation owns visual concept selection and self-checks; review supplies independent critique. These skills focus on career-facing identities, profiles, portfolios, resumes and talks rather than general commercial branding or product UX.
-
-Removed for the MVP: `benchmark-profile` and `review-research` (research retention rules stay in docs/WORKSPACE.md); `review-progress` is now the review branch of `plan-development`. `audit-surface` was merged into `audit` (one or several surfaces). The former `design-identity` package is replaced by these three design skills; update installed paths and invocations accordingly.
+Removed for the MVP: `benchmark-profile` and `review-research` (research retention rules stay in docs/WORKSPACE.md); `review-progress` is now the review branch of `plan-development`. `audit-surface` was merged into `audit` (one or several surfaces). `define-design-brief`, `create-design-assets` and `review-design` were merged into `visual-identity`; the visual brand kit moved from `personal-brand` to it (#99).
 
 ## Design principles
 
@@ -59,7 +55,7 @@ Removed for the MVP: `benchmark-profile` and `review-research` (research retenti
 
 ## Shared career workspace
 
-The entire workspace is private, including material prepared for public use. Its five homes are **profile/** (background, capabilities, direction and development), **projects/** (work accounts and evidence links), **brand/** (positioning, audiences and visual guidance), **assets/** (drafts, approved staged outputs and service descriptions), and **research/** (selected companies, opportunities and comparable profiles).
+The entire workspace is private, including material prepared for public use. Its five homes are **profile/** (background, capabilities, direction and development), **projects/** (work accounts and evidence links), **brand/** (positioning, target surfaces and visual identity), **assets/** (drafts and approved staged copy, visuals and resumes), and **research/** (selected companies, opportunities and comparable profiles).
 
 A managed workspace uses the **physical** `career/` root with these standardized directory names, creating each home when needed. `career/README.md` is its entry point and can map homes not yet populated. Existing resumes, old notes, project records and profile exports are potential **sources** to populate new canonical Markdown records: select and verify them rather than bulk-copying or silently moving the originals. Reuse approved assets; staged material is not proof of publication. Research is retained selectively.
 
@@ -73,7 +69,7 @@ The [workspace decision specification](docs/CAREER-WORKSPACE-SPEC.md) captures t
 
 ### Example: adopting an old career tree
 
-An existing `career/personal-projects/`, `career/personal-brand/` and root `career/services.md` can remain as source material while the user reviews a proposed move to `career/projects/`, `career/brand/` and `career/assets/services.md`. The agent inventories content and links, gets approval, then verifies the chosen changes in a reviewable PR. **No files in the public Career Skills repository are migrated by this documentation change.**
+An existing `career/personal-projects/`, `career/personal-brand/` and root `career/services.md` can remain as source material while the user reviews a proposed move to `career/projects/`, `career/brand/` and `career/brand/surfaces.md`. The agent inventories content and links, gets approval, then verifies the chosen changes in a reviewable PR. **No files in the public Career Skills repository are migrated by this documentation change.**
 
 ## After setup: suggested journey
 

@@ -1,6 +1,6 @@
 interface:
   display_name: "Personal Brand"
-  short_description: "Define positioning and reusable professional messaging"
-  default_prompt: "Use $personal-brand to define my professional positioning and reusable bios from my career records."
+  short_description: "Positioning, target surfaces and publishable text"
+  default_prompt: "Use $personal-brand to choose what to put forward on my public surfaces and draft the text."
 policy:
   allow_implicit_invocation: false

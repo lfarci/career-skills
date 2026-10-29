@@ -18,8 +18,8 @@ Recommend a next step in Career Skills. This is a **manual navigation skill**, n
 2. Route by the **outcome**, not by a fixed sequence:
    - Initialize a clean standardized `career/` or discover prior documents to import: `setup-career-skills`; explicitly align/migrate an occupied legacy workspace or repair broken paths: `validate-workspace` (if installed); changed career facts: `maintain-profile`; uncertain direction: `reflect`.
    - Career growth: `plan-development` to create a plan or review progress.
-   - Positioning: `personal-brand`; audit one or several surfaces: `audit`.
-   - Visual identity: `define-design-brief` for discovery, `create-design-assets` for production, `review-design` for critique.
+   - Public presentation (role to put forward, target surfaces, headline, bio, LinkedIn/GitHub text): `personal-brand`; check live surfaces: `audit`.
+   - Look (palette, fonts, logo, banners, design review): `visual-identity`.
    - Opportunities: `find-companies` for target employers, `find-jobs` for live vacancies, `build-resume` for application documents.
 3. Recommend the most useful **next action**, why it fits, the input it needs and a concrete invocation example. When the user explicitly names a goal, route there without forcing prerequisites. When the goal is open-ended, suggest addressing unreliable facts first, then unclear direction, then the user's preferred branch; show at most two meaningful alternatives.
 4. A missing installed skill is an option to install, not an action already performed. If no career skill is relevant, say so. Ask one concise question only if selecting a useful next step truly depends on an unanswered preference.

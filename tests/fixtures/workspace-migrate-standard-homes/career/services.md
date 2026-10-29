@@ -1,2 +1,3 @@
-# Services I offer
-- Freelance .NET code reviews
+# My public profiles
+- LinkedIn: https://www.linkedin.com/in/example
+- GitHub: https://github.com/example

@@ -141,6 +141,14 @@
     {
       "id": "design-approve-stages-exact-version",
       "mode": "explicit"
+    },
+    {
+      "id": "brand-surfaces-copy",
+      "mode": "explicit"
+    },
+    {
+      "id": "identity-existing-palette-to-resume",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [
