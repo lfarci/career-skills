@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shlex
 import subprocess
+import tempfile
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -65,10 +67,11 @@ def run(command: str, output: Path, selected: set[str], timeout: int, label: str
         if case["mode"] == "explicit":
             prompt = "Use $" + case["skill"] + " for this task. " + prompt
         print(f"Running {case['id']} ({case['mode']})...", flush=True)
+        scratch = tempfile.mkdtemp(prefix="career-eval-run-")  # never run an agent inside this repo
         try:
             process = subprocess.run(
                 argv, input=prompt, capture_output=True, text=True,
-                timeout=timeout, check=False, cwd=ROOT,
+                timeout=timeout, check=False, cwd=scratch, env={**os.environ, "PWD": scratch},
             )
             response, stderr, exit_code = process.stdout, process.stderr, process.returncode
         except subprocess.TimeoutExpired:
