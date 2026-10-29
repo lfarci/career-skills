@@ -57,8 +57,7 @@ Following the small, composable skill approach, each skill has a distinct trigge
 | `create-design-assets` | Current brief and scoped deliverables | Selected concepts, versioned assets and applicable usage guide | Requested files and checks are explicit; approval is traceable |
 | `benchmark-profile` | Selected user assets, target roles and inspected public examples | Linked comparator analysis and prioritized improvements | Peers and aspirational examples are distinguished; communication and growth gaps are separate |
 | `review-design` | Actual assets/revisions and current brief | Prioritized evidence-backed design findings | Fit, craft and readiness issues have concrete remedies and inspection limits |
-| `audit-surface` | One accessible asset and available benchmarks | Evidence-backed single-surface findings | All inspected claims and access limits accounted for |
-| `audit` | Multiple assets, canonical facts, goals and optional visual references | Cross-asset discrepancy matrix and proposed tracker tasks | Material overlaps and conflicts reconciled, duplicates removed |
+| `audit` | One or more assets, canonical facts, goals and optional visual references | Cross-asset discrepancy matrix and proposed tracker tasks | Material overlaps and conflicts reconciled, duplicates removed |
 | `review-research` | Selected saved references and retention guidance | Reviewed/archived research and linked findings | Changes follow guidance, useful history stays available and no automatic deletion occurs |
 | `find-companies` | Profile, career direction, location and work constraints | Evidence-backed target-employer shortlist | Company fit and vacancy availability are separate; practical constraints and unknowns are explicit |
 | `find-jobs` | Skills/goals, constraints, current official vacancies | Ranked verified opportunities with links and timestamps | Each verified role has live first-party evidence, transparent fit, no fabricated details |
@@ -78,7 +77,7 @@ Capture uncertainty without forcing everything into one scale: distinguish *conf
 
 ### Lightweight visual identity (optional)
 
-Users may already have a few reusable visual assets: a banner, logo/avatar, icons, a small color palette and typography choices. `personal-brand` can record **links to their existing source files and approved variants** in a short brand-kit note. `audit-surface` can compare an individual rendered surface to those references; `audit` can spot drift across surfaces. This is a simple asset inventory and consistency checklist, not a mandatory design system or design-token pipeline. When explicitly requested, `define-design-brief` clarifies visual needs, `create-design-assets` owns concept exploration and production checks, and `review-design` critiques design quality against the brief; it does not replace positioning or require a full design system. Read the [example brand kit](../skills/personal-brand/personal-brand/references/brand-kit.md) only when relevant. Respect platform-specific crops, font substitutions and stylistic variations; report unknowns when visuals are inaccessible.
+Users may already have a few reusable visual assets: a banner, logo/avatar, icons, a small color palette and typography choices. `personal-brand` can record **links to their existing source files and approved variants** in a short brand-kit note. `audit` can compare one rendered surface to those references or spot drift across several. This is a simple asset inventory and consistency checklist, not a mandatory design system or design-token pipeline. When explicitly requested, `define-design-brief` clarifies visual needs, `create-design-assets` owns concept exploration and production checks, and `review-design` critiques design quality against the brief; it does not replace positioning or require a full design system. Read the [example brand kit](../skills/personal-brand/personal-brand/references/brand-kit.md) only when relevant. Respect platform-specific crops, font substitutions and stylistic variations; report unknowns when visuals are inaccessible.
 
 ### Operating permissions
 
@@ -86,7 +85,7 @@ Read accessible resources within granted permissions. Produce a proposal when wr
 
 ### Composition
 
-Each skill must be executable without installing any other skill. Where two skills are present they may cooperate, but responsibility remains separated: `audit-surface` is a single-asset evidence review; `audit` performs reconciliation across assets; `personal-brand` decides the strategy; `maintain-profile` owns updates to facts. `setup-career-skills` initializes the standardized destination and selectively imports approved source material; `validate-workspace` plans an explicitly requested legacy migration or repairs concrete drift during another task. Other skills can resolve paths themselves when the validator is not installed.
+Each skill must be executable without installing any other skill. Where two skills are present they may cooperate, but responsibility remains separated: `audit` reviews one or several assets; `personal-brand` decides the strategy; `maintain-profile` owns updates to facts. `setup-career-skills` initializes the standardized destination and selectively imports approved source material; `validate-workspace` plans an explicitly requested legacy migration or repairs concrete drift during another task. Other skills can resolve paths themselves when the validator is not installed.
 
 ### Tracker behavior
 
@@ -94,9 +93,9 @@ Track issues in the system explicitly selected during setup. If absent, provide 
 
 ## Invocation policy
 
-**Manual:** `ask-career-skills`, `reflect`, `review-research`, `plan-development`, `review-progress`, `personal-brand`, `benchmark-profile`, `define-design-brief`, `create-design-assets`, `review-design`, `audit`.
+**Manual:** `ask-career-skills`, `reflect`, `review-research`, `plan-development`, `review-progress`, `personal-brand`, `benchmark-profile`, `define-design-brief`, `create-design-assets`, `review-design`.
 
-**Discoverable:** `setup-career-skills`, `validate-workspace`, `maintain-profile`, `build-resume`, `find-companies`, `find-jobs`, `audit-surface`.
+**Discoverable:** `setup-career-skills`, `validate-workspace`, `maintain-profile`, `build-resume`, `find-companies`, `find-jobs`, `audit`.
 
 Manual skills are deliberately selected by name for bounded sessions. Discoverable skills have concrete, concise trigger descriptions. The manual-only flag is a host-specific hint, not a portable guarantee. Validate routing empirically; see [behavioral evaluations](EVALUATION.md).
 

@@ -14,13 +14,13 @@ SKILLS = ROOT / "skills"
 EXPECTED = {
     "setup-career-skills", "plan-development", "review-progress", "review-research",
     "reflect", "maintain-profile", "build-resume", "personal-brand", "benchmark-profile",
-    "define-design-brief", "create-design-assets", "review-design", "audit-surface",
+    "define-design-brief", "create-design-assets", "review-design",
     "audit", "find-jobs", "find-companies", "validate-workspace", "ask-career-skills",
 }
 MANUAL = {
     "reflect", "review-research", "plan-development",
     "review-progress", "personal-brand", "benchmark-profile", "define-design-brief",
-    "create-design-assets", "review-design", "audit", "ask-career-skills",
+    "create-design-assets", "review-design", "ask-career-skills",
 }
 
 

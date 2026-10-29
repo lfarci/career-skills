@@ -14,7 +14,7 @@ disable-model-invocation: true
 ## Establish the review
 - Identify the exact assets/revisions and current brief: goal, audience, usage, desired impression and constraints. Ask only missing context that changes the judgment. Review existing work without requiring a new discovery or creation cycle.
 - Inspect actual files/renderings; distinguish observed issues from assumptions. If assets are inaccessible, report the limit and request what is needed rather than inventing findings.
-- Keep the review focused on professional identity and career applications. Leave factual claims and cross-surface compliance to audit-surface/audit; remain independently useful without those skills.
+- Keep the review focused on professional identity and career applications. Leave factual claims and cross-surface compliance to audit; remain independently useful without those skills.
 
 ## Assess
 - Check fit to the brief, distinctive recognition, simplicity, visual hierarchy, typography, spacing, palette and consistency within the asset set. Separate personal taste from functional failures and strategic mismatch.

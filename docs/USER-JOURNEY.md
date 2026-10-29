@@ -14,7 +14,7 @@ flowchart TD
     Q -->|"Grow professionally"| D["plan-development"]
     D -. "At a review point" .-> DR["review-progress"]
     Q -->|"Improve public presence"| B["personal-brand"]
-    B -. "Inspect one or several surfaces" .-> A["audit-surface / audit"]
+    B -. "Inspect one or several surfaces" .-> A["audit"]
     B -. "Create a visual identity" .-> DB["define-design-brief"]
     DB -. "Brief ready" .-> DA["create-design-assets"]
     DA -. "Review an asset" .-> DV["review-design"]
@@ -72,7 +72,7 @@ For a resume, verify the index, relevant links, canonical records and pending it
 | Build a growth plan / review one | `plan-development` / `review-progress` | Plan / evidence-based check-in |
 | Clarify professional messaging | `personal-brand` | Positioning and reusable wording |
 | Design a logo, banner or visuals | `define-design-brief` → `create-design-assets` → `review-design` | Brief, versioned assets, critique (use only needed stages) |
-| Audit one profile or compare multiple surfaces | `audit-surface` / `audit` | Surface findings / alignment matrix |
+| Audit one profile or compare multiple surfaces | `audit` | Surface findings, plus alignment matrix for several |
 | Research employers or live openings | `find-companies` / `find-jobs` | Target companies / verified roles |
 | Create a resume for an opportunity | `build-resume` | Truthful targeted resume |
 | Learn from public career examples | `benchmark-profile` | Comparator observations |

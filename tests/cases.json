@@ -70,7 +70,7 @@
     },
     {
       "id": "surface-inaccessible",
-      "skill": "audit-surface",
+      "skill": "audit",
       "prompt": "Audit my LinkedIn profile for inaccurate claims, but you cannot access it or see an export.",
       "expect": [
         "Reports access limitation",
@@ -383,7 +383,7 @@
     },
     {
       "id": "assets-staged-not-published",
-      "skill": "audit-surface",
+      "skill": "audit",
       "prompt": "My staged bio differs from the LinkedIn text I supplied. I may have edited LinkedIn manually. Which one is wrong?",
       "expect": [
         "Does not infer which side changed or is correct",
