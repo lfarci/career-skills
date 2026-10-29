@@ -48,6 +48,8 @@ for id in $(python3 -c "import json;s=json.load(open('$REPO/tests/eval-smoke.jso
 done
 ```
 
+Each case's synthetic files live in `tests/fixtures/<case-id>/` (regenerate with `python3 tests/make_fixtures.py`); the runner copies them into the case's scratch directory and adapters copy their cwd into their own workdir. For Copilot use `--agent-command "python3 $REPO/scripts/copilot_adapter.py"`; each case costs Copilot AI credits, so run the full set only with the owner's approval.
+
 Run cases one at a time: concurrent free-model runs returned empty replies. OpenCode takes its project from `$PWD`, so the adapter and runner set it to a fresh scratch dir; with only `cwd` changed, agents wrote into the checkout.
 
 ### GitHub Copilot CLI (verified 2026-10-29, Copilot CLI 1.0.105)
@@ -62,7 +64,7 @@ copilot -p "Use the setup-career-skills skill. ..." --allow-all-tools      # add
 copilot --resume=<id> -p "..." --allow-all-tools                          # continue a session
 ```
 
-Copilot discovers project skills in `.github/skills/`, `.agents/skills/` or `.claude/skills/`, and personal ones in `~/.copilot/skills/` or `~/.agents/skills/`; keep the personal folders empty during evals so only the installed skills are used. Without `-s` the output shows each tool call, which is how to confirm a bundled script ran. Verified: setup import, validate-workspace running `scripts/check_workspace.py`, and build-resume compiling a PDF with Tectonic.
+Copilot discovers project skills in `.github/skills/`, `.agents/skills/` or `.claude/skills/`, and personal ones in `~/.copilot/skills/` or `~/.agents/skills/`; keep the personal folders empty during evals so only the installed skills are used. In prompt mode Copilot cannot load skills marked `disable-model-invocation: true` (ask-career-skills and the personal-brand skills) through its skill tool, and `/skill-name` is not expanded; it then reads the SKILL.md from `.agents/skills/` itself, which worked in every smoke case. Without `-s` the output shows each tool call, which is how to confirm a bundled script ran. Verified: setup import, validate-workspace running `scripts/check_workspace.py`, and build-resume compiling a PDF with Tectonic.
 
 ### Other harnesses
 
