@@ -38,6 +38,13 @@ opencode run -c -m opencode/big-pickle "Create it in a new folder named career h
 
 Symlinks make the checked-out branch the version under test. `-c` continues the last session for multi-turn flows. Inspect the files written under `career/`, not only the reply.
 
+### Other harnesses
+
+Free Zen models answer only through the OpenCode client (direct API calls return `FreeUsageLimitError`), so other harnesses need their own credentials:
+
+- **Codex CLI** (`npm i -g @openai/codex`): `codex login` (ChatGPT plan) or `OPENAI_API_KEY`; install skills with `npx skills add lfarci/career-skills --skill <name> -a codex`; run `codex exec "<prompt>"`.
+- **Claude Code** (`npm i -g @anthropic-ai/claude-code`): Anthropic login or `ANTHROPIC_API_KEY`; install with `-a claude-code`; run `claude -p "<prompt>"`.
+
 ## Interpreting results
 
 Run identical scenarios on each relevant harness. Record host/version, installed skill set, invocation evidence, resulting artifacts and access limits. Direct calls default to `$skill` syntax; adapt for hosts with different syntax.
