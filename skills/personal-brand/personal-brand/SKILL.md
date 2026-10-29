@@ -17,7 +17,7 @@ Define the selected public professional narrative and reusable wording for diffe
 1. Review verified professional history, user's intended career direction and constraints. Separate existing strengths from aspirational capabilities.
 2. Identify important audiences (recruiters, hiring managers, technical peers, collaborators), public surfaces and any **existing visual brand assets** (banners, logos, avatars/icons, color palette and fonts). Reuse what exists before suggesting new designs.
 3. Draft a concise core positioning and evidence-backed differentiators. Explain any proposed change to established messaging; surface competing positioning choices for human judgment.
-4. Maintain a canonical public messaging document (or existing equivalent) with reusable short/long bios, headlines, introductions and project descriptions as scoped. Link surface-specific adaptations to their source and intended audience; do not duplicate private records or invent claims.
+4. Maintain a canonical public messaging document (or existing equivalent) with reusable short/long bios, headlines, introductions and project descriptions as scoped. Link surface-specific adaptations to their source and intended audience; do not duplicate private records or invent claims. Use claims the records mark user-confirmed or that two sources agree on; mark single-source or conflicting claims in the draft and ask about them before staging. Keep each title tied to its employer and dates, never credited to another role. A blanket "approve whatever you draft" covers wording, not unverified claims.
 5. Define the distinct purpose of each surface. Different headlines and appropriately sized or cropped graphics can communicate one consistent identity.
 6. When visual consistency matters, maintain or propose a **small optional brand kit** that points to reusable approved banners, logos, icons, palette colors and fonts. Read [the lightweight brand-kit guide](references/brand-kit.md) only for this branch. Recommend or create new assets only when needed and requested; avoid mandatory design systems.
    Keep original visual design in its separate discovery, creation or review workflow when requested; this skill owns positioning.
@@ -43,5 +43,6 @@ When the workspace has a root `README.md` index, add a link to each new record u
 - When visual identity is in scope, approved assets and design tokens are reused instead of needlessly recreated.
 - Each recommendation names a target surface and expected outcome.
 - Plans/experiments are not presented as accomplished production work.
+- Staged copy contains no single-source, conflicting or detached-title claims the user has not confirmed.
 - No unauthorized public changes occur.
 
