@@ -12,6 +12,26 @@ Maintain the user's private source of truth for experience, projects, achievemen
 - **Scope:** Establish the focus first, then examine or update only records needed for that task.
 - **Output:** One clarifying question when unscoped; otherwise a targeted profile section, factual assessment or supported patch.
 
+## Record map
+
+Follow the workspace's existing layout when its index maps records. Otherwise, and when starting from nothing, put each fact in its record below (paths relative to the workspace root), creating a file only when it gets content. When you create a record, add its link under `Records` in the root `README.md`, creating a minimal index with only `Records` and `Source inventory` if none exists (`Setup progress` belongs to setup).
+
+<!-- record-map -->
+| Fact | Record |
+| --- | --- |
+| Employers, titles/grades, dates, internships | `profile/experience.md` |
+| Degrees and schools | `profile/education.md` |
+| Certifications, licences, awards | `profile/qualifications.md` |
+| Skills and tools | `profile/skills.md` |
+| Spoken languages | `profile/languages.md` |
+| Goals, north star, considered next steps | `profile/direction.md` |
+| Location, work mode, commute, contract, salary preferences | `profile/preferences.md` |
+| Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
+| Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
+| Reusable resumes, bios, banners | `assets/drafts/` or `assets/staged/` (approved) |
+| Saved companies, job ads, comparator profiles | `research/` |
+<!-- /record-map -->
+
 ## Steps
 
 1. **Establish intent before investigating.** A bare invocation or “help with my profile” is not a request to audit or edit everything. If the conversation does not identify a task, ask **one short question**, such as: *“Would you like to add information, correct a fact, review accuracy, or start a profile?”* Stop there until the user responds. Reuse known context; never ask this again for an already-clear request.

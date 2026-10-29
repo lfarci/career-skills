@@ -63,3 +63,4 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: OpenCode with the free `opencode/big-pickle` model runs skills headless and discovers `.opencode/skills/<name>/SKILL.md` symlinks to this checkout, so branch edits are tested live (see docs/EVALUATION.md).
 - 2026-10-29: Shared files need an explicit owner. Without one, `personal-brand` rewrote setup's progress checkpoint and setup wrote source paths relative to the agent's start dir instead of the root.
 - 2026-10-29: `audit-surface` vs `audit` was a count (one vs. many), not a responsibility; merged into `audit`.
+- 2026-10-29: A contract that lives in one skill is invisible to the others; standalone `maintain-profile` invented a single `profile.md`. Shared contracts live in docs/WORKSPACE.md with validator-checked verbatim copies in the skills that write them.
