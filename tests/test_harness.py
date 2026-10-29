@@ -21,9 +21,9 @@ class HarnessTest(unittest.TestCase):
             argv = shlex.split(harness_command(name, "m1"))
             self.assertEqual(Path(argv[1]).name, f"{name}_adapter.py")
             self.assertEqual(argv[-2:], ["--model", "m1"])
-        self.assertIn("--continue", h.build_command(h.get("copilot"), "copilot", "x", resume=True))
-        self.assertEqual(h.build_command(h.get("codex"), "codex", "x", resume=True)[-3:], ["resume", "--last", "x"])
-        self.assertIn("-c", h.build_command(h.get("opencode"), "opencode", "x", resume=True))
+        self.assertIn("--continue", h.build_command("copilot", "copilot", "x", resume=True))
+        self.assertEqual(h.build_command("codex", "codex", "x", resume=True)[-3:], ["resume", "--last", "x"])
+        self.assertIn("-c", h.build_command("opencode", "opencode", "x", resume=True))
         with self.assertRaises(ValueError):
             harness_command("claude")
 
