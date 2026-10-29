@@ -18,6 +18,8 @@ Create these homes **as needed**, directly under the chosen root:
 
 Ask which sources the user authorizes you to read. Start with indexes and summaries of CVs, prior notes, resumes, portfolios, project records and credentials; open detailed records only for the approved import or a relevant conflict. Recommend a useful first subset. Extract selected claims into canonical records and link original evidence. Preserve uncertainty and separate grade from functional role. A summary does not replace its supporting source. The user may choose minimal index-only setup.
 
+**Archives** (for example a LinkedIn data export `.zip`): list the members first (Python's standard `zipfile` works on every OS), then read only the files the batch needs, such as `Profile.csv`, `Positions.csv`, `Education.csv`, `Skills.csv`, `Languages.csv`, `Certifications.csv`, `Projects.csv`. Read members in place or extract to a temporary folder outside the workspace; never unpack into the root. Messages, connections, invitations, contacts and ad data concern other people or are private: list them as `excluded` and do not open them. The archive itself is the source in the inventory.
+
 When the user expressly asks to create the chosen folder first, create it with available permission **and continue** into source discovery; an empty directory is not the end of setup.
 
 ## Resume: validation
