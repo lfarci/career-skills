@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import shlex
+import shutil
 import signal
 import subprocess
 import tempfile
@@ -14,6 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+FIXTURES = ROOT / "tests" / "fixtures"
 DEFAULT_OUT = ROOT / "eval-results" / "smoke.json"
 
 
@@ -96,6 +98,9 @@ def run(command: str, output: Path, selected: set[str], timeout: int, label: str
             prompt = "Use $" + case["skill"] + " for this task. " + prompt
         print(f"Running {case['id']} ({case['mode']})...", flush=True)
         scratch = tempfile.mkdtemp(prefix="career-eval-run-")  # never run an agent inside this repo
+        fixture = FIXTURES / case["id"]
+        if fixture.is_dir():  # synthetic files the prompt describes
+            shutil.copytree(fixture, scratch, dirs_exist_ok=True)
         try:
             response, stderr, exit_code = run_with_timeout(
                 argv, prompt, timeout, cwd=scratch, env={**os.environ, "PWD": scratch})

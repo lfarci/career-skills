@@ -29,6 +29,21 @@ class TimeoutTests(unittest.TestCase):
             self.assertFalse(marker.exists(), "grandchild survived the timeout")
 
 
+class FixtureTests(unittest.TestCase):
+    def test_case_fixture_is_copied_into_scratch_cwd(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "r.json"
+            lister = shlex.join([sys.executable, "-c", "import os;print(sorted(os.listdir('career/profile')))"])
+            run(lister, out, {"repair-renamed-record-same-fix"}, 30, "test")
+            response = json.loads(out.read_text(encoding="utf-8"))["results"][0]["response"]
+            self.assertIn("technical-skills.md", response)
+
+    def test_every_fixture_belongs_to_a_smoke_case(self) -> None:
+        ids = {case["id"] for case in scenarios()}
+        fixtures = Path(__file__).resolve().parent / "fixtures"
+        self.assertTrue({p.name for p in fixtures.iterdir()} <= ids)
+
+
 class SmokeRunnerTests(unittest.TestCase):
     def test_scenarios_contain_discovery_explicit_and_negative(self) -> None:
         items = scenarios()

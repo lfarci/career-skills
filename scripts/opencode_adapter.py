@@ -37,10 +37,12 @@ def main() -> int:
     args = parser.parse_args()
     prompt = sys.stdin.read().replace("Use $", "Use the skill ")
     workdir = Path(tempfile.mkdtemp(prefix="career-eval-"))
+    shutil.copytree(Path.cwd(), workdir, dirs_exist_ok=True)  # case fixtures the runner placed in cwd
     install(workdir)
     # OpenCode resolves its project from the Git root; without one it can attach to another
     # directory (observed: writes into the caller's repo). Make the scratch dir its own repo.
     subprocess.run(["git", "init", "-q"], cwd=workdir, check=False)
+    before = {p: p.read_bytes() for p in workdir.rglob("*") if p.is_file() and ".git" not in p.parts}
     opencode = shutil.which("opencode") or str(Path.home() / ".opencode" / "bin" / "opencode")
     result = subprocess.run(
         [opencode, "run", "-m", args.model, prompt],
@@ -51,8 +53,8 @@ def main() -> int:
     if not result.stdout.strip():
         # Seen when several free-model runs share one OpenCode install concurrently: run cases serially.
         print("[adapter] empty reply from opencode; stderr tail:\n" + result.stderr[-800:])
-    files = [p.relative_to(workdir).as_posix() for p in sorted(workdir.rglob("*")) if p.is_file() and not {".opencode", ".git"} & set(p.parts)]
-    print("\n--- files left by the agent ---\n" + ("\n".join(files) if files else "(none)"))
+    files = [p.relative_to(workdir).as_posix() for p in sorted(workdir.rglob("*")) if p.is_file() and before.get(p) != p.read_bytes() and not {".opencode", ".git"} & set(p.parts)]
+    print("\n--- files created or changed by the agent ---\n" + ("\n".join(files) if files else "(none)"))
     print(f"--- scratch dir: {workdir}")
     if not args.keep:
         shutil.rmtree(workdir, ignore_errors=True)
