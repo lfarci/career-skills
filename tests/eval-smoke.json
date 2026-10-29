@@ -79,10 +79,6 @@
       "mode": "explicit"
     },
     {
-      "id": "setup-tracked-scaffold-not-ghosts",
-      "mode": "explicit"
-    },
-    {
       "id": "setup-role-history-with-internships",
       "mode": "explicit"
     },
@@ -95,19 +91,7 @@
       "mode": "explicit"
     },
     {
-      "id": "setup-resume-in-progress",
-      "mode": "explicit"
-    },
-    {
       "id": "setup-location-first-no-assumptions",
-      "mode": "explicit"
-    },
-    {
-      "id": "setup-location-first-existing-dir",
-      "mode": "explicit"
-    },
-    {
-      "id": "setup-new-empty-create-useful-files",
       "mode": "explicit"
     },
     {
@@ -128,6 +112,34 @@
     },
     {
       "id": "setup-cutover-checks-inbound-links",
+      "mode": "explicit"
+    },
+    {
+      "id": "setup-index-holds-no-facts",
+      "mode": "explicit"
+    },
+    {
+      "id": "setup-resume-facts-in-index-asks-first",
+      "mode": "discovery"
+    },
+    {
+      "id": "repair-renamed-record-same-fix",
+      "mode": "discovery"
+    },
+    {
+      "id": "design-banner-concepts-after-logo-approved",
+      "mode": "explicit"
+    },
+    {
+      "id": "setup-pdf-linkedin-conflicts",
+      "mode": "discovery"
+    },
+    {
+      "id": "profile-start-follows-record-map",
+      "mode": "explicit"
+    },
+    {
+      "id": "design-approve-stages-exact-version",
       "mode": "explicit"
     }
   ],

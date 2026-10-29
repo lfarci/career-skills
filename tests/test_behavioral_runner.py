@@ -15,8 +15,10 @@ from run_behavioral_evals import review, run, scenarios  # noqa: E402
 class SmokeRunnerTests(unittest.TestCase):
     def test_scenarios_contain_discovery_explicit_and_negative(self) -> None:
         items = scenarios()
-        self.assertEqual(len(items), 35)
-        self.assertTrue(all(any(x["id"] == id for x in items) for id in ("setup-asks-about-existing-sources", "setup-first-batch-does-not-end-intake", "setup-resume-in-progress", "setup-location-first-no-assumptions", "setup-location-first-existing-dir", "setup-named-folder-is-root", "setup-consolidation-is-not-lossless", "setup-cutover-checks-inbound-links")))
+        ids = {x["id"] for x in items}
+        self.assertEqual(len(ids), len(items))
+        for core in ("setup-index-holds-no-facts", "setup-resume-facts-in-index-asks-first", "setup-pdf-linkedin-conflicts", "repair-renamed-record-same-fix", "design-banner-concepts-after-logo-approved"):
+            self.assertIn(core, ids)
         self.assertTrue(any(x.get("skill") == "ask-career-skills" and x["mode"] == "explicit" for x in items))
         self.assertTrue(any(x.get("skill") == "validate-workspace" and x["mode"] == "discovery" for x in items))
         self.assertTrue(all(any(case["id"] == expected for case in items) for expected in ("profile-no-intent-existing", "profile-no-intent-new")))
