@@ -111,6 +111,8 @@ Run only the line for your harness. Put old CVs, LinkedIn data exports (zip), no
 python3 .agents/skills/setup-career-skills/scripts/check_workspace.py career   # Claude Code: .claude/skills/...
 ```
 
+On Windows use `py` instead of `python3` (for example `py .agents\skills\setup-career-skills\scripts\check_workspace.py career`).
+
 It prints `Status: usable` (exit 0) or `needs repair` with each broken link.
 
 **5. Next steps.**
