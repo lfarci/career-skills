@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+import os
+import time
 import shlex
 import sys
 import tempfile
@@ -9,7 +11,22 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from run_behavioral_evals import review, run, scenarios  # noqa: E402
+from run_behavioral_evals import review, run, run_with_timeout, scenarios  # noqa: E402
+
+
+class TimeoutTests(unittest.TestCase):
+    def test_timeout_kills_grandchild(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            marker = Path(tmp) / "alive"
+            child = ("import subprocess,sys,time;"
+                     "subprocess.Popen([sys.executable,'-c',"
+                     f"'import time,pathlib;time.sleep(3);pathlib.Path(r\"{marker}\").write_text(\"x\")']);"
+                     "time.sleep(30)")
+            _, err, code = run_with_timeout([sys.executable, "-c", child], "", 1, cwd=tmp, env=dict(os.environ))
+            self.assertEqual(code, 124)
+            self.assertIn("process tree killed", err)
+            time.sleep(3.5)
+            self.assertFalse(marker.exists(), "grandchild survived the timeout")
 
 
 class SmokeRunnerTests(unittest.TestCase):

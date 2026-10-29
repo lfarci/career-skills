@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import shlex
+import signal
 import subprocess
 import tempfile
 import sys
@@ -49,6 +50,33 @@ def review(path: Path) -> int:
     return 1 if failed else 2 if pending else 0
 
 
+def kill_tree(process: subprocess.Popen) -> None:
+    """Kill a process and every descendant (its own process group/session)."""
+    if os.name == "nt":
+        subprocess.run(["taskkill", "/T", "/F", "/PID", str(process.pid)], capture_output=True, check=False)
+    else:
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+
+
+def run_with_timeout(argv: list[str], prompt: str, timeout: int, cwd: str,
+                     env: dict[str, str]) -> tuple[str, str, int]:
+    """Run the agent command; on timeout kill its whole process tree and return exit code 124."""
+    group = ({"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP} if os.name == "nt"
+             else {"start_new_session": True})
+    process = subprocess.Popen(argv, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                               text=True, encoding="utf-8", errors="replace", cwd=cwd, env=env, **group)
+    try:
+        out, err = process.communicate(prompt, timeout=timeout)
+        return out, err, process.returncode
+    except subprocess.TimeoutExpired:
+        kill_tree(process)
+        out, err = process.communicate()
+        return out or "", (err or "") + f"\nTimed out after {timeout}s; process tree killed", 124
+
+
 def run(command: str, output: Path, selected: set[str], timeout: int, label: str) -> int:
     argv = shlex.split(command)
     if not argv:
@@ -69,13 +97,10 @@ def run(command: str, output: Path, selected: set[str], timeout: int, label: str
         print(f"Running {case['id']} ({case['mode']})...", flush=True)
         scratch = tempfile.mkdtemp(prefix="career-eval-run-")  # never run an agent inside this repo
         try:
-            process = subprocess.run(
-                argv, input=prompt, capture_output=True, text=True,
-                timeout=timeout, check=False, cwd=scratch, env={**os.environ, "PWD": scratch},
-            )
-            response, stderr, exit_code = process.stdout, process.stderr, process.returncode
-        except subprocess.TimeoutExpired:
-            response, stderr, exit_code = "", f"Timed out after {timeout}s", 124
+            response, stderr, exit_code = run_with_timeout(
+                argv, prompt, timeout, cwd=scratch, env={**os.environ, "PWD": scratch})
+        except OSError as exc:
+            response, stderr, exit_code = "", f"Could not start agent: {exc}", 127
         results.append({
             "id": case["id"], "skill": case.get("skill"), "mode": case["mode"],
             "prompt": prompt, "response": response, "stderr": stderr,
