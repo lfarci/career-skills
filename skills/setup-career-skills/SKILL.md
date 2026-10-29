@@ -19,6 +19,7 @@ Every imported fact goes into a canonical record, never into the index. Create a
 <!-- record-map -->
 | Fact | Record |
 | --- | --- |
+| Name and contact details the user chose to import (name, e-mail, phone, public links) | `profile/contact.md` |
 | Employers, titles/grades, dates, internships | `profile/experience.md` |
 | Degrees and schools | `profile/education.md` |
 | Certifications, licences, awards | `profile/qualifications.md` |
