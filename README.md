@@ -14,15 +14,12 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | [`reflect`](skills/career-direction/reflect/SKILL.md) | Explore and articulate professional identity and goals | Manual |
 | [`maintain-profile`](skills/career-evidence/maintain-profile/SKILL.md) | Ask for a focus when needed, then review or update factual career records | Discoverable |
 | [`build-resume`](skills/job-hunt/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Discoverable |
-| [`plan-development`](skills/career-development/plan-development/SKILL.md) | Turn career direction and evidence gaps into a feasible growth plan | Manual |
-| [`review-progress`](skills/career-development/review-progress/SKILL.md) | Review development evidence and adjust the plan | Manual |
+| [`plan-development`](skills/career-development/plan-development/SKILL.md) | Create a growth plan or review progress against it | Manual |
 | [`personal-brand`](skills/personal-brand/personal-brand/SKILL.md) | Define positioning, coordinate public messaging, and optionally maintain a small reusable visual brand kit | Manual |
 | [`define-design-brief`](skills/personal-brand/define-design-brief/SKILL.md) | Interview about career visual needs and agree on an actionable brief | Manual |
 | [`create-design-assets`](skills/personal-brand/create-design-assets/SKILL.md) | Explore concepts and produce scoped professional visual assets | Manual |
-| [`benchmark-profile`](skills/personal-brand/benchmark-profile/SKILL.md) | Research relevant public profiles and resumes for evidence-backed improvements | Manual |
 | [`review-design`](skills/personal-brand/review-design/SKILL.md) | Critique visual fit, craft and readiness against the brief | Manual |
 | [`audit`](skills/personal-brand/audit/SKILL.md) | Audit one or several professional surfaces for facts, consistency and visual drift | Discoverable |
-| [`review-research`](skills/career-evidence/review-research/SKILL.md) | Review retained references and archive under user guidance | Manual |
 | [`find-companies`](skills/job-hunt/find-companies/SKILL.md) | Research employers matching career direction, location and constraints, with or without vacancies | Discoverable |
 | [`find-jobs`](skills/job-hunt/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Discoverable |
 
@@ -33,9 +30,9 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | Directory | Responsibility | Skills |
 | --- | --- | --- |
 | `career-direction/` | What do I want, and why? Private north star, interests and decisions | `reflect` |
-| `career-evidence/` | What have I demonstrated? Experience, achievements and supporting records | `maintain-profile`, `review-research` |
-| `career-development/` | How do I grow toward it? Action plans, practice and progress | `plan-development`, `review-progress` |
-| `personal-brand/` | Public messaging, reusable text, visual identity and presentation quality | `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`, `benchmark-profile`, `audit` |
+| `career-evidence/` | What have I demonstrated? Experience, achievements and supporting records | `maintain-profile` |
+| `career-development/` | How do I grow toward it? Action plans, practice and progress | `plan-development` |
+| `personal-brand/` | Public messaging, reusable text, visual identity and presentation quality | `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`, `audit` |
 | `job-hunt/` | Application materials and opportunity search | `build-resume`, `find-jobs`, `find-companies` |
 | `setup-career-skills/` | Cross-cutting workspace setup | `setup-career-skills` |
 | `ask-career-skills/` | Optional navigation among independent skills | `ask-career-skills` |
@@ -49,7 +46,7 @@ Groups organize the repository; they are not installable umbrella skills. Instal
 
 Use discovery → creation → review as needed, reusing the same brief and asset files. Enter at any stage with existing inputs; no compulsory chain or repeated interview. Creation owns visual concept selection and self-checks; review supplies independent critique. These skills focus on career-facing identities, profiles, portfolios, resumes and talks rather than general commercial branding or product UX.
 
-`audit-surface` was merged into `audit` (one or several surfaces). The former `design-identity` package is replaced by these three design skills; update installed paths and invocations accordingly.
+Removed for the MVP: `benchmark-profile` and `review-research` (research retention rules stay in docs/WORKSPACE.md); `review-progress` is now the review branch of `plan-development`. `audit-surface` was merged into `audit` (one or several surfaces). The former `design-identity` package is replaced by these three design skills; update installed paths and invocations accordingly.
 
 ## Design principles
 

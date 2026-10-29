@@ -12,7 +12,6 @@ flowchart TD
     Q -->|"Direction unclear"| R["reflect"]
     P -. "When useful" .-> R
     Q -->|"Grow professionally"| D["plan-development"]
-    D -. "At a review point" .-> DR["review-progress"]
     Q -->|"Improve public presence"| B["personal-brand"]
     B -. "Inspect one or several surfaces" .-> A["audit"]
     B -. "Create a visual identity" .-> DB["define-design-brief"]
@@ -22,8 +21,6 @@ flowchart TD
     Q -->|"Explore employers and roles"| C["find-companies"]
     C -. "Search openings" .-> J["find-jobs"]
     J -. "Tailor application" .-> CV["build-resume"]
-    Q -->|"Learn from market examples"| BM["benchmark-profile"]
-    BM -. "Later, if requested" .-> RR["review-research"]
 ```
 
 Solid arrows identify the choice being made. Dashed arrows identify **optional follow-on activities**. None of these arrows implies the next skill must be installed or automatically invoked.
@@ -69,14 +66,12 @@ For a resume, verify the index, relevant links, canonical records and pending it
 | Choose a next task without knowing the skill names | `ask-career-skills` | One next-step recommendation |
 | Correct or add career facts | `maintain-profile` | Supported canonical updates |
 | Decide where their career should go | `reflect` | Reflection and direction brief |
-| Build a growth plan / review one | `plan-development` / `review-progress` | Plan / evidence-based check-in |
+| Build a growth plan / review one | `plan-development` | Plan, or evidence-based check-in |
 | Clarify professional messaging | `personal-brand` | Positioning and reusable wording |
 | Design a logo, banner or visuals | `define-design-brief` → `create-design-assets` → `review-design` | Brief, versioned assets, critique (use only needed stages) |
 | Audit one profile or compare multiple surfaces | `audit` | Surface findings, plus alignment matrix for several |
 | Research employers or live openings | `find-companies` / `find-jobs` | Target companies / verified roles |
 | Create a resume for an opportunity | `build-resume` | Truthful targeted resume |
-| Learn from public career examples | `benchmark-profile` | Comparator observations |
-| Revisit retained career research | `review-research` | Keep, refresh or guided archive |
 
 ## How `ask-career-skills` behaves
 
@@ -85,7 +80,7 @@ Invoke **`ask-career-skills`** explicitly, for example:
 - *"I finished setup; what's next?"* → inspect what is known and suggest profile reconciliation or reflection **only when needed**.
 - *"My profile is already accurate and I want to apply for jobs."* → recommend `find-jobs`, `find-companies` or `build-resume` depending on the immediate objective.
 - *"I have a logo draft but it feels off."* → recommend `review-design`; no new design brief required.
-- *"I'm learning .NET architecture; what should I work on?"* → recommend `plan-development` or `review-progress` depending on whether a plan already exists.
+- *"I'm learning .NET architecture; what should I work on?"* → recommend `plan-development` (it creates a plan or reviews an existing one).
 
 The result is a **recommendation**, not a hand-off that executes another skill. Users explicitly select the next skill themselves. Where a client does not support manual-invocation flags, the intended behavior may not be enforced by metadata; see [invocation policy](ARCHITECTURE.md#invocation-policy).
 

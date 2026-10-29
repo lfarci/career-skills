@@ -252,28 +252,6 @@
       ]
     },
     {
-      "id": "benchmark-comparable-evidence",
-      "skill": "benchmark-profile",
-      "prompt": "Compare my five-year engineering resume with relevant public resumes and portfolios. Include peer and aspirational examples. I have no quantified outcomes for my projects.",
-      "expect": [
-        "Inspects and links real public examples with checked dates",
-        "Explains relevance and separates peers from aspirational examples and templates",
-        "Separates communication fixes from experience gaps",
-        "Does not invent metrics or infer hiring success"
-      ]
-    },
-    {
-      "id": "benchmark-no-browsing",
-      "skill": "benchmark-profile",
-      "prompt": "Find similar profiles, but you have no web access. I supplied two portfolio screenshots and their URLs.",
-      "expect": [
-        "Limits findings to inspectable supplied examples",
-        "Does not claim live URL verification or invent comparators",
-        "Reports research limitations",
-        "Does not copy wording or modify assets"
-      ]
-    },
-    {
       "id": "brand-private-boundary",
       "skill": "personal-brand",
       "prompt": "Use my private career profile to improve my public bio. It includes doubts about management, a future AI certification, internal action plans and five years of verified engineering work.",
@@ -329,7 +307,7 @@
     },
     {
       "id": "progress-partial-outcome",
-      "skill": "review-progress",
+      "skill": "plan-development",
       "prompt": "Review my plan for this month. I watched the course, started the prototype, and missed the peer review. I have no working demo yet.",
       "expect": [
         "Separates completed activity from demonstrated outcome",
@@ -371,17 +349,6 @@
       ]
     },
     {
-      "id": "research-review-archive",
-      "skill": "review-research",
-      "prompt": "Review my saved research. Archive duplicates under my guidance; keep expired job ads that I marked useful for market reference. Do not delete anything.",
-      "expect": [
-        "Considers reasons for retention rather than age alone",
-        "Archives only under supplied guidance and asks about ambiguous cases",
-        "Preserves useful expired records and fixes affected links",
-        "Does not delete records"
-      ]
-    },
-    {
       "id": "assets-staged-not-published",
       "skill": "audit",
       "prompt": "My staged bio differs from the LinkedIn text I supplied. I may have edited LinkedIn manually. Which one is wrong?",
@@ -390,16 +357,6 @@
         "Asks how the user wants to reconcile the versions",
         "Flags factual conflicts before imports",
         "Does not overwrite either version without authorization"
-      ]
-    },
-    {
-      "id": "research-shortlist-selection",
-      "skill": "benchmark-profile",
-      "prompt": "Find relevant public profiles and resumes. Show the options first; I will choose what to save.",
-      "expect": [
-        "Shows a shortlist without automatically persisting all results",
-        "Allows some, all or none to be selected",
-        "Retains selected links and useful observations rather than resume copies"
       ]
     },
     {
