@@ -64,6 +64,24 @@ career/
     archive/
 ```
 
+**Record map.** This is the shared contract for where facts go. Skills that write records carry a verbatim copy (checked by the validator); change it here and in every copy together.
+
+<!-- record-map -->
+| Fact | Record |
+| --- | --- |
+| Employers, titles/grades, dates, internships | `profile/experience.md` |
+| Degrees and schools | `profile/education.md` |
+| Certifications, licences, awards | `profile/qualifications.md` |
+| Skills and tools | `profile/skills.md` |
+| Spoken languages | `profile/languages.md` |
+| Goals, north star, considered next steps | `profile/direction.md` |
+| Location, work mode, commute, contract, salary preferences | `profile/preferences.md` |
+| Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
+| Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
+| Reusable resumes, bios, banners | `assets/drafts/` or `assets/staged/` (approved) |
+| Saved companies, job ads, comparator profiles | `research/` |
+<!-- /record-map -->
+
 Unused homes can remain documented in `career/README.md` until populated. Create only needed records; combine or split files when useful. direction.md can hold north star, values, motivations, interests and goals. development.md holds actions, evidence milestones and dated progress reviews. Project records describe purpose, status, contribution, skills used, learning, relevance to a resume and links to work; do not copy source code or the project's backlog.
 
 brand/ contains guidance, not a second asset library. identity.md can describe fonts, palette, logo and composition rules, linking actual sources under assets/. Design interview answers can live in brand/discovery.md. **Legacy source filenames** such as `goals.md` or `certifications.md` can inform the new records; don't rename or import a file solely because its name looks similar.

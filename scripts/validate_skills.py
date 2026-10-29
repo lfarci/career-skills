@@ -78,6 +78,17 @@ def main() -> int:
         if not match or (match.group(1) == "Manual") != (name in MANUAL):
             errors.append(f"{name}: README invocation policy mismatch")
 
+    marker = re.compile(r"<!-- record-map -->\n(.*?)<!-- /record-map -->", re.DOTALL)
+    canonical = marker.search((ROOT / "docs" / "WORKSPACE.md").read_text(encoding="utf-8"))
+    if not canonical:
+        errors.append("docs/WORKSPACE.md: missing record-map block")
+    for skill_path in files:
+        copy = marker.search(skill_path.read_text(encoding="utf-8"))
+        if copy and canonical and copy.group(1) != canonical.group(1):
+            errors.append(f"{skill_path.parent.name}: record map differs from docs/WORKSPACE.md")
+    for required in ("setup-career-skills", "maintain-profile"):
+        if required in packages and not marker.search(packages[required].read_text(encoding="utf-8")):
+            errors.append(f"{required}: missing record-map block")
     cases = json.loads((ROOT / "tests" / "cases.json").read_text(encoding="utf-8"))["cases"]
     covered = {case["skill"] for case in cases}
     if covered != EXPECTED:

@@ -886,6 +886,17 @@
         "Leaves the Setup progress section and its next decision unchanged",
         "Reports its own next decision in the reply"
       ]
+    },
+    {
+      "id": "profile-start-follows-record-map",
+      "skill": "maintain-profile",
+      "prompt": "Use maintain-profile: start my profile in ./mycareer. I'm a data analyst at Litware since 2023, before that intern at Proseware (2022). I hold the PL-300 cert and want to become a data engineer. You may write files.",
+      "expect": [
+        "Creates profile/experience.md, profile/qualifications.md and profile/direction.md rather than one combined file",
+        "The goal is recorded as direction, not as a qualification or role",
+        "Creates or updates a minimal README.md index linking the new records",
+        "Asks one next question"
+      ]
     }
   ]
 }

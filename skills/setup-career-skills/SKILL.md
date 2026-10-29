@@ -16,6 +16,7 @@ Turn the user's scattered career material into a private workspace made of two t
 
 Every imported fact goes into a canonical record, never into the index. Create a file only when it receives content.
 
+<!-- record-map -->
 | Fact | Record |
 | --- | --- |
 | Employers, titles/grades, dates, internships | `profile/experience.md` |
@@ -29,6 +30,7 @@ Every imported fact goes into a canonical record, never into the index. Create a
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
 | Reusable resumes, bios, banners | `assets/drafts/` or `assets/staged/` (approved) |
 | Saved companies, job ads, comparator profiles | `research/` |
+<!-- /record-map -->
 
 Keep each record plain Markdown with headings and relative links. Note the source file and its date beside imported facts; mark approximations and conflicts instead of resolving them silently. A goal stays a goal: "considering AZ-305" belongs in `direction.md`, not `qualifications.md`.
 
