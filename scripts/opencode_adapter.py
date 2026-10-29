@@ -19,6 +19,9 @@ import sys
 import tempfile
 from pathlib import Path
 
+LIMIT_MESSAGE = "Free usage limit reached"
+HARNESS_ERROR_EXIT = 75  # EX_TEMPFAIL: harness unavailable, rerun later
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -44,21 +47,39 @@ def main() -> int:
     subprocess.run(["git", "init", "-q"], cwd=workdir, check=False)
     before = {p: p.read_bytes() for p in workdir.rglob("*") if p.is_file() and ".git" not in p.parts}
     opencode = shutil.which("opencode") or str(Path.home() / ".opencode" / "bin" / "opencode")
-    result = subprocess.run(
-        [opencode, "run", "-m", args.model, prompt],
+    reply = tempfile.TemporaryFile(mode="w+", encoding="utf-8", errors="replace")
+    # --print-logs streams OpenCode's log to stderr; on the free-model limit it would otherwise retry
+    # silently until the runner's timeout, so stop at the first limit message and report it.
+    proc = subprocess.Popen(
+        [opencode, "run", "--print-logs", "-m", args.model, prompt],
         # OpenCode reads $PWD, not the OS cwd: without this it works in the caller's directory.
-        cwd=workdir, env={**os.environ, "PWD": str(workdir)}, capture_output=True, text=True, encoding="utf-8", errors="replace", check=False,
+        cwd=workdir, env={**os.environ, "PWD": str(workdir)}, stdout=reply, stderr=subprocess.PIPE, text=True, encoding="utf-8", errors="replace",
     )
-    print(result.stdout)
-    if not result.stdout.strip():
-        # Seen when several free-model runs share one OpenCode install concurrently: run cases serially.
-        print("[adapter] empty reply from opencode; stderr tail:\n" + result.stderr[-800:])
+    stderr_tail: list[str] = []
+    harness_error = None
+    for line in proc.stderr:
+        stderr_tail = (stderr_tail + [line])[-20:]
+        if LIMIT_MESSAGE in line:
+            harness_error = f"OpenCode {LIMIT_MESSAGE.lower()} for {args.model}"
+            proc.kill()
+            break
+    returncode = proc.wait()
+    reply.seek(0)
+    stdout = reply.read()
+    if harness_error:
+        print(f"[adapter] HARNESS ERROR: {harness_error}; not a skill result. Retry after the limit resets.")
+        returncode = HARNESS_ERROR_EXIT
+    else:
+        print(stdout)
+        if not stdout.strip():
+            # Seen when several free-model runs share one OpenCode install concurrently: run cases serially.
+            print("[adapter] empty reply from opencode; stderr tail:\n" + "".join(stderr_tail)[-800:])
     files = [p.relative_to(workdir).as_posix() for p in sorted(workdir.rglob("*")) if p.is_file() and before.get(p) != p.read_bytes() and not {".opencode", ".git"} & set(p.parts)]
     print("\n--- files created or changed by the agent ---\n" + ("\n".join(files) if files else "(none)"))
     print(f"--- scratch dir: {workdir}")
     if not args.keep:
         shutil.rmtree(workdir, ignore_errors=True)
-    return result.returncode
+    return returncode
 
 
 if __name__ == "__main__":
