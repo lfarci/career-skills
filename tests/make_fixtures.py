@@ -2,7 +2,10 @@
 import json, shutil
 from pathlib import Path
 F = Path(__file__).resolve().parent / "fixtures"
-if F.exists(): shutil.rmtree(F)
+KEEP = F / "setup-pdf-linkedin-conflicts" / "sources"  # committed binary sources (synthetic PDF and zip)
+for d in (F.iterdir() if F.exists() else []):
+    if d.is_dir() and d != KEEP.parent:
+        shutil.rmtree(d)
 def w(case, rel, text):
     p = F / case / rel; p.parent.mkdir(parents=True, exist_ok=True); p.write_text(text.strip() + "\n", encoding="utf-8")
 
@@ -187,7 +190,7 @@ w(c,"career/brand/identity.md","# Visual identity\nStatus: approved a-v2 (logo o
 
 c="setup-pdf-linkedin-conflicts"
 for n in ("resume-2025.pdf","linkedin-export.zip"):
-    p=F/c/"sources"/n; p.parent.mkdir(parents=True,exist_ok=True); shutil.copy(f"/tmp/e7/sources/{n}",p)
+    assert (F/c/"sources"/n).is_file(), f"committed binary fixture missing: {n}"
 
 c="design-approve-stages-exact-version"
 base(c, extra_readme="- [Visual identity](brand/identity.md)")
