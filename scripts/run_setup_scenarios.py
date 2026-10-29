@@ -41,34 +41,28 @@ SEED_README = (
 SEED_ROLE = "# Experience\n\n## ExampleCo, Software Engineer\n- Jan 2024 to Dec 2025\n"
 
 
-def prepare(workdir: Path, scenario: str, spec: h.Harness) -> None:
-    """Install the skill and seed scenario files."""
-    h.install_skills(workdir, spec, {SKILL.name})
+def run(name: str, binary: str, scenario: str, model: str | None, timeout: int,
+        follow_ups: list[str]) -> int:
+    """Run one scenario (plus follow-up turns) and print its observable result."""
+    workdir = h.make_scratch(name, skills={SKILL.name})
     if scenario == "3":
         root = workdir / "career-skill-resume"
         (root / "profile").mkdir(parents=True)
         (root / "README.md").write_text(SEED_README, encoding="utf-8")
         (root / "profile" / "experience.md").write_text(SEED_ROLE, encoding="utf-8")
-
-
-def run(spec: h.Harness, binary: str, scenario: str, model: str | None, timeout: int,
-        follow_ups: list[str]) -> int:
-    """Run one scenario (plus follow-up turns) and print its observable result."""
-    workdir = h.make_scratch(f"setup-scenario-{scenario}-")
-    prepare(workdir, scenario, spec)
-    env = h.agent_env(spec, workdir)
+    env = h.agent_env(name, workdir)
     code = 0
     for turn, prompt in enumerate([PROMPTS[scenario], *follow_ups]):
-        argv = h.build_command(spec, binary, prompt, model, resume=turn > 0)
+        argv = h.build_command(name, binary, prompt, model, resume=turn > 0)
         stdout, stderr, code = h.run_agent(argv, workdir, env, timeout)
         reply = stdout + stderr if code else stdout
-        print(f"### scenario {scenario} · turn {turn + 1} · {spec.name} {model or ''} · {workdir}")
+        print(f"### scenario {scenario} · turn {turn + 1} · {name} {model or ''} · {workdir}")
         print("\n".join(line for line in reply.splitlines() if line.strip())[-1500:])
         if code:
             break
+    skip = {".git", h.HARNESSES[name].split("/")[0]}
     for path in sorted(workdir.rglob("*")):
-        parts = set(path.relative_to(workdir).parts)
-        if path.is_file() and not {".git", spec.skills_dir.split("/")[0]} & parts:
+        if path.is_file() and not skip & set(path.relative_to(workdir).parts):
             print(f"  file: {path.relative_to(workdir).as_posix()} ({path.stat().st_size} B)")
     return code
 
@@ -83,24 +77,19 @@ def main(argv: list[str] | None = None) -> int:
                         help="further user turn in the same session (repeatable)")
     parser.add_argument("--timeout", type=int, default=300)
     args = parser.parse_args(argv)
-    spec = h.get(args.harness)
-    binary = h.find_binary(spec)
-    if binary is None:
-        print(f"HARNESS ERROR: {spec.name} not installed/authenticated ({spec.binary} not on PATH)")
-        return h.HARNESS_ERROR_EXIT
     worst = 0
-    for scenario in args.scenario:
-        try:
-            code = run(spec, binary, scenario, args.model, args.timeout, args.follow_up)
-        except h.HarnessError as exc:
-            print(f"HARNESS ERROR: {spec.name} not installed/authenticated: {exc}")
-            return h.HARNESS_ERROR_EXIT
-        if code == h.HARNESS_ERROR_EXIT:
-            print(f"HARNESS ERROR: {spec.name} quota/credit limit; rerun with another --harness or --model.")
-            return code
-        worst = worst or code
+    try:
+        binary = h.find_binary(args.harness)
+        for scenario in args.scenario:
+            code = run(args.harness, binary, scenario, args.model, args.timeout, args.follow_up)
+            if code == h.HARNESS_ERROR_EXIT:
+                print(f"HARNESS ERROR: {args.harness} quota/credit limit; rerun with another --harness or --model.")
+                return code
+            worst = worst or code
+    except h.HarnessError as exc:
+        print(f"HARNESS ERROR: {exc}")
+        return h.HARNESS_ERROR_EXIT
     return worst
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
