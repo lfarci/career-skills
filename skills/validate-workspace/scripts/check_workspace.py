@@ -81,6 +81,8 @@ def check_index(root: Path, index: Path, report: Report) -> None:
     for home in HOMES:
         for md in sorted((root / home).rglob("*.md")) if (root / home).is_dir() else []:
             report.records += 1
+            if not md.read_text(encoding="utf-8", errors="replace").strip():
+                report.errors.append(f"{md.relative_to(root).as_posix()}: empty record; delete it or add content")
             if md.resolve() not in linked:
                 report.warnings.append(f"{md.relative_to(root).as_posix()}: record not linked from README.md")
     progress = section(text, "Setup progress")

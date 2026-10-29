@@ -57,6 +57,11 @@ class CheckWorkspaceTest(unittest.TestCase):
         self.assertTrue(any("Captured facts" in e for e in report.errors))
         self.assertEqual(report.status, "needs repair")
 
+    def test_empty_record_is_error(self) -> None:
+        (self.root / "profile" / "skills.md").write_text("", encoding="utf-8")
+        self.write_index("## Records\n- [E](profile/experience.md)\n- [S](profile/skills.md)\n")
+        self.assertTrue(any("profile/skills.md: empty record" in e for e in self.cw.check(self.root).errors))
+
     def test_invalid_status(self) -> None:
         self.write_index("## Records\n- [E](profile/experience.md)\n## Setup progress\nStatus: done\n")
         self.assertTrue(self.cw.check(self.root).errors)
