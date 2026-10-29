@@ -82,3 +82,4 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: A rule placed in a later section (`## Resume`) loses to the step the agent is executing; put stop-and-ask gates inside the step that routes to them. "Resume setup" is not approval to restructure.
 - 2026-10-29: A fixed record header (Status/Checked/Source) in a references/ template made a free model's research records uniform on the first try; prefer templates over scripts until drift is shown.
 - 2026-10-29: Without an explicit tool boundary, find-jobs scripted curl over 20 listing pages; say "host web tools, one page at a time".
+- 2026-10-29: Weak free models (nemotron-lightning, flint) fail on harness behaviour (sub-agents wandering, out-of-dir writes), not skill wording. Record them in tests/SETUP-SCENARIOS.md; fix only what a host-neutral rule or a checker catches (e.g. empty records).

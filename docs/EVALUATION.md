@@ -56,4 +56,4 @@ Setup regression tests from a real OpenCode session cover Git's deleted legacy p
 
 **Guided onboarding lifecycle:** Test that `setup-career-skills` asks about existing sources at the outset, maintains a concise captured/missing/deferred checkpoint after a first successful import and offers a focused next question, and resumes from that checkpoint without repeating the interview. An index-only request is a valid explicit shortcut. A successful `patch` and link check do **not** prove the guided session is finished. Live-agent testing requires multi-turn observation; mock-runner tests verify only scenario packaging and plumbing.
 
-For faster real-agent iteration on setup, use the [two-turn guided-setup smoke](../tests/SETUP-QUICK-SMOKE.md) in a disposable workspace. It tests the opening question and the post-first-batch continuation before attempting a full migration. This is a manual live test; CI does not execute an independent agent.
+For setup changes, run the three [live setup scenarios](../tests/SETUP-SCENARIOS.md) with `scripts/run_setup_scenarios.py`; results are recorded in that file.

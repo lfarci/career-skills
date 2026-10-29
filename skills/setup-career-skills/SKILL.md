@@ -47,7 +47,7 @@ Contact details (e-mail, phone, address) stay in their source unless the user as
 6. **Verify.** When Python 3 can run, run `python3 scripts/check_workspace.py <root>` from this skill's folder (add `--json` for structured output); exit code 0 means usable, 1 lists errors to fix, warnings name unlinked records. Otherwise re-read or list every written file and check the index links resolve by reading. A write counts only after this check. Without a working write or read tool, report the blocker and offer the content as a proposal.
 7. **Ask the next question.** Summarize verified files and gaps, then ask one useful question in plain text, such as an unimported source, a missing role, or an assignment worth a project record. The first batch rarely completes onboarding: continue batch by batch until the user says the scope is enough or pauses, then set the status.
 
-When you cannot obtain the user's answer (a question tool fails or the session ends), stop and put the pending question in your final reply. A next decision saved in the index is a pending question, never permission to pick an answer.
+When you cannot obtain the user's answer (a question tool fails or the session ends), stop and put the pending question in your final reply. A next decision saved in the index is a pending question, never permission to pick an answer: ask it with its saved wording and change it only after the user answers.
 
 ## Resume
 
