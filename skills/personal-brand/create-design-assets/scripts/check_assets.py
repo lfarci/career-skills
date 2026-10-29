@@ -6,6 +6,8 @@ Contract (relative to the workspace root):
     assets/drafts/<kind>/previews/<concept>-v<n>-<size>.<ext>
     assets/staged/<kind>/<concept>-v<n>[-<variant>].<ext>
 and every draft or staged master is linked from brand/identity.md.
+Kinds owned by other skills (assets/<drafts|staged>/resumes/ from build-resume)
+are skipped.
 
 Standard library only; works on Windows, macOS and Linux.
 
@@ -25,12 +27,15 @@ from pathlib import Path
 VISUAL = {".svg", ".png", ".jpg", ".jpeg", ".webp", ".pdf"}
 MASTER = re.compile(r"^[a-z0-9]+-v\d+(-[a-z0-9]+)*\.[a-z0-9]+$")
 PREVIEW = re.compile(r"^[a-z0-9]+-v\d+-[a-z0-9]+\.[a-z0-9]+$")
+OTHER_KINDS = {"resumes"}  # written by build-resume; not design assets
 SCRATCH = {".html", ".htm", ".js", ".py", ".sh", ".tmp", ".log"}
 
 
 def classify(rel: Path) -> str | None:
     """Return an error message for a file under assets/, or None when it follows the contract."""
     parts = rel.parts
+    if len(parts) > 3 and parts[1] in {"drafts", "staged"} and parts[2] in OTHER_KINDS:
+        return None
     if rel.suffix.lower() in SCRATCH:
         return f"{rel.as_posix()}: scratch/render file; keep helpers outside the workspace"
     if rel.suffix.lower() not in VISUAL:
@@ -57,7 +62,8 @@ def check(root: Path) -> dict[str, list[str]]:
         problem = classify(rel)
         if problem:
             errors.append(problem)
-        elif rel.suffix.lower() in VISUAL and "previews" not in rel.parts:
+        elif (rel.suffix.lower() in VISUAL and "previews" not in rel.parts
+              and not (len(rel.parts) > 3 and rel.parts[2] in OTHER_KINDS)):
             masters.append(rel)
     if masters and not identity.is_file():
         errors.append("brand/identity.md: missing; add a 'Status: pending' entry linking the drafts")
