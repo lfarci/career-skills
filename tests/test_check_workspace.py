@@ -51,6 +51,12 @@ class CheckWorkspaceTest(unittest.TestCase):
         self.assertTrue(any("broken link -> projects/x.md" in e for e in report.errors))
         self.assertTrue(any("profile/experience.md: record not linked" in w for w in report.warnings))
 
+    def test_facts_in_index_needs_repair(self) -> None:
+        self.write_index("# W\n## Captured facts\n### Education\n- MSc 2020\n## Next decision\nWhat next?\n")
+        report = self.cw.check(self.root)
+        self.assertTrue(any("Captured facts" in e for e in report.errors))
+        self.assertEqual(report.status, "needs repair")
+
     def test_invalid_status(self) -> None:
         self.write_index("## Records\n- [E](profile/experience.md)\n## Setup progress\nStatus: done\n")
         self.assertTrue(self.cw.check(self.root).errors)
