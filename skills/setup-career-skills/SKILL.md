@@ -19,7 +19,7 @@ Every imported fact goes into a canonical record, never into the index. Create a
 <!-- record-map -->
 | Fact | Record |
 | --- | --- |
-| Name and contact details the user chose to import (name, e-mail, phone, public links) | `profile/contact.md` |
+| Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/contact.md` |
 | Employers, titles/grades, dates, internships | `profile/experience.md` |
 | Degrees and schools | `profile/education.md` |
 | Certifications, licences, awards | `profile/qualifications.md` |
@@ -29,7 +29,7 @@ Every imported fact goes into a canonical record, never into the index. Create a
 | Location, work mode, commute, contract, salary preferences | `profile/preferences.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
-| Public surfaces to target (URL, audience, purpose, emphasis) | `brand/surfaces.md` |
+| Every public surface: URL, purpose, why targeted, emphasis (may repeat links from contact.md) | `brand/surfaces.md` |
 | Reusable resumes, bios, banners | `assets/drafts/` or `assets/staged/` (approved) |
 | Saved companies, job ads, comparator profiles | `research/` |
 <!-- /record-map -->
