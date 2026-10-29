@@ -8,8 +8,8 @@ Use ordinary Markdown and links in user-selected private storage: local files, a
 | --- | --- | --- |
 | profile/ | Background, capabilities, aspirations, preferences and development | reflect, maintain-profile, plan-development |
 | projects/ | Career-oriented project records and links to actual work | maintain-profile; other skills consume selected project evidence |
-| brand/ | Positioning, audiences, messaging principles, design briefs and visual rules | personal-brand, define-design-brief, create-design-assets, review-design |
-| assets/ | Reusable external-facing outputs, drafts, approved staged material and surface descriptions | personal-brand, build-resume, design skills, audits |
+| brand/ | Positioning, target surfaces, visual identity (brief, design system, brand tokens) | personal-brand, visual-identity, audit |
+| assets/ | Reusable external-facing outputs: copy, visuals and resumes, as drafts and approved staged material | personal-brand, visual-identity, build-resume, audit |
 | research/ | User-selected company, opportunity and comparator references; archived research | find-companies, find-jobs |
 
 Profile grounds brand and growth decisions; projects can supply evidence. Brand guides assets. Selected research informs market understanding, targeting, presentation and development. Research about someone else never proves a personal capability. A project is not automatically evidence: link the repository, outcome or feedback supporting a particular claim.
@@ -52,11 +52,11 @@ career/
     project-name.md
   brand/
     positioning.md
+    surfaces.md
     identity.md
   assets/
     drafts/
     staged/
-    services.md
   research/
     companies/
     opportunities/
@@ -79,6 +79,7 @@ career/
 | Location, work mode, commute, contract, salary preferences | `profile/preferences.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
+| Public surfaces to target (URL, audience, purpose, emphasis) | `brand/surfaces.md` |
 | Reusable resumes, bios, banners | `assets/drafts/` or `assets/staged/` (approved) |
 | Saved companies, job ads, comparator profiles | `research/` |
 <!-- /record-map -->
@@ -88,7 +89,7 @@ Unused homes can remain documented in `career/README.md` until populated. Create
 ## Brand tokens
 
 <!-- brand-tokens -->
-Resume and document styling reads one fenced block in `brand/identity.md`. Visual-identity skills write it; `build-resume` reads it. One `key: value` per line; omit keys you have not decided.
+Resume and document styling reads one fenced block in `brand/identity.md`. `visual-identity` writes it; `build-resume` reads it. One `key: value` per line; omit keys you have not decided.
 
 ```brand-tokens
 status: approved          # approved | pending; pending tokens are not applied without the user's say-so
@@ -119,7 +120,7 @@ brand/ contains guidance, not a second asset library. identity.md can describe f
 
 ## Adopt and migrate an existing career tree
 
-If the user requests **physical alignment**, compare their current tree with the standard root. For example, `career/personal-projects/` may map to `career/projects/`, `career/personal-brand/` to `career/brand/` and `career/services.md` to `career/assets/services.md`. These are **candidate changes**, never automatic renames.
+If the user requests **physical alignment**, compare their current tree with the standard root. For example, `career/personal-projects/` may map to `career/projects/`, `career/personal-brand/` to `career/brand/` and `career/services.md` (a list of public profiles) to `career/brand/surfaces.md`. These are **candidate changes**, never automatic renames.
 
 For a selected migration, inventory affected files, collisions, inbound/outbound links **across the accessible repository** and source ownership. A condensed import is not automatically a lossless replacement: preserve source evidence and links needed by the new records. Produce a proposed path map, preserve Git history where practical, update references and verify both workspace links and links from elsewhere after approved writes; explicitly report inaccessible scope. Keep any unsupported or conflicting data in its original source until the user decides. Changes to factual content or public platforms are separate tasks.
 
@@ -129,7 +130,7 @@ An existing custom layout can remain **operational** through its index even befo
 
 - drafts/ contains proposed text and visual work; staged/ contains the latest explicitly approved reusable versions. Neither proves publication. Preserve meaningful option/revision history without a mandatory final/ directory.
 - Organize by content/use (bios, headlines, resumes, logos, banners) only when needed. Reuse a shared bio or headline across surfaces; create separate adaptations only for intentional differences. Link rather than duplicate common content or visual masters.
-- services.md describes each external surface: service and account/name, URL or source repository, purpose/audience, staged asset references, available ways to inspect/update it, access limitations and relevant permissions. Split into per-service records if useful; do not assume APIs, scraping or automation work.
+- brand/surfaces.md (owned by personal-brand) lists each public presence tied to the profile: URL, audience, why it is targeted, what to emphasise, linked copy, status and last-reviewed date. `audit` reads it. A legacy `assets/services.md` is a source to import. Do not assume APIs, scraping or automation work.
 - Live surfaces establish actual published state; the profile establishes supported personal facts and intentions. Source code can help inspect a website but does not prove what is deployed. A staged asset is not a published snapshot.
 - Compare accessible live content, or user-provided exports/pasted text, with the relevant staged material. State source and inspection date/limits; do not require a historical snapshot store. If there is a difference, ask whether to update the workspace, the external surface or leave an intentional adaptation. Do not guess which side changed.
 - Flag factual incoherence before importing public edits into the profile. Importing wording does not establish the truth of a new credential, role or achievement. Publication requires the user's authorization; manually copying staged material is a valid workflow.

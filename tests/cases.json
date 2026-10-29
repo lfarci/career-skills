@@ -70,13 +70,13 @@
     },
     {
       "id": "brand-kit-reuse",
-      "skill": "personal-brand",
-      "prompt": "I already have a banner, a simple logo, a few icons, two fonts and three brand colors. Help keep my website, GitHub and LinkedIn consistent without making a full design system.",
+      "skill": "visual-identity",
+      "prompt": "Use visual-identity: I already have a banner, a simple logo, a few icons, two fonts and three brand colors. Record them so my website, GitHub, LinkedIn and resume stay consistent, without a full design system.",
       "expect": [
-        "Finds and reuses existing assets before suggesting new ones",
-        "Produces a compact optional brand-kit reference with source links or paths and approved variants",
-        "Does not create new logos or require a design system",
-        "Allows platform-specific crop and typography adjustments"
+        "Records existing files and values in brand/identity.md before suggesting anything new",
+        "Writes the brand-tokens block as pending and asks to confirm the exact values",
+        "Does not create new logos or require a full design system",
+        "Allows platform-specific crops and font fallbacks"
       ]
     },
     {
@@ -135,7 +135,7 @@
     },
     {
       "id": "identity-existing-brief",
-      "skill": "create-design-assets",
+      "skill": "visual-identity",
       "prompt": "Use this current brief: abstract symbol plus name, fixed shape, colour-independent recognition. The older brief requires an F. I like my current font. Develop three directions for header, favicon, social card and resume.",
       "expect": [
         "Uses current brief and flags historical F as superseded",
@@ -146,7 +146,7 @@
     },
     {
       "id": "identity-no-image-tools",
-      "skill": "create-design-assets",
+      "skill": "visual-identity",
       "prompt": "Refine my selected logo but you cannot inspect images or export vectors. Produce final approved SVG files.",
       "expect": [
         "States inspection and export limitations",
@@ -167,18 +167,18 @@
     },
     {
       "id": "identity-storage-and-package",
-      "skill": "create-design-assets",
+      "skill": "visual-identity",
       "prompt": "Prepare my identity package with a wordmark, favicon and reusable banner. I have not specified where to store it.",
       "expect": [
         "Asks for storage destination before writing user deliverables",
-        "Plans identity.md and discovery.md plus actual required files",
+        "Plans identity.md plus actual required files",
         "Includes a platform-agnostic banner master and only requested size derivatives",
         "Keeps exploration separate from approval and records dimensions"
       ]
     },
     {
       "id": "identity-storage-already-set",
-      "skill": "create-design-assets",
+      "skill": "visual-identity",
       "prompt": "Save my selected identity to the private workspace path I already specified above. I only need a wordmark and favicon.",
       "expect": [
         "Reuses established destination without asking again",
@@ -189,7 +189,7 @@
     },
     {
       "id": "identity-preserve-options-and-revisions",
-      "skill": "create-design-assets",
+      "skill": "visual-identity",
       "prompt": "A/v1, B/v1 and C/v1 exist in my chosen folder. I prefer B/v1 but want B/v2 with softer geometry. Keep A and C available and let me compare before approving. Do not overwrite my approved older identity.",
       "expect": [
         "Creates B/v2 without modifying existing options or approved identity",
@@ -200,7 +200,7 @@
     },
     {
       "id": "brief-no-assumed-direction",
-      "skill": "define-design-brief",
+      "skill": "visual-identity",
       "prompt": "Help me with reusable visuals for my career. Past conversations explored geometric logos and Manrope, but I have not chosen a direction for this task.",
       "expect": [
         "Asks what I want to create or improve before suggesting assets",
@@ -211,7 +211,7 @@
     },
     {
       "id": "brief-explicit-reference",
-      "skill": "define-design-brief",
+      "skill": "visual-identity",
       "prompt": "Continue this supplied brief: a warm editorial LinkedIn banner for recruiters, using my approved wordmark. Only the headline is undecided.",
       "expect": [
         "Reuses explicit current scope and reference",
@@ -221,7 +221,7 @@
     },
     {
       "id": "create-banner-only",
-      "skill": "create-design-assets",
+      "skill": "visual-identity",
       "prompt": "Create a LinkedIn banner from this current brief: welcoming, editorial, for recruiters; headline Software Engineer. No logo requested. Discuss concepts first.",
       "expect": [
         "Discusses relevant concepts before drafting",
@@ -232,7 +232,7 @@
     },
     {
       "id": "review-career-banner",
-      "skill": "review-design",
+      "skill": "visual-identity",
       "prompt": "Review this supplied professional banner against its brief: clear name and role on mobile. The name is clipped in the target crop and the role has low contrast. Do not edit it.",
       "expect": [
         "Inspects supplied rendering before asserting findings",
@@ -243,7 +243,7 @@
     },
     {
       "id": "review-inaccessible",
-      "skill": "review-design",
+      "skill": "visual-identity",
       "prompt": "Review my new logo but you cannot see the file or a rendering.",
       "expect": [
         "Reports inspection limitation",
@@ -529,7 +529,7 @@
       "skill": "ask-career-skills",
       "prompt": "I have a finished first logo draft and a current brief. I only want professional critique before deciding whether to refine it. What's next?",
       "expect": [
-        "Selects review-design rather than restarting design discovery",
+        "Selects visual-identity (review) rather than restarting the brief",
         "Explains the assets and brief needed for critique",
         "Distinguishes reviewing from approving or automatically redesigning",
         "Makes no edits or artifact claims"
@@ -606,7 +606,7 @@
       "skill": "validate-workspace",
       "prompt": "I explicitly want to align my existing private career/ with the Career Skills physical standard. It currently contains career/personal-brand/, career/personal-projects/ and career/services.md. Inventory links and propose moves to the standard locations. Do not edit files until I approve a plan.",
       "expect": [
-        "Identifies standard target homes career/brand/, career/projects/ and career/assets/services.md",
+        "Identifies standard target homes career/brand/, career/projects/ and career/brand/surfaces.md",
         "Inspects relevant content and link dependencies before proposing renames",
         "Produces a migration plan preserving history and checking target path collisions",
         "Does not apply moves or edit factual content before approval"
@@ -772,7 +772,7 @@
       "skill": "personal-brand",
       "prompt": "Use personal-brand to draft my positioning. My workspace is ./career (README.md has Records, Source inventory and Setup progress sections); you may write drafts.",
       "expect": [
-        "Writes brand/positioning.md and drafts under assets/drafts/",
+        "Writes brand/positioning.md and copy drafts under assets/drafts/copy/",
         "Adds links to the new records under Records in career/README.md",
         "Leaves the Setup progress section and its next decision unchanged",
         "Reports its own next decision in the reply"
@@ -802,8 +802,8 @@
     },
     {
       "id": "design-banner-concepts-after-logo-approved",
-      "skill": "create-design-assets",
-      "prompt": "Use create-design-assets: now make my LinkedIn banner using the approved logo. Display name is 'Alex Testa', role line '.NET & Azure Engineer · Brussels'. Workspace ./career, you may write files.",
+      "skill": "visual-identity",
+      "prompt": "Use visual-identity: now make my LinkedIn banner using the approved logo. Display name is 'Alex Testa', role line '.NET & Azure Engineer · Brussels'. Workspace ./career, you may write files.",
       "expect": [
         "Presents two or three banner concepts in words with a recommendation",
         "Writes no banner file before the user selects a concept",
@@ -835,13 +835,34 @@
     },
     {
       "id": "design-approve-stages-exact-version",
-      "skill": "create-design-assets",
+      "skill": "visual-identity",
       "prompt": "I approve logo A/v1 as my final logo. Stage it in ./career.",
       "expect": [
         "Copies exactly assets/drafts/logo/a-v1.svg to assets/staged/logo/a-v1.svg without modifying it",
         "Sets brand/identity.md to approved A/v1 with links to staged and draft files",
         "Keeps other versions and does not publish anything",
         "check_assets.py reports ok"
+      ]
+    },
+    {
+      "id": "brand-surfaces-copy",
+      "skill": "personal-brand",
+      "prompt": "Use personal-brand: workspace ./career has my profile and brand/surfaces.md. Draft my LinkedIn headline and About, and my GitHub profile README. You may write drafts.",
+      "expect": [
+        "Reads profile records and brand/surfaces.md emphasis lines",
+        "Writes assets/drafts/copy/linkedin.md and assets/drafts/copy/github.md with no claim beyond the profile",
+        "Marks single-source claims and does not stage or publish without approval",
+        "Adds no palette, font or banner work"
+      ]
+    },
+    {
+      "id": "identity-existing-palette-to-resume",
+      "skill": "visual-identity",
+      "prompt": "Use visual-identity: my notes in ./career/inbox/brand-note.md list my existing colours and fonts. Record them so my resume uses them. Workspace ./career, you may write.",
+      "expect": [
+        "Writes the brand-tokens block in brand/identity.md with the exact values from the note",
+        "Sets status: pending and asks the user to confirm the shown values before approving",
+        "Does not edit positioning, surfaces or profile records"
       ]
     }
   ]

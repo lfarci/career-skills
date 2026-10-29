@@ -1,7 +1,7 @@
 # Brand tokens
 
 <!-- brand-tokens -->
-Resume and document styling reads one fenced block in `brand/identity.md`. Visual-identity skills write it; `build-resume` reads it. One `key: value` per line; omit keys you have not decided.
+Resume and document styling reads one fenced block in `brand/identity.md`. `visual-identity` writes it; `build-resume` reads it. One `key: value` per line; omit keys you have not decided.
 
 ```brand-tokens
 status: approved          # approved | pending; pending tokens are not applied without the user's say-so

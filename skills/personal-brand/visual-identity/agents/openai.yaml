@@ -1,0 +1,6 @@
+interface:
+  display_name: "Visual Identity"
+  short_description: "Design system, logo and banners for your professional identity"
+  default_prompt: "Use $visual-identity for my professional visual identity."
+policy:
+  allow_implicit_invocation: false

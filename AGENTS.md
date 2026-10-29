@@ -4,7 +4,7 @@ Public repo of small [Agent Skills](https://agentskills.io/) that help one perso
 
 ## Mental model
 
-The workspace has an **index** (`career/README.md`: links, source inventory, setup progress) and **canonical records** in five homes: `profile/` (facts, direction, preferences, development), `projects/` (assignments and side projects), `brand/` (positioning, visual guidance), `assets/` (drafts and approved reusable outputs), `research/` (saved companies, jobs, comparators). The index points; records hold facts. Details: [docs/WORKSPACE.md](docs/WORKSPACE.md).
+The workspace has an **index** (`career/README.md`: links, source inventory, setup progress) and **canonical records** in five homes: `profile/` (facts, direction, preferences, development), `projects/` (assignments and side projects), `brand/` (positioning, surfaces, visual identity), `assets/` (drafts and approved reusable outputs), `research/` (saved companies, jobs, comparators). The index points; records hold facts. Details: [docs/WORKSPACE.md](docs/WORKSPACE.md).
 
 Skill groups under `skills/`, each owning one question:
 
@@ -12,7 +12,7 @@ Skill groups under `skills/`, each owning one question:
 - `career-evidence/`: what have I demonstrated? (`maintain-profile` owns facts.)
 - `career-direction/`: what do I want? (`reflect`)
 - `career-development/`: how do I grow? (`plan-development`: create or review a plan)
-- `personal-brand/`: how do I present myself? (positioning, design brief → assets → review, audits)
+- `personal-brand/`: how do I present myself? (`personal-brand`: positioning, surfaces, public copy; `visual-identity`: design system and assets; `audit`: live surfaces)
 - `job-hunt/`: how do I get there? (`build-resume`, `find-companies`, `find-jobs`)
 - `ask-career-skills` (router: recommends, never runs) and `validate-workspace` (structural repair) are top-level helpers.
 
@@ -23,7 +23,7 @@ Groups are folders, not skills. Every leaf installs and runs alone.
 Aim for a stable MVP: fewer, rock-solid skills over richness. Simplify or remove a skill when it adds little.
 
 1. **Workspace creation and profile import**: `setup-career-skills`, `maintain-profile`, `validate-workspace`, and the `career/` contracts (record map, index, paths).
-2. **Visual identity**: `personal-brand`, `define-design-brief`, `create-design-assets`, `review-design`.
+2. **Brand**: `personal-brand` (what to show, where, in which words), `visual-identity` (how it looks).
 3. **Opportunities**: `find-companies`, `find-jobs`, `build-resume`.
 
 Secondary: `audit`, `plan-development`, `reflect` (kept: sole owner of profile/direction.md, which brand and job search consume), `ask-career-skills` (kept: router for the manual skills, zero context load). Removed for the MVP: `benchmark-profile`, `review-research`, `review-progress` (merged); re-add only with a demonstrated need.
@@ -77,7 +77,7 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: Loading a module with `importlib` for tests requires registering it in `sys.modules` before `exec_module` when it defines dataclasses.
 - 2026-10-29: Every file-producing skill needs a naming contract plus a check; without one a single session mixed `option-a_v1` and `at-a-v1` names and left render helpers in assets/.
 - 2026-10-29: Free test models are often text-only; visual skills need an explicit can't-see-images branch or they burn the turn on improvised pixel analysis.
-- 2026-10-29: Cut to 14 skills for the MVP; a removed skill's durable rules (e.g. research retention) stay in docs/WORKSPACE.md so nothing is lost.
+- 2026-10-29: Cut to 14 skills (12 since #99) for the MVP; a removed skill's durable rules (e.g. research retention) stay in docs/WORKSPACE.md so nothing is lost.
 - 2026-10-29: Web-search skills need an explicit stopping rule; without one find-jobs retried blocked sites (403/429) until timeout. With it, the run finished in ~2 min with 2 verified roles.
 - 2026-10-29: A rule placed in a later section (`## Resume`) loses to the step the agent is executing; put stop-and-ask gates inside the step that routes to them. "Resume setup" is not approval to restructure.
 - 2026-10-29: A fixed record header (Status/Checked/Source) in a references/ template made a free model's research records uniform on the first try; prefer templates over scripts until drift is shown.
@@ -103,3 +103,5 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-29: A shared folder needs per-kind owners in every checker: create-design-assets' `check_assets.py` flagged build-resume's `assets/drafts/resumes/*/resume.pdf` as a misnamed logo (#83). A file contract with one writer (brand-tokens) misses other paths to the same data: personal-brand's brand kit stored palette and fonts in a free table, so resumes stayed unbranded (#85). Scripts must treat absent optional homes as empty: `search_jobs.py --career` exited 2 on a fresh workspace without research/ (#84).
 - 2026-10-29: The setup runner hardcoded `opencode run` with the free big-pickle model, so tests stalled when that plan ran out. Engines are now a `--harness copilot|codex|opencode` choice (default Copilot) plus `--model`; OpenCode can use any logged-in provider (`github-copilot/<m>`). A quota or missing login exits 75 `HARNESS ERROR`; rerun on another harness, never count it as a skill result (#93).
 - 2026-10-29: Live check of #88 on Copilot: personal-brand recorded exact palette and fonts from a note but set `status: approved` right away, reading "my existing identity" as confirmation. Tokens from a file now start `pending` until the user confirms the shown values; build-resume then applied the colours and embedded Lato, falling back with a warning for variable-only Montserrat.
+- 2026-10-29: Split the brand area by question, not by stage: `personal-brand` = what to show, where, in which words (positioning, `brand/surfaces.md`, copy); `visual-identity` = how it looks (brief, design system, assets, review merged from three skills sharing one record and approval flow). Surfaces became a record, not a skill: inventory is a content decision and checking is `audit` (#99).
+- 2026-10-29: Live check of #99 on Copilot: personal-brand drafted LinkedIn + GitHub copy from profile + surfaces.md, marked single-source claims and staged nothing; visual-identity recorded a note's palette as pending, approved it on "confirmed", and build-resume embedded Lato with the navy/orange tokens. About 10–18 credits per prompt with workspace reads.

@@ -1,4 +1,4 @@
-"""Tests for create-design-assets/scripts/check_assets.py."""
+"""Tests for visual-identity/scripts/check_assets.py."""
 from __future__ import annotations
 
 import importlib.util
@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-SCRIPT = Path(__file__).resolve().parents[1] / "skills" / "personal-brand" / "create-design-assets" / "scripts" / "check_assets.py"
+SCRIPT = Path(__file__).resolve().parents[1] / "skills" / "personal-brand" / "visual-identity" / "scripts" / "check_assets.py"
 
 
 def load():

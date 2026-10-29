@@ -1,6 +1,0 @@
-interface:
-  display_name: "Create Design Assets"
-  short_description: "Create reusable visuals for your professional identity"
-  default_prompt: "Use $create-design-assets for my professional visual identity."
-policy:
-  allow_implicit_invocation: false
