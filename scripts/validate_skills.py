@@ -95,6 +95,14 @@ def main() -> int:
         copy = rule.search(packages[required].read_text(encoding="utf-8")) if required in packages else None
         if not copy or not canonical_rule or copy.group(1) != canonical_rule.group(1):
             errors.append(f"{required}: repair rule missing or differs from docs/WORKSPACE.md")
+    tokens_block = re.compile(r"<!-- brand-tokens -->\n(.*?)<!-- /brand-tokens -->", re.DOTALL)
+    canonical_tokens = tokens_block.search((ROOT / "docs" / "WORKSPACE.md").read_text(encoding="utf-8"))
+    for rel in ("personal-brand/create-design-assets/references/asset-structure.md",
+                "job-hunt/build-resume/references/brand-tokens.md"):
+        target = SKILLS / rel
+        copy = tokens_block.search(target.read_text(encoding="utf-8")) if target.is_file() else None
+        if not copy or not canonical_tokens or copy.group(1) != canonical_tokens.group(1):
+            errors.append(f"{rel}: brand-tokens block missing or differs from docs/WORKSPACE.md")
     for required in ("setup-career-skills", "maintain-profile"):
         if required in packages and not marker.search(packages[required].read_text(encoding="utf-8")):
             errors.append(f"{required}: missing record-map block")

@@ -47,6 +47,17 @@
       ]
     },
     {
+      "id": "resume-pdf-brand-tokens",
+      "skill": "build-resume",
+      "prompt": "Build my resume PDF in my brand. brand/identity.md has a brand-tokens block with status: pending.",
+      "expect": [
+        "Passes --brand to build_resume.py",
+        "Does not apply pending tokens without asking",
+        "Reports the brand field and font or colour warnings",
+        "Never edits or approves the tokens"
+      ]
+    },
+    {
       "id": "brand-valid-variation",
       "skill": "personal-brand",
       "prompt": "My website says Software Engineer; my resume says Software & Cloud Engineer. Help me align my brand.",
