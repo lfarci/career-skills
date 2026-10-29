@@ -865,6 +865,16 @@
         "Changes no file in this turn",
         "After approval, README.md becomes index-only and the checker reports usable"
       ]
+    },
+    {
+      "id": "design-banner-concepts-after-logo-approved",
+      "skill": "create-design-assets",
+      "prompt": "Use create-design-assets: now make my LinkedIn banner using the approved logo. Display name is 'Alex Testa', role line '.NET & Azure Engineer · Brussels'. Workspace ./career, you may write files.",
+      "expect": [
+        "Presents two or three banner concepts in words with a recommendation",
+        "Writes no banner file before the user selects a concept",
+        "Reuses the approved logo file without redrawing it once drafting starts"
+      ]
     }
   ]
 }
