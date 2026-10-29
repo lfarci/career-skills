@@ -98,7 +98,8 @@ def main() -> int:
     tokens_block = re.compile(r"<!-- brand-tokens -->\n(.*?)<!-- /brand-tokens -->", re.DOTALL)
     canonical_tokens = tokens_block.search((ROOT / "docs" / "WORKSPACE.md").read_text(encoding="utf-8"))
     for rel in ("personal-brand/create-design-assets/references/asset-structure.md",
-                "job-hunt/build-resume/references/brand-tokens.md"):
+                "job-hunt/build-resume/references/brand-tokens.md",
+                "personal-brand/personal-brand/references/brand-kit.md"):
         target = SKILLS / rel
         copy = tokens_block.search(target.read_text(encoding="utf-8")) if target.is_file() else None
         if not copy or not canonical_tokens or copy.group(1) != canonical_tokens.group(1):

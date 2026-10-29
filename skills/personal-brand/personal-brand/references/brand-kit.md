@@ -4,7 +4,7 @@ Read this only when a user asks about reusable visual identity or when visual co
 
 ## Suggested one-page inventory
 
-A Markdown table or short list is enough; fields may be omitted when unknown.
+Keep the kit in `brand/identity.md` (create it when needed). A Markdown table or short list is enough; fields may be omitted when unknown.
 
 | Element | Approved asset or value | Intended uses / variants | Source location |
 | --- | --- | --- | --- |
@@ -15,6 +15,26 @@ A Markdown table or short list is enough; fields may be omitted when unknown.
 | Fonts | Family names and safe fallbacks | Heading and body, when platform permits | License/source reference |
 
 Avoid collecting the raw assets or font binaries in this public repository. Preserve their provenance and license if known. If there is no established visual identity, document existing choices and suggest at most a few practical improvements rather than inventing a large brand system.
+
+## Palette and fonts for resumes and documents
+
+When the user has a palette or fonts (existing or newly agreed), also record them in `brand/identity.md` as the shared brand-tokens block so `build-resume` can apply them. Use `status: approved` only after the user confirms these exact values; otherwise `pending`.
+
+<!-- brand-tokens -->
+Resume and document styling reads one fenced block in `brand/identity.md`. Visual-identity skills write it; `build-resume` reads it. One `key: value` per line; omit keys you have not decided.
+
+```brand-tokens
+status: approved          # approved | pending; pending tokens are not applied without the user's say-so
+primary: #0F766E          # headings and section bars (contrast >= 3:1 on white)
+accent: #B45309           # headline and highlights (contrast >= 3:1 on white)
+text: #1F2937             # body text (contrast >= 4.5:1 on white)
+muted: #4B5563            # dates, locations, secondary text (contrast >= 4.5:1 on white)
+heading-font: Manrope     # installed font family name; licence link in prose below the block
+body-font: Source Sans 3
+```
+
+Colours are `#RRGGBB`. Write the block with `status: pending` while concepts are drafts and switch to `approved` only when the user approves the palette and fonts. Values that fail the format or contrast rule are ignored with a warning, and the neutral default is used.
+<!-- /brand-tokens -->
 
 ## Applying it
 

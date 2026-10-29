@@ -10,7 +10,7 @@ Define the selected public professional narrative and reusable wording for diffe
 ## Contract
 - **Input:** Selected profile/ facts and goals, project evidence, brand/ guidance and assets/services.md.
 - **Scope:** Define positioning and audience-specific messaging; do not change source facts or research a competing company list.
-- **Output:** brand/positioning.md for guidance; reusable text in assets/drafts/, promoted to assets/staged/ only after approval.
+- **Output:** brand/positioning.md for guidance; reusable text in assets/drafts/, promoted to assets/staged/ only after approval; brand kit and brand-tokens in brand/identity.md when visual identity is in scope.
 
 ## Steps
 
@@ -19,7 +19,7 @@ Define the selected public professional narrative and reusable wording for diffe
 3. Draft a concise core positioning and evidence-backed differentiators. Explain any proposed change to established messaging; surface competing positioning choices for human judgment.
 4. Maintain a canonical public messaging document (or existing equivalent) with reusable short/long bios, headlines, introductions and project descriptions as scoped. Link surface-specific adaptations to their source and intended audience; do not duplicate private records or invent claims. Use claims the records mark user-confirmed or that two sources agree on; mark single-source or conflicting claims in the draft and ask about them before staging. Keep each title tied to its employer and dates, never credited to another role. A blanket "approve whatever you draft" covers wording, not unverified claims.
 5. Define the distinct purpose of each surface. Different headlines and appropriately sized or cropped graphics can communicate one consistent identity.
-6. When visual consistency matters, maintain or propose a **small optional brand kit** that points to reusable approved banners, logos, icons, palette colors and fonts. Read [the lightweight brand-kit guide](references/brand-kit.md) only for this branch. Recommend or create new assets only when needed and requested; avoid mandatory design systems.
+6. When visual consistency matters, maintain or propose a **small optional brand kit** that points to reusable approved banners, logos, icons, palette colors and fonts. Read [the lightweight brand-kit guide](references/brand-kit.md) only for this branch; it keeps the kit in `brand/identity.md` with the brand-tokens block that `build-resume` reads. Recommend or create new assets only when needed and requested; avoid mandatory design systems.
    Keep original visual design in its separate discovery, creation or review workflow when requested; this skill owns positioning.
 7. Determine which assets merit an individual audit or a full cross-asset alignment audit. Use `audit` when available, but remain independently functional if they are not installed.
 8. Produce prioritized recommendations or reviewable proposed edits. Never claim a platform has changed until the modification is confirmed, and ask before public publishing.
