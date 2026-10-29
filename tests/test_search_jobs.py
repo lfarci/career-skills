@@ -115,6 +115,12 @@ class SearchJobsTest(unittest.TestCase):
         self.assertEqual(data["errors"], ["workable:blocked: HTTP 403"])
         self.assertEqual(sum("blocked" in c for c in self.calls), 1, "blocked source must not be retried")
 
+    def test_fresh_workspace_without_research(self) -> None:
+        code, out = self.run_main("--career", str(self.root), "--feeds", "--json")
+        self.assertNotEqual(code, 2)
+        self.assertIn("jobs", json.loads(out))
+        self.assertEqual(self.run_main("--career", str(self.root))[0], 2, "no source at all is still bad input")
+
     def test_seen_file_marks_new(self) -> None:
         seen = self.root / "seen.json"
         args = ("--board", "recruitee:acme", "--seen", str(seen), "--only-new", "--update-seen", "--json")

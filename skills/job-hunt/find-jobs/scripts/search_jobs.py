@@ -436,10 +436,13 @@ def main(argv: list[str] | None = None, get: Callable[..., str] = fetch) -> int:
         return 0 if specs else 1
     boards: list[tuple[str, str, str]] = []
     if args.career:
-        if not (args.career / "research").is_dir():
-            print(f"error: {args.career} has no research/ folder", file=sys.stderr)
+        if not args.career.is_dir():
+            print(f"error: career root not found: {args.career}", file=sys.stderr)
             return 2
-        boards += read_boards(args.career)
+        if (args.career / "research").is_dir():
+            boards += read_boards(args.career)
+        else:
+            print(f"note: {args.career} has no research/ yet; no saved Jobs board lines", file=sys.stderr)
     for spec in args.board or []:
         parts = spec.split(":", 2)
         if len(parts) < 2 or parts[0].lower() not in ATS:

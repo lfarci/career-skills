@@ -40,10 +40,10 @@ When the workspace has a root `README.md` index, add a link to each new record u
 
 When the user asks for a scheduled search, use the host's scheduler or automation when it has one; otherwise suggest a system job the user installs themselves, running from the career root:
 
-- cron (macOS/Linux): `0 8 * * 1-5 cd <career root> && python3 <skill dir>/scripts/search_jobs.py --career . --keywords backend --location Belgium --feeds --seen research/opportunities/.seen.json --only-new --update-seen >> research/opportunities/new-jobs.md`
-- Windows Task Scheduler: `schtasks /Create /SC WEEKLY /D MON,WED,FRI /ST 08:00 /TN find-jobs /TR "cmd /c cd /d <career root> && python <skill dir>\scripts\search_jobs.py --career . --keywords backend --location Belgium --seen research\opportunities\.seen.json --only-new --update-seen >> research\opportunities\new-jobs.md"`
+- cron (macOS/Linux): `0 8 * * 1-5 cd <career root> && mkdir -p research/opportunities && python3 <skill dir>/scripts/search_jobs.py --career . --keywords backend --location Belgium --feeds --seen research/opportunities/.seen.json --only-new --update-seen >> research/opportunities/new-jobs.md`
+- Windows Task Scheduler: `schtasks /Create /SC WEEKLY /D MON,WED,FRI /ST 08:00 /TN find-jobs /TR "cmd /c cd /d <career root> && (if not exist research\opportunities mkdir research\opportunities) && python <skill dir>\scripts\search_jobs.py --career . --keywords backend --location Belgium --seen research\opportunities\.seen.json --only-new --update-seen >> research\opportunities\new-jobs.md"`
 
-The seen-file keeps each run to new results only. A scheduled run only collects candidates; saving opportunity records still follows steps 3–6 in a session with the user.
+Create `research/opportunities/` before the first run (the examples do); the seen-file keeps each run to new results only. A scheduled run only collects candidates; saving opportunity records still follows steps 3–6 in a session with the user.
 
 ## Done when
 
