@@ -1,7 +1,6 @@
 ---
 name: reflect
-description: Explore career direction, motivations, trade-offs and professional goals through guided reflection.
-disable-model-invocation: true
+description: Explore career direction, motivations, trade-offs and professional goals through guided reflection. Use only when the user asks for this skill by name.
 ---
 
 # Reflect on Professional Identity

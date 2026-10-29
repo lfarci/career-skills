@@ -23,7 +23,7 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | [`find-companies`](skills/job-hunt/find-companies/SKILL.md) | Research employers matching career direction, location and constraints, with or without vacancies | Discoverable |
 | [`find-jobs`](skills/job-hunt/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Discoverable |
 
-**Manual** means the user selects the named skill; **Discoverable** means an agent may select it for a matching task. Manual skills declare `disable-model-invocation: true` on supporting hosts. This field is not part of the core Agent Skills specification and some hosts may ignore it. See the [invocation policy](docs/ARCHITECTURE.md#invocation-policy).
+**Manual** means the user selects the named skill; **Discoverable** means an agent may select it for a matching task. Manual skills say so in their description and set Codex's `allow_implicit_invocation: false`; they omit `disable-model-invocation`, which on some hosts makes a skill unreachable even by name. See the [invocation policy](docs/ARCHITECTURE.md#invocation-policy).
 
 ### Organization
 

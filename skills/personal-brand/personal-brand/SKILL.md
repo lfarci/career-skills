@@ -1,7 +1,6 @@
 ---
 name: personal-brand
-description: Define professional positioning, messaging and audience-specific presentation across career surfaces.
-disable-model-invocation: true
+description: Define professional positioning, messaging and audience-specific presentation across career surfaces. Use only when the user asks for this skill by name.
 ---
 
 # Personal Brand
