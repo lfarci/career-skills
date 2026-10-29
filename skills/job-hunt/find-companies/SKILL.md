@@ -30,6 +30,8 @@ description: Research target employers fitting career direction, interests and g
 - Ask where to save a target-company list unless established; update existing records instead of duplicating them. Record criteria, source dates and unresolved checks; confirm actual saves.
 - Offer focused vacancy research with find-jobs when available, but remain independently useful without it. Do not subscribe to alerts, apply, upload documents, follow companies or contact anyone without separate authorization.
 
+When the workspace has a root `README.md` index, add a link to each new record under `Records`.
+
 ## Done when
 - Candidates have traceable evidence and explicit links to profile/goals and practical constraints.
 - Employer suitability, inferred fit, unresolved conditions and current vacancy status are clearly separated.
