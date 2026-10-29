@@ -83,9 +83,43 @@ See the [user journey with Mermaid diagram and routing guide](docs/USER-JOURNEY.
 
 ## Getting started
 
-1. Install individual skills via your agent's workflow or `npx skills add lfarci/career-skills --skill <name>` ([Skills CLI](https://www.skills.sh/docs/cli)). Nested skills are independently installable; no repository-wide setup is required.
-2. Run `setup-career-skills` for **guided onboarding**: select a private destination, find existing career sources, answer focused questions about missing information, and approve selected imports. It creates only the needed standard homes and keeps a resumable progress checkpoint; it doesn't stop merely because the first files were created. An existing `career/` is preserved unless you approve a controlled migration.
-3. Choose a task-focused skill directly or run `ask-career-skills` for guidance. For example: *“Audit alignment among my resume, GitHub profile, website, and LinkedIn export.”*
+You need Node.js (for `npx`), Git, Python 3 and one agent harness. Everything stays in a private folder you own.
+
+**1. Create a private folder and install the skills** (run inside the folder; `--copy` keeps real files, `-y` skips prompts):
+
+```bash
+mkdir my-career && cd my-career && git init
+npx skills add lfarci/career-skills --skill '*' -y --copy -a opencode         # OpenCode         -> .agents/skills/
+npx skills add lfarci/career-skills --skill '*' -y --copy -a github-copilot   # Copilot CLI      -> .agents/skills/
+npx skills add lfarci/career-skills --skill '*' -y --copy -a claude-code      # Claude Code      -> .claude/skills/
+npx skills add lfarci/career-skills --skill '*' -y --copy -a codex            # Codex            -> .agents/skills/
+```
+
+Run only the line for your harness. Put old CVs, LinkedIn data exports (zip), notes or portfolio pages in a subfolder such as `inbox/`; they are read only when you approve.
+
+**2. Start your agent in that folder** (`opencode`, `copilot`, `claude` or `codex`) **and type:**
+
+> Use the setup-career-skills skill. Create my private career workspace in ./career. My material is in ./inbox; you may read it and write records. Start with my role history.
+
+(Shortcuts: `/setup-career-skills` in Claude Code, `$setup-career-skills` in Codex.)
+
+**3. What happens.** The agent confirms the location, inventories your sources, and writes `career/README.md` (an index with a source inventory and a *Setup progress* checkpoint) plus records such as `career/profile/experience.md`. Conflicting sources are kept side by side and it asks you which value is right; private notes (health, salary, family) are not imported unless you ask. It ends with one question for the next batch. Stop at any time; later say *"Use the setup-career-skills skill. Resume my setup."* and it continues from the checkpoint.
+
+**4. Check the workspace** at any time:
+
+```bash
+python3 .agents/skills/setup-career-skills/scripts/check_workspace.py career   # Claude Code: .claude/skills/...
+```
+
+It prints `Status: usable` (exit 0) or `needs repair` with each broken link.
+
+**5. Next steps.**
+- Keep facts current: *"Use the maintain-profile skill. Since October I'm Lead Engineer at …"*
+- Brand: *"Use the personal-brand skill. Draft my LinkedIn headline and About for …"*, then *"Use the audit skill. Audit my staged LinkedIn copy against ./inbox/linkedin-export.zip."* Drafts go to `career/assets/drafts/`, approved copy to `career/assets/staged/`; nothing is published for you.
+- Job search: *"Use the build-resume skill for this job ad: …"*, *"Find remote .NET jobs that match my profile"* (find-jobs) or *"Which companies in Lyon fit my direction?"* (find-companies).
+- Not sure? *"Use the ask-career-skills skill. What should I do next?"*
+
+To update later: `npx skills update -y`.
 
 Configuration discovered during setup belongs in the **user's chosen private workspace**, not in this public skill repository. See [architecture and contracts](docs/ARCHITECTURE.md) and [evaluation cases](tests/cases.json).
 
