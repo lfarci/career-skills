@@ -14,7 +14,7 @@ Use this workflow only for an explicit setup or resume request. Ask one question
 
 ## Tool guardrail
 
-Never call `execute`, Node, Python, or another code runner to inspect or change files, even if the host offers one. A folder named in the prompt is the exact target path relative to OpenCode's starting directory: read `<folder>/README.md` and only the record paths it identifies using the host's direct file-reading tool. Never read the starting-directory README, inspect or list the starting or parent directory, or search for another folder with a similar name. Use a listed shell or file-writing tool only when a write is needed.
+Never call `execute`, Node, Python, or another code runner to inspect or change files, even if the host offers one. **Path rule:** When the user says `resume <folder> here`, `<folder>` is the workspace root relative to OpenCode's starting directory. First read `<folder>/README.md`, then only the record paths it identifies. Example: `resume career-skill-resume here` means read `career-skill-resume/README.md` first. Never read `README.md` at the starting directory, inspect or list the starting or parent directory, or search for another folder with a similar name. If that exact README cannot be read, report that the named workspace is unavailable; do not ask where the root is. Do not ask the user to repeat a saved decision you can read. Ask questions in plain text; do not call the `question` tool. A saved next decision is a pending question, not permission to pick an answer. If the `question` tool is used and errors, stop tool use and put that unanswered question in the final response. Never retry it, choose a default, or assume the user's answer.
 
 ## Fast path: named folder, facts, and write permission
 
@@ -27,13 +27,13 @@ Treat `<named-folder>` itself as the root. Do not add `<named-folder>/career/`. 
 
 ## Run protocol
 
-1. **Resolve the root.** A user-named folder is the root itself. If no destination is named, ask where to put the workspace and stop before inspecting or writing anything. Never assume the current directory or a suggested default is the destination. If the question tool errors, is unavailable, or receives no answer, stop and report that the root is undecided; create no workspace files. If the selected root contains unrelated or ambiguous material, ask whether to use it or choose another root.
+1. **Resolve the root.** A user-named folder is the root itself. For `resume <folder> here`, the first read must be `<folder>/README.md` (for example, `career-skill-resume/README.md`). If no destination is named, ask where to put the workspace and stop before inspecting or writing anything. Never assume the current directory or a suggested default is the destination. If the question tool errors, is unavailable, or receives no answer, stop and report that the root is undecided; create no workspace files. If the selected root contains unrelated or ambiguous material, ask whether to use it or choose another root.
 2. **Route.** Inspect only the selected root. An absent or empty root is New. A root with a career README or records is Resume. Preserve existing files; never silently overwrite, move, or delete them. A workspace folder is an ordinary directory, not a Git worktree or new repository.
 3. **Import.** Career facts supplied in the conversation are an approved source. When local writes are authorized, import supported facts now without asking again. Put employer and role history in `profile/experience.md`. Do not invent duties, technologies, credentials, achievements, or dates. If no facts or approved sources are available, ask one focused question and wait; do not make an empty scaffold. If that question tool errors or the user has not answered, stop without creating any files.
 4. **Save progress.** After every approved import, create or update the root `README.md`. Record root, sources used, records created, captured facts, missing/deferred information, status (`in progress`, `paused`, `ready`, or `blocked`), and one next decision.
 5. **Use supported tools safely.** Follow the tool guardrail above. Use only file or shell tools actually listed by the host. Do not invent APIs or use a code-execution runtime for filesystem work. Do not use worktree, branch, task, or repository-creation tools for ordinary workspace folders. Do not issue delete or move commands during ordinary setup. Never call a question tool to re-confirm a destination or write permission already supplied by the user.
 6. **Verify before reporting.** After writing, read the files or list the workspace to confirm the exact paths and contents. A write is complete only after the host reports success and the follow-up read/listing confirms it. If no supported write or verification tool is available, report the blocker; do not claim completion.
-7. **Stop at the next decision.** Summarize verified files and remaining gaps, then ask one useful next question. Do not continue into a broad onboarding interview unless the user answers.
+7. **Stop at the next decision.** Summarize verified files and remaining gaps, then ask one useful next question in plain text. If the `question` tool fails, make no further tool calls; put that question in the final response and stop. Never assume the answer or continue until the user replies.
 
 ## Resume checks
 
@@ -46,3 +46,5 @@ Consult [workspace rules](references/workspace-model.md) when mapping sources, r
 The selected root has a verified index and useful approved records, or one specific blocker is reported. The README accurately saves progress and the next decision.
 
 Writes stay within the approved scope. Publication requires separate approval.
+
+Never choose an unanswered user decision, including a decision restored from the README.
