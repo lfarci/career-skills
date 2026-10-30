@@ -40,6 +40,7 @@ New managed workspaces use these home names directly under the selected root, us
 career/
   README.md
   profile/
+    contact.md
     experience.md
     education.md
     qualifications.md
@@ -104,7 +105,7 @@ body-font: Source Sans 3
 Colours are `#RRGGBB`. Write the block with `status: pending` while concepts are drafts and switch to `approved` only when the user approves the palette and fonts. Values that fail the format or contrast rule are ignored with a warning, and the neutral default is used.
 <!-- /brand-tokens -->
 
-brand/ contains guidance, not a second asset library. identity.md can describe fonts, palette, logo and composition rules, linking actual sources under assets/. Design interview answers can live in brand/discovery.md. **Legacy source filenames** such as `goals.md` or `certifications.md` can inform the new records; don't rename or import a file solely because its name looks similar.
+brand/ contains guidance, not a second asset library. identity.md can describe fonts, palette, logo and composition rules, linking actual sources under assets/. The design brief (interview answers, scope, open choices) lives under `## Brief` in identity.md; a legacy `brand/discovery.md` is a source to import, not a second record. **Legacy source filenames** such as `goals.md` or `certifications.md` can inform the new records; don't rename or import a file solely because its name looks similar.
 
 ## Initialize from existing sources
 
