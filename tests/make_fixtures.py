@@ -82,7 +82,7 @@ w("brand-surfaces-copy","career/brand/surfaces.md","""# Surfaces
 - Audience: technical peers, hiring engineers
 - Why: proof of hands-on work
 - Emphasise: stack, the AI assistant project, link to LinkedIn
-- Status: planned
+- Status: active
 - Last reviewed: 2026-10-01
 
 ## Credly
@@ -228,3 +228,29 @@ w(c,"career/brand/identity.md","# Visual identity\nStatus: pending\n- Concepts: 
 
 base("workspace-healthy-resume-no-helper")
 print(sorted(p.name for p in F.iterdir()))
+
+# Brand surfaces: the user has only LinkedIn and GitHub (no site, no X).
+base("brand-confirm-surfaces-linkedin-github")
+c="identity-banners-for-confirmed-surfaces"
+base(c, extra_readme="- [Surfaces](brand/surfaces.md)")
+w(c,"career/brand/surfaces.md","""# Surfaces
+
+## LinkedIn
+- URL: https://www.linkedin.com/in/alex-testa-example
+- Audience: recruiters in Belgium
+- Why: main recruiter channel
+- Status: active
+- Last reviewed: 2026-10-30
+
+## GitHub profile README
+- URL: https://github.com/alex-testa-example
+- Audience: technical peers
+- Why: proof of hands-on work
+- Status: active
+- Last reviewed: 2026-10-30
+
+## Personal website
+- Why: not now, no time to maintain it
+- Status: dropped
+- Last reviewed: 2026-10-30
+""")
