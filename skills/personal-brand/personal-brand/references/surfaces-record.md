@@ -11,7 +11,7 @@ One entry per public presence tied to the profile: its URL, and mainly what it i
 - Why: main recruiter channel in the target market
 - Emphasise: lead role, recent cloud work, certifications
 - Copy: ../assets/staged/copy/linkedin.md
-- Status: active        # active | planned | dropped
+- Status: active        # active: exists or being created now (gets copy) | planned: later, no copy yet | dropped: no copy, keep the reason
 - Last reviewed: 2026-10-29
 
 ## GitHub profile README

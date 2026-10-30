@@ -12,7 +12,7 @@ All paths relative to the workspace root:
 | Preview render | `assets/drafts/<kind>/previews/<concept>-v<n>-<size>.png`, e.g. `a-v2-32.png` |
 | Approved copy | `assets/staged/<kind>/<concept>-v<n>[-<variant>].<ext>`, e.g. `logo/a-v2-mono.svg` |
 
-`<kind>` is `logo`, `banner`, `avatar`, `icon` or `palette`; `<concept>` is the lowercase concept ID (a, b, c); the selection "A/v2" is file `a-v2`. Lowercase, hyphens, no spaces. `assets/<drafts|staged>/resumes/` belongs to build-resume and is not checked here. Render helpers (HTML pages, scripts) go in a temporary folder outside the workspace.
+`<kind>` is `logo` or `banner` (`favicon` when a site is confirmed; other kinds only when the user asks); `<concept>` is the lowercase concept ID (a, b, c); the selection "A/v2" is file `a-v2`. Lowercase, hyphens, no spaces. `assets/<drafts|staged>/resumes/` belongs to build-resume and is not checked here. Render helpers (HTML pages, scripts) go in a temporary folder outside the workspace.
 
 ## identity.md
 
@@ -40,4 +40,4 @@ Colours are `#RRGGBB`. Write the block with `status: pending` while concepts are
 
 ## Assets
 
-Create only the kinds in scope. Banners keep one generic master; platform crops derive from it. Record purpose, format and pixel size (SVG: viewBox) next to each link. Verify saved files exist; a description is not an asset.
+Create only the kinds in scope: logo and banners for confirmed surfaces. Banners keep one master; per-surface crops derive from it as `<concept>-v<n>-<surface>.<ext>` in staged (e.g. `a-v1-linkedin.png`) or in drafts previews. Record purpose, format and pixel size (SVG: viewBox) next to each link. Verify saved files exist; a description is not an asset.

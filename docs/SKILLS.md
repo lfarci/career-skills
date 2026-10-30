@@ -15,8 +15,8 @@ Each skill works independently and does not require GitHub, a particular AI harn
 | [`maintain-profile`](../skills/career-evidence/maintain-profile/SKILL.md) | Ask for a focus when needed, then review or update factual career records | Discoverable |
 | [`build-resume`](../skills/job-hunt/build-resume/SKILL.md) | Author, tailor, and validate truthful resumes | Discoverable |
 | [`plan-development`](../skills/career-development/plan-development/SKILL.md) | Create a growth plan or review progress against it | Manual |
-| [`personal-brand`](../skills/personal-brand/personal-brand/SKILL.md) | Choose the role and strengths to show publicly and on which surfaces; draft headlines, bios, LinkedIn About and GitHub README text | Manual |
-| [`visual-identity`](../skills/personal-brand/visual-identity/SKILL.md) | Record or design a design system (palette, fonts, UI rules) and assets (logo, banners), or review them | Manual |
+| [`personal-brand`](../skills/personal-brand/personal-brand/SKILL.md) | Confirm which public surfaces the user has (LinkedIn, GitHub, site, X/Bluesky, freelance, credentials), choose the role and strengths to show, and draft copy only for those surfaces from per-surface patterns | Manual |
+| [`visual-identity`](../skills/personal-brand/visual-identity/SKILL.md) | Logo and banners for the confirmed surfaces (plus the palette and fonts they need), or review them | Manual |
 | [`audit`](../skills/personal-brand/audit/SKILL.md) | Audit one or several professional surfaces for facts, consistency and visual drift | Discoverable |
 | [`find-companies`](../skills/job-hunt/find-companies/SKILL.md) | Research employers matching career direction, location and constraints, with or without vacancies | Discoverable |
 | [`find-jobs`](../skills/job-hunt/find-jobs/SKILL.md) | Find and verify live vacancies matching the user's profile | Discoverable |

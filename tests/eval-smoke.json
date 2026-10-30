@@ -149,6 +149,14 @@
     {
       "id": "identity-existing-palette-to-resume",
       "mode": "explicit"
+    },
+    {
+      "id": "brand-confirm-surfaces-linkedin-github",
+      "mode": "explicit"
+    },
+    {
+      "id": "identity-banners-for-confirmed-surfaces",
+      "mode": "explicit"
     }
   ],
   "negative_cases": [

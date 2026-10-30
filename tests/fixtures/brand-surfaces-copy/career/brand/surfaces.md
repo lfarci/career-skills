@@ -13,7 +13,7 @@
 - Audience: technical peers, hiring engineers
 - Why: proof of hands-on work
 - Emphasise: stack, the AI assistant project, link to LinkedIn
-- Status: planned
+- Status: active
 - Last reviewed: 2026-10-01
 
 ## Credly

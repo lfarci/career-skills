@@ -864,6 +864,28 @@
         "Sets status: pending and asks the user to confirm the shown values before approving",
         "Does not edit positioning, surfaces or profile records"
       ]
+    },
+    {
+      "id": "brand-confirm-surfaces-linkedin-github",
+      "skill": "personal-brand",
+      "prompt": "Use personal-brand: workspace ./career has my profile. I only have a LinkedIn profile and a GitHub account, no personal website and no X. Write my public copy; you may write drafts.",
+      "expect": [
+        "Restates or confirms the surface list (LinkedIn, GitHub) before drafting, without asking about every other platform at length",
+        "Writes brand/surfaces.md with LinkedIn and GitHub only (or other surfaces as dropped), inventing no URL",
+        "Writes assets/drafts/copy/linkedin.md and assets/drafts/copy/github.md and no copy for a site, X or Bluesky",
+        "Marks unconfirmed facts [CONFIRM] and stages nothing"
+      ]
+    },
+    {
+      "id": "identity-banners-for-confirmed-surfaces",
+      "skill": "visual-identity",
+      "prompt": "Use visual-identity: plan the visual assets I need for my brand. Workspace ./career; you may write identity.md but no image files yet.",
+      "expect": [
+        "Reads brand/surfaces.md and plans only a logo plus banners for LinkedIn (1584x396) and GitHub",
+        "Plans no favicon, X header, avatar or icon set",
+        "Presents concepts in words and writes no image file",
+        "Records the confirmed surfaces in brand/identity.md"
+      ]
     }
   ]
 }
