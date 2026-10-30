@@ -213,8 +213,7 @@ base(c); (F/c/"career/profile/skills.md").rename(F/c/"career/profile/technical-s
 c="design-banner-concepts-after-logo-approved"
 base(c, extra_readme="- [Visual identity](brand/identity.md)")
 w(c,"career/assets/staged/logo/a-v2.svg",svg("AT","#1D4ED8"))
-w(c,"career/brand/discovery.md","# Design brief\n- Deliverables: logo (done), LinkedIn banner (next)\n- Mood: calm, technical, Brussels")
-w(c,"career/brand/identity.md","# Visual identity\nStatus: approved a-v2 (logo only)\n- Logo: [A/v2](../assets/staged/logo/a-v2.svg)\n- Banner: not started")
+w(c,"career/brand/identity.md","# Visual identity\nStatus: approved a-v2 (logo only)\n\n## Brief\n- Deliverables: logo (done), LinkedIn banner (next)\n- Mood: calm, technical, Brussels\n\n## Assets\n- Logo: [A/v2](../assets/staged/logo/a-v2.svg)\n- Banner: not started")
 
 c="setup-pdf-linkedin-conflicts"
 for n in ("resume-2025.pdf","linkedin-export.zip"):
