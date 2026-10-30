@@ -20,7 +20,7 @@ The profile is the private truth; the personal brand is the public facet of that
 4. **Truth check.** Use only claims the records mark user-confirmed or that two sources agree on; mark single-source or conflicting claims inline and ask before staging. Keep each title with its employer and dates. Label goals as goals; leave private doubts, plans and constraints out. A blanket "approve whatever you draft" covers wording, not unverified claims.
 5. **Hand off.** Show the drafts, stage only what the user approves, and say what to paste where. Suggest `audit` to compare live surfaces with the staged copy.
 
-When the workspace has a root `README.md` index, add a link to each new record under `Records`.
+When the workspace has a root `README.md` index, add a link to each new record under `Records` and change nothing else there: `Setup progress` belongs to setup, so report your next steps in the reply.
 
 ## Done when
 - positioning.md names the lead role, strengths and audiences, each traceable to profile records.

@@ -12,6 +12,7 @@ description: Research target employers fitting career direction, interests and g
 
 ## Establish fit criteria
 - Read the user's selected profile and career direction. Reuse explicit current preferences; ask only missing information that materially changes the search. Do not infer preferred roles or industries solely from past employers.
+- Use as fit evidence only facts the records mark confirmed or that two sources agree on; name any single-source or conflicting claim as unconfirmed instead of relying on it.
 - Establish desired work and growth, demonstrated strengths, location/commute, remote or hybrid needs, employment geography, working languages and relevant eligibility constraints. Clarify industry, company size, employment model, compensation or values only when they affect selection.
 - Separate non-negotiable constraints from preferences and exploratory interests. Confirm priorities before ranking; keep private goals and supported experience distinct.
 - Use generic professional search criteria. Do not upload private profiles, internal decisions, client-sensitive details or personal identifiers to external search services. A private profile is input, not permission to disclose it.
@@ -27,7 +28,7 @@ description: Research target employers fitting career direction, interests and g
 ## Compare and hand off
 - Return a concise shortlist with company, fit rationale, practical location/remote constraints, evidence, concerns/unknowns and vacancy status. Explain ranking against the user's priorities; avoid unsupported numeric fit scores. Exclude known hard-constraint conflicts or label clearly if retained for exploration.
 - Distinguish observed facts from inferred fit. State important trade-offs and what would change the recommendation. Prefer a few substantiated candidates over an unfiltered directory.
-- Save each selected employer with the [company record](references/company-record.md) header. Ask where to save a target-company list unless established; update existing records instead of duplicating them. Record criteria, source dates and unresolved checks; confirm actual saves. When the careers page links to an ATS board (Greenhouse, Lever, Ashby, Workable, Recruitee, SmartRecruiters, Personio), record it as `Jobs board: <ats>:<slug>` (the slug is the path or subdomain in the board URL) so find-jobs can query it.
+- Save each selected employer with the [company record](references/company-record.md) header. Save to `research/companies/<company>.md` under the workspace root without asking; ask only when the index maps companies elsewhere or there is no workspace. Update existing records instead of duplicating them. Record criteria, source dates and unresolved checks; confirm actual saves. When the careers page links to an ATS board (Greenhouse, Lever, Ashby, Workable, Recruitee, SmartRecruiters, Personio), record it as `Jobs board: <ats>:<slug>` (the slug is the path or subdomain in the board URL) so find-jobs can query it.
 - Offer focused vacancy research with find-jobs when available, but remain independently useful without it. Do not subscribe to alerts, apply, upload documents, follow companies or contact anyone without separate authorization.
 
 When the workspace has a root `README.md` index, add a link to each new record under `Records`.

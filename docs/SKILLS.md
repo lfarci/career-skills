@@ -69,7 +69,7 @@ The [workspace decision specification](CAREER-WORKSPACE-SPEC.md) captures the ag
 
 ## Example: adopting an old career tree
 
-An existing `career/personal-projects/`, `career/personal-brand/` and root `career/services.md` can remain as source material while the user reviews a proposed move to `career/projects/`, `career/brand/` and `career/brand/surfaces.md`. The agent inventories content and links, gets approval, then verifies the chosen changes in a reviewable PR. **No files in the public Career Skills repository are migrated by this documentation change.**
+An existing `career/personal-projects/`, `career/personal-brand/` and root `career/services.md` can remain as source material while the user reviews a proposed move to `career/projects/`, `career/brand/` and `career/brand/surfaces.md`. The agent inventories content and links, gets approval, then verifies the chosen changes in a reviewable PR.
 
 ## After setup: suggested journey
 
