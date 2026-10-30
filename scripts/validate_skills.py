@@ -32,7 +32,7 @@ def main() -> int:
     actual = set(packages)
     if actual != EXPECTED:
         errors.append(f"Skill inventory mismatch: missing={sorted(EXPECTED-actual)}, extra={sorted(actual-EXPECTED)}")
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    readme = (ROOT / "docs" / "SKILLS.md").read_text(encoding="utf-8")
     for name in sorted(EXPECTED):
         path = packages.get(name)
         if path is None:
@@ -78,7 +78,7 @@ def main() -> int:
                 errors.append(f"{name}: broken bundled reference {rel}")
         match = re.search(r"^\| \[" + re.escape(chr(96) + name + chr(96)) + r"\].* \| (Manual|Discoverable) \|$", readme, re.MULTILINE)
         if not match or (match.group(1) == "Manual") != (name in MANUAL):
-            errors.append(f"{name}: README invocation policy mismatch")
+            errors.append(f"{name}: docs/SKILLS.md invocation policy mismatch")
 
     marker = re.compile(r"<!-- record-map -->\n(.*?)<!-- /record-map -->", re.DOTALL)
     canonical = marker.search((ROOT / "docs" / "WORKSPACE.md").read_text(encoding="utf-8"))
