@@ -314,14 +314,24 @@ def parse_jsonld(page: str, url: str, today: dt.date | None = None) -> list[dict
 
 # --- Criteria, dedupe, seen ---------------------------------------------------
 
-def read_boards(career: Path) -> list[tuple[str, str, str]]:
-    """Return (ats, slug, company) from research/companies/*.md 'Jobs board:' lines."""
+def read_boards(career: Path, skipped: list[str] | None = None) -> list[tuple[str, str, str]]:
+    """Return (ats, slug, company) from research/companies/*.md 'Jobs board:' lines.
+
+    Accepts `ats:slug` and supported ATS board URLs; other values (e.g. Workday or a
+    plain careers page) are reported in `skipped` instead of being silently ignored.
+    """
     boards = []
     for record in sorted((career / "research" / "companies").glob("*.md")):
         text = record.read_text(encoding="utf-8")
         title = re.search(r"^#\s+(.+)$", text, re.M)
-        for ats, slug in BOARD_LINE.findall(text):
-            boards.append((ats.lower(), slug, title.group(1).strip() if title else slug))
+        for value in re.findall(r"^Jobs board:\s*(\S+)", text, re.I | re.M):
+            spec = BOARD_LINE.match(f"Jobs board: {value}")
+            specs = [f"{spec.group(1)}:{spec.group(2)}"] if spec and spec.group(1).lower() in ATS else detect_boards(value)
+            if not specs and skipped is not None:
+                skipped.append(f"{record.name}: unsupported Jobs board {value!r}; use ats:slug or check the page by hand")
+            for item in specs:
+                ats, slug = item.split(":", 1)
+                boards.append((ats.lower(), slug, title.group(1).strip() if title else slug))
     return boards
 
 
@@ -340,7 +350,9 @@ def matches(j: dict, keywords: list[str], locations: list[str], remote: bool, ex
         return True
     if _has(locations, j["location"]):
         return True
-    return bool(remote and j["remote"] and (not j["location"] or _has(list(REMOTE_REGIONS), j["location"])))
+    # "Anywhere in France" is country-restricted, not worldwide.
+    region = re.sub(r"\banywhere in\b", "in", j["location"], flags=re.I)
+    return bool(remote and j["remote"] and (not j["location"] or _has(list(REMOTE_REGIONS), region)))
 
 
 def key(j: dict) -> str:
@@ -435,12 +447,13 @@ def main(argv: list[str] | None = None, get: Callable[..., str] = fetch) -> int:
         print(json.dumps(specs) if args.json else "\n".join(specs) or "No ATS board found.")
         return 0 if specs else 1
     boards: list[tuple[str, str, str]] = []
+    skipped: list[str] = []
     if args.career:
         if not args.career.is_dir():
             print(f"error: career root not found: {args.career}", file=sys.stderr)
             return 2
         if (args.career / "research").is_dir():
-            boards += read_boards(args.career)
+            boards += read_boards(args.career, skipped)
         else:
             print(f"note: {args.career} has no research/ yet; no saved Jobs board lines", file=sys.stderr)
     for spec in args.board or []:
@@ -454,7 +467,7 @@ def main(argv: list[str] | None = None, get: Callable[..., str] = fetch) -> int:
         return 2
     keywords, locations, exclude = split(args.keywords), split(args.location), split(args.exclude)
     jobs: list[dict] = []
-    errors: list[str] = []
+    errors: list[str] = list(skipped)
     for ats, slug, company in boards:
         try:
             jobs += search_board(ats, slug, company, get)
