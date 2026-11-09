@@ -8,9 +8,9 @@ description: Plan professional growth, or review progress against an existing pl
 One private development plan, created once and revisited at its review points. Plans, completed learning and demonstrated capability stay distinct.
 
 ## Contract
-- **Input:** profile/goals/direction.md, profile/facts/ skills and achievements, profile/criteria/ constraints; relevant project evidence; for a review, the current plan, the review period and what actually happened.
+- **Input:** profile/goals/north-star.md and values, profile/facts/ skills and achievements, profile/criteria/ constraints; relevant project evidence; for a review, the current plan, the review period and what actually happened.
 - **Scope:** Create or revise the plan; never declare planned learning achieved or publish it.
-- **Output:** profile/goals/development.md (or mapped plan): prioritized outcomes, actions, effort, evidence milestones, estimated and actual completion dates, review points, and dated review entries.
+- **Output:** profile/goals/development.md (or mapped plan) and, for target credentials, profile/goals/certifications.md: prioritized outcomes, actions, effort, evidence milestones, estimated and actual completion dates, review points, and dated review entries.
 
 ## Choose the branch
 If no plan exists, or the user wants a new one, **create**. If a plan exists and the user reports progress or reaches a review point, **review**. Ask only when it is unclear.

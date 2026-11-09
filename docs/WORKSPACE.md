@@ -54,7 +54,9 @@ career/
       compensation.md
       expectations.md
     goals/
-      direction.md
+      values.md
+      north-star.md
+      certifications.md
       development.md
   projects/
     project-name.md
@@ -88,7 +90,9 @@ career/
 | Location, work mode, travel, commute, contract type | `profile/criteria/conditions.md` |
 | Current compensation as a private baseline; salary targets only once the user sets them | `profile/criteria/compensation.md` |
 | Must-haves, nice-to-haves and deal-breakers for screening a role or company | `profile/criteria/expectations.md` |
-| Goals, north star, values, career anchors, ideal job, considered next steps | `profile/goals/direction.md` |
+| Values and motivations: what matters, career-anchor ranking, work values | `profile/goals/values.md` |
+| North star, goals, ideal job, target role and responsibility level, considered next steps, career-change options | `profile/goals/north-star.md` |
+| Planned or target certifications and learning credentials (earned ones stay in `qualifications.md`) | `profile/goals/certifications.md` |
 | Development plan: objectives, actions with estimated and actual dates, dated reviews | `profile/goals/development.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
@@ -105,7 +109,7 @@ Historical credentials (expired, lapsed or outgrown, for example an old language
 
 - **`facts/`**: what happened and can be checked: roles, credentials, skills, achievements, stories. maintain-profile owns it; setup imports into it.
 - **`criteria/`**: what a role must offer now, used to screen companies and offers: conditions, compensation, expectations. maintain-profile records what the user states; reflect may propose expectations; find-companies and find-jobs read it as hard constraints and preferences.
-- **`goals/`**: where the user wants to go and how to grow: `direction.md` (reflect) and `development.md` (plan-development).
+- **`goals/`**: where the user wants to go and how to grow: `values.md` and `north-star.md` (reflect), `certifications.md` and `development.md` (plan-development). One question per file keeps each easy to find.
 
 A fact never moves into goals because it is aspirational wording, and a goal never becomes a fact until there is evidence. Criteria are the user's stated current conditions, not inferred from past employers.
 
@@ -116,23 +120,26 @@ Optional headings borrowed from established methods. Use them when they help; no
 - **stories.md**: one entry per story: title, Situation, Task, Action (what *I* did), Result (measured where the source supports it), skills or dimension shown, evidence link, date.
 - **compensation.md**: the private baseline plus an optional package overview (employer, contract and hours, salary and bonus, benefits such as car, vouchers, insurance and pension, mobility, other) with the same fields for each offer. Belgian users can follow the [r/BESalary template](https://www.reddit.com/r/BESalary/comments/12xam5d/whats_your_wage_and_work_conditions_template/).
 - **expectations.md**: Must-haves, Nice-to-haves, Deal-breakers, optionally grouped by [O*NET work values](https://www.onetcenter.org/dictionary/26.0/excel/work_values.html) (Achievement, Independence, Recognition, Relationships, Support, Working Conditions), plus a short screening checklist.
-- **direction.md**: one north star; optionally the user's ranking of [Schein's career anchors](https://mitsloan.mit.edu/ideas-made-to-matter/5-enduring-management-ideas-mit-sloans-edgar-schein) (technical/functional competence, general management, autonomy/independence, security/stability, entrepreneurial creativity, service/dedication to a cause, pure challenge, lifestyle), ideal job, target responsibility level, career-change options.
+- **values.md**: what matters to the user; optionally their ranking of [Schein's career anchors](https://mitsloan.mit.edu/ideas-made-to-matter/5-enduring-management-ideas-mit-sloans-edgar-schein) (technical/functional competence, general management, autonomy/independence, security/stability, entrepreneurial creativity, service/dedication to a cause, pure challenge, lifestyle) and of the O*NET work values.
+- **north-star.md**: one north star, ideal job, target role (for an individual contributor, optionally a [StaffEng archetype](https://staffeng.com/guides/staff-archetypes): Tech Lead, Architect, Solver, Right Hand), target responsibility level, considered next steps, career-change options.
+- **certifications.md**: planned or target credentials with why, estimated date and status (considering, planned, booked, dropped). An earned credential moves to `facts/qualifications.md` only with evidence.
 - **development.md**: an individual development plan: objectives with estimated and actual completion dates, actions, evidence of completion and dated reviews.
 
 Rankings and levels are the user's own answers. An agent may suggest them from evidence but records them only as proposals until the user confirms.
 
-**Earlier flat layout.** A workspace created before the layers (`profile/experience.md`, `profile/preferences.md`, …) stays valid: skills follow its index links. Move files only when the user asks to standardize the layout (repair rule 3). Migration map:
+**Earlier layouts.** A workspace created before the layers (`profile/experience.md`, `profile/preferences.md`, …) or with a single `goals/direction.md` stays valid: skills follow its index links. Move files only when the user asks to standardize the layout (repair rule 3). Migration map:
 
 | Flat record | Layered record |
 | --- | --- |
 | `profile/contact.md`, `experience.md`, `education.md`, `qualifications.md`, `languages.md`, `skills.md` | same name under `profile/facts/` |
 | `profile/preferences.md` | `profile/criteria/conditions.md`; compensation sections to `profile/criteria/compensation.md` |
 | opportunity-screening sections of `direction.md` | `profile/criteria/expectations.md` |
-| `profile/direction.md`, `profile/development.md` | same name under `profile/goals/` |
+| `profile/direction.md` or `profile/goals/direction.md` | split into `profile/goals/values.md`, `north-star.md` and `certifications.md` (planned credentials, also from the development plan) |
+| `profile/development.md` | `profile/goals/development.md` |
 
 When migrating, move files with history preserved where the storage allows (for example `git mv`), rewrite every inbound link including links outside `career/`, update the index, then run the workspace check.
 
-Unused homes can remain documented in `career/README.md` until populated. Create only needed records; combine or split files when useful. goals/direction.md can hold north star, values, motivations, interests and goals. goals/development.md holds actions, evidence milestones and dated progress reviews. Project records describe purpose, status, contribution, skills used, learning, relevance to a resume and links to work; do not copy source code or the project's backlog.
+Unused homes can remain documented in `career/README.md` until populated. Create only needed records; combine or split files when useful. goals/values.md holds values and motivations; goals/north-star.md the north star, interests and goals; goals/certifications.md planned credentials; goals/development.md holds actions, evidence milestones and dated progress reviews. Project records describe purpose, status, contribution, skills used, learning, relevance to a resume and links to work; do not copy source code or the project's backlog.
 
 ## Brand tokens
 

@@ -10,7 +10,7 @@ Publication: separate approval required
 - [Skills](profile/facts/skills.md)
 - [Education](profile/facts/education.md)
 - [Qualifications](profile/facts/qualifications.md)
-- [Direction](profile/goals/direction.md)
+- [North star](profile/goals/north-star.md)
 - [Positioning](brand/positioning.md)
 - [Project: Contoso AI assistant](projects/contoso-ai-assistant.md)
 

@@ -30,7 +30,9 @@ Every imported fact goes into a canonical record, never into the index. Create a
 | Location, work mode, travel, commute, contract type | `profile/criteria/conditions.md` |
 | Current compensation as a private baseline; salary targets only once the user sets them | `profile/criteria/compensation.md` |
 | Must-haves, nice-to-haves and deal-breakers for screening a role or company | `profile/criteria/expectations.md` |
-| Goals, north star, values, career anchors, ideal job, considered next steps | `profile/goals/direction.md` |
+| Values and motivations: what matters, career-anchor ranking, work values | `profile/goals/values.md` |
+| North star, goals, ideal job, target role and responsibility level, considered next steps, career-change options | `profile/goals/north-star.md` |
+| Planned or target certifications and learning credentials (earned ones stay in `qualifications.md`) | `profile/goals/certifications.md` |
 | Development plan: objectives, actions with estimated and actual dates, dated reviews | `profile/goals/development.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
@@ -39,7 +41,7 @@ Every imported fact goes into a canonical record, never into the index. Create a
 | Saved companies, job ads, comparator profiles | `research/` |
 <!-- /record-map -->
 
-Keep each record plain Markdown with headings and relative links. Note the source file and its date beside imported facts; mark approximations and conflicts instead of resolving them silently. A newer user-confirmed fact supersedes an older goal or note: record the fact, keep the older entry dated as superseded, and mention the change. A goal stays a goal: "considering AZ-305" belongs in `goals/direction.md`, not `facts/qualifications.md`. A stated current condition ("no more than two office days") is a criterion in `criteria/`, not a goal. A workspace with the earlier flat `profile/` (for example `profile/experience.md`) stays valid through its index links; keep its layout unless the user asks to standardize.
+Keep each record plain Markdown with headings and relative links. Note the source file and its date beside imported facts; mark approximations and conflicts instead of resolving them silently. A newer user-confirmed fact supersedes an older goal or note: record the fact, keep the older entry dated as superseded, and mention the change. A goal stays a goal: "considering AZ-305" belongs in `goals/certifications.md`, not `facts/qualifications.md`. A stated current condition ("no more than two office days") is a criterion in `criteria/`, not a goal. A workspace with the earlier flat `profile/` (for example `profile/experience.md`) stays valid through its index links; keep its layout unless the user asks to standardize.
 
 Contact details (e-mail, phone, address) stay in their source unless the user asks to import them; then they go to `profile/facts/contact.md`, never the index.
 

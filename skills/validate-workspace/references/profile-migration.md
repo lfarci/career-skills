@@ -1,13 +1,14 @@
 # Migrating a flat profile/ to layers
 
-Use only when the user asks to standardize the layout. A flat `profile/` with working index links is valid as it is.
+Use only when the user asks to standardize the layout. A flat `profile/`, or a single `goals/direction.md`, with working index links is valid as it is.
 
 | Flat record | Layered record |
 | --- | --- |
 | `profile/contact.md`, `experience.md`, `education.md`, `qualifications.md`, `languages.md`, `skills.md` | same name under `profile/facts/` |
 | `profile/preferences.md` | `profile/criteria/conditions.md`; compensation sections to `profile/criteria/compensation.md` |
 | opportunity-screening sections of `direction.md` | `profile/criteria/expectations.md` |
-| `profile/direction.md`, `profile/development.md` | same name under `profile/goals/` |
+| `profile/direction.md` or `profile/goals/direction.md` | split into `profile/goals/values.md`, `north-star.md` and `certifications.md` (planned credentials, also from the development plan) |
+| `profile/development.md` | `profile/goals/development.md` |
 | other records (for example `goals.md`, `certifications.md`) | the layer whose meaning matches the content, not the file name; ask when unclear |
 
 Plan, then apply after approval:
