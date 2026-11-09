@@ -6,7 +6,7 @@ Read this reference when importing career sources, choosing canonical records or
 
 Create these homes **as needed**, directly under the chosen root:
 
-- `profile/`: three layers. `facts/`: identity, employers/grades/dates (including supported internships), skills, qualifications, achievements and stories. `criteria/`: current conditions, compensation baseline and expectations for screening roles. `goals/`: values, north star, planned certifications and development plan.
+- `profile/`: three layers. `facts/`: identity, employers/grades/dates (including supported internships), skills, qualifications, achievements, stories and current compensation. `criteria/`: current conditions, salary expectations and expectations for screening roles. `goals/`: values, north star, planned certifications and development plan.
 - `projects/`: consulting assignments, personal projects, contributions and evidence.
 - `brand/`: positioning, audiences and visual guidance.
 - `assets/`: staged and draft reusable materials.

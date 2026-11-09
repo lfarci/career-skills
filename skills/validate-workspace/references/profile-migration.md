@@ -5,7 +5,8 @@ Use only when the user asks to standardize the layout. A flat `profile/`, or a s
 | Flat record | Layered record |
 | --- | --- |
 | `profile/contact.md`, `experience.md`, `education.md`, `qualifications.md`, `languages.md`, `skills.md` | same name under `profile/facts/` |
-| `profile/preferences.md` | `profile/criteria/conditions.md`; compensation sections to `profile/criteria/compensation.md` |
+| `profile/preferences.md` | `profile/criteria/conditions.md`; current pay to `profile/facts/compensation.md`; salary targets to `profile/criteria/salary-expectations.md` |
+| `profile/criteria/compensation.md` (earlier layered layout) | `profile/facts/compensation.md`; targets to `profile/criteria/salary-expectations.md` |
 | opportunity-screening sections of `direction.md` | `profile/criteria/expectations.md` |
 | `profile/direction.md` or `profile/goals/direction.md` | split into `profile/goals/values.md`, `north-star.md` and `certifications.md` (planned credentials, also from the development plan) |
 | `profile/development.md` | `profile/goals/development.md` |

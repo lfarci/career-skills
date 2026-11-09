@@ -49,9 +49,10 @@ career/
       skills.md
       achievements.md
       stories.md
+      compensation.md
     criteria/
       conditions.md
-      compensation.md
+      salary-expectations.md
       expectations.md
     goals/
       values.md
@@ -87,8 +88,9 @@ career/
 | Spoken languages | `profile/facts/languages.md` |
 | Dated achievements, recognition and feedback received (brag log) | `profile/facts/achievements.md` |
 | Interview stories (Situation, Task, Action, Result), each linked to its project or achievement | `profile/facts/stories.md` |
+| Current compensation package (salary, bonus, car or mobility, vouchers, insurance, pension) as a private baseline | `profile/facts/compensation.md` |
 | Location, work mode, travel, commute, contract type | `profile/criteria/conditions.md` |
-| Current compensation as a private baseline; salary targets only once the user sets them | `profile/criteria/compensation.md` |
+| Salary and package expectations for a next role: minimum and target, must-have benefits, trade-offs; only values the user sets | `profile/criteria/salary-expectations.md` |
 | Must-haves, nice-to-haves and deal-breakers for screening a role or company | `profile/criteria/expectations.md` |
 | Values and motivations: what matters, career-anchor ranking, work values | `profile/goals/values.md` |
 | North star, goals, ideal job, target role and responsibility level, considered next steps, career-change options | `profile/goals/north-star.md` |
@@ -101,14 +103,14 @@ career/
 | Saved companies, job ads, comparator profiles | `research/` |
 <!-- /record-map -->
 
-Historical credentials (expired, lapsed or outgrown, for example an old language certificate or an introductory online course) stay in `profile/facts/qualifications.md` under `## Historical credentials`, separate from current ones; resumes and public copy use current credentials only unless the user asks. Current compensation, when the user shares it, is a private baseline in `profile/criteria/compensation.md` for comparing offers; it never becomes a target or appears on a public surface.
+Historical credentials (expired, lapsed or outgrown, for example an old language certificate or an introductory online course) stay in `profile/facts/qualifications.md` under `## Historical credentials`, separate from current ones; resumes and public copy use current credentials only unless the user asks. Current compensation, when the user shares it, is a fact: a private baseline in `profile/facts/compensation.md` for comparing offers. It never becomes a target or appears on a public surface. What the user wants from a next role goes to `profile/criteria/salary-expectations.md`, with the same fields, and only with values the user sets.
 
 ## Profile layers
 
 `profile/` separates three kinds of records so that each skill reads only what it needs:
 
-- **`facts/`**: what happened and can be checked: roles, credentials, skills, achievements, stories. maintain-profile owns it; setup imports into it.
-- **`criteria/`**: what a role must offer now, used to screen companies and offers: conditions, compensation, expectations. maintain-profile records what the user states; reflect may propose expectations; find-companies and find-jobs read it as hard constraints and preferences.
+- **`facts/`**: what happened or holds now and can be checked: roles, credentials, skills, achievements, stories, current compensation. maintain-profile owns it; setup imports into it.
+- **`criteria/`**: what a role must offer now, used to screen companies and offers: conditions, salary expectations, expectations. maintain-profile records what the user states; reflect may propose expectations; find-companies and find-jobs read it as hard constraints and preferences.
 - **`goals/`**: where the user wants to go and how to grow: `values.md` and `north-star.md` (reflect), `certifications.md` and `development.md` (plan-development). One question per file keeps each easy to find.
 
 A fact never moves into goals because it is aspirational wording, and a goal never becomes a fact until there is evidence. Criteria are the user's stated current conditions, not inferred from past employers.
@@ -118,7 +120,7 @@ Optional headings borrowed from established methods. Use them when they help; no
 - **experience.md** per role: position, organisation, start and end dates (`YYYY-MM`), summary, highlights (field names as in [JSON Resume](https://jsonresume.org/schema)). An optional *responsibility level*, self-assessed by the user on the [SFIA](https://sfia-online.org/en/sfia-9/responsibilities) 1–7 scale (Follow, Assist, Apply, Enable, Ensure/advise, Initiate/influence, Set strategy/inspire/mobilise); never assigned by an agent.
 - **achievements.md**: a dated brag log ([Julia Evans](https://jvns.ca/blog/brag-documents/)): projects (contribution and impact), collaboration and mentorship, design and documentation, company building, learning, feedback received. Tag entries with an [Engineering Ladders](https://www.engineeringladders.com/) dimension (Technology, System, People, Process, Influence) when useful, and link the evidence.
 - **stories.md**: one entry per story: title, Situation, Task, Action (what *I* did), Result (measured where the source supports it), skills or dimension shown, evidence link, date.
-- **compensation.md**: the private baseline plus an optional package overview (employer, contract and hours, salary and bonus, benefits such as car, vouchers, insurance and pension, mobility, other) with the same fields for each offer. Belgian users can follow the [r/BESalary template](https://www.reddit.com/r/BESalary/comments/12xam5d/whats_your_wage_and_work_conditions_template/).
+- **facts/compensation.md** and **criteria/salary-expectations.md**: the same optional package overview (employer, contract and hours, salary and bonus, benefits such as car, vouchers, insurance and pension, mobility, other). The fact records the current package; the criterion records minimum and target values, must-have benefits and acceptable trade-offs. Every offer is compared line by line against both. Belgian users can follow the [r/BESalary template](https://www.reddit.com/r/BESalary/comments/12xam5d/whats_your_wage_and_work_conditions_template/).
 - **expectations.md**: Must-haves, Nice-to-haves, Deal-breakers, optionally grouped by [O*NET work values](https://www.onetcenter.org/dictionary/26.0/excel/work_values.html) (Achievement, Independence, Recognition, Relationships, Support, Working Conditions), plus a short screening checklist.
 - **values.md**: what matters to the user; optionally their ranking of [Schein's career anchors](https://mitsloan.mit.edu/ideas-made-to-matter/5-enduring-management-ideas-mit-sloans-edgar-schein) (technical/functional competence, general management, autonomy/independence, security/stability, entrepreneurial creativity, service/dedication to a cause, pure challenge, lifestyle) and of the O*NET work values.
 - **north-star.md**: one north star, ideal job, target role (for an individual contributor, optionally a [StaffEng archetype](https://staffeng.com/guides/staff-archetypes): Tech Lead, Architect, Solver, Right Hand), target responsibility level, considered next steps, career-change options.
@@ -132,7 +134,8 @@ Rankings and levels are the user's own answers. An agent may suggest them from e
 | Flat record | Layered record |
 | --- | --- |
 | `profile/contact.md`, `experience.md`, `education.md`, `qualifications.md`, `languages.md`, `skills.md` | same name under `profile/facts/` |
-| `profile/preferences.md` | `profile/criteria/conditions.md`; compensation sections to `profile/criteria/compensation.md` |
+| `profile/preferences.md` | `profile/criteria/conditions.md`; current pay to `profile/facts/compensation.md`; salary targets to `profile/criteria/salary-expectations.md` |
+| `profile/criteria/compensation.md` (earlier layered layout) | `profile/facts/compensation.md`; targets to `profile/criteria/salary-expectations.md` |
 | opportunity-screening sections of `direction.md` | `profile/criteria/expectations.md` |
 | `profile/direction.md` or `profile/goals/direction.md` | split into `profile/goals/values.md`, `north-star.md` and `certifications.md` (planned credentials, also from the development plan) |
 | `profile/development.md` | `profile/goals/development.md` |
