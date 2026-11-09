@@ -12,6 +12,17 @@ Check what a surface actually shows against the user's canonical facts and appro
 - **Scope:** Find factual, presentation and visual-drift issues; ask how to reconcile differences instead of assuming live or staged content is right. Never edit surfaces or overwrite records.
 - **Output:** Findings in the response or the user's existing review/tracker record; with several surfaces, a discrepancy matrix and deduplicated actions.
 
+## Writing records
+
+<!-- writing-rule -->
+Records are read mostly by agents, so keep them token-efficient:
+1. Dense, factual and scannable: lists and tables over prose; no preamble, filler, repeated context or narrative padding.
+2. One home per fact: link to it instead of restating it.
+3. Small files, split by topic.
+4. Cut words, never information: keep facts, figures, dates, sources, decisions, TODOs, approved or "avoid" wording, approximations and caveats.
+5. When you touch a record, condense nearby verbosity the same way; keep file names and anchors stable, or fix the links.
+<!-- /writing-rule -->
+
 ## Steps
 1. **Scope.** Identify each surface, accessible version, date checked and audience. Mark inaccessible parts unknown; accept exports and pasted content. In an export archive (for example a LinkedIn data zip) read only the profile files the audit needs, in place; leave messages and connections unopened.
 2. **Extract claims** by subject: headline, roles and dates, experience, skills, credentials, projects, links, contact. When visible, note banner, avatar/logo, palette and typography.

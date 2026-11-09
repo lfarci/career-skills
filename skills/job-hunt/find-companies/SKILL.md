@@ -10,6 +10,17 @@ description: Research target employers fitting career direction, interests and g
 - **Scope:** Assess employer fit independently of vacancy availability; do not apply or contact employers.
 - **Output:** Shortlist first; save selected employers to research/companies/<company>.md with fit, sources/check dates and unknowns.
 
+## Writing records
+
+<!-- writing-rule -->
+Records are read mostly by agents, so keep them token-efficient:
+1. Dense, factual and scannable: lists and tables over prose; no preamble, filler, repeated context or narrative padding.
+2. One home per fact: link to it instead of restating it.
+3. Small files, split by topic.
+4. Cut words, never information: keep facts, figures, dates, sources, decisions, TODOs, approved or "avoid" wording, approximations and caveats.
+5. When you touch a record, condense nearby verbosity the same way; keep file names and anchors stable, or fix the links.
+<!-- /writing-rule -->
+
 ## Establish fit criteria
 - Read the user's selected profile and career direction. Reuse explicit current preferences; ask only missing information that materially changes the search. Do not infer preferred roles or industries solely from past employers.
 - Use as fit evidence only facts the records mark confirmed or that two sources agree on; name any single-source or conflicting claim as unconfirmed instead of relying on it.

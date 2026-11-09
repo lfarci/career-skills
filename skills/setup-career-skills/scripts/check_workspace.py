@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check a Career Skills Markdown workspace: index, local links and record coverage.
+"""Check a Career Skills Markdown workspace: index, local links, record coverage and size.
 
 Standard library only; works on Windows, macOS and Linux.
 
@@ -22,6 +22,8 @@ HOMES = ("profile", "projects", "brand", "assets", "research")
 STATUSES = ("in progress", "paused", "ready", "blocked")
 LINK = re.compile(r"(?<!!)\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 EXTERNAL = ("http://", "https://", "mailto:", "#")
+LARGE_RECORD_WORDS = 1500
+DUPLICATE_MIN_WORDS = 30
 INDEX_SECTIONS = {"records", "source inventory", "setup progress", "boundaries", "next decision", "notes"}
 
 
@@ -95,6 +97,26 @@ def check_index(root: Path, index: Path, report: Report) -> None:
             report.warnings.append(f"{child.name}/: not a standard home (fine if mapped in the index)")
 
 
+def check_size(root: Path, report: Report) -> None:
+    """Warn on very large records and on prose paragraphs repeated across records."""
+    seen: dict[str, str] = {}
+    for home in HOMES:
+        for md in sorted((root / home).rglob("*.md")) if (root / home).is_dir() else []:
+            rel = md.relative_to(root).as_posix()
+            text = re.sub(r"```.*?```", "", md.read_text(encoding="utf-8", errors="replace"), flags=re.S)
+            words = len(text.split())
+            if words > LARGE_RECORD_WORDS:
+                report.warnings.append(f"{rel}: large record ({words} words); condense or split by topic")
+            for para in re.split(r"\n\s*\n", text):
+                para = " ".join(para.split())
+                if len(para.split()) < DUPLICATE_MIN_WORDS or para.startswith(("|", "#", "<!--")):
+                    continue
+                if para in seen:
+                    report.warnings.append(f"{rel}: paragraph duplicated from {seen[para]}; keep one home and link")
+                else:
+                    seen[para] = rel
+
+
 def check(root: Path) -> Report:
     """Run every check against a workspace root."""
     report = Report(root=root.as_posix())
@@ -104,6 +126,7 @@ def check(root: Path) -> Report:
     else:
         check_index(root, index, report)
     check_links(root, report)
+    check_size(root, report)
     return report
 
 

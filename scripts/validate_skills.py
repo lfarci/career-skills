@@ -11,6 +11,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
+WRITERS = ("setup-career-skills", "maintain-profile", "validate-workspace", "find-companies", "find-jobs", "audit", "reflect", "plan-development", "personal-brand")
 EXPECTED = {
     "setup-career-skills", "plan-development",
     "reflect", "maintain-profile", "build-resume", "personal-brand",
@@ -94,6 +95,12 @@ def main() -> int:
         copy = rule.search(packages[required].read_text(encoding="utf-8")) if required in packages else None
         if not copy or not canonical_rule or copy.group(1) != canonical_rule.group(1):
             errors.append(f"{required}: repair rule missing or differs from docs/WORKSPACE.md")
+    writing = re.compile(r"<!-- writing-rule -->\n(.*?)<!-- /writing-rule -->", re.DOTALL)
+    canonical_writing = writing.search((ROOT / "docs" / "WORKSPACE.md").read_text(encoding="utf-8"))
+    for required in WRITERS:
+        copy = writing.search(packages[required].read_text(encoding="utf-8")) if required in packages else None
+        if not copy or not canonical_writing or copy.group(1) != canonical_writing.group(1):
+            errors.append(f"{required}: writing rule missing or differs from docs/WORKSPACE.md")
     tokens_block = re.compile(r"<!-- brand-tokens -->\n(.*?)<!-- /brand-tokens -->", re.DOTALL)
     canonical_tokens = tokens_block.search((ROOT / "docs" / "WORKSPACE.md").read_text(encoding="utf-8"))
     for rel in ("personal-brand/visual-identity/references/asset-structure.md",

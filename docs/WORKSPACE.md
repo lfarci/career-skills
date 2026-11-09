@@ -201,6 +201,19 @@ An existing custom layout can remain **operational** through its index even befo
 - Research is a long-term reference library. An expired job may still explain market requirements; an older profile can remain useful inspiration. Age alone does not make a record disposable.
 - Research review runs on request. Prefer archiving under user guidance, retaining useful history and updating affected links. Deletion is manual. During unrelated work, an agent noticing stale content asks whether the user wants it reviewed; it does not silently archive, delete or start background maintenance.
 
+## Writing records
+
+Shared by every skill that writes records (verbatim copies, validator-checked). `check_workspace.py` warns on very large records and on paragraphs repeated across records.
+
+<!-- writing-rule -->
+Records are read mostly by agents, so keep them token-efficient:
+1. Dense, factual and scannable: lists and tables over prose; no preamble, filler, repeated context or narrative padding.
+2. One home per fact: link to it instead of restating it.
+3. Small files, split by topic.
+4. Cut words, never information: keep facts, figures, dates, sources, decisions, TODOs, approved or "avoid" wording, approximations and caveats.
+5. When you touch a record, condense nearby verbosity the same way; keep file names and anchors stable, or fix the links.
+<!-- /writing-rule -->
+
 ## Workspace index and record rules
 
 Use the chosen root's `README.md` (typically `career/README.md`) as the managed workspace entry point: record storage location, source and ownership map, relevant original sources (imported, pending, excluded), optional tracker, branch/PR workflow, read/write boundaries, external publication permissions and unresolved decisions. Link rather than duplicate supporting documents; never store credentials in it.

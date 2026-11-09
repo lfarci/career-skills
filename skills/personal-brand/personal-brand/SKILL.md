@@ -12,6 +12,17 @@ The profile is the private truth; the personal brand is the public facet of that
 - **Scope:** Positioning, surface strategy and publishable text. Never change facts, never publish.
 - **Output:** `brand/positioning.md`, `brand/surfaces.md` ([format](references/surfaces-record.md)), text drafts in `assets/drafts/copy/<surface>.md`, copied to `assets/staged/copy/` after approval.
 
+## Writing records
+
+<!-- writing-rule -->
+Records are read mostly by agents, so keep them token-efficient:
+1. Dense, factual and scannable: lists and tables over prose; no preamble, filler, repeated context or narrative padding.
+2. One home per fact: link to it instead of restating it.
+3. Small files, split by topic.
+4. Cut words, never information: keep facts, figures, dates, sources, decisions, TODOs, approved or "avoid" wording, approximations and caveats.
+5. When you touch a record, condense nearby verbosity the same way; keep file names and anchors stable, or fix the links.
+<!-- /writing-rule -->
+
 ## Steps
 
 1. **Confirm surfaces.** Before any copy, know which public presences the user has or wants. If `brand/surfaces.md` exists, show its entries (name, status) and ask the user to confirm or correct them. Otherwise ask one short checklist question, for example: "Which of these do you have or want? LinkedIn · GitHub · personal website · X · Bluesky · Credly / Microsoft Learn · Malt or another freelance platform · other". When the request already lists the surfaces, restate them and treat that as the answer. Never guess a surface or a URL from the profile.

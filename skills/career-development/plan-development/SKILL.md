@@ -12,6 +12,17 @@ One private development plan, created once and revisited at its review points. P
 - **Scope:** Create or revise the plan; never declare planned learning achieved or publish it.
 - **Output:** profile/goals/development.md (or mapped plan) and, for target credentials, profile/goals/certifications.md: prioritized outcomes, actions, effort, evidence milestones, estimated and actual completion dates, review points, and dated review entries.
 
+## Writing records
+
+<!-- writing-rule -->
+Records are read mostly by agents, so keep them token-efficient:
+1. Dense, factual and scannable: lists and tables over prose; no preamble, filler, repeated context or narrative padding.
+2. One home per fact: link to it instead of restating it.
+3. Small files, split by topic.
+4. Cut words, never information: keep facts, figures, dates, sources, decisions, TODOs, approved or "avoid" wording, approximations and caveats.
+5. When you touch a record, condense nearby verbosity the same way; keep file names and anchors stable, or fix the links.
+<!-- /writing-rule -->
+
 ## Choose the branch
 If no plan exists, or the user wants a new one, **create**. If a plan exists and the user reports progress or reaches a review point, **review**. Ask only when it is unclear.
 

@@ -12,6 +12,17 @@ Find *live, verifiable* openings—not just roles that sound suitable. Search br
 - **Scope:** Verify and compare specific vacancies; do not apply or generate unsolicited application materials.
 - **Output:** Shortlist first; save selected roles to research/opportunities/<role>.md, linking company records and retaining requirements, sources, checked dates and fit.
 
+## Writing records
+
+<!-- writing-rule -->
+Records are read mostly by agents, so keep them token-efficient:
+1. Dense, factual and scannable: lists and tables over prose; no preamble, filler, repeated context or narrative padding.
+2. One home per fact: link to it instead of restating it.
+3. Small files, split by topic.
+4. Cut words, never information: keep facts, figures, dates, sources, decisions, TODOs, approved or "avoid" wording, approximations and caveats.
+5. When you touch a record, condense nearby verbosity the same way; keep file names and anchors stable, or fix the links.
+<!-- /writing-rule -->
+
 ## Steps
 
 1. Read the user's career record or supplied resume, confirmed preferences and constraints. Capture target functions, seniority, locations/time zones, remote/hybrid preferences, languages, employment eligibility, compensation expectations and exclusions **only when known**. Ask one targeted question if a missing hard constraint prevents useful searching; otherwise use declared assumptions.
