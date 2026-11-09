@@ -35,7 +35,7 @@ PROMPTS = {
     "3": "Use setup-career-skills to resume career-skill-resume here. Continue from its saved next decision.",
 }
 SEED_README = (
-    "# Career workspace\n\n## Records\n- [Experience](profile/experience.md)\n\n"
+    "# Career workspace\n\n## Records\n- [Experience](profile/facts/experience.md)\n\n"
     "## Setup progress\nStatus: in progress\nNext decision: choose one priority direction for the next review\n"
 )
 SEED_ROLE = "# Experience\n\n## ExampleCo, Software Engineer\n- Jan 2024 to Dec 2025\n"
@@ -47,9 +47,9 @@ def run(name: str, binary: str, scenario: str, model: str | None, timeout: int,
     workdir = h.make_scratch(name, skills={SKILL.name})
     if scenario == "3":
         root = workdir / "career-skill-resume"
-        (root / "profile").mkdir(parents=True)
+        (root / "profile" / "facts").mkdir(parents=True)
         (root / "README.md").write_text(SEED_README, encoding="utf-8")
-        (root / "profile" / "experience.md").write_text(SEED_ROLE, encoding="utf-8")
+        (root / "profile" / "facts" / "experience.md").write_text(SEED_ROLE, encoding="utf-8")
     env = h.agent_env(name, workdir)
     code = 0
     for turn, prompt in enumerate([PROMPTS[scenario], *follow_ups]):

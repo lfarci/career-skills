@@ -1,6 +1,6 @@
 # brand/surfaces.md
 
-One entry per public presence tied to the profile: its URL, and mainly what it is for and why it is targeted. Keep it short; omit unknown fields. `profile/contact.md` may repeat the main links for resumes; that is fine, it records contact details, not strategy.
+One entry per public presence tied to the profile: its URL, and mainly what it is for and why it is targeted. Keep it short; omit unknown fields. `profile/facts/contact.md` may repeat the main links for resumes; that is fine, it records contact details, not strategy.
 
 ```markdown
 # Surfaces

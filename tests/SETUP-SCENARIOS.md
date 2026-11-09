@@ -12,7 +12,7 @@ The runner makes a fresh temp dir per scenario, installs only this skill in the 
 
 ## 1. Named folder and supplied role
 Prompt names `career-skill-smoke` as the folder, grants writes and gives one ExampleCo role.
-**Pass:** `career-skill-smoke/README.md` and `profile/experience.md` exist with only the supplied role; no nested `career/`; no empty files; README has Records, Source inventory and Setup progress; the agent did not re-ask folder or permission; ends with one question.
+**Pass:** `career-skill-smoke/README.md` and `profile/facts/experience.md` exist with only the supplied role; no nested `career/`; no empty files; README has Records, Source inventory and Setup progress; the agent did not re-ask folder or permission; ends with one question.
 
 ## 2. No destination
 Prompt: "Use setup-career-skills to start my private career workspace."

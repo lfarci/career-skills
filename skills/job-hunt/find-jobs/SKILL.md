@@ -8,7 +8,7 @@ description: Find and verify current job openings; rank roles against career evi
 Find *live, verifiable* openings—not just roles that sound suitable. Search broadly, verify narrowly, and explain match quality without overstating certainty.
 
 ## Contract
-- **Input:** profile/ capabilities, goals and constraints; selected company records and current employer/recruiter listings.
+- **Input:** profile/facts/ capabilities, profile/goals/ direction, profile/criteria/ conditions, compensation and expectations; selected company records and current employer/recruiter listings.
 - **Scope:** Verify and compare specific vacancies; do not apply or generate unsolicited application materials.
 - **Output:** Shortlist first; save selected roles to research/opportunities/<role>.md, linking company records and retaining requirements, sources, checked dates and fit.
 

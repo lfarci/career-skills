@@ -1,11 +1,11 @@
 ---
 name: maintain-profile
-description: Maintain evidence-backed career facts (experience, skills, qualifications and projects). Ask what to focus on when invoked without a specific request.
+description: Maintain evidence-backed career facts (experience, skills, qualifications, achievements, interview stories and projects) and stated job criteria. Ask what to focus on when invoked without a specific request.
 ---
 
 # Maintain a Canonical Career Profile
 
-Maintain the user's private source of truth for experience, projects, achievements, qualifications and supporting evidence. Keep facts separate from career direction, development plans and public positioning. Use existing records if available; setup is optional.
+Maintain the user's private source of truth for experience, projects, achievements, stories, qualifications and supporting evidence, plus the criteria the user states for screening roles. Keep facts separate from career direction, development plans and public positioning. Use existing records if available; setup is optional.
 
 ## Contract
 - **Input:** A requested task or, when unspecified, the user's intention; relevant facts, evidence and existing records if any.
@@ -19,20 +19,27 @@ Follow the workspace's existing layout when its index maps records. Otherwise, a
 <!-- record-map -->
 | Fact | Record |
 | --- | --- |
-| Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/contact.md` |
-| Employers, titles/grades, dates, internships | `profile/experience.md` |
-| Degrees and schools | `profile/education.md` |
-| Certifications, licences, awards; expired or outgrown ones under `## Historical credentials` | `profile/qualifications.md` |
-| Skills and tools | `profile/skills.md` |
-| Spoken languages | `profile/languages.md` |
-| Goals, north star, considered next steps | `profile/direction.md` |
-| Location, work mode, commute, contract, salary preferences; current compensation as a private baseline (never a target the user did not set) | `profile/preferences.md` |
+| Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/facts/contact.md` |
+| Employers, titles/grades, dates, internships; optional self-assessed responsibility level per role | `profile/facts/experience.md` |
+| Degrees and schools | `profile/facts/education.md` |
+| Certifications, licences, awards; expired or outgrown ones under `## Historical credentials` | `profile/facts/qualifications.md` |
+| Skills and tools | `profile/facts/skills.md` |
+| Spoken languages | `profile/facts/languages.md` |
+| Dated achievements, recognition and feedback received (brag log) | `profile/facts/achievements.md` |
+| Interview stories (Situation, Task, Action, Result), each linked to its project or achievement | `profile/facts/stories.md` |
+| Location, work mode, travel, commute, contract type | `profile/criteria/conditions.md` |
+| Current compensation as a private baseline; salary targets only once the user sets them | `profile/criteria/compensation.md` |
+| Must-haves, nice-to-haves and deal-breakers for screening a role or company | `profile/criteria/expectations.md` |
+| Goals, north star, values, career anchors, ideal job, considered next steps | `profile/goals/direction.md` |
+| Development plan: objectives, actions with estimated and actual dates, dated reviews | `profile/goals/development.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
 | Every public surface: URL, purpose, why targeted, emphasis (may repeat links from contact.md) | `brand/surfaces.md` |
 | Reusable resumes, bios, banners | `assets/drafts/` or `assets/staged/` (approved) |
 | Saved companies, job ads, comparator profiles | `research/` |
 <!-- /record-map -->
+
+The three profile layers and optional headings (role fields, brag-log entries, STAR stories, criteria sections) are in [profile layers](references/profile-layers.md). A workspace with the earlier flat `profile/` (for example `profile/experience.md`) stays valid through its index links: write there and keep its layout unless the user asks to standardize.
 
 ## Steps
 

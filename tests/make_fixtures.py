@@ -19,11 +19,16 @@ EXP = """# Experience
 ## Software Engineering Intern, Tailspin Labs
 - Dates: Feb 2020 – Jul 2020
 """
-def base(case, readme_records=None, status="ready", extra_readme=""):
-    recs = readme_records or [("Contact","profile/contact.md"),("Experience","profile/experience.md"),("Skills","profile/skills.md"),("Education","profile/education.md"),
-            ("Qualifications","profile/qualifications.md"),("Direction","profile/direction.md"),("Positioning","brand/positioning.md"),
+FLAT = {"contact": "profile/contact.md", "experience": "profile/experience.md", "skills": "profile/skills.md",
+        "education": "profile/education.md", "qualifications": "profile/qualifications.md", "direction": "profile/direction.md"}
+LAYERED = {k: v.replace("profile/", "profile/goals/" if k == "direction" else "profile/facts/") for k, v in FLAT.items()}
+def base(case, readme_records=None, status="ready", extra_readme="", flat=False):
+    """Standard workspace; flat=True keeps the earlier flat profile/ layout (still valid via index links)."""
+    p = FLAT if flat else LAYERED
+    recs = readme_records or [("Contact",p["contact"]),("Experience",p["experience"]),("Skills",p["skills"]),("Education",p["education"]),
+            ("Qualifications",p["qualifications"]),("Direction",p["direction"]),("Positioning","brand/positioning.md"),
             ("Project: Contoso AI assistant","projects/contoso-ai-assistant.md")]
-    links = "\n".join(f"- [{t}]({p})" for t,p in recs)
+    links = "\n".join(f"- [{t}]({q})" for t,q in recs)
     w(case,"career/README.md",f"""# Career workspace
 
 Storage: private local folder (Markdown)
@@ -36,17 +41,17 @@ Publication: separate approval required
 ## Source inventory
 | Source | Decision | Destination | Notes |
 |---|---|---|---|
-| old-notes/resume.md | imported | profile/experience.md | 2026-09 |
+| old-notes/resume.md | imported | {p["experience"]} | 2026-09 |
 
 ## Setup progress
 Status: {status}
 {extra_readme}""")
-    w(case,"career/profile/experience.md",EXP)
-    w(case,"career/profile/skills.md","# Skills\n- C#, .NET 8, SQL, TypeScript, React\n- Azure App Service, Azure Functions, Azure DevOps pipelines (application deployment)\n- Source: old-notes/resume.md")
-    w(case,"career/profile/contact.md","# Contact (imported with approval)\n- Name: Alex Testa\n- E-mail: alex.testa@example.invalid\n- City: Brussels, Belgium")
-    w(case,"career/profile/education.md","# Education\n- MSc Computer Science, Université Exemple, 2020")
-    w(case,"career/profile/qualifications.md","# Qualifications\n- AZ-204 Azure Developer Associate, passed 2023 (credential ID on file)")
-    w(case,"career/profile/direction.md","# Direction\n- Goal: grow toward solution architecture while staying hands-on.")
+    w(case,"career/"+p["experience"],EXP)
+    w(case,"career/"+p["skills"],"# Skills\n- C#, .NET 8, SQL, TypeScript, React\n- Azure App Service, Azure Functions, Azure DevOps pipelines (application deployment)\n- Source: old-notes/resume.md")
+    w(case,"career/"+p["contact"],"# Contact (imported with approval)\n- Name: Alex Testa\n- E-mail: alex.testa@example.invalid\n- City: Brussels, Belgium")
+    w(case,"career/"+p["education"],"# Education\n- MSc Computer Science, Université Exemple, 2020")
+    w(case,"career/"+p["qualifications"],"# Qualifications\n- AZ-204 Azure Developer Associate, passed 2023 (credential ID on file)")
+    w(case,"career/"+p["direction"],"# Direction\n- Goal: grow toward solution architecture while staying hands-on.")
     w(case,"career/brand/positioning.md","# Positioning\n- Headline: .NET & Azure Engineer · Consulting\n- Audience: hiring managers at Benelux product companies")
     w(case,"career/projects/contoso-ai-assistant.md","# Contoso AI assistant\n- Status: experimental internal prototype (not in production)\n- Contribution: built the retrieval API in C#\n- Source: old-notes/projects.md")
 
@@ -62,8 +67,8 @@ w("resume-unsupported-metrics","job-ad.md","# Cloud Engineer, Woodgrove (synthet
 base("surface-inaccessible")
 
 base("brand-private-boundary")
-w("brand-private-boundary","career/profile/direction.md","# Direction (private)\n- Doubts: not sure I want to manage people; worried about losing hands-on work.\n- Goal: solution architecture.")
-w("brand-private-boundary","career/profile/development.md","# Development (private)\n- Action plan: ask manager for an architecture-lead assignment by Q1 (internal).\n- Planned: AI-102 Azure AI Engineer certification (not taken yet).")
+w("brand-private-boundary","career/profile/goals/direction.md","# Direction (private)\n- Doubts: not sure I want to manage people; worried about losing hands-on work.\n- Goal: solution architecture.")
+w("brand-private-boundary","career/profile/goals/development.md","# Development (private)\n- Action plan: ask manager for an architecture-lead assignment by Q1 (internal).\n- Planned: AI-102 Azure AI Engineer certification (not taken yet).")
 w("brand-private-boundary","career/brand/bio.md","# Public bio (current)\nSoftware engineer at Contoso Consulting.")
 
 base("brand-surfaces-copy", extra_readme="- [Surfaces](brand/surfaces.md)")
@@ -115,19 +120,19 @@ w("audit-drift","surfaces/linkedin/Profile.csv","First Name,Last Name,Headline,S
 
 w("profile-no-intent-existing","notes/career-notes.md","# Career notes\n"+EXP)
 
-base("workspace-stale-index", readme_records=[("Experience","profile/experience.md"),("Skills","profile/skills-old.md"),("Education","profile/education.md"),("Qualifications","profile/qualifications.md"),("Direction","profile/direction.md"),("Positioning","brand/positioning.md"),("Project: Contoso AI assistant","projects/contoso-ai-assistant.md")])
+base("workspace-stale-index", readme_records=[("Experience","profile/experience.md"),("Skills","profile/skills-old.md"),("Education","profile/education.md"),("Qualifications","profile/qualifications.md"),("Direction","profile/direction.md"),("Positioning","brand/positioning.md"),("Project: Contoso AI assistant","projects/contoso-ai-assistant.md")], flat=True)
 
 c="workspace-valid-custom-layout"
-base(c, readme_records=[("Experience","profile/experience.md"),("Skills","profile/skills.md"),("Education","profile/education.md"),("Qualifications","profile/qualifications.md"),("Direction","profile/direction.md"),("Positioning","personal-brand/positioning.md"),("Project: Contoso AI assistant","projects/contoso-ai-assistant.md")])
+base(c, readme_records=[("Experience","profile/experience.md"),("Skills","profile/skills.md"),("Education","profile/education.md"),("Qualifications","profile/qualifications.md"),("Direction","profile/direction.md"),("Positioning","personal-brand/positioning.md"),("Project: Contoso AI assistant","projects/contoso-ai-assistant.md")], flat=True)
 (F/c/"career/brand/positioning.md").rename(F/c/"career/brand/x"); (F/c/"career/personal-brand").mkdir(); (F/c/"career/brand/x").rename(F/c/"career/personal-brand/positioning.md"); (F/c/"career/brand").rmdir()
 
 c="workspace-full-review-request"
-base(c, readme_records=[("Experience","profile/experience.md"),("Skills","profile/skills.md"),("Education","profile/education.md"),("Qualifications","profile/certs.md"),("Direction","profile/direction.md"),("Positioning","brand/positioning.md")])
+base(c, readme_records=[("Experience","profile/experience.md"),("Skills","profile/skills.md"),("Education","profile/education.md"),("Qualifications","profile/certs.md"),("Direction","profile/direction.md"),("Positioning","brand/positioning.md")], flat=True)
 w(c,"career/assets/drafts/resumes/general/resume.md","# Resume draft\nSee [experience](../../../../profile/experiance.md).")
 
 base("workspace-user-goal-first")
 base("ask-career-skills-after-setup")
-base("ask-career-skills-structure", readme_records=[("Experience","profiles/experience.md"),("Skills","profile/skills.md"),("Education","profile/education.md"),("Qualifications","profile/qualifications.md"),("Direction","profile/direction.md"),("Positioning","brand/positioning.md"),("Project: Contoso AI assistant","projects/contoso-ai-assistant.md")])
+base("ask-career-skills-structure", readme_records=[("Experience","profiles/experience.md"),("Skills","profile/skills.md"),("Education","profile/education.md"),("Qualifications","profile/qualifications.md"),("Direction","profile/direction.md"),("Positioning","brand/positioning.md"),("Project: Contoso AI assistant","projects/contoso-ai-assistant.md")], flat=True)
 
 c="setup-fresh-selective-import"
 w(c,"old/resume.md","# Alex Testa — Resume\n"+EXP)
@@ -166,7 +171,7 @@ w(c,"sources/side-projects.md","# Side projects\n- Open-source Blazor component 
 
 c="setup-resume-invalid-workspace-before-import"
 base(c, status="in progress", extra_readme="Next: import projects from sources/projects/")
-(F/c/"career/profile/experience.md").rename(F/c/"career/profile/work-history.md")
+(F/c/"career/profile/facts/experience.md").rename(F/c/"career/profile/facts/work-history.md")
 w(c,"sources/projects/payments-api.md","# Payment API migration\n- .NET 8, 2022–2024")
 
 c="setup-resume-valid-continue-next-step"
@@ -208,7 +213,7 @@ w(c,"career/README.md","# Career workspace\n\n## Records\n- [Experience](profile
 w(c,"career/profile/experience.md",EXP)
 
 c="repair-renamed-record-same-fix"
-base(c); (F/c/"career/profile/skills.md").rename(F/c/"career/profile/technical-skills.md")
+base(c); (F/c/"career/profile/facts/skills.md").rename(F/c/"career/profile/facts/technical-skills.md")
 
 c="design-banner-concepts-after-logo-approved"
 base(c, extra_readme="- [Visual identity](brand/identity.md)")

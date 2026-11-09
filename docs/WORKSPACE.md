@@ -6,7 +6,7 @@ Use ordinary Markdown and links in user-selected private storage: local files, a
 
 | Directory | Owns | Related skills |
 | --- | --- | --- |
-| profile/ | Background, capabilities, aspirations, preferences and development | reflect, maintain-profile, plan-development |
+| profile/ | Three layers: `facts/` (past, verifiable), `criteria/` (what a role must offer now), `goals/` (aspirations and development) | maintain-profile, reflect, plan-development |
 | projects/ | Career-oriented project records and links to actual work | maintain-profile; other skills consume selected project evidence |
 | brand/ | Positioning, target surfaces, visual identity (brief, design system, brand tokens) | personal-brand, visual-identity, audit |
 | assets/ | Reusable external-facing outputs: copy, visuals and resumes, as drafts and approved staged material | personal-brand, visual-identity, build-resume, audit |
@@ -20,7 +20,7 @@ The five homes are **standard physical destinations within the chosen managed wo
 
 ```mermaid
 flowchart LR
-    J["projects/<br/>work records and evidence links"] -.->|"selected evidence"| P["profile/<br/>facts, goals and development"]
+    J["projects/<br/>work records and evidence links"] -.->|"selected evidence"| P["profile/<br/>facts, criteria and goals"]
     P -->|"grounds claims"| B["brand/<br/>positioning and identity guidance"]
     P -->|"supports reusable content"| A["assets/<br/>drafts and approved staged outputs"]
     B -->|"guides"| A
@@ -40,15 +40,22 @@ New managed workspaces use these home names directly under the selected root, us
 career/
   README.md
   profile/
-    contact.md
-    experience.md
-    education.md
-    qualifications.md
-    languages.md
-    skills.md
-    direction.md
-    preferences.md
-    development.md
+    facts/
+      contact.md
+      experience.md
+      education.md
+      qualifications.md
+      languages.md
+      skills.md
+      achievements.md
+      stories.md
+    criteria/
+      conditions.md
+      compensation.md
+      expectations.md
+    goals/
+      direction.md
+      development.md
   projects/
     project-name.md
   brand/
@@ -70,14 +77,19 @@ career/
 <!-- record-map -->
 | Fact | Record |
 | --- | --- |
-| Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/contact.md` |
-| Employers, titles/grades, dates, internships | `profile/experience.md` |
-| Degrees and schools | `profile/education.md` |
-| Certifications, licences, awards; expired or outgrown ones under `## Historical credentials` | `profile/qualifications.md` |
-| Skills and tools | `profile/skills.md` |
-| Spoken languages | `profile/languages.md` |
-| Goals, north star, considered next steps | `profile/direction.md` |
-| Location, work mode, commute, contract, salary preferences; current compensation as a private baseline (never a target the user did not set) | `profile/preferences.md` |
+| Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/facts/contact.md` |
+| Employers, titles/grades, dates, internships; optional self-assessed responsibility level per role | `profile/facts/experience.md` |
+| Degrees and schools | `profile/facts/education.md` |
+| Certifications, licences, awards; expired or outgrown ones under `## Historical credentials` | `profile/facts/qualifications.md` |
+| Skills and tools | `profile/facts/skills.md` |
+| Spoken languages | `profile/facts/languages.md` |
+| Dated achievements, recognition and feedback received (brag log) | `profile/facts/achievements.md` |
+| Interview stories (Situation, Task, Action, Result), each linked to its project or achievement | `profile/facts/stories.md` |
+| Location, work mode, travel, commute, contract type | `profile/criteria/conditions.md` |
+| Current compensation as a private baseline; salary targets only once the user sets them | `profile/criteria/compensation.md` |
+| Must-haves, nice-to-haves and deal-breakers for screening a role or company | `profile/criteria/expectations.md` |
+| Goals, north star, values, career anchors, ideal job, considered next steps | `profile/goals/direction.md` |
+| Development plan: objectives, actions with estimated and actual dates, dated reviews | `profile/goals/development.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
 | Every public surface: URL, purpose, why targeted, emphasis (may repeat links from contact.md) | `brand/surfaces.md` |
@@ -85,9 +97,41 @@ career/
 | Saved companies, job ads, comparator profiles | `research/` |
 <!-- /record-map -->
 
-Historical credentials (expired, lapsed or outgrown, for example an old language certificate or an introductory online course) stay in `profile/qualifications.md` under `## Historical credentials`, separate from current ones; resumes and public copy use current credentials only unless the user asks. Current compensation, when the user shares it, is a private baseline in `profile/preferences.md` for comparing offers; it never becomes a target or appears on a public surface.
+Historical credentials (expired, lapsed or outgrown, for example an old language certificate or an introductory online course) stay in `profile/facts/qualifications.md` under `## Historical credentials`, separate from current ones; resumes and public copy use current credentials only unless the user asks. Current compensation, when the user shares it, is a private baseline in `profile/criteria/compensation.md` for comparing offers; it never becomes a target or appears on a public surface.
 
-Unused homes can remain documented in `career/README.md` until populated. Create only needed records; combine or split files when useful. direction.md can hold north star, values, motivations, interests and goals. development.md holds actions, evidence milestones and dated progress reviews. Project records describe purpose, status, contribution, skills used, learning, relevance to a resume and links to work; do not copy source code or the project's backlog.
+## Profile layers
+
+`profile/` separates three kinds of records so that each skill reads only what it needs:
+
+- **`facts/`**: what happened and can be checked: roles, credentials, skills, achievements, stories. maintain-profile owns it; setup imports into it.
+- **`criteria/`**: what a role must offer now, used to screen companies and offers: conditions, compensation, expectations. maintain-profile records what the user states; reflect may propose expectations; find-companies and find-jobs read it as hard constraints and preferences.
+- **`goals/`**: where the user wants to go and how to grow: `direction.md` (reflect) and `development.md` (plan-development).
+
+A fact never moves into goals because it is aspirational wording, and a goal never becomes a fact until there is evidence. Criteria are the user's stated current conditions, not inferred from past employers.
+
+Optional headings borrowed from established methods. Use them when they help; none is required, and none adds scores, schemas or tests:
+
+- **experience.md** per role: position, organisation, start and end dates (`YYYY-MM`), summary, highlights (field names as in [JSON Resume](https://jsonresume.org/schema)). An optional *responsibility level*, self-assessed by the user on the [SFIA](https://sfia-online.org/en/sfia-9/responsibilities) 1–7 scale (Follow, Assist, Apply, Enable, Ensure/advise, Initiate/influence, Set strategy/inspire/mobilise); never assigned by an agent.
+- **achievements.md**: a dated brag log ([Julia Evans](https://jvns.ca/blog/brag-documents/)): projects (contribution and impact), collaboration and mentorship, design and documentation, company building, learning, feedback received. Tag entries with an [Engineering Ladders](https://www.engineeringladders.com/) dimension (Technology, System, People, Process, Influence) when useful, and link the evidence.
+- **stories.md**: one entry per story: title, Situation, Task, Action (what *I* did), Result (measured where the source supports it), skills or dimension shown, evidence link, date.
+- **expectations.md**: Must-haves, Nice-to-haves, Deal-breakers, optionally grouped by [O*NET work values](https://www.onetcenter.org/dictionary/26.0/excel/work_values.html) (Achievement, Independence, Recognition, Relationships, Support, Working Conditions), plus a short screening checklist.
+- **direction.md**: one north star; optionally the user's ranking of [Schein's career anchors](https://mitsloan.mit.edu/ideas-made-to-matter/5-enduring-management-ideas-mit-sloans-edgar-schein) (technical/functional competence, general management, autonomy/independence, security/stability, entrepreneurial creativity, service/dedication to a cause, pure challenge, lifestyle), ideal job, target responsibility level, career-change options.
+- **development.md**: an individual development plan: objectives with estimated and actual completion dates, actions, evidence of completion and dated reviews.
+
+Rankings and levels are the user's own answers. An agent may suggest them from evidence but records them only as proposals until the user confirms.
+
+**Earlier flat layout.** A workspace created before the layers (`profile/experience.md`, `profile/preferences.md`, …) stays valid: skills follow its index links. Move files only when the user asks to standardize the layout (repair rule 3). Migration map:
+
+| Flat record | Layered record |
+| --- | --- |
+| `profile/contact.md`, `experience.md`, `education.md`, `qualifications.md`, `languages.md`, `skills.md` | same name under `profile/facts/` |
+| `profile/preferences.md` | `profile/criteria/conditions.md`; compensation sections to `profile/criteria/compensation.md` |
+| opportunity-screening sections of `direction.md` | `profile/criteria/expectations.md` |
+| `profile/direction.md`, `profile/development.md` | same name under `profile/goals/` |
+
+When migrating, move files with history preserved where the storage allows (for example `git mv`), rewrite every inbound link including links outside `career/`, update the index, then run the workspace check.
+
+Unused homes can remain documented in `career/README.md` until populated. Create only needed records; combine or split files when useful. goals/direction.md can hold north star, values, motivations, interests and goals. goals/development.md holds actions, evidence milestones and dated progress reviews. Project records describe purpose, status, contribution, skills used, learning, relevance to a resume and links to work; do not copy source code or the project's backlog.
 
 ## Brand tokens
 
@@ -116,7 +160,7 @@ brand/ contains guidance, not a second asset library. identity.md can describe f
 1. **Confirm destination and mode.** Ask where the workspace belongs (unless already specified or confirmed). Inspect the selected location only. If an existing workspace is present, **validate before any changes**; repair broken mappings only with approval, then resume saved pending work. Otherwise start fresh. Ambiguous occupied directories require the user's decision; don't overwrite or create a duplicate root.
 2. **Discover (read-only).** With permission, look for existing career notes, resumes, portfolio/project documents, certificates, published profile exports and other user-supplied sources. Record where they are and what each might contribute; ask before expanding access or reading sensitive material.
 3. **Select and map.** Present a concise inventory and recommend which sources/sections to bring in first. Let the user choose. Map selected claims to `profile/`, project records to `projects/`, positioning and design guidance to `brand/`, reusable artifacts to `assets/`, and selected outside references to `research/`. External documents are **inputs**, not automatically authoritative workspace files.
-4. **Create the canonical destination.** After confirming storage and write policy, initialize `README.md` at the selected root plus the standard homes needed for selected content, documenting unused homes as pending without creating empty folders. Extract selected content into canonical Markdown records; **do not bulk-copy old workspaces or invent filler data**. Treat `profile/experience.md` as a complete *role-history* record for the chosen sources (including internships where supported), not a dump of client engagements; place assignments and project evidence in `projects/` with links. Retain source locations, dates when known and uncertainty; ask about real contradictions or omissions.
+4. **Create the canonical destination.** After confirming storage and write policy, initialize `README.md` at the selected root plus the standard homes needed for selected content, documenting unused homes as pending without creating empty folders. Extract selected content into canonical Markdown records; **do not bulk-copy old workspaces or invent filler data**. Treat `profile/facts/experience.md` as a complete *role-history* record for the chosen sources (including internships where supported), not a dump of client engagements; place assignments and project evidence in `projects/` with links. Retain source locations, dates when known and uncertainty; ask about real contradictions or omissions.
 5. **Review gaps and continue.** Check new records and links, and list what is captured, missing, uncertain and intentionally deferred. Ask the next most useful question, including about unconsidered existing documents and essential facts absent from selected sources; don't stop after the first import batch. Save a short `in progress` / `paused` / `ready` / `blocked` checkpoint with the selected next area in the root `README.md`. Finish guided onboarding only when the user confirms the chosen scope is sufficient or chooses minimal setup. No fixed questionnaire or fully populated five-home requirement.
 
 **Chosen root already occupied?** Resume the existing workspace after lightweight validation, or let the user choose a different root. If they explicitly request a physical migration, propose a plan before moving anything; `validate-workspace` is optional. Never overwrite the existing root, create a hidden duplicate authority, or move/delete old files without a selected migration plan and approval. Import can also be read-only when no write destination is available.
@@ -133,7 +177,7 @@ An existing custom layout can remain **operational** through its index even befo
 
 - drafts/ contains proposed text and visual work; staged/ contains the latest explicitly approved reusable versions. Neither proves publication. Preserve meaningful option/revision history without a mandatory final/ directory.
 - Organize by content/use (bios, headlines, resumes, logos, banners) only when needed. Reuse a shared bio or headline across surfaces; create separate adaptations only for intentional differences. Link rather than duplicate common content or visual masters.
-- brand/surfaces.md (owned by personal-brand) lists each public presence tied to the profile: URL, audience, why it is targeted, what to emphasise, linked copy, status (`active` gets copy and visuals; `planned` and `dropped` get none) and last-reviewed date. `personal-brand` confirms the list with the user before drafting; `visual-identity` and `audit` read it. It is the home for public surface links; `profile/contact.md` may repeat the main ones (site, LinkedIn, X/Bluesky) as contact details for resumes. The duplication is intended: contact details and surface strategy are different concepts. A legacy `assets/services.md` is a source to import. Do not assume APIs, scraping or automation work.
+- brand/surfaces.md (owned by personal-brand) lists each public presence tied to the profile: URL, audience, why it is targeted, what to emphasise, linked copy, status (`active` gets copy and visuals; `planned` and `dropped` get none) and last-reviewed date. `personal-brand` confirms the list with the user before drafting; `visual-identity` and `audit` read it. It is the home for public surface links; `profile/facts/contact.md` may repeat the main ones (site, LinkedIn, X/Bluesky) as contact details for resumes. The duplication is intended: contact details and surface strategy are different concepts. A legacy `assets/services.md` is a source to import. Do not assume APIs, scraping or automation work.
 - Live surfaces establish actual published state; the profile establishes supported personal facts and intentions. Source code can help inspect a website but does not prove what is deployed. A staged asset is not a published snapshot.
 - Compare accessible live content, or user-provided exports/pasted text, with the relevant staged material. State source and inspection date/limits; do not require a historical snapshot store. If there is a difference, ask whether to update the workspace, the external surface or leave an intentional adaptation. Do not guess which side changed.
 - Flag factual incoherence before importing public edits into the profile. Importing wording does not establish the truth of a new credential, role or achievement. Publication requires the user's authorization; manually copying staged material is a valid workflow.
@@ -169,7 +213,7 @@ Canonical areas: profile/, projects/, brand/, assets/, research/
 ## Source inventory
 | Existing source | Decision | Managed destination | Notes |
 | --- | --- | --- | --- |
-| Path or user-provided link | imported / pending / excluded | profile/experience.md (if selected) | source date, unresolved differences |
+| Path or user-provided link | imported / pending / excluded | profile/facts/experience.md (if selected) | source date, unresolved differences |
 
 ## Boundaries
 Publication: separate approval required

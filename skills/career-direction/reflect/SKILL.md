@@ -8,9 +8,9 @@ description: Explore career direction, motivations, trade-offs and professional 
 Help the person understand where they are professionally, where they want to go and why. This skill is about career identity, **not** general-purpose journaling or making a resume.
 
 ## Contract
-- **Input:** profile/ direction, experience and preferences; relevant project accounts or supplied history.
+- **Input:** profile/goals/direction.md, profile/facts/ experience and achievements, profile/criteria/; relevant project accounts or supplied history.
 - **Scope:** Clarify professional motivations, north star and choices; do not rewrite experience or public positioning.
-- **Output:** profile/direction.md (or mapped equivalent): reflection, alternatives, decisions and open questions.
+- **Output:** profile/goals/direction.md (or mapped equivalent): reflection, alternatives, decisions and open questions. Screening rules the user states (must-haves, deal-breakers) are proposed for profile/criteria/expectations.md.
 
 ## Steps
 
@@ -24,10 +24,11 @@ Help the person understand where they are professionally, where they want to go 
 
 - Current professional identity (fact-based)
 - Demonstrated strengths and supporting examples
-- Interests, motivators and work preferences (user-attributed)
+- Interests, motivators and work preferences (user-attributed); optionally the user's own ranking of career anchors (technical/functional competence, general management, autonomy/independence, security/stability, entrepreneurial creativity, service/dedication to a cause, pure challenge, lifestyle) and work values (Achievement, Independence, Recognition, Relationships, Support, Working Conditions), recorded as proposals until confirmed
 - Possible directions and associated trade-offs
 - Preferred direction, if decided, or alternatives still under consideration
-- Private north star, goals, experiments and evidence to gather
+- One private north star, ideal job, goals, experiments and evidence to gather
+- Must-haves and deal-breakers the user stated, proposed for profile/criteria/expectations.md rather than kept in direction
 - Development priorities to hand off to a private action plan; plan-development can structure it when available
 - Open questions and decisions
 

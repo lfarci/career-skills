@@ -33,7 +33,7 @@ class FixtureTests(unittest.TestCase):
     def test_case_fixture_is_copied_into_scratch_cwd(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "r.json"
-            lister = shlex.join([sys.executable, "-c", "import os;print(sorted(os.listdir('career/profile')))"])
+            lister = shlex.join([sys.executable, "-c", "import os;print(sorted(os.listdir('career/profile/facts')))"])
             run(lister, out, {"repair-renamed-record-same-fix"}, 30, "test")
             response = json.loads(out.read_text(encoding="utf-8"))["results"][0]["response"]
             self.assertIn("technical-skills.md", response)

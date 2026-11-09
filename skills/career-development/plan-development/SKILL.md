@@ -8,9 +8,9 @@ description: Plan professional growth, or review progress against an existing pl
 One private development plan, created once and revisited at its review points. Plans, completed learning and demonstrated capability stay distinct.
 
 ## Contract
-- **Input:** profile/ direction, skills, preferences and constraints; relevant project evidence; for a review, the current plan, the review period and what actually happened.
+- **Input:** profile/goals/direction.md, profile/facts/ skills and achievements, profile/criteria/ constraints; relevant project evidence; for a review, the current plan, the review period and what actually happened.
 - **Scope:** Create or revise the plan; never declare planned learning achieved or publish it.
-- **Output:** profile/development.md (or mapped plan): prioritized outcomes, actions, effort, evidence milestones, review points, and dated review entries.
+- **Output:** profile/goals/development.md (or mapped plan): prioritized outcomes, actions, effort, evidence milestones, estimated and actual completion dates, review points, and dated review entries.
 
 ## Choose the branch
 If no plan exists, or the user wants a new one, **create**. If a plan exists and the user reports progress or reaches a review point, **review**. Ask only when it is unclear.
@@ -18,7 +18,7 @@ If no plan exists, or the user wants a new one, **create**. If a plan exists and
 ## Create
 - Read the chosen direction, demonstrated experience and constraints. Ask only for missing priorities, time, budget or deadlines that change the plan. Assume no default goal (promotion, management, certification, a tech track); if direction is undecided, ask one question about the target or suggest `reflect`, and plan only against a stated direction.
 - Separate demonstrated capabilities from aspirations. Keep gaps relevant to the chosen work; a job-ad requirement or peer credential is not automatically a gap.
-- Prioritize a few outcomes by relevance and effort; state what is deferred. For each: a concrete action or experiment, approximate effort/cadence, observable completion evidence and a review point. Completing a course differs from demonstrating a skill.
+- Prioritize a few outcomes by relevance and effort; state what is deferred. For each: a concrete action or experiment, approximate effort/cadence, observable completion evidence, an estimated completion date and a review point; record the actual date when it is done. Completing a course differs from demonstrating a skill.
 - Fit time and budget with estimates. Check current official sources for specific courses or certifications, or label cost and availability unknown.
 
 ## Review

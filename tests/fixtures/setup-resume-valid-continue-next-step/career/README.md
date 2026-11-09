@@ -5,19 +5,19 @@ Write policy: propose changes; direct edits only when approved
 Publication: separate approval required
 
 ## Records
-- [Contact](profile/contact.md)
-- [Experience](profile/experience.md)
-- [Skills](profile/skills.md)
-- [Education](profile/education.md)
-- [Qualifications](profile/qualifications.md)
-- [Direction](profile/direction.md)
+- [Contact](profile/facts/contact.md)
+- [Experience](profile/facts/experience.md)
+- [Skills](profile/facts/skills.md)
+- [Education](profile/facts/education.md)
+- [Qualifications](profile/facts/qualifications.md)
+- [Direction](profile/goals/direction.md)
 - [Positioning](brand/positioning.md)
 - [Project: Contoso AI assistant](projects/contoso-ai-assistant.md)
 
 ## Source inventory
 | Source | Decision | Destination | Notes |
 |---|---|---|---|
-| old-notes/resume.md | imported | profile/experience.md | 2026-09 |
+| old-notes/resume.md | imported | profile/facts/experience.md | 2026-09 |
 
 ## Setup progress
 Status: paused

@@ -8,7 +8,7 @@ description: Decide how the user presents themselves publicly (role and strength
 The profile is the private truth; the personal brand is the public facet of that truth. It chooses **which role and which parts of the career to put forward**, **on which surfaces**, and writes the **text** people will read there. Every claim comes from the profile; every output is a draft until the user approves it. Visuals (palette, fonts, logo, banners) belong to `visual-identity`.
 
 ## Contract
-- **Input:** profile/ and projects/ records, profile/direction.md, existing brand/ records and any live text the user supplies.
+- **Input:** profile/facts/ and projects/ records, profile/goals/direction.md, existing brand/ records and any live text the user supplies.
 - **Scope:** Positioning, surface strategy and publishable text. Never change facts, never publish.
 - **Output:** `brand/positioning.md`, `brand/surfaces.md` ([format](references/surfaces-record.md)), text drafts in `assets/drafts/copy/<surface>.md`, copied to `assets/staged/copy/` after approval.
 

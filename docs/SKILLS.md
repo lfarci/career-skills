@@ -55,7 +55,7 @@ Removed for the MVP: `benchmark-profile` and `review-research` (research retenti
 
 ## Shared career workspace
 
-The entire workspace is private, including material prepared for public use. Its five homes are **profile/** (background, capabilities, direction and development), **projects/** (work accounts and evidence links), **brand/** (positioning, target surfaces and visual identity), **assets/** (drafts and approved staged copy, visuals and resumes), and **research/** (selected companies, opportunities and comparable profiles).
+The entire workspace is private, including material prepared for public use. Its five homes are **profile/** (`facts/`, `criteria/` and `goals/`), **projects/** (work accounts and evidence links), **brand/** (positioning, target surfaces and visual identity), **assets/** (drafts and approved staged copy, visuals and resumes), and **research/** (selected companies, opportunities and comparable profiles).
 
 A managed workspace uses the **physical** `career/` root with these standardized directory names, creating each home when needed. `career/README.md` is its entry point and can map homes not yet populated. Existing resumes, old notes, project records and profile exports are potential **sources** to populate new canonical Markdown records: select and verify them rather than bulk-copying or silently moving the originals. Reuse approved assets; staged material is not proof of publication. Research is retained selectively.
 
