@@ -73,17 +73,19 @@ career/
 | Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/contact.md` |
 | Employers, titles/grades, dates, internships | `profile/experience.md` |
 | Degrees and schools | `profile/education.md` |
-| Certifications, licences, awards | `profile/qualifications.md` |
+| Certifications, licences, awards; expired or outgrown ones under `## Historical credentials` | `profile/qualifications.md` |
 | Skills and tools | `profile/skills.md` |
 | Spoken languages | `profile/languages.md` |
 | Goals, north star, considered next steps | `profile/direction.md` |
-| Location, work mode, commute, contract, salary preferences | `profile/preferences.md` |
+| Location, work mode, commute, contract, salary preferences; current compensation as a private baseline (never a target the user did not set) | `profile/preferences.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
 | Every public surface: URL, purpose, why targeted, emphasis (may repeat links from contact.md) | `brand/surfaces.md` |
 | Reusable resumes, bios, banners | `assets/drafts/` or `assets/staged/` (approved) |
 | Saved companies, job ads, comparator profiles | `research/` |
 <!-- /record-map -->
+
+Historical credentials (expired, lapsed or outgrown, for example an old language certificate or an introductory online course) stay in `profile/qualifications.md` under `## Historical credentials`, separate from current ones; resumes and public copy use current credentials only unless the user asks. Current compensation, when the user shares it, is a private baseline in `profile/preferences.md` for comparing offers; it never becomes a target or appears on a public surface.
 
 Unused homes can remain documented in `career/README.md` until populated. Create only needed records; combine or split files when useful. direction.md can hold north star, values, motivations, interests and goals. development.md holds actions, evidence milestones and dated progress reviews. Project records describe purpose, status, contribution, skills used, learning, relevance to a resume and links to work; do not copy source code or the project's backlog.
 

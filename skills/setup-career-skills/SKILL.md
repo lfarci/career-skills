@@ -22,11 +22,11 @@ Every imported fact goes into a canonical record, never into the index. Create a
 | Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/contact.md` |
 | Employers, titles/grades, dates, internships | `profile/experience.md` |
 | Degrees and schools | `profile/education.md` |
-| Certifications, licences, awards | `profile/qualifications.md` |
+| Certifications, licences, awards; expired or outgrown ones under `## Historical credentials` | `profile/qualifications.md` |
 | Skills and tools | `profile/skills.md` |
 | Spoken languages | `profile/languages.md` |
 | Goals, north star, considered next steps | `profile/direction.md` |
-| Location, work mode, commute, contract, salary preferences | `profile/preferences.md` |
+| Location, work mode, commute, contract, salary preferences; current compensation as a private baseline (never a target the user did not set) | `profile/preferences.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
 | Every public surface: URL, purpose, why targeted, emphasis (may repeat links from contact.md) | `brand/surfaces.md` |
@@ -53,7 +53,7 @@ When you cannot obtain the user's answer (a question tool fails or the session e
 
 ## Resume
 
-Read the root `README.md` first, then only the records it links. Run `scripts/check_workspace.py <root>` when Python is available. Check links resolve, records have one owner, and the saved next decision. Report `usable`, `needs repair` or `blocked`, then continue from the saved decision without re-asking answered questions. An index that holds facts directly (older setups; the checker names its content sections) is `needs repair`: list the proposed records and moves, then wait for approval before changing any file, unless the user's request already authorizes restructuring. Move contact details only when the user asks. Structural fixes follow the repair rule:
+Read the root `README.md` first, then only the records it links. Run `scripts/check_workspace.py <root>` when Python is available. Check links resolve, records have one owner, and the saved next decision. Report `usable`, `needs repair` or `blocked`, then continue from the saved decision without re-asking answered questions. A saved decision that the workspace itself shows as settled (the review it names is merged, or a record now holds the answer with its source) is answered: say so, cite the evidence, and replace it with the next open question. An index that holds facts directly (older setups; the checker names its content sections) is `needs repair`: list the proposed records and moves, then wait for approval before changing any file, unless the user's request already authorizes restructuring. Move contact details only when the user asks. Structural fixes follow the repair rule:
 
 <!-- repair-rule -->
 1. A request to check, review or resume is read-only for structure: report the status and the proposed fix, then ask before changing files.

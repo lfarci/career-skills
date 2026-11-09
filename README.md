@@ -17,7 +17,7 @@ mkdir my-career && cd my-career && git init
 | Codex | `npx skills add lfarci/career-skills --skill '*' -y --copy -a codex` | `.agents/skills/` | `codex` |
 | OpenCode | `npx skills add lfarci/career-skills --skill '*' -y --copy -a opencode` | `.agents/skills/` | `opencode` |
 
-To update later: `npx skills update -y`.
+To update later: `npx skills update -y`. It refreshes the skills you already have, but it does not install skills added to Career Skills since your first install, and in non-interactive mode it only warns about skills that were removed or merged upstream. After an update that prints "appear to have been deleted upstream", remove them by name (`npx skills remove <name> ... -y`), then re-run the install line above to add any new skills. A `skills-lock.json` that lists a skill this repository no longer ships is stale.
 
 ## Getting started
 
