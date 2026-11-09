@@ -115,6 +115,25 @@ class SearchJobsTest(unittest.TestCase):
         self.assertEqual(data["errors"], ["workable:blocked: HTTP 403"])
         self.assertEqual(sum("blocked" in c for c in self.calls), 1, "blocked source must not be retried")
 
+    def test_career_board_urls_and_unsupported(self) -> None:
+        companies = self.root / "research" / "companies"
+        companies.mkdir(parents=True)
+        (companies / "acme.md").write_text("# Acme\nJobs board: https://acme.recruitee.com/\n", encoding="utf-8")
+        (companies / "wd.md").write_text("# WD\nJobs board: https://wd.wd3.myworkdayjobs.com/Jobs\n", encoding="utf-8")
+        code, out = self.run_main("--career", str(self.root), "--location", "Belgium", "--json")
+        data = json.loads(out)
+        self.assertEqual(code, 0)
+        self.assertEqual(data["jobs"][0]["company"], "Acme")
+        self.assertEqual(len(data["errors"]), 1)
+        self.assertIn("wd.md: unsupported Jobs board", data["errors"][0])
+
+    def test_anywhere_in_country_is_not_worldwide(self) -> None:
+        mod = self.sj
+        base = {"title": "Platform Engineer", "tags": [], "description": "", "remote": True}
+        self.assertFalse(mod.matches({**base, "location": "Anywhere in France"}, ["engineer"], ["Belgium"], True, []))
+        self.assertTrue(mod.matches({**base, "location": "Anywhere in Belgium"}, ["engineer"], ["Brussels"], True, []))
+        self.assertTrue(mod.matches({**base, "location": "Anywhere"}, ["engineer"], ["Belgium"], True, []))
+
     def test_fresh_workspace_without_research(self) -> None:
         code, out = self.run_main("--career", str(self.root), "--feeds", "--json")
         self.assertNotEqual(code, 2)
