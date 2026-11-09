@@ -8,9 +8,9 @@ description: Explore career direction, motivations, trade-offs and professional 
 Help the person understand where they are professionally, where they want to go and why. This skill is about career identity, **not** general-purpose journaling or making a resume.
 
 ## Contract
-- **Input:** profile/goals/direction.md, profile/facts/ experience and achievements, profile/criteria/; relevant project accounts or supplied history.
+- **Input:** profile/goals/ values and north star, profile/facts/ experience and achievements, profile/criteria/; relevant project accounts or supplied history.
 - **Scope:** Clarify professional motivations, north star and choices; do not rewrite experience or public positioning.
-- **Output:** profile/goals/direction.md (or mapped equivalent): reflection, alternatives, decisions and open questions. Screening rules the user states (must-haves, deal-breakers) are proposed for profile/criteria/expectations.md.
+- **Output:** profile/goals/north-star.md (north star, ideal job, alternatives, decisions, open questions) and profile/goals/values.md (values, anchor ranking), or the mapped equivalents. Considered certifications go to profile/goals/certifications.md. Screening rules the user states (must-haves, deal-breakers) are proposed for profile/criteria/expectations.md.
 
 ## Steps
 

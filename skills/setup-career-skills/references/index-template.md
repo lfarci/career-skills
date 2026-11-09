@@ -13,7 +13,7 @@ Publication: separate approval required
 - [Experience](profile/facts/experience.md)
 - [Skills](profile/facts/skills.md)
 - [Conditions](profile/criteria/conditions.md)
-- [Direction](profile/goals/direction.md)
+- [North star](profile/goals/north-star.md)
 - [Project: budget-app](projects/budget-app.md)
 
 ## Source inventory

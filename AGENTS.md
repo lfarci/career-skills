@@ -26,7 +26,7 @@ Aim for a stable MVP: fewer, rock-solid skills over richness. Simplify or remove
 2. **Brand**: `personal-brand` (what to show, where, in which words), `visual-identity` (how it looks).
 3. **Opportunities**: `find-companies`, `find-jobs`, `build-resume`.
 
-Secondary: `audit`, `plan-development`, `reflect` (kept: sole owner of profile/goals/direction.md, which brand and job search consume), `ask-career-skills` (kept: router for the manual skills, zero context load). Removed for the MVP: `benchmark-profile`, `review-research`, `review-progress` (merged); re-add only with a demonstrated need.
+Secondary: `audit`, `plan-development`, `reflect` (kept: sole owner of profile/goals/north-star.md and values.md, which brand and job search consume), `ask-career-skills` (kept: router for the manual skills, zero context load). Removed for the MVP: `benchmark-profile`, `review-research`, `review-progress` (merged); re-add only with a demonstrated need.
 
 ## Quality bar for a skill
 
@@ -111,3 +111,4 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-11-09: Completing a real workspace surfaced three gaps: `npx skills update` keeps skills deleted upstream (it only warns in non-interactive mode) and never adds new ones, so installs drift; build-resume said "verification recorded" without a file, and an agent first put a later cohort under the earlier grade; setup's saved next decision ("review PR #77") outlived the merged PR. README, build-resume and setup now say what to do.
 - 2026-11-09: The user's resume already lived in its own repository; build-resume assumed a fresh draft in assets/ and produced a competing resume. It now finds the reference resume first. Expired or outgrown credentials and current pay had no home in the record map; they now go to qualifications (`## Historical credentials`) and preferences (private baseline).
 - 2026-11-09: A flat profile/ let screening criteria drift into direction.md and resume advice into experience.md; profile/ now has facts/, criteria/ and goals/ layers (#122). Borrowed methods (JSON Resume fields, SFIA levels, STAR, brag log, career anchors) are optional headings, never scores or schemas.
+- 2026-11-09: One goals/direction.md grew to mix values, north star, ideal job and planned certifications; split into values.md, north-star.md and certifications.md so each question has one findable file (#126).

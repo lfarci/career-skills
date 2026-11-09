@@ -21,12 +21,13 @@ EXP = """# Experience
 """
 FLAT = {"contact": "profile/contact.md", "experience": "profile/experience.md", "skills": "profile/skills.md",
         "education": "profile/education.md", "qualifications": "profile/qualifications.md", "direction": "profile/direction.md"}
-LAYERED = {k: v.replace("profile/", "profile/goals/" if k == "direction" else "profile/facts/") for k, v in FLAT.items()}
+LAYERED = {k: v.replace("profile/", "profile/facts/") for k, v in FLAT.items()}
+LAYERED["direction"] = "profile/goals/north-star.md"
 def base(case, readme_records=None, status="ready", extra_readme="", flat=False):
     """Standard workspace; flat=True keeps the earlier flat profile/ layout (still valid via index links)."""
     p = FLAT if flat else LAYERED
     recs = readme_records or [("Contact",p["contact"]),("Experience",p["experience"]),("Skills",p["skills"]),("Education",p["education"]),
-            ("Qualifications",p["qualifications"]),("Direction",p["direction"]),("Positioning","brand/positioning.md"),
+            ("Qualifications",p["qualifications"]),("North star" if not flat else "Direction",p["direction"]),("Positioning","brand/positioning.md"),
             ("Project: Contoso AI assistant","projects/contoso-ai-assistant.md")]
     links = "\n".join(f"- [{t}]({q})" for t,q in recs)
     w(case,"career/README.md",f"""# Career workspace
@@ -51,7 +52,7 @@ Status: {status}
     w(case,"career/"+p["contact"],"# Contact (imported with approval)\n- Name: Alex Testa\n- E-mail: alex.testa@example.invalid\n- City: Brussels, Belgium")
     w(case,"career/"+p["education"],"# Education\n- MSc Computer Science, Université Exemple, 2020")
     w(case,"career/"+p["qualifications"],"# Qualifications\n- AZ-204 Azure Developer Associate, passed 2023 (credential ID on file)")
-    w(case,"career/"+p["direction"],"# Direction\n- Goal: grow toward solution architecture while staying hands-on.")
+    w(case,"career/"+p["direction"],("# Direction" if flat else "# North star")+"\n- Goal: grow toward solution architecture while staying hands-on.")
     w(case,"career/brand/positioning.md","# Positioning\n- Headline: .NET & Azure Engineer · Consulting\n- Audience: hiring managers at Benelux product companies")
     w(case,"career/projects/contoso-ai-assistant.md","# Contoso AI assistant\n- Status: experimental internal prototype (not in production)\n- Contribution: built the retrieval API in C#\n- Source: old-notes/projects.md")
 
@@ -67,7 +68,7 @@ w("resume-unsupported-metrics","job-ad.md","# Cloud Engineer, Woodgrove (synthet
 base("surface-inaccessible")
 
 base("brand-private-boundary")
-w("brand-private-boundary","career/profile/goals/direction.md","# Direction (private)\n- Doubts: not sure I want to manage people; worried about losing hands-on work.\n- Goal: solution architecture.")
+w("brand-private-boundary","career/profile/goals/north-star.md","# North star (private)\n- Doubts: not sure I want to manage people; worried about losing hands-on work.\n- Goal: solution architecture.")
 w("brand-private-boundary","career/profile/goals/development.md","# Development (private)\n- Action plan: ask manager for an architecture-lead assignment by Q1 (internal).\n- Planned: AI-102 Azure AI Engineer certification (not taken yet).")
 w("brand-private-boundary","career/brand/bio.md","# Public bio (current)\nSoftware engineer at Contoso Consulting.")
 

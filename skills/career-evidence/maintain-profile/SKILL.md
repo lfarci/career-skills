@@ -30,7 +30,9 @@ Follow the workspace's existing layout when its index maps records. Otherwise, a
 | Location, work mode, travel, commute, contract type | `profile/criteria/conditions.md` |
 | Current compensation as a private baseline; salary targets only once the user sets them | `profile/criteria/compensation.md` |
 | Must-haves, nice-to-haves and deal-breakers for screening a role or company | `profile/criteria/expectations.md` |
-| Goals, north star, values, career anchors, ideal job, considered next steps | `profile/goals/direction.md` |
+| Values and motivations: what matters, career-anchor ranking, work values | `profile/goals/values.md` |
+| North star, goals, ideal job, target role and responsibility level, considered next steps, career-change options | `profile/goals/north-star.md` |
+| Planned or target certifications and learning credentials (earned ones stay in `qualifications.md`) | `profile/goals/certifications.md` |
 | Development plan: objectives, actions with estimated and actual dates, dated reviews | `profile/goals/development.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |

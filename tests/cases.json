@@ -760,10 +760,10 @@
       "skill": "setup-career-skills",
       "prompt": "Set up my career workspace in a new folder named career here; you may read ./old-notes (a resume with roles, client assignments, a degree, skills and a certification, plus goals.txt and a side-project note) and write local files.",
       "expect": [
-        "Creates separate canonical records such as profile/facts/experience.md, profile/facts/education.md, profile/facts/qualifications.md, profile/facts/skills.md, profile/goals/direction.md and projects/<project>.md",
+        "Creates separate canonical records such as profile/facts/experience.md, profile/facts/education.md, profile/facts/qualifications.md, profile/facts/skills.md, profile/goals/north-star.md and projects/<project>.md",
         "Puts client assignments and the side project in projects/ records linked from experience.md",
         "README.md links records and lists each source with its decision; it contains no copied facts or contact details",
-        "Keeps the goal (a considered certification) in goals/direction.md, not facts/qualifications.md",
+        "Keeps the goal (a considered certification) in goals/certifications.md, not facts/qualifications.md",
         "Verifies writes and asks one next question"
       ]
     },
@@ -783,7 +783,7 @@
       "skill": "maintain-profile",
       "prompt": "Use maintain-profile: start my profile in ./mycareer. I'm a data analyst at Litware since 2023, before that intern at Proseware (2022). I hold the PL-300 cert and want to become a data engineer. You may write files.",
       "expect": [
-        "Creates profile/facts/experience.md, profile/facts/qualifications.md and profile/goals/direction.md rather than one combined file",
+        "Creates profile/facts/experience.md, profile/facts/qualifications.md and profile/goals/north-star.md rather than one combined file",
         "The goal is recorded as direction, not as a qualification or role",
         "Creates or updates a minimal README.md index linking the new records",
         "Asks one next question"
@@ -903,7 +903,7 @@
       "skill": "validate-workspace",
       "prompt": "Please standardize my career workspace ./career to the layered profile layout. It still has the flat profile/ (experience.md, skills.md, preferences.md with a compensation section, direction.md with a 'How to judge an opportunity' section, development.md) and a TODO.md outside career/ links profile/direction.md.",
       "expect": [
-        "Proposes moves to profile/facts/, profile/criteria/ and profile/goals/ and the split of preferences.md into conditions.md and compensation.md before changing files",
+        "Proposes moves to profile/facts/, profile/criteria/ and profile/goals/, the split of preferences.md into conditions.md and compensation.md, and of direction.md into values.md, north-star.md and certifications.md, before changing files",
         "Moves the opportunity-screening section to profile/criteria/expectations.md rather than deleting it",
         "Includes rewriting inbound links outside career/, such as TODO.md, and updating the index",
         "Asks for approval before moving and plans to run the workspace check afterwards"
