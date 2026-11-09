@@ -6,13 +6,13 @@ Read this reference when importing career sources, choosing canonical records or
 
 Create these homes **as needed**, directly under the chosen root:
 
-- `profile/`: identity, employers/grades/dates (including supported internships), skills, qualifications and goals.
+- `profile/`: three layers. `facts/`: identity, employers/grades/dates (including supported internships), skills, qualifications, achievements and stories. `criteria/`: current conditions, compensation baseline and expectations for screening roles. `goals/`: direction and development plan.
 - `projects/`: consulting assignments, personal projects, contributions and evidence.
 - `brand/`: positioning, audiences and visual guidance.
 - `assets/`: staged and draft reusable materials.
 - `research/`: selected companies, opportunities and comparisons.
 
-`profile/experience.md` holds employer and role history, while assignments and their outcomes belong in `projects/` when selected. Distinguish verified or user-reported facts from aspirations, messaging and live publication. Reuse supported facts without inventing achievements, dates or credentials.
+`profile/facts/experience.md` holds employer and role history, while assignments and their outcomes belong in `projects/` when selected. Distinguish verified or user-reported facts from aspirations, messaging and live publication. Reuse supported facts without inventing achievements, dates or credentials.
 
 ## New: source handling
 

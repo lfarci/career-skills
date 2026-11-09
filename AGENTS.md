@@ -4,7 +4,7 @@ Public repo of small [Agent Skills](https://agentskills.io/) that help one perso
 
 ## Mental model
 
-The workspace has an **index** (`career/README.md`: links, source inventory, setup progress) and **canonical records** in five homes: `profile/` (facts, direction, preferences, development), `projects/` (assignments and side projects), `brand/` (positioning, surfaces, visual identity), `assets/` (drafts and approved reusable outputs), `research/` (saved companies, jobs, comparators). The index points; records hold facts. Details: [docs/WORKSPACE.md](docs/WORKSPACE.md).
+The workspace has an **index** (`career/README.md`: links, source inventory, setup progress) and **canonical records** in five homes: `profile/` (`facts/`, `criteria/`, `goals/`), `projects/` (assignments and side projects), `brand/` (positioning, surfaces, visual identity), `assets/` (drafts and approved reusable outputs), `research/` (saved companies, jobs, comparators). The index points; records hold facts. Details: [docs/WORKSPACE.md](docs/WORKSPACE.md).
 
 Skill groups under `skills/`, each owning one question:
 
@@ -26,7 +26,7 @@ Aim for a stable MVP: fewer, rock-solid skills over richness. Simplify or remove
 2. **Brand**: `personal-brand` (what to show, where, in which words), `visual-identity` (how it looks).
 3. **Opportunities**: `find-companies`, `find-jobs`, `build-resume`.
 
-Secondary: `audit`, `plan-development`, `reflect` (kept: sole owner of profile/direction.md, which brand and job search consume), `ask-career-skills` (kept: router for the manual skills, zero context load). Removed for the MVP: `benchmark-profile`, `review-research`, `review-progress` (merged); re-add only with a demonstrated need.
+Secondary: `audit`, `plan-development`, `reflect` (kept: sole owner of profile/goals/direction.md, which brand and job search consume), `ask-career-skills` (kept: router for the manual skills, zero context load). Removed for the MVP: `benchmark-profile`, `review-research`, `review-progress` (merged); re-add only with a demonstrated need.
 
 ## Quality bar for a skill
 
@@ -110,3 +110,4 @@ Append one dated line per lesson when you discover a problem worth not repeating
 - 2026-10-30: Brand skills drafted for surfaces the user never had. A confirm-surfaces checklist now gates copy and visuals, and per-surface references load only for confirmed surfaces (progressive disclosure); visual-identity's MVP is logo + banners (#111).
 - 2026-11-09: Completing a real workspace surfaced three gaps: `npx skills update` keeps skills deleted upstream (it only warns in non-interactive mode) and never adds new ones, so installs drift; build-resume said "verification recorded" without a file, and an agent first put a later cohort under the earlier grade; setup's saved next decision ("review PR #77") outlived the merged PR. README, build-resume and setup now say what to do.
 - 2026-11-09: The user's resume already lived in its own repository; build-resume assumed a fresh draft in assets/ and produced a competing resume. It now finds the reference resume first. Expired or outgrown credentials and current pay had no home in the record map; they now go to qualifications (`## Historical credentials`) and preferences (private baseline).
+- 2026-11-09: A flat profile/ let screening criteria drift into direction.md and resume advice into experience.md; profile/ now has facts/, criteria/ and goals/ layers (#122). Borrowed methods (JSON Resume fields, SFIA levels, STAR, brag log, career anchors) are optional headings, never scores or schemas.

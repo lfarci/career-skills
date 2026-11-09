@@ -639,7 +639,7 @@
       "skill": "setup-career-skills",
       "prompt": "Set up my career workspace from my resume and older notes. The resume includes two internships, paid roles at three grades, and a detailed cloud engagement spanning two grades. Start with role history, and keep assignment evidence separate.",
       "expect": [
-        "Places employer, function, grade, date ranges and source-supported internships in profile/experience.md",
+        "Places employer, function, grade, date ranges and source-supported internships in profile/facts/experience.md",
         "Does not mistake a long-running client engagement for an additional employment role",
         "Keeps cloud assignment and project outcome details under projects/ when selected, linking from role history instead of mixing them",
         "Flags conflicts or missing role dates rather than silently dropping internships or inventing details"
@@ -703,7 +703,7 @@
     {
       "id": "setup-resume-invalid-workspace-before-import",
       "skill": "setup-career-skills",
-      "prompt": "Resume setup-career-skills in the private career/ location we confirmed last session. It contains a README with status 'in progress' that links profile/experience.md, but that file was renamed and the link no longer resolves. The index lists projects as the next import. Please continue the setup.",
+      "prompt": "Resume setup-career-skills in the private career/ location we confirmed last session. It contains a README with status 'in progress' that links profile/facts/experience.md, but that file was renamed and the link no longer resolves. The index lists projects as the next import. Please continue the setup.",
       "expect": [
         "Recognizes resume mode and verifies the index and referenced paths before starting the pending projects import",
         "Reports the specific broken experience mapping and proposes a narrow repair instead of treating it as a fresh workspace",
@@ -760,10 +760,10 @@
       "skill": "setup-career-skills",
       "prompt": "Set up my career workspace in a new folder named career here; you may read ./old-notes (a resume with roles, client assignments, a degree, skills and a certification, plus goals.txt and a side-project note) and write local files.",
       "expect": [
-        "Creates separate canonical records such as profile/experience.md, profile/education.md, profile/qualifications.md, profile/skills.md, profile/direction.md and projects/<project>.md",
+        "Creates separate canonical records such as profile/facts/experience.md, profile/facts/education.md, profile/facts/qualifications.md, profile/facts/skills.md, profile/goals/direction.md and projects/<project>.md",
         "Puts client assignments and the side project in projects/ records linked from experience.md",
         "README.md links records and lists each source with its decision; it contains no copied facts or contact details",
-        "Keeps the goal (a considered certification) in direction.md, not qualifications.md",
+        "Keeps the goal (a considered certification) in goals/direction.md, not facts/qualifications.md",
         "Verifies writes and asks one next question"
       ]
     },
@@ -783,7 +783,7 @@
       "skill": "maintain-profile",
       "prompt": "Use maintain-profile: start my profile in ./mycareer. I'm a data analyst at Litware since 2023, before that intern at Proseware (2022). I hold the PL-300 cert and want to become a data engineer. You may write files.",
       "expect": [
-        "Creates profile/experience.md, profile/qualifications.md and profile/direction.md rather than one combined file",
+        "Creates profile/facts/experience.md, profile/facts/qualifications.md and profile/goals/direction.md rather than one combined file",
         "The goal is recorded as direction, not as a qualification or role",
         "Creates or updates a minimal README.md index linking the new records",
         "Asks one next question"
@@ -813,10 +813,10 @@
     {
       "id": "repair-renamed-record-same-fix",
       "skill": "validate-workspace",
-      "prompt": "Check my career workspace ./career for structural problems. (profile/skills.md was renamed to profile/technical-skills.md; README.md still links the old name.)",
+      "prompt": "Check my career workspace ./career for structural problems. (profile/facts/skills.md was renamed to profile/facts/technical-skills.md; README.md still links the old name.)",
       "expect": [
         "Reports needs repair with the broken link and the unlinked record",
-        "Proposes updating the links to profile/technical-skills.md, keeping the user's file name",
+        "Proposes updating the links to profile/facts/technical-skills.md, keeping the user's file name",
         "Changes no file before the user approves",
         "setup-career-skills resuming the same workspace proposes the same fix"
       ]
@@ -885,6 +885,28 @@
         "Plans no favicon, X header, avatar or icon set",
         "Presents concepts in words and writes no image file",
         "Records the confirmed surfaces in brand/identity.md"
+      ]
+    },
+    {
+      "id": "profile-criteria-and-feedback-layers",
+      "skill": "maintain-profile",
+      "prompt": "Use maintain-profile on ./career (layered profile/). Record two things: I want at most two office days a week and only permanent contracts for now; and last month my client lead thanked me by e-mail for the payment API migration (I saved it as evidence/2026-10-thanks.eml). You may write files.",
+      "expect": [
+        "Records the office-days and contract conditions in profile/criteria/conditions.md as the user's stated conditions, not as goals or facts",
+        "Adds a dated entry to profile/facts/achievements.md for the feedback, linking the evidence file and the related project record if one exists",
+        "Invents no metrics, ranking or deal-breakers the user did not state",
+        "Links any new record from README.md Records"
+      ]
+    },
+    {
+      "id": "workspace-standardize-flat-profile",
+      "skill": "validate-workspace",
+      "prompt": "Please standardize my career workspace ./career to the layered profile layout. It still has the flat profile/ (experience.md, skills.md, preferences.md with a compensation section, direction.md with a 'How to judge an opportunity' section, development.md) and a TODO.md outside career/ links profile/direction.md.",
+      "expect": [
+        "Proposes moves to profile/facts/, profile/criteria/ and profile/goals/ and the split of preferences.md into conditions.md and compensation.md before changing files",
+        "Moves the opportunity-screening section to profile/criteria/expectations.md rather than deleting it",
+        "Includes rewriting inbound links outside career/, such as TODO.md, and updating the index",
+        "Asks for approval before moving and plans to run the workspace check afterwards"
       ]
     }
   ]

@@ -10,15 +10,16 @@ Write policy: <propose changes / approved direct edits / pull requests>
 Publication: separate approval required
 
 ## Records
-- [Experience](profile/experience.md)
-- [Skills](profile/skills.md)
-- [Direction](profile/direction.md)
+- [Experience](profile/facts/experience.md)
+- [Skills](profile/facts/skills.md)
+- [Conditions](profile/criteria/conditions.md)
+- [Direction](profile/goals/direction.md)
 - [Project: budget-app](projects/budget-app.md)
 
 ## Source inventory
 | Source | Decision | Destination | Notes |
 | --- | --- | --- | --- |
-| ../old-notes/resume-2024.md | imported | profile/experience.md, profile/education.md | dated 2024 |
+| ../old-notes/resume-2024.md | imported | profile/facts/experience.md, profile/facts/education.md | dated 2024 |
 | ../old-notes/linkedin.pdf | pending | | not yet read |
 
 ## Setup progress

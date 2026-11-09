@@ -6,7 +6,7 @@ description: Research target employers fitting career direction, interests and g
 # Find Companies
 
 ## Contract
-- **Input:** profile/ experience, direction, location and work constraints; existing research/companies/ references.
+- **Input:** profile/facts/ experience, profile/goals/direction.md, profile/criteria/ (conditions, expectations); existing research/companies/ references.
 - **Scope:** Assess employer fit independently of vacancy availability; do not apply or contact employers.
 - **Output:** Shortlist first; save selected employers to research/companies/<company>.md with fit, sources/check dates and unknowns.
 
@@ -14,7 +14,7 @@ description: Research target employers fitting career direction, interests and g
 - Read the user's selected profile and career direction. Reuse explicit current preferences; ask only missing information that materially changes the search. Do not infer preferred roles or industries solely from past employers.
 - Use as fit evidence only facts the records mark confirmed or that two sources agree on; name any single-source or conflicting claim as unconfirmed instead of relying on it.
 - Establish desired work and growth, demonstrated strengths, location/commute, remote or hybrid needs, employment geography, working languages and relevant eligibility constraints. Clarify industry, company size, employment model, compensation or values only when they affect selection.
-- Separate non-negotiable constraints from preferences and exploratory interests. Confirm priorities before ranking; keep private goals and supported experience distinct.
+- Separate non-negotiable constraints (deal-breakers and must-haves in the criteria records) from preferences and exploratory interests. Confirm priorities before ranking; keep private goals and supported experience distinct.
 - Use generic professional search criteria. Do not upload private profiles, internal decisions, client-sensitive details or personal identifiers to external search services. A private profile is input, not permission to disclose it.
 
 ## Research employers
@@ -34,6 +34,6 @@ description: Research target employers fitting career direction, interests and g
 When the workspace has a root `README.md` index, add a link to each new record under `Records`.
 
 ## Done when
-- Candidates have traceable evidence and explicit links to profile/goals and practical constraints.
+- Candidates have traceable evidence and explicit links to profile/goals/ and profile/criteria/.
 - Employer suitability, inferred fit, unresolved conditions and current vacancy status are clearly separated.
 - Sources, checked dates and research limits are stated; the shortlist is reviewable and no outreach occurred.

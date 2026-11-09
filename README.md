@@ -26,7 +26,7 @@ To update later: `npx skills update -y`. It refreshes the skills you already hav
 
    > Use the setup-career-skills skill. Create my private career workspace in ./career. My material is in ./inbox; you may read it and write records. Start with my role history.
 
-   Setup reads your sources, asks about anything unclear or conflicting, and writes `career/README.md` (an index with your progress) plus records such as `career/profile/experience.md`. Private details (health, salary, family) are left out unless you ask. This one clean, verified record of your career is what every other skill builds on, so resumes and profiles stay truthful and consistent.
+   Setup reads your sources, asks about anything unclear or conflicting, and writes `career/README.md` (an index with your progress) plus records such as `career/profile/facts/experience.md`. Private details (health, salary, family) are left out unless you ask. This one clean, verified record of your career is what every other skill builds on, so resumes and profiles stay truthful and consistent.
 3. **Take breaks.** Stop at any time; later say *"Resume my setup"* and it continues where you left off.
 4. **Check the workspace** (use `.claude/skills/...` instead of `.agents/skills/...` for Claude Code):
 

@@ -19,14 +19,19 @@ Every imported fact goes into a canonical record, never into the index. Create a
 <!-- record-map -->
 | Fact | Record |
 | --- | --- |
-| Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/contact.md` |
-| Employers, titles/grades, dates, internships | `profile/experience.md` |
-| Degrees and schools | `profile/education.md` |
-| Certifications, licences, awards; expired or outgrown ones under `## Historical credentials` | `profile/qualifications.md` |
-| Skills and tools | `profile/skills.md` |
-| Spoken languages | `profile/languages.md` |
-| Goals, north star, considered next steps | `profile/direction.md` |
-| Location, work mode, commute, contract, salary preferences; current compensation as a private baseline (never a target the user did not set) | `profile/preferences.md` |
+| Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/facts/contact.md` |
+| Employers, titles/grades, dates, internships; optional self-assessed responsibility level per role | `profile/facts/experience.md` |
+| Degrees and schools | `profile/facts/education.md` |
+| Certifications, licences, awards; expired or outgrown ones under `## Historical credentials` | `profile/facts/qualifications.md` |
+| Skills and tools | `profile/facts/skills.md` |
+| Spoken languages | `profile/facts/languages.md` |
+| Dated achievements, recognition and feedback received (brag log) | `profile/facts/achievements.md` |
+| Interview stories (Situation, Task, Action, Result), each linked to its project or achievement | `profile/facts/stories.md` |
+| Location, work mode, travel, commute, contract type | `profile/criteria/conditions.md` |
+| Current compensation as a private baseline; salary targets only once the user sets them | `profile/criteria/compensation.md` |
+| Must-haves, nice-to-haves and deal-breakers for screening a role or company | `profile/criteria/expectations.md` |
+| Goals, north star, values, career anchors, ideal job, considered next steps | `profile/goals/direction.md` |
+| Development plan: objectives, actions with estimated and actual dates, dated reviews | `profile/goals/development.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
 | Every public surface: URL, purpose, why targeted, emphasis (may repeat links from contact.md) | `brand/surfaces.md` |
@@ -34,9 +39,9 @@ Every imported fact goes into a canonical record, never into the index. Create a
 | Saved companies, job ads, comparator profiles | `research/` |
 <!-- /record-map -->
 
-Keep each record plain Markdown with headings and relative links. Note the source file and its date beside imported facts; mark approximations and conflicts instead of resolving them silently. A newer user-confirmed fact supersedes an older goal or note: record the fact, keep the older entry dated as superseded, and mention the change. A goal stays a goal: "considering AZ-305" belongs in `direction.md`, not `qualifications.md`.
+Keep each record plain Markdown with headings and relative links. Note the source file and its date beside imported facts; mark approximations and conflicts instead of resolving them silently. A newer user-confirmed fact supersedes an older goal or note: record the fact, keep the older entry dated as superseded, and mention the change. A goal stays a goal: "considering AZ-305" belongs in `goals/direction.md`, not `facts/qualifications.md`. A stated current condition ("no more than two office days") is a criterion in `criteria/`, not a goal. A workspace with the earlier flat `profile/` (for example `profile/experience.md`) stays valid through its index links; keep its layout unless the user asks to standardize.
 
-Contact details (e-mail, phone, address) stay in their source unless the user asks to import them; then they go to `profile/contact.md`, never the index.
+Contact details (e-mail, phone, address) stay in their source unless the user asks to import them; then they go to `profile/facts/contact.md`, never the index.
 
 ## Steps
 
