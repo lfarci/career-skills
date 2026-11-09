@@ -10,7 +10,7 @@ Produce an evidence-based resume readable by humans and reliably extractable by 
 ## Contract
 - **Input:** Supported profile/ facts, selected project evidence, brand/ guidance and an optional research/opportunities/ role.
 - **Scope:** Author or tailor a truthful resume; do not alter career facts to match the vacancy or submit an application.
-- **Output:** Resume sources/exports in assets/drafts/resumes/; explicitly approved versions in assets/staged/resumes/, with verification and intentional tailoring recorded.
+- **Output:** Resume sources/exports in assets/drafts/resumes/<name>/; explicitly approved versions in assets/staged/resumes/<name>/; verification, intentional tailoring and open points recorded in `verification.md` beside the resume.
 
 ## Steps
 
@@ -35,14 +35,14 @@ Produce an evidence-based resume readable by humans and reliably extractable by 
    The script applies colours and fonts from the identity file's brand-tokens block ([format](references/brand-tokens.md)) only when its status is `approved`. Pending tokens: ask the user whether to use them (`--allow-pending`) or keep the neutral default. Report the `brand` field and every font or colour warning; never write or approve tokens here.
 
    `<out>` is `assets/drafts/resumes/<name>/` inside the career workspace root (next to its `README.md`). Fix every entry in `warnings` that is a data mistake; ask the user for a missing name instead of using a placeholder. The script writes `resume.tex` (built from the blocks in `templates/career-resume.sty`), a Markdown copy, and compiles a PDF with the first engine found: `tectonic`, `latexmk`, `xelatex`, `lualatex` or `pdflatex`. If the user wants another layout, edit the generated `.tex` or the copied `.sty` and re-run the engine; keep the blocks.
-5. Read the script's JSON status. Exit `0`: a PDF exists and was checked (`pages`, `text_extracted`); look at page 1 as an image when you can (for example `pdftoppm -png -r 80 -f 1 -l 1`). Exit `3`: no TeX engine, so only `.tex` and `.md` exist; say so, give the install hint, and do not claim a PDF. Exit `2`: show the error and fix the `.tex`. Exit `1`: fix `resume.json`. Then validate claim provenance, chronology, spelling, length, relevance, links and reading order, and name the checks you could not run.
-6. Report meaningful changes and unresolved evidence gaps. Never silently modify the canonical professional profile as part of tailoring.
+5. Read the script's JSON status. Exit `0`: a PDF exists and was checked (`pages`, `text_extracted`); look at page 1 as an image when you can (for example `pdftoppm -png -r 80 -f 1 -l 1`). Exit `3`: no TeX engine, so only `.tex` and `.md` exist; say so, give the install hint, and do not claim a PDF. Exit `2`: show the error and fix the `.tex`. Exit `1`: fix `resume.json`. Then validate claim provenance, chronology (each bullet sits under the role, grade and dates it happened in; work spanning a promotion is not attributed to only one of them unless the records say so), spelling, length, relevance, links and reading order, and name the checks you could not run.
+6. Write `verification.md` in `<out>`: target, sources used, what differs from the previous or published resume and why, the claim checks you ran, and open `[CONFIRM]` points. Report meaningful changes and unresolved evidence gaps. Never silently modify the canonical professional profile as part of tailoring.
 
 ## Output
 
 Resume source and requested exports when possible, plus a concise validation summary: relevance choices, verified key claims, format checks and any unresolved assumptions.
 
-When the workspace has a root `README.md` index, add a link to each new record under `Records`.
+When the workspace has a root `README.md` index, add a link to each new record under `Records` (the resume's `resume.md` and its `verification.md`; the workspace check flags unlinked Markdown files).
 
 ## Done when
 
