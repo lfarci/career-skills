@@ -27,8 +27,9 @@ Every imported fact goes into a canonical record, never into the index. Create a
 | Spoken languages | `profile/facts/languages.md` |
 | Dated achievements, recognition and feedback received (brag log) | `profile/facts/achievements.md` |
 | Interview stories (Situation, Task, Action, Result), each linked to its project or achievement | `profile/facts/stories.md` |
+| Current compensation package (salary, bonus, car or mobility, vouchers, insurance, pension) as a private baseline | `profile/facts/compensation.md` |
 | Location, work mode, travel, commute, contract type | `profile/criteria/conditions.md` |
-| Current compensation as a private baseline; salary targets only once the user sets them | `profile/criteria/compensation.md` |
+| Salary and package expectations for a next role: minimum and target, must-have benefits, trade-offs; only values the user sets | `profile/criteria/salary-expectations.md` |
 | Must-haves, nice-to-haves and deal-breakers for screening a role or company | `profile/criteria/expectations.md` |
 | Values and motivations: what matters, career-anchor ranking, work values | `profile/goals/values.md` |
 | North star, goals, ideal job, target role and responsibility level, considered next steps, career-change options | `profile/goals/north-star.md` |

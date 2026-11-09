@@ -6,7 +6,7 @@ description: Research target employers fitting career direction, interests and g
 # Find Companies
 
 ## Contract
-- **Input:** profile/facts/ experience, profile/goals/north-star.md and values, profile/criteria/ (conditions, expectations); existing research/companies/ references.
+- **Input:** profile/facts/ experience, profile/goals/north-star.md and values, profile/criteria/ (conditions, salary expectations, expectations); existing research/companies/ references.
 - **Scope:** Assess employer fit independently of vacancy availability; do not apply or contact employers.
 - **Output:** Shortlist first; save selected employers to research/companies/<company>.md with fit, sources/check dates and unknowns.
 
