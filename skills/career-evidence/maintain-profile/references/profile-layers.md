@@ -49,5 +49,13 @@ One dated entry per achievement or piece of feedback, newest first:
 ## criteria/
 
 - `conditions.md`: location, work mode, travel, commute, contract type, languages, notice period.
-- `compensation.md`: current baseline (private, with source and date) and targets only once the user sets them.
+- `compensation.md`: current baseline (private, with source and date) and targets only once the user sets them. A package overview with the same fields for the current job and each offer makes comparisons line by line. Keep only the fields that apply in the user's country, and write `TODO` for unknown values:
+  - Employer: name, sector, size, multinational.
+  - Contract: title, seniority, contract type, official and real hours per week, on-call duty, vacation days.
+  - Salary: gross and net per month, number of monthly payments (13th month, holiday pay), expense allowances, bonus or incentive plans and their targets, equity.
+  - Benefits: company car or mobility budget (with personal contribution and fuel or charging card), meal vouchers, eco vouchers, group insurance or pension (employee and employer %), health and other insurance, phone, internet, home-working allowance, training budget.
+  - Mobility: work location, distance and commute, travel compensation, telework days.
+  - Other: ease of taking leave, stress, people managed.
+
+  Belgian users can follow the r/BESalary template (https://www.reddit.com/r/BESalary/comments/12xam5d/whats_your_wage_and_work_conditions_template/).
 - `expectations.md`: Must-haves, Nice-to-haves, Deal-breakers. Optionally group them by work value (Achievement, Independence, Recognition, Relationships, Support, Working Conditions). End with a short screening checklist.
