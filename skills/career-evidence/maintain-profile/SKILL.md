@@ -44,6 +44,17 @@ Follow the workspace's existing layout when its index maps records. Otherwise, a
 
 The three profile layers and optional headings (role fields, brag-log entries, STAR stories, criteria sections) are in [profile layers](references/profile-layers.md). A workspace with the earlier flat `profile/` (for example `profile/experience.md`) stays valid through its index links: write there and keep its layout unless the user asks to standardize.
 
+## Writing records
+
+<!-- writing-rule -->
+Records are read mostly by agents, so keep them token-efficient:
+1. Dense, factual and scannable: lists and tables over prose; no preamble, filler, repeated context or narrative padding.
+2. One home per fact: link to it instead of restating it.
+3. Small files, split by topic.
+4. Cut words, never information: keep facts, figures, dates, sources, decisions, TODOs, approved or "avoid" wording, approximations and caveats.
+5. When you touch a record, condense nearby verbosity the same way; keep file names and anchors stable, or fix the links.
+<!-- /writing-rule -->
+
 ## Steps
 
 1. **Establish intent before investigating.** A bare invocation or “help with my profile” is not a request to audit or edit everything. If the conversation does not identify a task, ask **one short question**, such as: *“Would you like to add information, correct a fact, review accuracy, or start a profile?”* Stop there until the user responds. Reuse known context; never ask this again for an already-clear request.

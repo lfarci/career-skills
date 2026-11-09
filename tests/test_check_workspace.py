@@ -34,6 +34,16 @@ class CheckWorkspaceTest(unittest.TestCase):
     def write_index(self, body: str) -> None:
         (self.root / "README.md").write_text(body, encoding="utf-8")
 
+    def test_large_and_duplicated_records_warn(self) -> None:
+        para = " ".join(f"word{i}" for i in range(40))
+        (self.root / "profile" / "experience.md").write_text("# E\n\n" + para + "\n\n" + "x " * 1600, encoding="utf-8")
+        (self.root / "profile" / "skills.md").write_text("# S\n\n" + para + "\n", encoding="utf-8")
+        self.write_index("# W\n## Records\n- [E](profile/experience.md)\n- [S](profile/skills.md)\n")
+        report = self.cw.check(self.root)
+        self.assertEqual(report.errors, [])
+        self.assertTrue(any("large record" in w for w in report.warnings))
+        self.assertTrue(any("profile/skills.md: paragraph duplicated from profile/experience.md" in w for w in report.warnings))
+
     def test_valid_workspace(self) -> None:
         self.write_index("# W\n## Records\n- [E](profile/experience.md)\n## Setup progress\nStatus: in progress\n")
         report = self.cw.check(self.root)

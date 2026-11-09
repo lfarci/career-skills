@@ -12,6 +12,17 @@ Help the person understand where they are professionally, where they want to go 
 - **Scope:** Clarify professional motivations, north star and choices; do not rewrite experience or public positioning.
 - **Output:** profile/goals/north-star.md (north star, ideal job, alternatives, decisions, open questions) and profile/goals/values.md (values, anchor ranking), or the mapped equivalents. Considered certifications go to profile/goals/certifications.md. Screening rules the user states (must-haves, deal-breakers) are proposed for profile/criteria/expectations.md.
 
+## Writing records
+
+<!-- writing-rule -->
+Records are read mostly by agents, so keep them token-efficient:
+1. Dense, factual and scannable: lists and tables over prose; no preamble, filler, repeated context or narrative padding.
+2. One home per fact: link to it instead of restating it.
+3. Small files, split by topic.
+4. Cut words, never information: keep facts, figures, dates, sources, decisions, TODOs, approved or "avoid" wording, approximations and caveats.
+5. When you touch a record, condense nearby verbosity the same way; keep file names and anchors stable, or fix the links.
+<!-- /writing-rule -->
+
 ## Steps
 
 1. Read available professional history, projects, past decisions, goals and personal constraints. Distinguish observations from interpretations; do not assume any profession or preferred promotion path.
