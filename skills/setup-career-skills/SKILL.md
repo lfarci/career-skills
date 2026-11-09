@@ -22,11 +22,11 @@ Every imported fact goes into a canonical record, never into the index. Create a
 | Name and contact details the user chose to import (name, e-mail, phone, main public links used on a resume) | `profile/contact.md` |
 | Employers, titles/grades, dates, internships | `profile/experience.md` |
 | Degrees and schools | `profile/education.md` |
-| Certifications, licences, awards | `profile/qualifications.md` |
+| Certifications, licences, awards; expired or outgrown ones under `## Historical credentials` | `profile/qualifications.md` |
 | Skills and tools | `profile/skills.md` |
 | Spoken languages | `profile/languages.md` |
 | Goals, north star, considered next steps | `profile/direction.md` |
-| Location, work mode, commute, contract, salary preferences | `profile/preferences.md` |
+| Location, work mode, commute, contract, salary preferences; current compensation as a private baseline (never a target the user did not set) | `profile/preferences.md` |
 | Client assignments, side projects, contributions and their outcomes | `projects/<project>.md`, linked from the role in `experience.md` |
 | Positioning, bios, visual guidance | `brand/` (only when the source contains it) |
 | Every public surface: URL, purpose, why targeted, emphasis (may repeat links from contact.md) | `brand/surfaces.md` |
